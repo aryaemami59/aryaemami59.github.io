@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Barcode</title>
+        <link rel="stylesheet" href="Barcode.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="generator.js"></script>
+        
+    </head>
+    <body>
+        <span id="empty">
+            <span id="OIQR" class="vendorQR"></span>
+            <span id="MCKQR" class="vendorQR"></span>
+            <span id="GNFRQR" class="vendorQR"></span>
+            <span id="SOCQR" class="vendorQR"></span>
+            <span id="VSQR" class="vendorQR"></span>
+            <span id="MSQR" class="vendorQR"></span>
+            <span id="COVQR" class="vendorQR"></span>
+            <span id="FORSQR" class="vendorQR"></span>
+        </span>
+        <header id="mainHeader">Supplies Simplified</header>
+        <!-- <nav id="nav">
+            <nav id="displayAllItems" class="nav">Display All Items</nav>
+            <nav id="mckesson" class="nav">McKesson Items</nav>
+            <nav id="myInv" class="nav">OrderInsite</nav>
+            <nav id="gnfr" class="nav">GNFR</nav>
+        </nav> -->
+        <div class="control" id="control">
+            <!-- <div id="navParent"> -->
+                <span id="navSpan">
+                    <ul id="listNav">
+                <!-- <ul id="Home1">Home</ul> -->
+                <ul >Display All Items</ul>
+                <ul id="McKessonItems1">McKesson Items</ul>
+                <ul id="OrderInsiteItems1">OrderInsite Items</ul>
+                <ul id="GNFRItems1">GNFR Items</ul>
+                <ul id="Vials1">Vials</ul>
+                <ul id="Caps1">Caps</ul>
+                <ul >Liquid Bottles</ul>
+                <ul id="ReliOnNovolinVials1">ReliOn Novolin Vials</ul>
+                <ul id="ReliOnInsulinSyringes1">ReliOn Insulin Syringes</ul>
+                <ul id="ReliOnPenNeedles1">ReliOn Pen Needles</ul>
+                <ul id="ReliOnNovolinFlexpens1">ReliOn Novolin Flexpens</ul>
+                <ul id="Paper1">Paper</ul>
+                <ul id="RXBags1">RX Bags</ul>
+                <ul id="FLAVORx1">FLAVORx</ul>
+                <ul id="TechnicianSmocks1"> Neighborhood Technician Smocks</ul>
+                <ul > Supercenter Technician Smocks</ul>
+                <ul id="PharmacistCoats1">Pharmacist Coats</ul>
+                <!-- <ul>VaxServe</ul> --> 
+                <ul id="SignOrderCatalog1">Sign Order Catalog</ul>
+                <!-- <ul id="Favorites1">Favorites</ul> -->
+                <!-- <ul id="DailyChecklist1">Daily Checklist</ul> -->
+                <!-- <ul id="MyInventoryManagement1">MyInventory Management</ul> -->
+                <!-- <ul id="Bunzl1">Bunzl</ul> -->
+                <ul id="Equipment1">Equipment</ul>
+                <ul id="Covap1">Covap</ul>
+                <ul id="CardioChek&A1C1">CardioChek and A1C</ul>
+                <ul id="PPE1">PPE</ul>
+                <ul >Immunization Supplies</ul>
+                <ul >BD Syringes</ul>
+                <!-- <ul id="PrintBarcodes1">Print Barcodes</ul> -->
+                <!-- <ul id="FindItemNumber1">Find Item Number</ul> -->
+                    </ul>
+                </span>
+            <!-- </div> -->
+            <span id="searchResults">
+                <p id="results">Search Results:</p>
+                <!-- <span id="navResults">
+                    <span id="columnMCK">
+                        <h3 id="resultsMCKHeader">Mckesson Items</h3>
+                        <ul id="resultsMCK"></ul>
+                    </span>
+                    <span id="columnOI">
+                        <h3 id="resultsOIHeader">OrderInsite Items</h3>
+                        <ul id="resultsOI"></ul>
+                    </span>
+                    <span id="columnGNFR">
+                        <h3 id="resultsGNFRHeader">GNFR Items</h3>
+                        <ul id="resultsGNFR"></ul>
+                    </span>
+                </span> -->
+            </span>
+            <!-- <span class="searchParent"> -->
+                <span class="search" id="search1">
+                    <input type="text" autofocus name="" id="box" placeholder="Search...">
+                    <ul id="list" ></ul>
+                </span>
+                <button id="button" type="submit"><i class="fa fa-search"></i></button>
+                <span class="itemContainers">
+                    <span id="Mckesson-Items" class = "vendorItems">
+                        <span id="orderNumberMCK" class="orderNumberVendor">0</span>
+                        <h2 id="mck-items" class="titleVendor">McKesson</h2>
+                        <span id="QRMCK" class="QRVendor"></span>
+                        <span id="testingMCK"></span>
+                    </span>
+                    <span id="OrderInsite-Items" class = "vendorItems">
+                        <span id="orderNumberOI" class="orderNumberVendor">0</span>
+                        <h2 id="OI-items" class="titleVendor">OrderInsite</h2>
+                        <span id="QROI" class="QRVendor"></span>
+                        <span id="testingOI"></span>
+                    </span>
+                    <span id="GNFR-Items" class = "vendorItems">
+                        <span id="orderNumberGNFR" class="orderNumberVendor">0</span>
+                        <h2 id="G-items" class="titleVendor">GNFR</h2>
+                        <span id="QRGNFR" class="QRVendor"></span>
+                        <span id="testingGNFR"></span>
+                    </span>
+                    <span id="signOrderCatalogItems" class = "vendorItems">
+                        <span id="orderNumberSOC" class="orderNumberVendor">0</span>
+                        <h2 id="SOC-items" class="titleVendor">Sign Order Catalog</h2>
+                        <span id="QRSOC" class="QRVendor"></span>
+                        <span id="testingSOC"></span>
+                    </span>
+                    <span id="vaxServeItems" class = "vendorItems">
+                        <span id="orderNumberVS" class="orderNumberVendor">0</span>
+                        <h2 id="VS-items" class="titleVendor">VaxServe</h2>
+                        <span id="QRVS" class="QRVendor"></span>
+                        <span id="testingVS"></span>
+                    </span>
+                    <span id="medSurgeItems" class = "vendorItems">
+                        <span id="orderNumberMS" class="orderNumberVendor">0</span>
+                        <h2 id="MS-items" class="titleVendor">McKesson MedSurge</h2>
+                        <span id="QRMS" class="QRVendor"></span>
+                        <span id="testingMS"></span>
+                    </span>
+                    <span id="covapItems" class = "vendorItems">
+                        <span id="orderNumberCOV" class="orderNumberVendor">0</span>
+                        <h2 id="COV-items" class="titleVendor">Covap</h2>
+                        <span id="QRCOV" class="QRVendor"></span>
+                        <span id="testingCOV"></span>
+                    </span>
+                    <span id="FORSItems" class = "vendorItems">
+                        <span id="orderNumberFORS" class="orderNumberVendor">0</span>
+                        <h2 id="FORS-items" class="titleVendor">FORS</h2>
+                        <span id="QRFORS" class="QRVendor"></span>
+                        <span id="testingFORS"></span>
+                    </span>
+                </span>
+                <!-- <span id="navSpanRight">
+                    <ul id="listNavRight">
+                        <ul id="">Sign Order Catalog</ul>
+                        <ul id="">VaxServe</ul>
+                        <ul id="">McKesson MedSurge</ul>
+                        <ul id="">Covap</ul>
+                    </ul>
+                </span> -->
+            <!-- </span> -->
+        </div>
+        <!-- <script src="https://github.com/jasonday/printThis.git"></script> -->
+        <script src="jquery-3.6.0.js"></script>
+        <script src="printThis.js"></script>
+        <script src="barcodejquery.js"></script>
+        <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+        <!-- <script src="QRious.js"></script> -->
+        <script src="qrcode.js"></script>
+        <script src="Barcode.js"></script>
+    </body>
+    </html>
