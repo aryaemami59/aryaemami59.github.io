@@ -4135,14 +4135,15 @@ function printBarcode (barcode) {
         $(event.target).printThis({
             printDelay: 50,
             importCSS: false,
-            loadCSS: 'https://aryaemami59.github.io/printingBarcodes.css',
+            // loadCSS: 'Barcode Project/printingBarcodes.css',
+            loadCSS: 'aryaemami59.github.io/printingBarcodes.css',
             });
     })
     // barcode.addEventListener('dblclick', (event) => {
     //     $(event.target).printThis({
     //         printDelay: 50,
     //         importCSS: false,
-    //         loadCSS: '',
+    //         loadCSS: 'Barcode Project/printingBarcodes.css',
     //         });
     // })
 }
