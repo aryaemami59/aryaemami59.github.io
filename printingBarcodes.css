@@ -1,0 +1,24 @@
+/* @media print { */
+/* .vendorQR > img {
+    min-width: 500px;
+    width: 500px;
+} */
+/* .vendorQR > canvas {
+    width: 500px;
+} */
+/* .vendorQR {
+    width: 1000px;
+} */
+/* body {
+    width: 200%;
+    font-size: 100px;
+} */
+/* @media print { */
+img {
+    min-width: 400px;
+}
+/* } */
+/* span {
+    width: 500px;
+} */
+/* } */

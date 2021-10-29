@@ -3012,10 +3012,10 @@ createListFromArray (ImmunizationSupplies1arr, $('#ImmunizationSupplies1')[0]);
 let ImmunizationSupplies1Children = Array.from(ImmunizationSupplies1.querySelectorAll('li'));
 ImmunizationSupplies1Children.forEach(element => {
     const text = Array.from(element);
-    console.log(text);
+    // console.log(text);
 })
 ImmunizationSupplies1Children = removeDuplicates(ImmunizationSupplies1Children);
-console.log(ImmunizationSupplies1Children);
+// console.log(ImmunizationSupplies1Children);
 // console.log(ImmunizationSupplies1Children);
 // ImmunizationSupplies1Children.forEach(element => {
 //     const x = element.textContent;
@@ -3654,7 +3654,7 @@ function onClick (li) {
             // while (ram !== null) {
             //     console.log(ram);
             // }
-            console.log(ram)
+            // console.log(ram)
             // console.log(rep.exec(testStr))
             // console.log(rep);
             $("a").click(function(evt){
@@ -4125,21 +4125,35 @@ function onClick (li) {
         }
     }
 }
+// const mediaQuery = window.matchMedia('print');
 // this function will print out the barcode.
+// $(function () {
+
+// });
 function printBarcode (barcode) {
     barcode.addEventListener('click', (event) => {
-        // console.log(event.target);
-        // event.target.style.transform = 'scale(2)';
-        $(event.target).printThis({printDelay: 1});
-        // event.target.style.width = '100px';
-
+        $(event.target).printThis({
+            printDelay: 50,
+            importCSS: false,
+            loadCSS: 'Barcode Project/printingBarcodes.css',
+            });
     })
+    // barcode.addEventListener('dblclick', (event) => {
+    //     $(event.target).printThis({
+    //         printDelay: 50,
+    //         importCSS: false,
+    //         loadCSS: 'Barcode Project/printingBarcodes.css',
+    //         });
+    // })
 }
-// this function shrinks an element.
-function shrink (barcode) {
-    barcode.addEventListener('click', (event) => {
-    $(event.target).width(100);
-})};
+const mediaQuery = window.matchMedia('print');
+function myf (mediaQuery) {
+    if (mediaQuery.matches) {
+        console.log('yay');
+    }
+}
+myf (mediaQuery);
+
 printBarcode(QRGNFR);
 printBarcode(QRMCK);
 printBarcode(QROI);
@@ -4148,6 +4162,12 @@ printBarcode(QRVS);
 printBarcode(QRMS);
 printBarcode(QRCOV);
 printBarcode(QRFORS);
+// this function shrinks an element.
+function shrink (barcode) {
+    barcode.addEventListener('click', (event) => {
+    $(event.target).width(100);
+})};
+
 // this is the function that is executed when the user clicks on the search button.
 function buttonClick () {
     for (let i = 0; i < list.children.length; i++) {
