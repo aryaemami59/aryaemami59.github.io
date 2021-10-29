@@ -4142,7 +4142,7 @@ function printBarcode (barcode) {
     //     $(event.target).printThis({
     //         printDelay: 50,
     //         importCSS: false,
-    //         loadCSS: 'Barcode Project/printingBarcodes.css',
+    //         loadCSS: '',
     //         });
     // })
 }
