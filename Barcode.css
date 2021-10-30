@@ -88,7 +88,7 @@
         margin: 0;
         margin-top: 15px;
         display: grid;
-        grid-template-columns: 70px auto auto auto auto auto auto auto;
+        grid-template-columns: 70px auto 60px auto auto auto auto auto;
         grid-template-rows: auto auto auto;
         height: auto;
         /* grid-template-areas: search search search; */
@@ -106,7 +106,7 @@
         /* flex: 1 1 0; */
     }
         .search {
-            grid-column: 4;
+            grid-column: 3/4;
             grid-row: 1;
             /* display: flex; */
             /* flex-direction: column; */
@@ -114,7 +114,7 @@
             /* justify-content: center; */
             /* margin-left: 10%; */
             /* flex: 1 1 0; */
-            width: 70px;
+            width: 60px;
             justify-self: flex-start;
             /* align-self: center; */
             /* z-index: 2; */
@@ -139,15 +139,17 @@
                 border-right: 0;
                 border: 0;
                 outline: none;
-                margin-top: 6px;
+                /* margin-top: 6px; */
                 text-shadow: .5px .5px 1px black;
                 /* justify-content: space-evenly; */
                 /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
                 /* box-shadow: 5px 5px 20px black; */
                 box-shadow: 1px 1px 5px -1px black;
-                position: relative;
+                /* position: relative;
+                bottom:6px; */
                 z-index: 0;
                 -webkit-transition: ease-in-out 0.1s;
+                /* align-items: flex-start; */
                 /* transition: width 2s; */
                 /* left: 5px; */
                 /* margin-left: 5px; */
@@ -253,20 +255,20 @@
             /* align-self: flex-start; */
             background-color: #7f7f7f;
             color: white;
-            grid-column: 4;
+            grid-column: 4/5;
             grid-row: 1;
-            font-size: 5px;
+            font-size: 6px;
             font-weight: bold;
             padding: 0px;
-            justify-self: flex-end;
-            height: 10.5px;
-            width: 8px;
+            justify-self: flex-start;
+            height: 10px;
+            width: 10px;
             margin-top: 8px;
-            position: relative;
+            /* position: relative; */
             z-index: 1;
             box-shadow: 1px 1px 5px -1px black;
             text-shadow: 1px 1px 1px black;
-            border-radius: 1px;
+            border-radius: 2px;
             border: 0;
             -webkit-transition: ease-in-out 0.1s;
         }
@@ -282,14 +284,15 @@
             /* display: grid; */
             /* margin-left: 100px; */
             /* flex-direction: row; */
-            grid-column: 5 / 9;
+            /* grid-column: 5 / 9; */
             height: auto;
-            grid-area: 1/6/1/9;
+            grid-area: 1/7/1/9;
             display: grid;
             grid-row: 1/2;
             justify-items: flex-end;
             align-items: flex-start;
             align-content: flex-start;
+            column-gap: 15px;
             /* grid-row-gap: 15px; */
             row-gap: 15px;
             /* grid-template-rows: auto auto auto auto; */
@@ -310,12 +313,12 @@
             #Mckesson-Items {
                 /* background-color: #005a8c; */
                 background-color: #002b42;
-                /* height: auto; */
-                /* text-align: center; */
+                height: auto;
+                text-align: center;
                 width: 50px;
                 /* margin: auto; */
                 grid-column: 1/2;
-                grid-row: 1/2;
+                grid-row: 1;
                 border-radius: 2px;
                 box-shadow: 0px 0px 6px 0px #00a6ff;
                 /* min-height: auto; */
@@ -361,8 +364,8 @@
                 /* min-height: 154.5px; */
                 height: auto;
                 width: 50px;
-                grid-column: 3/4;
-                grid-row: 1/2;
+                grid-column: 1/2;
+                grid-row: 2/3;
                 border-radius: 2px;
                 /* box-shadow: 0 0 30px 0 black; */
                 /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
@@ -379,7 +382,8 @@
                 /* justify-content: flex-end; */
             }
             #signOrderCatalogItems {
-                grid-row: 2/2;
+                grid-column: 2/3;
+                grid-row: 2/3;
                 background-color: bisque;
                 border-radius: 2px;
                 text-align: center;
@@ -418,7 +422,7 @@
                 /* background-color: burlywood; */
                 }
                 #SOC-items {
-                    font-size: 5px;
+                    font-size: 6px;
                 }
                 #MS-items {
                     font-size: 5px;
@@ -468,9 +472,10 @@
                     -webkit-transition: ease-in-out 0.1s;
                 } */
                 .bigLinkVendor {
-                    display: inline-block;
+                    display: flex;
+                    /* display: inline-block; */
                     font-size: 4px;
-                    min-height: 28px;
+                    min-height: 20px;
                     line-height: normal;
                     vertical-align: middle;
                     box-sizing: border-box;
@@ -484,6 +489,9 @@
                     border-radius: 2px;
                     box-shadow: 1px 1px 3px -1px black;
                     -webkit-transition: ease-in-out 0.1s;
+                    align-items: center;
+                    /* align-self: center; */
+                    /* justify-content: center; */
                 }
                 /* #bigLinkMCK:hover, #bigLinkOI:hover, #bigLinkGNFR:hover, #bigLinkSOC:hover {
                     transform: scale(1.1);
@@ -582,8 +590,6 @@
                     .descVendor {
                         height: 33px;
                         display: flex;
-                        /* display: inline-block; */
-                        align-items: center;
                         justify-content: center;
                         text-shadow: 1px 1px 1px #000000;
                         box-shadow: 1px 1px 3px -1px black;
@@ -596,8 +602,6 @@
                         word-break: keep-all;
                         -webkit-transition: transform ease-in-out 0.1s, max-height ease-in-out 0.1s, width ease-in-out 0.1s, font ease-in-out 0.1s;
                         max-height: 66px;
-                        /* height: 100%; */
-                        /* font-size: 0.9vw; */
                         box-sizing: border-box;
                         padding: 2px;
                     }
@@ -1167,11 +1171,13 @@
         border-radius: 2px;
         font-weight: bold;
         position: relative;
-        left: 18px;
+        left: 9px;
         box-shadow: .5px .5px 2.5px black;
         text-shadow: .5px .5px 1px black;
         -webkit-transition: ease-in-out 0.1s;
         font-size: 4px;
+        width: 16px;
+        text-align: center;
     }
     /* #removeButtonMCK:hover, #removeButtonOI:hover, #removeButtonGNFR:hover, #removeButtonSOC:hover {
         cursor: pointer;
@@ -1397,6 +1403,7 @@
         color: white;
         -webkit-transition: ease-in-out 0.1s;
         font-size: 4px;
+        width: 16px;
         /* background-image: linear-gradient(rgb(0, 255, 242, 1), rgb(0, 255, 242, 0)); */
     }
     #collapseButtonMCK {
@@ -1430,28 +1437,32 @@
     
     }
     #vaxServeItems {
-        grid-row: 2/2;
+        grid-column: 1/2;
+        grid-row: 3/4;
         background-color: bisque;
         border-radius: 2px;
         text-align: center;
         width: 50px;
     }
     #medSurgeItems {
-        grid-row: 2/2;
+        grid-column: 2/3;
+        grid-row: 3/4;
         background-color: bisque;
         border-radius: 2px;
         text-align: center;
         width: 50px;
     }
     #covapItems {
-        grid-row: 3/3;
+        grid-column: 1/2;
+        grid-row: 4/5;
         background-color: rgb(180, 104, 10);
         border-radius: 2px;
         text-align: center;
         width: 50px;
     }
     #FORSItems {
-        grid-row: 3/3;
+        grid-column: 2/3;
+        grid-row: 4/5;
         background-color: bisque;
         border-radius: 2px;
         text-align: center;
@@ -1467,37 +1478,38 @@
     .bigCollapseHideButtonVendor, .bigCollapseShowButtonVendor, .bigClearButtonVendor {
         color: white;
         font-family: 'Montserrat', sans-serif;
-        font-size: 4px;
+        font-size: 6px;
+        width: 42px;
     }
     .bigCollapseShowButtonVendor {
-        font-size: 4px;
+        /* font-size: 10px; */
     }
     #bigCollapseHideButtonMCK, #bigCollapseShowButtonMCK, #bigClearButtonMCK {
         background-image: linear-gradient(rgb(0, 100, 140, 1), rgba(0, 100, 140, 0));
-        font-size: 4px;
+        /* font-size: 4px; */
     }
     #bigCollapseHideButtonOI, #bigCollapseShowButtonOI, #bigClearButtonOI {
         background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
-        font-size: 4px;
+        /* font-size: 4px; */
     }
     #bigCollapseHideButtonGNFR, #bigCollapseShowButtonGNFR, #bigClearButtonGNFR {
         background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
-        font-size: 4px;
+        /* font-size: 4px; */
     }
     #bigCollapseHideButtonSOC, #bigCollapseShowButtonSOC, #bigClearButtonSOC {
-        font-size: 4px;
+        /* font-size: 4px; */
     }
     #bigCollapseHideButtonVS, #bigCollapseShowButtonVS, #bigClearButtonVS {
-        font-size: 4px;
+        /* font-size: 4px; */
     }
     #bigCollapseHideButtonMS, #bigCollapseShowButtonMS, #bigClearButtonMS {
-        font-size: 4px;
+        /* font-size: 4px; */
     }
     #bigCollapseHideButtonCOV, #bigCollapseShowButtonCOV, #bigClearButtonCOV {
-        font-size: 4px;
+        /* font-size: 4px; */
     }
     #bigCollapseHideButtonFORS, #bigCollapseShowButtonFORS, #bigClearButtonFORS {
-        font-size: 4px;
+        /* font-size: 4px; */
     }
     /* #bigCollapseShowButtonMCK {
         background-image: linear-gradient(rgb(0, 100, 140, 1), rgba(0, 100, 140, 0));
@@ -1573,9 +1585,27 @@
         /* bottom: 3px; */
         font-size: .5em;
         margin: 0;
+        position: relative;
+        bottom: 10px;
+        height: 10px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        /* justify-items: center;
+        align-self: center; */
+        justify-content: center;
+        /* padding-bottom: 40px; */
+        /* vertical-align: middle; */
+        /* box-sizing: border-box; */
+        /* display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-self: center;
+        vertical-align: middle;
+        justify-self: center; */
         /* margin-bottom: 0px;
         margin-top: 0px; */
-        box-sizing: border-box;
+        /* box-sizing: border-box;
         vertical-align: middle;
         align-self: center;
         justify-self: center;
@@ -1583,13 +1613,13 @@
         justify-content: center;
         text-align: center;
         align-content: center;
-        justify-items: center;
+        justify-items: center; */
         /* float: left; */
     }
     
-/* .vendorItems {
-    box-sizing: border-box;
-} */
+.vendorItems {
+    min-height: 30px;
+}
 /* @media only screen and (width: 375px) {
     #navSpan {
         position: static;
