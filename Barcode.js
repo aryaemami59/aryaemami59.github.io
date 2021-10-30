@@ -4133,7 +4133,7 @@ function onClick (li) {
 function printBarcode (barcode) {
     barcode.addEventListener('click', (event) => {
         $(event.target).printThis({
-            printDelay: 50,
+            printDelay: 100,
             importCSS: false,
             loadCSS: 'aryaemami59.github.io/printingBarcodes.css',
             // loadCSS: 'aryaemami59.github.io/printingBarcodes.css',
