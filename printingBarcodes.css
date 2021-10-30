@@ -1,3 +1,5 @@
+@media print {
 img {
     min-width: 400px;
+}
 }
