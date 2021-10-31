@@ -752,7 +752,7 @@
         #list2 {
             padding: 0;
             margin: 0;
-            width: 50px;
+            width: 100%;
             font-size: 8px;
             grid-column: 2/4;
         }
@@ -773,7 +773,8 @@
                 justify-content: space-evenly;
                 text-align: center;
                 min-height: 10px;
-                width: 80px;
+                /* width: 80px; */
+                width: 90%;
                 box-shadow: 0px 0px 2px 0px rgb(183, 0, 255);
                 /* box-shadow: 2px 2px 2px black; */
                 text-shadow: 1px 1px 1px black;
