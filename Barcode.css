@@ -918,12 +918,12 @@
         content: "";
         border-color: transparent rgb(255, 255, 255);
         border-style: solid;
-        border-width: 0.15em 0 0.15em 0.25em;
+        border-width: 0.35em 0 0.35em 0.45em;
         display: block;
         height: 0;
         width: 0;
-        left: -.5em;
-        top: 0.3em;
+        left: -1em;
+        top: 0.9em;
         position: relative;
         -webkit-transition: ease-in-out 0.1s;
         /* box-shadow: 2px 2px 2px #000000; */
