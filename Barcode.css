@@ -933,12 +933,12 @@
         content: "";
         border-color: transparent rgb(255, 255, 255);
         border-style: solid;
-        border-width: 0.15em 0 0.15em 0.25em;
+        border-width: 0.35em 0 0.35em 0.45em;
         display: block;
         height: 0;
         width: 0;
-        left: -.5em;
-        top: 0.3em;
+        left: -1em;
+        top: 0.9em;
         position: relative;
         color: white;
         text-shadow: 1px 1px 1px black;
@@ -974,12 +974,12 @@
         content: "";
         border-color: transparent rgb(0, 0, 0);
         border-style: solid;
-        border-width: 0.15em 0 0.15em 0.25em;
+        border-width: 0.35em 0 0.35em 0.45em;
         display: block;
         height: 0;
         width: 0;
-        left: -.5em;
-        top: 0.3em;
+        left: -1em;
+        top: 0.9em;
         position: relative;
         color: white;
         -webkit-transition: 0.1s ease-in-out;
@@ -988,12 +988,12 @@
         content: "";
         border-color: transparent rgb(0, 0, 0);
         border-style: solid;
-        border-width: 0.15em 0 0.15em 0.25em;
+        border-width: 0.35em 0 0.35em 0.45em;
         display: block;
         height: 0;
         width: 0;
-        left: -.5em;
-        top: 0.3em;
+        left: -1em;
+        top: 0.9em;
         position: relative;
         -webkit-transition: 0.1s ease-in-out;
     }
