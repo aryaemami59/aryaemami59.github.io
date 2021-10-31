@@ -85,7 +85,7 @@
         margin: 0;
         /* margin-top: 15px; */
         display: grid;
-        grid-template-columns: 70px 15px 60px 20px auto 200px 200px 20px;
+        grid-template-columns: 70px 15px 60px 20px auto 60px 60px 20px;
         grid-template-rows: 30px auto auto;
         min-width: 0;
         row-gap: 10px;
@@ -988,7 +988,8 @@
         text-align: center;
         text-shadow: 5px 5px 5px #000000;
         grid-row: 1;
-        grid-column: 3/6;
+        grid-column: 3/9;
+        width: 300px;
         /* text-decoration: underline; */
     }
     #navSpan {
@@ -1657,7 +1658,7 @@
         margin: 0;
         /* margin-top: 15px; */
         display: grid;
-        grid-template-columns: 250px 50px 200px 65px auto auto auto 80px;
+        grid-template-columns: 250px 50px 200px 65px auto 200px 200px 80px;
         grid-template-rows: 100px auto auto;
         /* column-gap: 50px; */
         /* height: 100vh; */
@@ -1846,8 +1847,8 @@
             align-content: flex-start;
             column-gap: 50px;
             row-gap: 50px;
-            /* grid-template-rows: auto auto auto;
-            grid-template-columns: 150px 150px; */
+            grid-template-rows: auto auto auto;
+            grid-template-columns: auto auto;
             min-width: 0px;
         }
             #Mckesson-Items {
@@ -2296,7 +2297,11 @@
                         transform: scale(1.1); 
                     }
     #searchResults {
-        width: 450px;
+        /* width: 450px; */
+        /* min-width: 350px; */
+        width: 100%;
+        min-width: 200px;
+        max-width: 450px;
         list-style: none;
         margin-top: 20px;
         grid-column: 5;
@@ -2305,7 +2310,9 @@
         #list2 {
             padding: 0;
             margin: 0;
-            width: 150px;
+            /* width: 150px; */
+            width: 90%;
+            max-width: 400px;
             font-size: 25px;
             grid-column: 2/4;
         }
@@ -2326,7 +2333,11 @@
                 justify-content: space-evenly;
                 text-align: center;
                 min-height: 30px;
-                width: 400px;
+                /* width: 25vw; */
+                width: 100%;
+                max-width: 400px;
+                /* width: 400px; */
+                /* min-width: 300px; */
                 box-shadow: 0px 0px 5px 0px rgb(183, 0, 255);
                 /* box-shadow: 2px 2px 2px black; */
                 text-shadow: 2px 2px 2px black;
@@ -2356,6 +2367,8 @@
         font-size: 20px;
         margin-top: 0;
         padding-left: 30px;
+        width: 100%;
+        box-sizing: border-box;
         text-shadow: 0px 0px 10px white, 3px 3px 3px #000000;
         /* text-shadow: 3px 3px 3px #000000; */
     
@@ -2542,7 +2555,8 @@
         text-align: center;
         text-shadow: 10px 10px 10px #000000;
         grid-row: 1;
-        grid-column: 3/6;
+        grid-column: 3/9;
+        width: 700px;
         /* text-decoration: underline; */
     }
     #navSpan {
