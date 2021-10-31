@@ -4135,7 +4135,7 @@ function printBarcode (barcode) {
         $(event.target).printThis({
             printDelay: 100,
             importCSS: false,
-            loadCSS: 'printingBarcodes.css',
+            loadCSS: '/printingBarcodes.css',
             });
     })
     // barcode.addEventListener('dblclick', (event) => {
