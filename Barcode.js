@@ -129,7 +129,7 @@ const vials = [
     },
     { name: "Nitrile Small Exam Gloves mckesson brand",
     itemNumber: "61247912113",
-    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi', 'small', 'gloves'],
     McKesson: true,
     OrderInsite: true,
     },
@@ -2889,7 +2889,9 @@ function searchFunc (itemToFind, arr) {
 // this function looks at certain keywords associated with the item in a vial array
 // and puts them in another array.
 function keywordSearch (itemToFind, arr) {
+    // const itemsToFind1 = /(itemToFind)\.*\i/
     const g = new RegExp(itemToFind, 'gi');
+    // const g = /[(itemToFind)(itemToFind)]/gi;
     vials.forEach(element => {const x = Array.from(element.keywords);
         // console.log(x);
         x.forEach(e => { 
@@ -2901,6 +2903,28 @@ function keywordSearch (itemToFind, arr) {
         })
         })
 }
+// function apple (s) {
+//     // for (let i = 0; i < vials.length; i++) {
+//     //     const element = vials[i];
+//     //     console.log([i][keywords]);
+//     // }
+//     vials.forEach(element => {
+//         const key = Array.from(element.keywords);
+//         // console.log(key);
+//         key.forEach(e => {;
+//             // console.log(e);
+//             const s = new RegExp('\.*'+ e +'\.*', 'gi');
+//             const g = 'small gloves'
+//             if (g.match(s)) {
+//             //    console.log(element.name);
+//             // console.log(key);
+//             }
+//             // console.log(s);
+//         })
+        
+//     })
+// }
+// apple();
 
 // this function looks at the main vials array and separates the items based on vendor and puts them in a new array based on their vendor.
 function separateItemsBasedOnVendor (arr, dist) {
@@ -2949,6 +2973,7 @@ searchFunc('flavorx', FLAVORx1arr);
 searchFunc('liquid bottles', liquidBottles1arr);
 searchFunc('Gloves|Masks', PPE1arr);
 searchFunc('nitrile|Masks|immunization|imz|vanish', ImmunizationSupplies1arr);
+keywordSearch('immunization', ImmunizationSupplies1arr);
 keywordSearch('immunization', ImmunizationSupplies1arr);
 
 // ImmunizationSupplies1arr = removeDuplicates(ImmunizationSupplies1arr);
@@ -3384,7 +3409,7 @@ function onClick (li) {
             smallLinkCOV.setAttribute('class', "smallLinkVendor");
             smallLinkCOV.setAttribute('title', "This Link Will Take You To The Covap Website");
             smallLinkCOV.setAttribute('href',
-            "https://www.covap.com/login?ReturnUrl=%2F");
+            "https://www.covap.com/" + itemNumber1);
             smallLinkCOV.text = "Order on Covap";
             const smallLinkFORS = document.createElement('a');
             smallLinkFORS.setAttribute('target', '_blank');
@@ -4058,7 +4083,7 @@ function onClick (li) {
                 $('#COVQR').show();
                 QRCOV.append(document.getElementById('COVQR'));
                 bigLinkCOV.setAttribute('href',
-                "https://www.covap.com/login?ReturnUrl=%2F");
+                "https://www.covap.com/");
                 bigCOVImage.makeCode(arr6.join(', '));
                 printBarcode(imageCOV);
                 orderNumberCOV.textContent = liCOV1.length +=1;
@@ -4374,15 +4399,22 @@ function getRelevancy(value, searchTerm) {
 search.addEventListener('input', (event) => {
     let value = event.target.value;
     if (value && value.trim().length > 0) {
-        value = value.trim().replace(/\s/g, "").toLowerCase();
-        const re = new RegExp(value, 'gi');
+        // value = value.trim().replace(/\s/g, "").toLowerCase();
+        // const res = '('
+        value = value.replace(/\s/g, '.*'); 
+        const re = new RegExp('\.*'+ value +'\.*', 'gi');
+        // const re = new RegExp(res, 'gi');
+        // console.log(re);
         setList(vials.filter(i => {
             for (let j = 0; j < i.keywords.length; j++) {
                 const element = i.keywords[j];
                 // console.log(element)
                 if (element.match(re)) {
+                    // console.log(element);
                     const result = element.match(re);
-                    // console.log(result)
+                    // console.log(result);
+                    const name = i.name;
+                    // console.log(name);
                     return result;
                 }
                 // }).sort((personA, personB) => {
@@ -4390,7 +4422,6 @@ search.addEventListener('input', (event) => {
                 }
                 if (i.name.replace(/\s/g, "").match(re)) {
                     const result1 = i.name.replace(/\s/g, "").match(re);
-                    // console.log(result1)
                     return result1;
                 }
                 if (i.name.match(re)) {
