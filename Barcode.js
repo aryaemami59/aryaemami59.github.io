@@ -4407,22 +4407,60 @@ search.addEventListener('input', (event) => {
         // console.log(re);
         setList(vials.filter(i => {
             for (let j = 0; j < i.keywords.length; j++) {
+                const keywords = i.keywords;
                 const element = i.keywords[j];
-                // console.log(element)
                 if (element.match(re)) {
                     // console.log(element);
+                    // console.log(((i.keywords).indexOf(element)));
+                    const index = ((i.keywords).indexOf(element));
+                    // console.log(keywords);
+                    // console.log(i);
+                    // for (let h = 0; h < keywords.length; h++) {
+                    //     const element1 = keywords[h];
+                    //     console.log(element1)
+                    // }
+                    keywords.forEach(e => {
+                        // console.log(e);
+                        if (e.match(re)) {
+                            // const next = 
+                            // console.log(i.name);
+                        }
+                    });
+                    // console.log(element);
+                    // console.log(i.keywords);
                     const result = element.match(re);
                     // console.log(result);
                     const name = i.name;
                     // console.log(name);
+                    // console.log(i);
+                    // console.log(Array.from(i));
+                    // console.log(Array.from(name));
                     return result;
                 }
                 // }).sort((personA, personB) => {
                     //     return getRelevancy(personB.name, value) - getRelevancy(personA.name, value);   
                 }
-                if (i.name.replace(/\s/g, "").match(re)) {
-                    const result1 = i.name.replace(/\s/g, "").match(re);
+                if (i.name.replace(/\s/g, '').match(re)) {
+                    const name = i.name;
+                    const name1 = name.replace(/\s/g, '');
+                    const result1 = name1.match(re);
+                    // console.log(result1);
+                    // console.log(name);
+                    // console.log(i);
+                    // console.log(re);
+                    // const res1 = ( name1 + '\.*(?=' + value + '\)');
+                    // console.log(res1);
+                    // const res = new RegExp (res1, 'gi');
+                    // const res = new RegExp ('\\' + name1 + '\\.*(?=' + value +'\)', 'gi');
+                    // console.log(res);
+                    // if (name1.match(res)) {
+                    //     console.log(name1);
+                    //     const result3 = name1.match(res);
+                    //     // console.log(result3);
+                    //     return result3;
+                    // }
                     return result1;
+                    
                 }
                 if (i.name.match(re)) {
                     const result2 = i.name.match(re);
