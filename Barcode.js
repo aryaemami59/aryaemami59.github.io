@@ -2489,7 +2489,7 @@ bigLinkMCK.setAttribute('target', "_blank");
 const bigLinkOI = document.createElement('a');
 bigLinkOI.setAttribute('id', "bigLinkOI");
 bigLinkOI.setAttribute('class', "bigLinkVendor");
-bigLinkOI.setAttribute('title', "This Link Will Take You To The OrderInsite Website");
+bigLinkOI.setAttribute('title', "This Link Will Take You To The OrderInsite Website With The Item Numbers Copied");
 bigLinkOI.addEventListener('click', function() {setTimeout((e) => {
     window.open('https://acloud.orderinsite.com/rs/logon/walmart')
 }, 1)});
@@ -2497,32 +2497,50 @@ bigLinkOI.setAttribute('target', "_blank");
 const bigLinkGNFR = document.createElement('a');
 bigLinkGNFR.setAttribute('id', "bigLinkGNFR");
 bigLinkGNFR.setAttribute('class', "bigLinkVendor");
-bigLinkGNFR.setAttribute('title', "This Link Will Take You To The GNFR Website");
+bigLinkGNFR.setAttribute('title', "This Link Will Take You To The GNFR Website With The Item Numbers Copied");
+bigLinkGNFR.addEventListener('click', function() {setTimeout((e) => {
+    window.open('https://ppa01.wal-mart.com/irj/portal')
+}, 1)});
 bigLinkGNFR.setAttribute('target', "_blank");
 const bigLinkSOC = document.createElement('a');
 bigLinkSOC.setAttribute('id', "bigLinkSOC");
 bigLinkSOC.setAttribute('class', "bigLinkVendor");
-bigLinkSOC.setAttribute('title', "This Link Will Take You To The Sign Order Catalog Website");
+bigLinkSOC.setAttribute('title', "This Link Will Take You To The Sign Order Catalog Website With The Item Numbers Copied");
+bigLinkSOC.addEventListener('click', function() {setTimeout((e) => {
+    window.open('https://ecom.schwarz.com/Default.aspx?page=ProductCatalog')
+}, 1)});
 bigLinkSOC.setAttribute('target', "_blank");
 const bigLinkVS = document.createElement('a');
 bigLinkVS.setAttribute('id', "bigLinkVS");
 bigLinkVS.setAttribute('class', "bigLinkVendor");
-bigLinkVS.setAttribute('title', "This Link Will Take You To The VaxServe Website");
+bigLinkVS.setAttribute('title', "This Link Will Take You To The VaxServe Website With The Item Numbers Copied");
+bigLinkVS.addEventListener('click', function() {setTimeout((e) => {
+    window.open('https://unify.vaxserve.com/index.cfm?fa=portal.selectStore')
+}, 1)});
 bigLinkVS.setAttribute('target', "_blank");
 const bigLinkMS = document.createElement('a');
 bigLinkMS.setAttribute('id', "bigLinkMS");
 bigLinkMS.setAttribute('class', "bigLinkVendor");
-bigLinkMS.setAttribute('title', "This Link Will Take You To The McKesson MedSurge Website");
+bigLinkMS.setAttribute('title', "This Link Will Take You To The McKesson MedSurge Website With The Item Numbers Copied");
+bigLinkMS.addEventListener('click', function() {setTimeout((e) => {
+    window.open('https://mms.mckesson.com/portal/login')
+}, 1)});
 bigLinkMS.setAttribute('target', "_blank");
 const bigLinkCOV = document.createElement('a');
 bigLinkCOV.setAttribute('id', "bigLinkCOV");
 bigLinkCOV.setAttribute('class', "bigLinkVendor");
-bigLinkCOV.setAttribute('title', "This Link Will Take You To The Covap Website");
+bigLinkCOV.setAttribute('title', "This Link Will Take You To The Covap Website With The Item Numbers Copied");
+bigLinkCOV.addEventListener('click', function() {setTimeout((e) => {
+    window.open('https://www.covap.com/')
+}, 1)});
 bigLinkCOV.setAttribute('target', "_blank");
 const bigLinkFORS = document.createElement('a');
 bigLinkFORS.setAttribute('id', "bigLinkFORS");
 bigLinkFORS.setAttribute('class', "bigLinkVendor");
-bigLinkFORS.setAttribute('title', "This Link Will Take You To The FORS Website");
+bigLinkFORS.setAttribute('title', "This Link Will Take You To The FORS Website With The Item Numbers Copied");
+bigLinkFORS.addEventListener('click', function() {setTimeout((e) => {
+    window.open('https://psz01.wal-mart.com/webdynpro/dispatcher/sap.com/tc~mdm~srmcat~uisearch/ProcurementCatalog7Ehp1#')
+}, 1)});
 bigLinkFORS.setAttribute('target', "_blank");
 const bigCollapseHideButtonMCK = document.createElement('button');
 bigCollapseHideButtonMCK.textContent = 'Minimize All Items';
@@ -3367,7 +3385,7 @@ function onClick (li) {
             smallLinkOI.setAttribute('target', '_blank');
             smallLinkOI.setAttribute('id', "smallLinkOI");
             smallLinkOI.setAttribute('class', "smallLinkVendor");
-            smallLinkOI.setAttribute('title', "This Link Will Take You To The OrderInsite Website");
+            smallLinkOI.setAttribute('title', "This Link Will Take You To The OrderInsite Website With The Item Number Copied");
             smallLinkOI.setAttribute('href',
             "https://acloud.orderinsite.com/rs/logon/walmart");
             smallLinkOI.text = "Order on OrderInsite";
@@ -3705,7 +3723,7 @@ function onClick (li) {
                     }
                 }
                 arr.push(itemNumber1);
-                bigLinkMCK.text = "Order All Items on McKesson";
+                bigLinkMCK.text = "McKesson Website";
                 MckessonItems.append(liMCK);
                 MckessonItems.insertBefore(bigLinkMCK, testingMCK);
                 MckessonItems.insertBefore(bigCollapseShowButtonMCK, testingMCK);
@@ -3762,7 +3780,7 @@ function onClick (li) {
                     }
                 }
                 arr1.push(itemNumber1);
-                bigLinkOI.text = "Order All Items on OrderInsite";
+                bigLinkOI.text = "OrderInsite";
                 OrderInsiteItems.append(liOI);
                 OrderInsiteItems.insertBefore(bigLinkOI, testingOI);
                 OrderInsiteItems.insertBefore(bigCollapseShowButtonOI, testingOI);
@@ -3816,7 +3834,7 @@ function onClick (li) {
                     }
                     const itemNumber1MCK = vials[index].itemNumber;
                     arr.push(itemNumber1MCK);
-                    bigLinkMCK.text = "Order All Items on McKesson";
+                    bigLinkMCK.text = "McKesson Website";
                     MckessonItems.append(liMCK);
                     MckessonItems.insertBefore(bigLinkMCK, testingMCK);
                     MckessonItems.insertBefore(bigCollapseShowButtonMCK, testingMCK);
@@ -3856,7 +3874,7 @@ function onClick (li) {
                     }
                     const itemNumber1OI = vials[index].itemNumber;
                     arr1.push(itemNumber1OI);
-                    bigLinkOI.text = "Order All Items on OrderInsite";
+                    bigLinkOI.text = "OrderInsite Website";
                     OrderInsiteItems.append(liOI);
                     OrderInsiteItems.insertBefore(bigLinkOI, testingOI);
                     OrderInsiteItems.insertBefore(bigCollapseShowButtonOI, testingOI);
@@ -3895,7 +3913,7 @@ function onClick (li) {
                     }
                 }
                 arr2.push(itemNumber1);
-                bigLinkGNFR.text = "Order All Items on GNFR";
+                bigLinkGNFR.text = "GNFR Website";
                 GNFRItems.append(liGNFR);
                 GNFRItems.insertBefore(bigLinkGNFR, testingGNFR);
                 GNFRItems.insertBefore(bigCollapseShowButtonGNFR, testingGNFR);
@@ -3903,8 +3921,9 @@ function onClick (li) {
                 GNFRItems.insertBefore(bigClearButtonGNFR, testingGNFR);
                 $('#GNFRQR').show();
                 QRGNFR.append(document.getElementById('GNFRQR'));
-                bigLinkGNFR.setAttribute('href',
-                "https://ppa01.wal-mart.com/irj/portal");
+                copyItemNumber(bigLinkGNFR, (arr2.join(', ')));
+                // bigLinkGNFR.setAttribute('href',
+                // "https://ppa01.wal-mart.com/irj/portal");
                 bigGNFRImage.makeCode(arr2.join(' OR '));
                 printBarcode(imageGNFR);
                 console.log(liGNFR1);
@@ -3947,7 +3966,7 @@ function onClick (li) {
                     }
                 }
                 arr3.push(itemNumber1);
-                bigLinkSOC.text = "Order All Items on Sign Order Catalog";
+                bigLinkSOC.text = "Sign Order Catalog Website";
                 signOrderCatalogItems.append(liSOC);
                 signOrderCatalogItems.insertBefore(bigLinkSOC, testingSOC);
                 signOrderCatalogItems.insertBefore(bigCollapseShowButtonSOC, testingSOC);
@@ -3955,8 +3974,9 @@ function onClick (li) {
                 signOrderCatalogItems.insertBefore(bigClearButtonSOC, testingSOC);
                 $('#SOCQR').show();
                 QRSOC.append(document.getElementById('SOCQR'));
-                bigLinkSOC.setAttribute('href',
-                "https://ecom.schwarz.com/Default.aspx?page=ProductCatalog");
+                copyItemNumber(bigLinkSOC, (arr3.join(', ')));
+                // bigLinkSOC.setAttribute('href',
+                // "https://ecom.schwarz.com/Default.aspx?page=ProductCatalog");
                 bigSOCImage.makeCode(arr3.join(', '));
                 printBarcode(imageSOC);
                 orderNumberSOC.textContent = liSOC1.length +=1;
@@ -3989,7 +4009,7 @@ function onClick (li) {
                     }
                 }
                 arr4.push(itemNumber1);
-                bigLinkVS.text = "Order All Items on VaxServe";
+                bigLinkVS.text = "VaxServe Website";
                 vaxServeItems.append(liVS);
                 vaxServeItems.insertBefore(bigLinkVS, testingVS);
                 vaxServeItems.insertBefore(bigCollapseShowButtonVS, testingVS);
@@ -3997,8 +4017,9 @@ function onClick (li) {
                 vaxServeItems.insertBefore(bigClearButtonVS, testingVS);
                 $('#VSQR').show();
                 QRVS.append(document.getElementById('VSQR'));
-                bigLinkVS.setAttribute('href',
-                "https://unify.vaxserve.com/index.cfm?fa=portal.selectStore");
+                copyItemNumber(bigLinkVS, (arr4.join(', ')));
+                // bigLinkVS.setAttribute('href',
+                // "https://unify.vaxserve.com/index.cfm?fa=portal.selectStore");
                 bigVSImage.makeCode(arr4.join(', '));
                 printBarcode(imageVS);
                 // console.log(liVS1);
@@ -4032,7 +4053,7 @@ function onClick (li) {
                     }
                 }
                 arr5.push(itemNumber1);
-                bigLinkMS.text = "Order All Items on McKesson MedSurge";
+                bigLinkMS.text = "McKesson MedSurge Website";
                 medSurgeItems.append(liMS);
                 medSurgeItems.insertBefore(bigLinkMS, testingMS);
                 medSurgeItems.insertBefore(bigCollapseShowButtonMS, testingMS);
@@ -4040,8 +4061,9 @@ function onClick (li) {
                 medSurgeItems.insertBefore(bigClearButtonMS, testingMS);
                 $('#MSQR').show();
                 QRMS.append(document.getElementById('MSQR'));
-                bigLinkMS.setAttribute('href',
-                "https://unify.vaxserve.com/index.cfm?fa=portal.selectStore");
+                copyItemNumber(bigLinkMS, (arr5.join(', ')));
+                // bigLinkMS.setAttribute('href',
+                // "https://mms.mckesson.com/portal/login");
                 bigMSImage.makeCode(arr5.join(', '));
                 printBarcode(imageMS);
                 orderNumberMS.textContent = liMS1.length +=1;
@@ -4074,7 +4096,7 @@ function onClick (li) {
                     }
                 }
                 arr6.push(itemNumber1);
-                bigLinkCOV.text = "Order All Items on Covap";
+                bigLinkCOV.text = "Covap Website";
                 covapItems.append(liCOV);
                 covapItems.insertBefore(bigLinkCOV, testingCOV);
                 covapItems.insertBefore(bigCollapseShowButtonCOV, testingCOV);
@@ -4082,8 +4104,9 @@ function onClick (li) {
                 covapItems.insertBefore(bigClearButtonCOV, testingCOV);
                 $('#COVQR').show();
                 QRCOV.append(document.getElementById('COVQR'));
-                bigLinkCOV.setAttribute('href',
-                "https://www.covap.com/");
+                copyItemNumber(bigLinkCOV, (arr6.join(', ')));
+                // bigLinkCOV.setAttribute('href',
+                // "https://www.covap.com/");
                 bigCOVImage.makeCode(arr6.join(', '));
                 printBarcode(imageCOV);
                 orderNumberCOV.textContent = liCOV1.length +=1;
@@ -4116,7 +4139,7 @@ function onClick (li) {
                     }
                 }
                 arr7.push(itemNumber1);
-                bigLinkFORS.text = "Order All Items on FORS";
+                bigLinkFORS.text = "FORS Website";
                 FORSItems.append(liFORS);
                 FORSItems.insertBefore(bigLinkFORS, testingFORS);
                 FORSItems.insertBefore(bigCollapseShowButtonFORS, testingFORS);
@@ -4124,8 +4147,9 @@ function onClick (li) {
                 FORSItems.insertBefore(bigClearButtonFORS, testingFORS);
                 $('#FORSQR').show();
                 QRFORS.append(document.getElementById('FORSQR'));
-                bigLinkFORS.setAttribute('href',
-                "https://psz01.wal-mart.com/webdynpro/dispatcher/sap.com/tc~mdm~srmcat~uisearch/ProcurementCatalog7Ehp1#");
+                copyItemNumber(bigLinkFORS, (arr7.join(', ')));
+                // bigLinkFORS.setAttribute('href',
+                // "https://psz01.wal-mart.com/webdynpro/dispatcher/sap.com/tc~mdm~srmcat~uisearch/ProcurementCatalog7Ehp1#");
                 bigFORSImage.makeCode(arr7.join(', '));
                 printBarcode(imageFORS);
                 orderNumberFORS.textContent = liFORS1.length +=1;
@@ -4171,13 +4195,13 @@ function printBarcode (barcode) {
     //         });
     // })
 }
-const mediaQuery = window.matchMedia('print');
-function myf (mediaQuery) {
-    if (mediaQuery.matches) {
-        console.log('yay');
-    }
-}
-myf (mediaQuery);
+// const mediaQuery = window.matchMedia('print');
+// function myf (mediaQuery) {
+//     if (mediaQuery.matches) {
+//         console.log('yay');
+//     }
+// }
+// myf (mediaQuery);
 
 printBarcode(QRGNFR);
 printBarcode(QRMCK);

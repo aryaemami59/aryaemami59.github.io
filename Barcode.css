@@ -595,8 +595,9 @@
                         transform: scale(1.1);
                         -webkit-transition: transform ease-in-out 0.1s;
                     }
-                    .descVendor:active {
+                    .descVendor:active, .bigCollapseShowButtonVendor:active, .bigCollapseHideButtonVendor:active, .bigClearButtonVendor:active, .removeButtonVendor:active, .collapseButtonVendor:active, .smallLinkVendor:active {
                         transform: scale(1.2);
+                        opacity: 0.5;
                     }
                     #itemNumberMCK {
                         /* text-shadow: 1px 1px 1px #919191,
@@ -1153,7 +1154,7 @@
         /* color: black; */
         color: white;
         border-radius: 2px;
-        border: solid 0.5px white;
+        /* border: solid 0.5px white; */
         font-weight: bold;
         position: relative;
         left: 16px;
@@ -1164,6 +1165,8 @@
         width: 8px;
         height: 8px;
         text-align: center;
+        background-color: #000000;
+        border: none;
         /* align-items: center; */
         /* display: flex; */
         /* box-sizing: content-box; */
@@ -1387,7 +1390,7 @@
         position: relative;
         float: right;
         border-radius: 2px;
-        border: solid 0.5px white;
+        /* border: solid 0.5px white; */
         font-weight: bold;
         box-shadow: .5px .5px 2.5px black;
         text-shadow: .5px .5px 1px black;
@@ -1397,6 +1400,8 @@
         width: 8px;
         padding: 0;
         height: 8px;
+        background-color: #000000;
+        border: none;
         /* background-image: linear-gradient(rgb(0, 255, 242, 1), rgb(0, 255, 242, 0)); */
     }
     #collapseButtonMCK {
@@ -1483,10 +1488,13 @@
         font-size: 4px;
         width: 42px;
         border-radius: 2px;
-        border: solid white 0.5px;
+        border: none;
         text-shadow: 1px 1px 1px #000000;
         box-shadow: 1px 1px 5px -1px black;
         -webkit-transition: transform ease-in-out 0.1s;
+        background-color:#000000;
+        height: 12px;
+        margin-bottom: 0px;
     }
     .bigCollapseHideButtonVendor:hover, .bigCollapseShowButtonVendor:hover, .bigClearButtonVendor:hover {
         cursor: pointer;
@@ -2741,7 +2749,7 @@
         /* color: black; */
         color: white;
         border-radius: 5px;
-        border: solid 2px white;
+        /* border: solid 2px white; */
         font-weight: bold;
         position: relative;
         left: 42px;
@@ -2750,9 +2758,11 @@
         -webkit-transition: ease-in-out 0.1s;
         font-size: 15px;
         width: 30px;
-        height: auto;
+        height: 24px;
         text-align: center;
         padding: auto;
+        background-color: #000000;
+        border: none;
     }
     /* #removeButtonMCK:hover, #removeButtonOI:hover, #removeButtonGNFR:hover, #removeButtonSOC:hover {
         cursor: pointer;
@@ -2976,7 +2986,7 @@
         position: relative;
         float: right;
         border-radius: 5px;
-        border: solid 2px white;
+        /* border: solid 2px white; */
         font-weight: bold;
         box-shadow: 1px 1px 5px black;
         text-shadow: 1px 1px 2px black;
@@ -2985,7 +2995,8 @@
         font-size: 15px;
         width: 30px;
         right: 2px;
-        height: auto;
+        height: 24px;
+        border: none;
         /* background-image: linear-gradient(rgb(0, 255, 242, 1), rgb(0, 255, 242, 0)); */
     }
     #collapseButtonMCK {
@@ -3068,13 +3079,14 @@
     .bigCollapseHideButtonVendor, .bigCollapseShowButtonVendor, .bigClearButtonVendor {
         color: white;
         font-family: 'Montserrat', sans-serif;
-        font-size: 15px;
+        font-size: 14px;
         width: 125px;
         border-radius: 5px;
-        border: solid white 2px;
         text-shadow: 2px 2px 2px #000000;
         box-shadow: 2px 2px 10px -2px black;
         -webkit-transition: transform ease-in-out 0.1s;
+        margin-bottom: 12px;
+        height: 36px;
     }
     .bigCollapseHideButtonVendor:hover, .bigCollapseShowButtonVendor:hover, .bigClearButtonVendor:hover {
         cursor: pointer;
