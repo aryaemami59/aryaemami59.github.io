@@ -4174,11 +4174,7 @@ function onClick (li) {
         }
     }
 }
-// const mediaQuery = window.matchMedia('print');
 // this function will print out the barcode.
-// $(function () {
-
-// });
 function printBarcode (barcode) {
     barcode.addEventListener('click', (event) => {
         $(event.target).printThis({
@@ -4187,13 +4183,6 @@ function printBarcode (barcode) {
             loadCSS: '/printingBarcodes.css',
             });
     })
-    // barcode.addEventListener('dblclick', (event) => {
-    //     $(event.target).printThis({
-    //         printDelay: 50,
-    //         importCSS: false,
-    //         loadCSS: 'Barcode Project/printingBarcodes.css',
-    //         });
-    // })
 }
 printBarcode(QRGNFR);
 printBarcode(QRMCK);
