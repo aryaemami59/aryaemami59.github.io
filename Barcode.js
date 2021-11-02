@@ -3420,7 +3420,7 @@ function onClick (li) {
             smallLinkMS.setAttribute('title', "This Link Will Take You To The McKesson MedSurge Website");
             smallLinkMS.setAttribute('href',
             "https://mms.mckesson.com/portal/login");
-            smallLinkMS.text = "Order on McKesson MedSurge";
+            smallLinkMS.text = "Order on McK MedSurge";
             const smallLinkCOV = document.createElement('a');
             smallLinkCOV.setAttribute('target', '_blank');
             smallLinkCOV.setAttribute('id', "smallLinkCOV");
@@ -4053,7 +4053,7 @@ function onClick (li) {
                     }
                 }
                 arr5.push(itemNumber1);
-                bigLinkMS.text = "McKesson MedSurge Website";
+                bigLinkMS.text = "McK MedSurge Website";
                 medSurgeItems.append(liMS);
                 medSurgeItems.insertBefore(bigLinkMS, testingMS);
                 medSurgeItems.insertBefore(bigCollapseShowButtonMS, testingMS);

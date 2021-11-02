@@ -462,7 +462,7 @@
                     box-sizing: border-box;
                     padding: 2px;
                     text-decoration: none;
-                    margin: 3px;
+                    margin: 4px;
                     margin-right: 4px;
                     margin-left: 4px;
                     color: white;
@@ -551,6 +551,24 @@
                         /* background-color: rgba(255, 255, 0, 0.418); */
                         background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
                     }
+                    #descSOC, #itemNumberSOC, #bigLinkSOC, #smallLinkSOC, #bigCollapseShowButtonSOC, #bigCollapseHideButtonSOC, #bigClearButtonSOC, #removeButtonSOC, #collapseButtonSOC  {
+                        background-image: linear-gradient(rgb(175, 0, 0, 1), rgba(175, 0, 0, 0));
+                    }
+                    #descVS, #itemNumberVS, #bigLinkVS, #smallLinkVS, #bigCollapseShowButtonVS, #bigCollapseHideButtonVS, #bigClearButtonVS, #removeButtonVS, #collapseButtonVS  {
+                        background-image: linear-gradient(rgb(67, 0, 192, 1), rgba(67, 0, 192, 0));
+                    }
+                    #descMS, #itemNumberMS, #bigLinkMS, #smallLinkMS,  #bigCollapseShowButtonMS, #bigCollapseHideButtonMS, #bigClearButtonMS, #removeButtonMS, #collapseButtonMS  {
+                        background-image: linear-gradient(rgb(226, 102, 0, 1), rgba(226, 102, 0, 0));
+                    }
+                    #descCOV, #itemNumberCOV, #bigLinkCOV, #smallLinkCOV,  #bigCollapseShowButtonCOV, #bigCollapseHideButtonCOV, #bigClearButtonCOV, #removeButtonCOV, #collapseButtonCOV  {
+                        background-image: linear-gradient(rgb(121, 0, 111, 1), rgba(121, 0, 111, 0));
+                    }
+                    #descFORS, #itemNumberFORS, #bigLinkFORS, #smallLinkFORS,  #bigCollapseShowButtonFORS, #bigCollapseHideButtonFORS, #bigClearButtonFORS, #removeButtonFORS, #collapseButtonFORS  {
+                        background-image: linear-gradient(rgb(0, 100, 104, 1), rgba(0, 100, 104, 0));
+                    }
+                    /* #bigLinkMS {
+
+                    } */
                     /* #descMCK, #descOI, #descGNFR, #descSOC {
                         height: 100px;
                         display: flex;
@@ -1454,7 +1472,7 @@
         border-radius: 2px;
         text-align: center;
         width: 50px;
-        background-color: rgba(226, 102, 0, 0.363);
+        background-color: rgba(255, 115, 0, 0.363);
         box-shadow: 0px 0px 6px 0px rgb(255, 160, 82);
     }
     #covapItems {
@@ -3202,6 +3220,9 @@
     }
     .vendorItems {
         min-height: 70px;
+    }
+    #bigLinkMS {
+        font-size: 14px;
     }
     }
     /* @media print and (min-width: 8.5in) {
