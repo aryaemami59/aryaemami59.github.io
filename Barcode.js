@@ -331,44 +331,170 @@ const vials = [
     McKesson: true,
     OrderInsite: true,
     },
-    { name: 'CareMates ',
-    itemNumber: '',
+    { name: '1 ML BD Syringes 20G x 1',
+    itemNumber: '08290309637',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '1 ML BD Syringes 26G x 5/8',
+    itemNumber: '08290309597',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '3 ML BD Syringes 18G x 1.5',
+    itemNumber: '08290309580',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '3 ML BD Syringes 20G x 1',
+    itemNumber: '08290309578',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '3 ML BD Syringes 20G x 1.5',
+    itemNumber: '08290309579',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '3 ML BD Syringes 21G x 1',
+    itemNumber: '08290309575',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '3 ML BD Syringes 21G x 1.5',
+    itemNumber: '08290309577',
     keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
     McKesson: true,
     OrderInsite: true,
     },
     { name: '',
-    itemNumber: '',
+    itemNumber: '0829030',
     keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
     McKesson: true,
     OrderInsite: true,
     },
-    { name: '',
-    itemNumber: '',
+    { name: '3 ML BD Syringes 22G x 3/4',
+    itemNumber: '08290309569',
     keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
     McKesson: true,
     OrderInsite: true,
     },
-    { name: '',
-    itemNumber: '',
+    { name: '3 ML BD Syringes 22G x 1',
+    itemNumber: '08290309572',
     keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
     McKesson: true,
     OrderInsite: true,
     },
-    { name: '',
-    itemNumber: '',
+    { name: '3 ML BD Syringes 22G x 1.5',
+    itemNumber: '08290309574',
     keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
     McKesson: true,
     OrderInsite: true,
     },
-    { name: '',
-    itemNumber: '',
+    { name: '3 ML BD Syringes 23G x 1',
+    itemNumber: '08290309571',
     keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
     McKesson: true,
     OrderInsite: true,
     },
-    { name: '',
-    itemNumber: '',
+    { name: '3 ML BD Syringes 23 G x 1.5',
+    itemNumber: '08290309589',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '3 ML BD Syringes 25 G x 5/8',
+    itemNumber: '08290309570',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '3 ML BD Syringes 25G x 1',
+    itemNumber: '08290309581',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '3 ML BD Syringes 25G x 1.5',
+    itemNumber: '08290309582',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '3 ML BD Syringes 26G x 5/8',
+    itemNumber: '08290309587',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '5 ML BD Syringes 20G x 1',
+    itemNumber: '08290309634',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '5 ML BD Syringes 20G x 1.5',
+    itemNumber: '08290309635',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '5 ML BD Syringes 21G x 1',
+    itemNumber: '08290309632',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '5 ML BD Syringes 21G x 1.5',
+    itemNumber: '08290309633',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '5 ML BD Syringes 22G x 1',
+    itemNumber: '08290309630',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '5 ML BD Syringes 22G x 1.5',
+    itemNumber: '08290309631',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '10 ML BD Syringes 20G x 1',
+    itemNumber: '08290309644',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '10 ML BD Syringes 20G x 1.5',
+    itemNumber: '08290309645',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '10 ML BD Syringes 21G x 1',
+    itemNumber: '08290309642',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '10 ML BD Syringes 21G 1.5',
+    itemNumber: '08290309643',
+    keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
+    McKesson: true,
+    OrderInsite: true,
+    },
+    { name: '10 ML BD Syringes 22G x 1',
+    itemNumber: '08290309640',
     keywords: ['mck', 'mckesson', 'orderinsite', 'oi'],
     McKesson: true,
     OrderInsite: true,
@@ -2808,6 +2934,7 @@ let RXBags = [];
 let liquidBottles1arr = [];
 let PPE1arr = [];
 let ImmunizationSupplies1arr = [];
+let BDSyringes1arr = [];
 // these are arrays that might be used in the onClick function in a splice method.
 let itemsMCK = [];
 let itemsOI = [];
@@ -2991,7 +3118,7 @@ searchFunc('flavorx', FLAVORx1arr);
 searchFunc('liquid bottles', liquidBottles1arr);
 searchFunc('Gloves|Masks', PPE1arr);
 searchFunc('nitrile|Masks|immunization|imz|vanish', ImmunizationSupplies1arr);
-keywordSearch('immunization', ImmunizationSupplies1arr);
+searchFunc('bd syringes', BDSyringes1arr);
 keywordSearch('immunization', ImmunizationSupplies1arr);
 
 // ImmunizationSupplies1arr = removeDuplicates(ImmunizationSupplies1arr);
@@ -3015,7 +3142,7 @@ function createListFromArray (arr, listParent) {
         listParent.appendChild(li);
         li.style.display = "none";
         // li.addEventListener('click', () => {onClick(li)});
-        azz(li);
+        avoidDuplicatesOnClick(li);
     });
 }
 //this function removes children of an element.
@@ -3048,22 +3175,7 @@ createListFromArray (arrMedSurge, $('#CardioChekandA1C1')[0]);
 createListFromArray (PPE1arr, $('#PPE1')[0]);
 createListFromArray (arrVaxServe, $('#ImmunizationSupplies1')[0]);
 createListFromArray (ImmunizationSupplies1arr, $('#ImmunizationSupplies1')[0]);
-// const ImmunizationSupplies1 = listNav.querySelector('#ImmunizationSupplies1');
-// let ImmunizationSupplies1Children = Array.from(ImmunizationSupplies1.children);
-// ImmunizationSupplies1Children = removeDuplicates(ImmunizationSupplies1Children);
-// console.log(ImmunizationSupplies1Children);
-let ImmunizationSupplies1Children = Array.from(ImmunizationSupplies1.querySelectorAll('li'));
-ImmunizationSupplies1Children.forEach(element => {
-    const text = Array.from(element);
-    // console.log(text);
-})
-ImmunizationSupplies1Children = removeDuplicates(ImmunizationSupplies1Children);
-// console.log(ImmunizationSupplies1Children);
-// console.log(ImmunizationSupplies1Children);
-// ImmunizationSupplies1Children.forEach(element => {
-//     const x = element.textContent;
-//     console.log(x);
-// })
+createListFromArray (BDSyringes1arr, $('#BDSyringes1')[0]);
 // this function is what happens when enter is pressed when focused on input field.
 function pressEnter (event) {
     if (event.key === "Enter" && box.value !== '') { event.preventDefault();
@@ -3254,8 +3366,6 @@ bigClearFunc (bigClearButtonVS, arr4);
 bigClearFunc (bigClearButtonMS, arr5);
 bigClearFunc (bigClearButtonCOV, arr6);
 bigClearFunc (bigClearButtonFORS, arr7);
-
-
 // this function takes list items and categorizes them based on vendor and adds vendor icons.
 function categorizeByClass (arr, a) {
     for (let j = 0; j < arr.length; j++) {
@@ -4209,7 +4319,7 @@ function buttonClick () {
         listNew.append(Object.values(items)[i]);
         list2.appendChild(listNew);
         searchResults.appendChild(list2);
-        azz(listNew);
+        avoidDuplicatesOnClick(listNew);
         const descmck = document.querySelectorAll('p#descMCK');
         const descoi = document.querySelectorAll('p#descOI');
         const descgnfr = document.querySelectorAll('p#descGNFR');
@@ -4237,17 +4347,12 @@ function buttonClick () {
             // categorizeByClass(arrGNFR, 'GNFR Icon.PNG');
 }
 // this function includes the onclick event listener that also avoids adding duplicates.
-function azz (li) {
+function avoidDuplicatesOnClick (li) {
     li.addEventListener('click', (e) => {
         const element = e.target.textContent;
         const target = e.target;
-        // $(target).hide();
         const check = (currentItem) => currentItem !== element
         avoidDuplciateResults(function () {onClick(li)}, check);
-        // if (items2.every(check)) {
-        //     console.log(element);
-        //     onClick(li);
-        // }
     });
 }
 // this is the function that creates list items based on search results.
@@ -4315,7 +4420,7 @@ function setList(array) {
         // li.appendChild(iconGNFR);
         // li.onclick = () => {search.value = ""};
         // li.onclick = () => {li.remove(li.firstChild)};
-        azz(li);
+        avoidDuplicatesOnClick(li);
         // li.addEventListener('click', function (e) {
         //     console.log(e.target.textContent);
         //     // for (let h = 0; h < items1.length; h++) {
