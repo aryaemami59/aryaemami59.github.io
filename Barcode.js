@@ -2582,14 +2582,8 @@ const vials = [
     },
     
 ];
-// console.log(descMCK.parentElement.parentElement.children[4].firstChild.textContent)
-
 // this is where we assign and grab elements from DOM.
 const MckessonItems = document.getElementById("Mckesson-Items");
-// const limck = MckessonItems.getElementsByTagName('li');
-// const paragraph = MckessonItems.getElementsByTagName('p');
-// const child1 = paragraph.children;
-// const descmck = document.querySelectorAll('p#descMCK');
 const OrderInsiteItems = document.getElementById('OrderInsite-Items');
 const GNFRItems = document.getElementById('GNFR-Items');
 const signOrderCatalogItems = document.getElementById('signOrderCatalogItems');
@@ -2605,9 +2599,6 @@ const bigLinkMCK = document.createElement('a');
 bigLinkMCK.setAttribute('id', "bigLinkMCK");
 bigLinkMCK.setAttribute('class', "bigLinkVendor");
 bigLinkMCK.setAttribute('title', "This Link Will Take You To The McKesson Website With All The Items Already Shown");
-// bigLinkMCK.addEventListener('click', function() {setTimeout((e) => {
-//     window.open('https://connect.mckesson.com/portal/site/smo/menuitem.87a0666be7398a3ece3ee6105740d0a0/?query=')
-// }, 1)});
 bigLinkMCK.addEventListener('click', function() {setTimeout((e) => {
     window.open('https://connect.mckesson.com/portal/site/smo/menuitem.87a0666be7398a3ece3ee6105740d0a0/?query='+ arr.join("%20or%20"));
 }, 1)});
@@ -2790,39 +2781,6 @@ function bigCollapseShowFunc (bigCollapseShowButtonGNFR) {
         })
     });
 }
-// function bigClearFunc (bigClearButtonMCK) {
-//     bigClearButtonMCK.addEventListener('click', function a (e) {
-//         const vendorItems = e.target.parentNode;
-//         const child = $(vendorItems).children().not('.titleVendor');
-//         console.log(child);
-//         child.remove();
-//         const liVendor = vendorItems.querySelectorAll('.liVendor');
-//         // console.log(vendorItems);
-//         // const vendorQR = vendorItems.querySelector('span').firstChild;
-//         const vendorQR = vendorItems.querySelector('.vendorQR');
-//         // console.log(vendorQR);
-//         const bigLinkVendor = vendorItems.querySelector('.bigLinkVendor');
-//         // console.log(bigLinkVendor);
-//         const hideButton = vendorItems.querySelector('.bigCollapseHideButtonVendor');
-//         // console.log(hideButton);
-//         const showButton = vendorItems.querySelector('.bigCollapseShowButtonVendor');
-//         // console.log(showButton);
-//         // console.log(liVendor);
-//         // vendorQR.remove();
-//         // $(vendorQR).hide();
-//         // $(bigLinkVendor).remove();
-//         // $(hideButton).remove();
-//         // $(showButton).remove();
-//         // bigClearButtonMCK.remove();
-//         // liVendor.remove(liVendor.childNodes);
-//         for (let i = 0; i < liVendor.length; i++) {
-//             const liVendorLoop = liVendor[i];
-//             // console.log(liVendorLoop);
-//             liVendorLoop.remove(liVendorLoop.childNodes);
-//         }
-
-//     })
-// }
 const testingMCK = document.getElementById('testingMCK');
 const testingOI = document.getElementById('testingOI');
 const testingGNFR = document.getElementById('testingGNFR');
@@ -2837,27 +2795,7 @@ const listNav = document.getElementById('listNav');
 const listUl = listNav.querySelectorAll('ul');
 const navLi = document.getElementById('navLi');
 const empty = document.getElementById('empty');
-// const search1 = document.getElementById('search1');
-// const listChildren = list.children;
-// const n = document.createElement('li');
 const titleMCK = document.getElementById('mck-items');
-// const control = document.getElementById('control');
-// const displayAllItems = document.getElementById('displayAllItems');
-// const mckesson = document.getElementById('mckesson');
-// const myInv = document.getElementById('myInv');
-// const gnfr = document.getElementById('gnfr');
-// const navBar = document.getElementById('nav');
-// const resultsMCK = document.getElementById('resultsMCK');
-// const resultsOI = document.getElementById('resultsOI');
-// const resultsGNFR = document.getElementById('resultsGNFR');
-// const navResults = document.getElementById("navResults");
-// const resultsMCKHeader = document.getElementById('resultsMCKHeader');
-// const resultsOIHeader = document.getElementById('resultsOIHeader');
-// const resultsGNFRHeader = document.getElementById('resultsGNFRHeader');
-// const McKessonItems1 = document.getElementById('McKessonItems1');
-// const DisplayAllItems1 = document.getElementById('DisplayAllItems1');
-// const caps1 = document.getElementById('Caps1');
-
 // these are the arrays used in the onclick function which is the function that is executed when the user clicks on the drop down search results.
 let arr = [];
 let arr1 = [];
@@ -2867,9 +2805,6 @@ let arr4 = [];
 let arr5 = [];
 let arr6 = [];
 let arr7 = [];
-// arr = removeDuplicates(arr);
-// removeDuplicates(arr1);
-// removeDuplicates(arr2);
 // these are the vendor specific arrays.
 let arrMCK = [];
 let arrMCKItemNames = [];
@@ -2977,7 +2912,6 @@ let bigFORSImage = new QRCode(document.getElementById('FORSQR'), {
     width: 100,
     height: 100
 });
-// $('canvas').hide();
 // this function will make sure that no duplicate results are added.
 function avoidDuplciateResults(myFunc, checkFunc) {
     if (addedItems.every(checkFunc)) {
@@ -3014,7 +2948,6 @@ checkVendor('FORS');
 getProperty('10 Dram Vials', 'vendor');
 // this function looks at the sidebar parent list items and gives them an id based on their text content.
 const listNavChildren = Array.from(listNav.querySelectorAll(':scope > ul'));
-// console.log(listNavChildren)
 function set (element) {
     var b = element.textContent.toString().replace(/ +/g, "") + "1";
     element.setAttribute('id', b);
@@ -3048,29 +2981,6 @@ function keywordSearch (itemToFind, arr) {
         })
         })
 }
-// function apple (s) {
-//     // for (let i = 0; i < vials.length; i++) {
-//     //     const element = vials[i];
-//     //     console.log([i][keywords]);
-//     // }
-//     vials.forEach(element => {
-//         const key = Array.from(element.keywords);
-//         // console.log(key);
-//         key.forEach(e => {;
-//             // console.log(e);
-//             const s = new RegExp('\.*'+ e +'\.*', 'gi');
-//             const g = 'small gloves'
-//             if (g.match(s)) {
-//             //    console.log(element.name);
-//             // console.log(key);
-//             }
-//             // console.log(s);
-//         })
-        
-//     })
-// }
-// apple();
-
 // this function looks at the main vials array and separates the items based on vendor and puts them in a new array based on their vendor.
 function separateItemsBasedOnVendor (arr, dist) {
     for (let i = 0; i < vials.length; i++) {
@@ -3120,18 +3030,6 @@ searchFunc('Gloves|Masks', PPE1arr);
 searchFunc('nitrile|Masks|immunization|imz|vanish', ImmunizationSupplies1arr);
 searchFunc('bd syringes', BDSyringes1arr);
 keywordSearch('immunization', ImmunizationSupplies1arr);
-
-// ImmunizationSupplies1arr = removeDuplicates(ImmunizationSupplies1arr);
-// const ImmunizationSupplies1 = document.getElementById('ImmunizationSupplies1');
-// let ImmunizationSupplies1Children = Array.from(ImmunizationSupplies1.querySelectorAll('li'));
-// console.log(ImmunizationSupplies1Children);
-// ImmunizationSupplies1Children = removeDuplicates(ImmunizationSupplies1Children);
-// removeDuplicates(ImmunizationSupplies1Children);
-// console.log(ImmunizationSupplies1Children);
-// console.log(ImmunizationSupplies1);
-// console.log(ImmunizationSupplies1.querySelectorAll('li'));
-// console.log(ImmunizationSupplies1.children);
-// console.log(Array.from(ImmunizationSupplies1.children));
 // this function creates a list from certain arrays.
 function createListFromArray (arr, listParent) {
     arr.forEach(element => { const xName = element.name;
@@ -3188,15 +3086,6 @@ function pressEnter (event) {
         // categorizeByClass(arrGNFR, 'GNFR Icon.PNG');
     }
 }
-// titleMCK.addEventListener('click', (e) => {
-//     const target = e.target;
-//     /* Select the text field */
-//     // target.select();
-//     // target.setSelectionRange(0, 99999);
-  
-//     /* Copy the text inside the text field */
-//     navigator.clipboard.writeText(target.textContent);
-// })
 // this function executes the x button that removes list items.
 function removeButtonFunc (removeButtonMCK, array, image, char) {
     removeButtonMCK.addEventListener('click', function d (e) {
