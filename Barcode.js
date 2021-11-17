@@ -3081,9 +3081,6 @@ function pressEnter (event) {
         replace(list2);
         buttonClick();
         replace(list);
-        // categorizeByClass(arrMCK, 'MCK-LOGO1.PNG');
-        // categorizeByClass(arrOI, 'OI.PNG');
-        // categorizeByClass(arrGNFR, 'GNFR Icon.PNG');
     }
 }
 // this function executes the x button that removes list items.
@@ -4250,81 +4247,12 @@ function setList(array) {
     for (const i of array) {
         const li = document.createElement('li');
         const text = document.createTextNode(i.name);
-        // const iconMCK = document.createElement('img');
-        // iconMCK.setAttribute('src', 'MCK-LOGO1.PNG');
-        // iconMCK.setAttribute('id', "iconMCK");
-        // const iconOI = document.createElement('img');
-        // iconOI.setAttribute('src', 'OI.PNG');
-        // iconOI.setAttribute('id', "iconOI");
-        // const iconGNFR = document.createElement('img');
-        // iconGNFR.setAttribute('src', 'GNFR Icon.PNG');
-        // iconGNFR.setAttribute('id', "iconGNFR");
         li.setAttribute('unit', i.name);
         li.appendChild(text);
-        // $('#list li').addClass('notAdded');
-        // li.appendChild(removeButton);
         list.appendChild(li);
         li.setAttribute("id", "li");
-        // console.log(li.textContent);
-        // console.log(arrGNFR.includes(li.textContent));
-        if (arrGNFR.includes(li.textContent)) {
-            li.style.backgroundColor = 'yellow';
-        }
-        // const descmck = document.querySelectorAll('p#descMCK');
-        // const descoi = document.querySelectorAll('p#descOI');
-        // const descgnfr = document.querySelectorAll('p#descGNFR');
-        // for (let u = 0; u < descmck.length; u++) {
-        //     const child = descmck[u];
-        //     // console.log(child.textContent)
-        //     if (li.textContent === child.textContent) {
-        //         $(li).css('text-decoration', 'line-through');
-        //     }
-        // }
-        // for (let u = 0; u < descoi.length; u++) {
-        //     const child = descoi[u];
-        //     // console.log(child.textContent)
-        //     if (li.textContent === child.textContent) {
-        //         $(li).css('text-decoration', 'line-through');
-        //     }
-        // }
-        // for (let u = 0; u < descgnfr.length; u++) {
-        //     const child = descgnfr[u];
-        //     // console.log(child.textContent)
-        //     if (li.textContent === child.textContent) {
-        //         $(li).css('text-decoration', 'line-through');
-        //     }
-        // }
-        // const jj = (current) => {
-        //     current == li.textContent;
-        // }
-        // if (arrGNFR.every(jj)) {
-        //     li.style.color = 'yellow';
-        // }
-        // console.log(window.location.href);
-        // items1.push(li.textContent);
-        // items1 = removeDuplicates(items1);
-        // console.log(items1);
-        // li.appendChild(iconMdocument.querySelectorAll('#descMCK'));
-        // li.appendChild(iconOI);
-        // li.appendChild(iconGNFR);
-        // li.onclick = () => {search.value = ""};
-        // li.onclick = () => {li.remove(li.firstChild)};
         avoidDuplicatesOnClick(li);
-        // li.addEventListener('click', function (e) {
-        //     console.log(e.target.textContent);
-        //     // for (let h = 0; h < items1.length; h++) {
-        //     //     const element = items1[h];
-        //         for (let k = 0; k < items2.length; k++) {
-        //             const element1 = items2[k];
-        //             if (e.target.textContent != element1) {
-        //                 onClick(li);
-        //             }
-        //         // }
-        //     }
-        // })
     }
-            // onClick(li)}, {once: true});
-            // console.log(array);
             if (array.length === 0) {
             setNoResults();
             }
