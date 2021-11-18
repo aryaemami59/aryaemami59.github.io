@@ -1584,12 +1584,15 @@
     }
     #bigCollapseHideButtonMCK, #bigCollapseShowButtonMCK, #bigClearButtonMCK {
         background-image: linear-gradient(rgb(0, 100, 140, 1), rgba(0, 100, 140, 0));
+        background-color: inherit;
     }
     #bigCollapseHideButtonOI, #bigCollapseShowButtonOI, #bigClearButtonOI {
         background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
+        background-color: inherit;
     }
     #bigCollapseHideButtonGNFR, #bigCollapseShowButtonGNFR, #bigClearButtonGNFR {
         background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
+        background-color: inherit;
     }
     .orderNumberVendor {
         text-align: center;
