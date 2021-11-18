@@ -4042,31 +4042,11 @@ search.addEventListener('input', (event) => {
                 const keywords = i.keywords;
                 const element = i.keywords[j];
                 if (element.match(re)) {
-                    // console.log(element);
-                    // console.log(((i.keywords).indexOf(element)));
-                    const index = ((i.keywords).indexOf(element));
-                    // console.log(keywords);
-                    // console.log(i);
-                    // for (let h = 0; h < keywords.length; h++) {
-                    //     const element1 = keywords[h];
-                    //     console.log(element1)
-                    // }
                     keywords.forEach(e => {
-                        // console.log(e);
                         if (e.match(re)) {
-                            // const next = 
-                            // console.log(i.name);
                         }
                     });
-                    // console.log(element);
-                    // console.log(i.keywords);
                     const result = element.match(re);
-                    // console.log(result);
-                    const name = i.name;
-                    // console.log(name);
-                    // console.log(i);
-                    // console.log(Array.from(i));
-                    // console.log(Array.from(name));
                     return result;
                 }
                 }
@@ -4079,7 +4059,6 @@ search.addEventListener('input', (event) => {
                 }
                 if (i.name.match(re)) {
                     const result2 = i.name.match(re);
-                    // console.log(result2)
                     return result2;
                 }
     }).sort((a, b) => {
