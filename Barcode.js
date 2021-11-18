@@ -4241,6 +4241,7 @@ function avoidDuplicatesOnClick (li) {
         avoidDuplciateResults(function () {onClick(li)}, check);
     });
 }
+//aa
 // this is the function that creates list items based on search results.
 function setList(array) {
     clearList();
