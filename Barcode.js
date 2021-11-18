@@ -4228,9 +4228,6 @@ function buttonClick () {
             }
         }
     }
-            // categorizeByClass(arrMCK, 'MCK-LOGO1.PNG');
-            // categorizeByClass(arrOI, 'OI.PNG');
-            // categorizeByClass(arrGNFR, 'GNFR Icon.PNG');
 }
 // this function includes the onclick event listener that also avoids adding duplicates.
 function avoidDuplicatesOnClick (li) {
@@ -4241,7 +4238,6 @@ function avoidDuplicatesOnClick (li) {
         avoidDuplciateResults(function () {onClick(li)}, check);
     });
 }
-//aa
 // this is the function that creates list items based on search results.
 function setList(array) {
     clearList();
