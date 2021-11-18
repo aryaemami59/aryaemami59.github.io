@@ -1317,7 +1317,6 @@ const vials = [
     },
     { name: 'Black Office Pens 12PK',
     itemNumber: "100616964",
-    // itemNumber: "60538801665",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1325,7 +1324,6 @@ const vials = [
     },
     { name: 'Will Call Dividers',
     itemNumber: "100522964",
-    // itemNumber: "60538801665",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1333,7 +1331,6 @@ const vials = [
     },
     { name: 'RX GPS Charger',
     itemNumber: "100649884",
-    // itemNumber: "60538801665",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1341,7 +1338,6 @@ const vials = [
     },
     { name: 'Nitrile Gloves Small',
     itemNumber: "100662786",
-    // itemNumber: "60538801665",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1349,7 +1345,6 @@ const vials = [
     },
     { name: 'Nitrile Gloves Medium',
     itemNumber: "100662787",
-    // itemNumber: "60538801665",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1357,7 +1352,6 @@ const vials = [
     },
     { name: 'Nitrile Gloves Large',
     itemNumber: "100662788",
-    // itemNumber: "60538801665",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1365,7 +1359,6 @@ const vials = [
     },
     { name: 'Nitrile Gloves X-Large',
     itemNumber: "100662789",
-    // itemNumber: "60538801665",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1373,7 +1366,6 @@ const vials = [
     },
     { name: 'Holder For Bags Under The Counter 12 Inch',
     itemNumber: "100521797",
-    // itemNumber: "60538801665",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1381,7 +1373,6 @@ const vials = [
     },
     { name: 'RX Bag Holder For Under The Counter 24 Inch',
     itemNumber: "100521154",
-    // itemNumber: "60538801665",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1389,7 +1380,6 @@ const vials = [
     },
     { name: 'Vacuum Cleaner',
     itemNumber: "100635304",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1397,7 +1387,6 @@ const vials = [
     },
     { name: 'Vacuum Cleaner Bags',
     itemNumber: "100635305",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1405,7 +1394,6 @@ const vials = [
     },
     { name: 'Vacuum Cleaner Belt',
     itemNumber: "100635306",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1413,7 +1401,6 @@ const vials = [
     },
     { name: 'Silver Stapler',
     itemNumber: "100616872",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1421,7 +1408,6 @@ const vials = [
     },
     { name: 'Staples For Silver Stapler',
     itemNumber: "100616873",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1429,7 +1415,6 @@ const vials = [
     },
     { name: 'Scissors',
     itemNumber: "100624989",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1453,7 +1438,6 @@ const vials = [
     },
     { name: 'Immunization Cart',
     itemNumber: "100555136",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1461,7 +1445,6 @@ const vials = [
     },
     { name: 'Thermometer',
     itemNumber: "100552441",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1469,7 +1452,6 @@ const vials = [
     },
     { name: 'Shipping Tape',
     itemNumber: "100612557",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1477,7 +1459,6 @@ const vials = [
     },
     { name: 'Pill Bay Station',
     itemNumber: "100611354",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1485,7 +1466,6 @@ const vials = [
     },
     { name: 'Debit Reader Charger',
     itemNumber: "100625808",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1493,7 +1473,6 @@ const vials = [
     },
     { name: 'TC70X Battery Charger',
     itemNumber: "100590206",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1501,7 +1480,6 @@ const vials = [
     },
     { name: 'Blue Pens',
     itemNumber: "100616965",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1509,7 +1487,6 @@ const vials = [
     },
     { name: 'First-Aid Band Aids',
     itemNumber: "100616877",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1517,7 +1494,6 @@ const vials = [
     },
     { name: 'Register Receipt Paper',
     itemNumber: "100619043",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1525,7 +1501,6 @@ const vials = [
     },
     { name: 'Face Masks 500 Count',
     itemNumber: "100662860",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1533,7 +1508,6 @@ const vials = [
     },
     { name: 'Face Masks 2000 Count',
     itemNumber: "100660510",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1541,7 +1515,6 @@ const vials = [
     },
     { name: `Kelly's 1 Gallon Hand Sanitizer`,
     itemNumber: "100659820",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1549,7 +1522,6 @@ const vials = [
     },
     { name: '2 Gallon Refillable Hand Soap',
     itemNumber: "100636900",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
@@ -1557,28 +1529,11 @@ const vials = [
     },
     { name: 'Hand Soap Dispenser',
     itemNumber: "100634419",
-    // itemNumber: "",
     keywords: ['gnfr',],
     McKesson: false,
     OrderInsite: false,
     GNFR: true
     },
-    // { name: '',
-    // itemNumber: "",
-    // // itemNumber: "",
-    // keywords: ['gnfr',],
-    // McKesson: false,
-    // OrderInsite: false,
-    // GNFR: true
-    // },
-    // { name: '',
-    // itemNumber: "",
-    // // itemNumber: "",
-    // keywords: ['gnfr',],
-    // McKesson: false,
-    // OrderInsite: false,
-    // GNFR: true
-    // },
     { name: 'Opioid Pamphlets',
     itemNumber: '586338822',
     keywords: ['586338822', 'sign', 'signing', 'catalog', 'bunzl'],
@@ -2532,30 +2487,6 @@ const vials = [
     GNFR: false,
     covap: true
     },
-    // { name: '',
-    // itemNumber: '',
-    // keywords: ['', 'covap'],
-    // McKesson: false,
-    // OrderInsite: false,
-    // GNFR: false,
-    // covap: true
-    // },
-    // { name: '',
-    // itemNumber: '',
-    // keywords: ['', 'covap'],
-    // McKesson: false,
-    // OrderInsite: false,
-    // GNFR: false,
-    // covap: true
-    // },
-    // { name: '',
-    // itemNumber: '',
-    // keywords: ['', 'covap'],
-    // McKesson: false,
-    // OrderInsite: false,
-    // GNFR: false,
-    // covap: true
-    // },
     { name: 'ZD620 Desktop Printer',
     itemNumber: '100637826',
     keywords: ['100637826', 'printer', 'equipment', 'FORS'],
@@ -2764,17 +2695,11 @@ function bigCollapseHideFunc (bigCollapseHideButtonGNFR) {
         $(apple).each(function() {
             $(this).toggleClass('collapseParent');
             $($button).toggleClass('collapsed');
-            $('.collapsed').on('click', function (e) {
-                // console.log(this);
-                const apple2 = $(this).parent().find('li.collapseParent');
-            })
         })
-        
     })
 }
 function bigCollapseShowFunc (bigCollapseShowButtonGNFR) {
     $(bigCollapseShowButtonGNFR).on('click', function () {
-        // console.log(this);
         const listToShow = $(this).parent().find('li.collapseParent');
         $(listToShow).each(function () {
             $(this).removeClass('collapseParent');
@@ -2932,7 +2857,6 @@ function checkVendor (prop) {
 function getProperty (name, prop) {
     for (let i = 0; i < vials.length; i++) {
         if (vials[i].name === name) {
-            // console.log(vials[i][prop]);
             return vials[i][prop];
         }
     }
@@ -2962,20 +2886,14 @@ function searchFunc (itemToFind, arr) {
             arr.push(element);
         }
     })
-    // console.log(arr);
 };
 // this function looks at certain keywords associated with the item in a vial array
 // and puts them in another array.
 function keywordSearch (itemToFind, arr) {
-    // const itemsToFind1 = /(itemToFind)\.*\i/
     const g = new RegExp(itemToFind, 'gi');
-    // const g = /[(itemToFind)(itemToFind)]/gi;
     vials.forEach(element => {const x = Array.from(element.keywords);
-        // console.log(x);
         x.forEach(e => { 
-            // console.log(e);
             if (e.match(g)) {
-                // console.log('yay');
                 arr.push(element);
             }
         })
@@ -3039,7 +2957,6 @@ function createListFromArray (arr, listParent) {
         li.setAttribute('id', 'navLi');
         listParent.appendChild(li);
         li.style.display = "none";
-        // li.addEventListener('click', () => {onClick(li)});
         avoidDuplicatesOnClick(li);
     });
 }
@@ -3086,58 +3003,32 @@ function pressEnter (event) {
 // this function executes the x button that removes list items.
 function removeButtonFunc (removeButtonMCK, array, image, char) {
     removeButtonMCK.addEventListener('click', function d (e) {
-        // const desc = e.target.parentNode.childNodes[2].textContent;
         const desc = e.target.parentNode.querySelector('p').textContent;
-        // console.log(e.target);
-        // console.log(desc);
-        // const QR = e.target.parentNode.parentNode.childNodes[3].childNodes[0];
         const QR = e.target.parentNode.parentNode.querySelector('.QRVendor').firstChild;
-        // console.log(QR);
-        // console.log(listNav.children[0].children[0].textContent);
-        // const bigLink = e.target.parentNode.parentNode.childNodes[5];
         const bigLink = e.target.parentNode.parentNode.querySelector('a');
         const orderNumberVendor = e.target.parentNode.parentNode.querySelector('.orderNumberVendor');
-        const parLivendor = e.target.parentNode.parentNode.querySelectorAll('.liVendor');
-        // console.log(parLivendor);
-        // console.log(orderNumberVendor);
-        // console.log(bigLink);
         const liVendor = e.target.parentNode;
         orderNumberVendor.textContent -=1;
-        // console.log(liVendor);
         const listItemParent = liVendor.parentNode;
-        // console.log(listItemParent);
         const li1 = list.querySelectorAll('li');
         const childButtons = $(listItemParent).children().filter('button');
-        const hideButton = liVendor.parentNode.querySelectorAll('.bigCollapseHideButtonVendor');
-        const showButton = liVendor.parentNode.querySelectorAll('.bigCollapseShowButtonVendor');
-        // console.log(showButton);
-        // console.log(hideButton);
-       
-        // console.log(li1)
         for (let h = 0; h < li1.length; h++) {
             const elem = li1[h];
-            // console.log(elem);
             const li1Text = elem.textContent;
-            // console.log(li1Text);
             if (desc == li1Text) {
-                // console.log('yay');
                 $(elem).show();
             }
         }
         const listUl = listNav.querySelectorAll('ul');
         for (let w = 0; w < listUl.length; w++) {
             const listUlLoop = listUl[w];
-            // console.log(listUlLoop);
             const navLi = listUlLoop.querySelectorAll('li');
-            // console.log(navLi);
             for (let q = 0; q < navLi.length; q++) {
                 const navLiLoop = navLi[q];
-                // console.log(navLiLoop.textContent);
                 if (desc == navLiLoop.textContent) {
                     $(navLiLoop).css('text-decoration', 'none');
                 }
             }
-            // console.log(listNav.childNodes[0]);
         }
         const li = Array.from(list.querySelectorAll('li'));
         li.forEach(element => {
@@ -3151,31 +3042,21 @@ function removeButtonFunc (removeButtonMCK, array, image, char) {
                 $(element).css('text-decoration', 'none');
             }
         })
-        // list.prepend(document.querySelector('[added="yes"]'));
         for (let j = 0; j < addedItems.length; j++) {
             const addedItemsLoop = addedItems[j];
             if (desc == addedItemsLoop) {
                 const addedItemsLoopIndex = addedItems.indexOf(addedItemsLoop);
                 if (addedItemsLoopIndex > -1) {
                     addedItems.splice(addedItemsLoopIndex, 1);
-                    // console.log(addedItemsLoop);
                 }
             }
         }
-        // const numberItem = liVendor.childNodes[4].textContent.replace('Item Number: ', ' ').trim();
         const numberItem = liVendor.querySelector('.itemNumberVendor').textContent.replace('Item Number: ', ' ').trim();
-        // console.log(numberItem);
         for (let i = 0; i < array.length; i++) {
             const element = array[i];
-            // console.log(element);
             if (numberItem == element) {
                 const index = array.indexOf(element);
-                // console.log(arr[index]);
                 if (index > -1) {
-                    // console.log(index);
-                    const ty = array.splice(index, 1);
-                    // console.log(ty);
-                    // console.log(array);
                     if (array.length > 0) {
                         $(QR).show();
                         image.makeCode(array.join(char));
@@ -3183,15 +3064,11 @@ function removeButtonFunc (removeButtonMCK, array, image, char) {
                     if (array.length == 0) {
                         $(QR).hide();
                         $(bigLink).remove();
-                        // $(hideButton).remove();
-                        // $(showButton).remove();
                         $(childButtons).remove();
                     }
                 }
             }
         }
-        
-        // liVendor.parentNode.remove(liVendor.parentNode.hideButton);
         liVendor.remove(liVendor.childNodes);
     }
 )
@@ -3215,13 +3092,10 @@ function bigClearFunc (bigClearButtonMCK, array, image, char) {
         bigClearButtonMCK.remove();
         for (let i = 0; i < liVendor.length; i++) {
             const liVendorLoop = liVendor[i];
-            const itemNumberVendor = liVendorLoop.querySelector('.itemNumberVendor').textContent;
-            // const numberItem = itemNumberVendor.replace('Item Number: ', ' ').trim();
             const descVendor = liVendorLoop.querySelector('.descVendor').textContent;
             for (let u = 0; u < li1.length; u++) {
                 const li1Loop = li1[u];
                 const li1Text = li1Loop.textContent;
-                // console.log(li1Text);
                 if (li1Text == descVendor) {
                     $(li1Loop).show();
                 }
@@ -3259,7 +3133,6 @@ function categorizeByClass (arr, a) {
         const name1 = arr[j].name;
     for (let i = 0; i < list2.children.length; i++) {
         const element = list2.children[i];
-        // console.log(element);
         if (element.textContent === name1) {
             element.style.backgroundColor = 'lightblue';
             const lim = document.createElement('li');
@@ -3277,7 +3150,6 @@ function onClick (li) {
         if (li.textContent == vials[i].name   ) {
             let index = vials.map(e => e.name).indexOf(li.textContent);
             const target = event.target;
-            const descmck = document.querySelectorAll('p#descMCK');
             const imageMCK = document.createElement('img');
             imageMCK.setAttribute('id', 'imageMCK');
             imageMCK.setAttribute('class', 'imageVendor');
@@ -3321,50 +3193,41 @@ function onClick (li) {
             JsBarcode(imageFORS, itemNumber1, {height: 40});
             const descMCK = document.createElement('p');
             const nameMain = vials[index].name;
-            // descMCK.textContent = "Item Description: " + nameMain;
             descMCK.append(nameMain);
-            // descMCK.textContent = nameMain;
             descMCK.setAttribute('id', "descMCK");
             descMCK.setAttribute('class', "descVendor");
             descMCK.setAttribute('title', "Click Here To Copy The Name of The Item");
             const descOI = document.createElement('p');
-            // descOI.textContent = "Item Description: " + nameMain;
             descOI.textContent = nameMain;
             descOI.setAttribute('id', "descOI");
             descOI.setAttribute('class', "descVendor");
             descOI.setAttribute('title', "Click Here To Copy The Name of The Item");
             const descGNFR = document.createElement('p');
-            // descGNFR.textContent = "Item Description: " + nameMain;
             descGNFR.textContent = nameMain;
             descGNFR.setAttribute('id', "descGNFR");
             descGNFR.setAttribute('class', "descVendor");
             descGNFR.setAttribute('title', "Click Here To Copy The Name of The Item");
             const descSOC = document.createElement('p');
-            // descSOC.textContent = "Item Description: " + nameMain;
             descSOC.textContent = nameMain;
             descSOC.setAttribute('id', "descSOC");
             descSOC.setAttribute('class', "descVendor");
             descSOC.setAttribute('title', "Click Here To Copy The Name of The Item");
             const descVS = document.createElement('p');
-            // descVS.textContent = "Item Description: " + nameMain;
             descVS.textContent = nameMain;
             descVS.setAttribute('id', "descVS");
             descVS.setAttribute('class', "descVendor");
             descVS.setAttribute('title', "Click Here To Copy The Name of The Item");
             const descMS = document.createElement('p');
-            // descMS.textContent = "Item Description: " + nameMain;
             descMS.textContent = nameMain;
             descMS.setAttribute('id', "descMS");
             descMS.setAttribute('class', "descVendor");
             descMS.setAttribute('title', "Click Here To Copy The Name of The Item");
             const descCOV = document.createElement('p');
-            // descCOV.textContent = "Item Description: " + nameMain;
             descCOV.textContent = nameMain;
             descCOV.setAttribute('id', "descCOV");
             descCOV.setAttribute('class', "descVendor");
             descCOV.setAttribute('title', "Click Here To Copy The Name of The Item");
             const descFORS = document.createElement('p');
-            // descFORS.textContent = "Item Description: " + nameMain;
             descFORS.textContent = nameMain;
             descFORS.setAttribute('id', "descFORS");
             descFORS.setAttribute('class', "descVendor");
@@ -3473,8 +3336,6 @@ function onClick (li) {
             itemNumberFORS.setAttribute('id', "itemNumberFORS");
             itemNumberFORS.setAttribute('class', "itemNumberVendor");
             itemNumberFORS.setAttribute('title', "Click Here To Copy The Item Number");
-            const itemNumberProp = getProperty(target.textContent, 'itemNumber');
-            const vendorProp = getProperty(target.textContent, 'vendor');
             const nameProp = getProperty(target.textContent, 'name');
             const QROI = document.getElementById('QROI');
             const QRMCK = document.getElementById('QRMCK');
@@ -3518,9 +3379,7 @@ function onClick (li) {
             removeButtonFORS.setAttribute('class', 'removeButtonVendor');
             function copyItemNumber (itemNumberMCK, itemNumber1) {
                 itemNumberMCK.addEventListener('click', (e) => {
-                    // const target1 = e.target;
                     navigator.clipboard.writeText(itemNumber1);
-                    // console.log(itemNumber1);
                 })
             }
             copyItemNumber(itemNumberMCK, itemNumber1);
@@ -3549,79 +3408,53 @@ function onClick (li) {
             removeButtonFunc (removeButtonFORS, arr7, bigFORSImage, ', ');
             addedItems.push(li.textContent);
             const collapseButtonMCK = document.createElement('button');
-            // collapseButtonMCK.textContent = '−';
             collapseButtonMCK.setAttribute('id', 'collapseButtonMCK');
             collapseButtonMCK.setAttribute('class', 'collapseButtonVendor');
             const collapseButtonOI = document.createElement('button');
-            // collapseButtonOI.textContent = '−';
             collapseButtonOI.setAttribute('id', 'collapseButtonOI');
             collapseButtonOI.setAttribute('class', 'collapseButtonVendor');
             const collapseButtonGNFR = document.createElement('button');
-            // collapseButtonGNFR.textContent = '−';
             collapseButtonGNFR.setAttribute('id', 'collapseButtonGNFR');
             collapseButtonGNFR.setAttribute('class', 'collapseButtonVendor');
             const collapseButtonSOC = document.createElement('button');
-            // collapseButtonSOC.textContent = '−';
             collapseButtonSOC.setAttribute('id', 'collapseButtonSOC');
             collapseButtonSOC.setAttribute('class', 'collapseButtonVendor');
             const collapseButtonVS = document.createElement('button');
-            // collapseButtonVS.textContent = '−';
             collapseButtonVS.setAttribute('id', 'collapseButtonVS');
             collapseButtonVS.setAttribute('class', 'collapseButtonVendor');
             const collapseButtonMS = document.createElement('button');
-            // collapseButtonMS.textContent = '−';
             collapseButtonMS.setAttribute('id', 'collapseButtonMS');
             collapseButtonMS.setAttribute('class', 'collapseButtonVendor');
             const collapseButtonCOV = document.createElement('button');
-            // collapseButtonCOV.textContent = '−';
             collapseButtonCOV.setAttribute('id', 'collapseButtonCOV');
             collapseButtonCOV.setAttribute('class', 'collapseButtonVendor');
             const collapseButtonFORS = document.createElement('button');
-            // collapseButtonFORS.textContent = '−';
             collapseButtonFORS.setAttribute('id', 'collapseButtonFORS');
             collapseButtonFORS.setAttribute('class', 'collapseButtonVendor');
             const liMCK = document.createElement('li');
             liMCK.setAttribute('id', 'liMCK');
             liMCK.setAttribute('class', 'liVendor');
-            // $(liMCK).children().addClass('mck');
             const liOI = document.createElement('li');
-            // liOI.setAttribute("class", "oi");
             liOI.setAttribute("id", "liOI");
             liOI.setAttribute('class', 'liVendor');
             const liGNFR = document.createElement('li');
-            // liGNFR.setAttribute("class", "GNFR");
             liGNFR.setAttribute("id", "liGNFR");
             liGNFR.setAttribute('class', 'liVendor');
             const liSOC = document.createElement('li');
-            // liSOC.setAttribute("class", "SOC");
             liSOC.setAttribute('class', 'liVendor');
             liSOC.setAttribute("id", "liSOC");
             const liVS = document.createElement('li');
-            // liVS.setAttribute("class", "VS");
             liVS.setAttribute('class', 'liVendor');
             liVS.setAttribute("id", "liVS");
             const liMS = document.createElement('li');
-            // liMS.setAttribute("class", "MS");
             liMS.setAttribute('class', 'liVendor');
             liMS.setAttribute("id", "liMS");
             const liCOV = document.createElement('li');
-            // liCOV.setAttribute("class", "COV");
             liCOV.setAttribute('class', 'liVendor');
             liCOV.setAttribute("id", "liCOV");
             const liFORS = document.createElement('li');
-            // liFORS.setAttribute("class", "FORS");
             liFORS.setAttribute('class', 'liVendor');
             liFORS.setAttribute("id", "liFORS");
-            // const xx = new XMLHttpRequest();
-            // console.log(xx);
-            // xx.onload = function () {
-            //     // document.body.innerHTML = this.responseText;
-            //     // console.log(this.responseText);
-            //     list.append(this.responseText);
-            // }
-            // xx.open('GET', 'arya.txt', true);
-            // xx.send();
-            // console.log(xx);
             liMCK.append(removeButtonMCK, collapseButtonMCK, descMCK, imageMCK ,itemNumberMCK, smallLinkMCK);
             liOI.append(removeButtonOI, collapseButtonOI, descOI, imageOI, itemNumberOI, smallLinkOI);
             liGNFR.append(removeButtonGNFR, collapseButtonGNFR, descGNFR, imageGNFR, itemNumberGNFR, smallLinkGNFR);
@@ -3633,14 +3466,7 @@ function onClick (li) {
             function collapseFunc (collapseButtonMCK) {
                 $(collapseButtonMCK).on('click', function (e) { 
                     e.preventDefault();
-                    const $target = e.target;
                     $(this).parent().toggleClass('collapseParent');
-                    // if ($($target).text() == '+') {
-                    //     $($target).text('−');
-                    // }
-                    // else  {
-                    //     $($target).text('+');
-                    // }
                 });
             }
             collapseFunc (collapseButtonMCK);
@@ -3675,41 +3501,8 @@ function onClick (li) {
             bigCollapseShowFunc (bigCollapseShowButtonMS);
             bigCollapseShowFunc (bigCollapseShowButtonCOV);
             bigCollapseShowFunc (bigCollapseShowButtonFORS);
-            // function orderNumberFunc (orderNumberMCK) {
-            //     orderNumberMCK.textContent = liMCK1.length ++1;
-            // }
-            // bigClearFunc (bigClearButtonMCK, arr);
-            // bigClearFunc (bigClearButtonOI);
-            // bigClearFunc (bigClearButtonGNFR);
-            // bigClearFunc (bigClearButtonSOC);
-            // bigClearFunc (bigClearButtonVS);
-            // bigClearFunc (bigClearButtonMS);
-            // bigClearFunc (bigClearButtonCOV);
-            // bigClearFunc (bigClearButtonFORS);
-            const testStr = 'I have a cat and i have a dog';
-            const rep = /I have /i;
-            rep.exec(testStr);
-            const ram = rep.exec(testStr);
-            // while (ram !== null) {
-            //     console.log(ram);
-            // }
-            // console.log(ram)
-            // console.log(rep.exec(testStr))
-            // console.log(rep);
-            $("a").click(function(evt){
-                var link = $(this).attr("href");
-                setTimeout(function() {
-                    window.open.href = link;
-                }, 5000);
-            });
+
             if (vials[index].McKesson === true && vials[index].OrderInsite === false && liMCK1.length < 10) {
-                // for (let t = 4; t < MckessonItems.children.length; t++) {
-                //     const element3 = MckessonItems.children[t];
-                //     const right = element3.children[1].textContent;
-                //     if (target.textContent == right) {
-                //         return
-                //     }
-                // }
                 for (let t = 0; t < liMCK1.length; t++) {
                     const liMCK1Loop = liMCK1[t];
                     const right = liMCK1Loop.querySelector('#descMCK').textContent;
@@ -3733,7 +3526,6 @@ function onClick (li) {
                 bigMCKImage.makeCode(arr.join(' OR '));
                 printBarcode(imageMCK);
                 orderNumberMCK.textContent = liMCK1.length +=1;
-                // printBarcode(QRMCK);
                 if (target.parentNode == list || target.parentNode == list2) {
                     $(target).hide();
                 }
@@ -3752,21 +3544,8 @@ function onClick (li) {
                         }
                     }
                 }
-                // $(target).hide();
-                // addedItems.push(li.textContent);
-                // testing.append(bigLinkMCK);
-                // box.value = '';
-                // itemsMCK.push(...vials.splice(index,1));
-                // itemsMCK.name.setAttribute('class', 'itemsMCK');
             } 
             if (vials[index].OrderInsite === true && vials[index].McKesson === false && liOI1.length < 10) {
-                // for (let t = 4; t < OrderInsiteItems.children.length; t++) {
-                //     const element3 = OrderInsiteItems.children[t];
-                //     const right = element3.children[1].textContent;
-                //     if (target.textContent == right) {
-                //         return
-                //     }
-                // }
                 for (let t = 0; t < liOI1.length; t++) {
                     const liOI1Loop = liOI1[t];
                     const right = liOI1Loop.querySelector('#descOI').textContent;
@@ -3785,7 +3564,6 @@ function onClick (li) {
                 $('#OIQR').show();
                 QROI.append(document.getElementById('OIQR'));
                 copyItemNumber(bigLinkOI, (arr1.join(', ')));
-                // bigLinkOI.setAttribute('href', "https://acloud.orderinsite.com/rs/logon/walmart");
                 bigOIImage.makeCode(arr1.join(', '));
                 printBarcode(imageOI);
                 orderNumberOI.textContent = liOI1.length +=1;
@@ -3795,15 +3573,6 @@ function onClick (li) {
                 if (target.parentNode.parentNode == listNav) {
                     $(target).css('text-decoration', 'line-through');
                 }
-                // for (let w = 0; w < listNav.children.length; w++) {
-                //     const element3 = listNav.children[w];
-                //     for (let q = 0; q < element3.children.length; q++) {
-                //         const element4 = element3.children[q];
-                //         if (nameProp == element4.textContent) {
-                //             $(element4).css('text-decoration', 'line-through');
-                //         }
-                //     }
-                // }
                 for (let w = 0; w < listUl.length; w++) {
                     const listUlLoop = listUl[w];
                     const listUlLoopChildren = listUlLoop.querySelectorAll('li');
@@ -3815,9 +3584,6 @@ function onClick (li) {
                         }
                     }
                 }
-                // $(target).hide();
-                // box.value = '';
-                // itemsOI.push(...vials.splice(index,1));
             }
             if (vials[index].McKesson === true && vials[index].OrderInsite === true) {
                 if (liMCK1.length < 10) {
@@ -3842,7 +3608,6 @@ function onClick (li) {
                     bigMCKImage.makeCode(arr.join(' OR '));
                     printBarcode(imageMCK);
                     orderNumberMCK.textContent = liMCK1.length +=1;
-                    // orderNumberFunc (orderNumberMCK);
                     if (target.parentNode == list || target.parentNode == list2) {
                         $(target).hide();
                     }
@@ -3891,19 +3656,9 @@ function onClick (li) {
                 }
             }
             if (vials[index].GNFR === true && vials[index].OrderInsite === false && vials[index].McKesson === false && liGNFR1.length < 10) {
-                // for (let t = 6; t < GNFRItems.children.length; t++) {
-                //     const element3 = GNFRItems.children[t];
-                //     const right = element3.children[2].textContent;
-                //     console.log(right);
-                //     if (target.textContent == right) {
-                //         return
-                //     }
-                // }
                 for (let t = 0; t < liGNFR1.length; t++) {
                     const liGNFR1Loop = liGNFR1[t];
                     const right = liGNFR1Loop.querySelector('#descGNFR').textContent;
-                    // console.log(liGNFR1Loop);
-                    // console.log(right);
                     if (target.textContent == right) {
                         return
                     }
@@ -3918,8 +3673,6 @@ function onClick (li) {
                 $('#GNFRQR').show();
                 QRGNFR.append(document.getElementById('GNFRQR'));
                 copyItemNumber(bigLinkGNFR, (arr2.join(', ')));
-                // bigLinkGNFR.setAttribute('href',
-                // "https://ppa01.wal-mart.com/irj/portal");
                 bigGNFRImage.makeCode(arr2.join(' OR '));
                 printBarcode(imageGNFR);
                 console.log(liGNFR1);
@@ -3935,21 +3688,11 @@ function onClick (li) {
                     const listUlLoopChildren = listUlLoop.querySelectorAll('li');
                     for (let q = 0; q < listUlLoopChildren.length; q++) {
                         const navLi = listUlLoopChildren[q];
-                        // console.log(navLi)
                         if (nameProp == navLi.textContent) {
                             $(navLi).css('text-decoration', 'line-through');
                         }
                     }
                 }
-                // for (let w = 0; w < listNav.children.length; w++) {
-                //     const element3 = listNav.children[w];
-                //     for (let q = 0; q < element3.children.length; q++) {
-                //         const element4 = element3.children[q];
-                //         if (nameProp == element4.textContent) {
-                //             $(element4).css('text-decoration', 'line-through');
-                //         }
-                //     }
-                // }
             }
             if (vials[index].signOrderCatalog === true && liSOC1.length < 10) {
                 for (let t = 0; t < liSOC1.length; t++) {
@@ -3971,8 +3714,6 @@ function onClick (li) {
                 $('#SOCQR').show();
                 QRSOC.append(document.getElementById('SOCQR'));
                 copyItemNumber(bigLinkSOC, (arr3.join(', ')));
-                // bigLinkSOC.setAttribute('href',
-                // "https://ecom.schwarz.com/Default.aspx?page=ProductCatalog");
                 bigSOCImage.makeCode(arr3.join(', '));
                 printBarcode(imageSOC);
                 orderNumberSOC.textContent = liSOC1.length +=1;
@@ -3987,7 +3728,6 @@ function onClick (li) {
                     const listUlLoopChildren = listUlLoop.querySelectorAll('li');
                     for (let q = 0; q < listUlLoopChildren.length; q++) {
                         const navLi = listUlLoopChildren[q];
-                        // console.log(navLi)
                         if (nameProp == navLi.textContent) {
                             $(navLi).css('text-decoration', 'line-through');
                         }
@@ -3998,8 +3738,6 @@ function onClick (li) {
                 for (let t = 0; t < liVS1.length; t++) {
                     const liVS1Loop = liVS1[t];
                     const right = liVS1Loop.querySelector('#descVS').textContent;
-                    // console.log(liVS1Loop);
-                    // console.log(right);
                     if (target.textContent == right) {
                         return
                     }
@@ -4014,11 +3752,8 @@ function onClick (li) {
                 $('#VSQR').show();
                 QRVS.append(document.getElementById('VSQR'));
                 copyItemNumber(bigLinkVS, (arr4.join(', ')));
-                // bigLinkVS.setAttribute('href',
-                // "https://unify.vaxserve.com/index.cfm?fa=portal.selectStore");
                 bigVSImage.makeCode(arr4.join(', '));
                 printBarcode(imageVS);
-                // console.log(liVS1);
                 orderNumberVS.textContent = liVS1.length +=1;
                 if (target.parentNode == list || target.parentNode == list2) {
                     $(target).hide();
@@ -4031,7 +3766,6 @@ function onClick (li) {
                     const listUlLoopChildren = listUlLoop.querySelectorAll('li');
                     for (let q = 0; q < listUlLoopChildren.length; q++) {
                         const navLi = listUlLoopChildren[q];
-                        // console.log(navLi)
                         if (nameProp == navLi.textContent) {
                             $(navLi).css('text-decoration', 'line-through');
                         }
@@ -4058,8 +3792,6 @@ function onClick (li) {
                 $('#MSQR').show();
                 QRMS.append(document.getElementById('MSQR'));
                 copyItemNumber(bigLinkMS, (arr5.join(', ')));
-                // bigLinkMS.setAttribute('href',
-                // "https://mms.mckesson.com/portal/login");
                 bigMSImage.makeCode(arr5.join(', '));
                 printBarcode(imageMS);
                 orderNumberMS.textContent = liMS1.length +=1;
@@ -4074,7 +3806,6 @@ function onClick (li) {
                     const listUlLoopChildren = listUlLoop.querySelectorAll('li');
                     for (let q = 0; q < listUlLoopChildren.length; q++) {
                         const navLi = listUlLoopChildren[q];
-                        // console.log(navLi)
                         if (nameProp == navLi.textContent) {
                             $(navLi).css('text-decoration', 'line-through');
                         }
@@ -4101,8 +3832,6 @@ function onClick (li) {
                 $('#COVQR').show();
                 QRCOV.append(document.getElementById('COVQR'));
                 copyItemNumber(bigLinkCOV, (arr6.join(', ')));
-                // bigLinkCOV.setAttribute('href',
-                // "https://www.covap.com/");
                 bigCOVImage.makeCode(arr6.join(', '));
                 printBarcode(imageCOV);
                 orderNumberCOV.textContent = liCOV1.length +=1;
@@ -4117,7 +3846,6 @@ function onClick (li) {
                     const listUlLoopChildren = listUlLoop.querySelectorAll('li');
                     for (let q = 0; q < listUlLoopChildren.length; q++) {
                         const navLi = listUlLoopChildren[q];
-                        // console.log(navLi)
                         if (nameProp == navLi.textContent) {
                             $(navLi).css('text-decoration', 'line-through');
                         }
@@ -4144,8 +3872,6 @@ function onClick (li) {
                 $('#FORSQR').show();
                 QRFORS.append(document.getElementById('FORSQR'));
                 copyItemNumber(bigLinkFORS, (arr7.join(', ')));
-                // bigLinkFORS.setAttribute('href',
-                // "https://psz01.wal-mart.com/webdynpro/dispatcher/sap.com/tc~mdm~srmcat~uisearch/ProcurementCatalog7Ehp1#");
                 bigFORSImage.makeCode(arr7.join(', '));
                 printBarcode(imageFORS);
                 orderNumberFORS.textContent = liFORS1.length +=1;
@@ -4160,7 +3886,6 @@ function onClick (li) {
                     const listUlLoopChildren = listUlLoop.querySelectorAll('li');
                     for (let q = 0; q < listUlLoopChildren.length; q++) {
                         const navLi = listUlLoopChildren[q];
-                        // console.log(navLi)
                         if (nameProp == navLi.textContent) {
                             $(navLi).css('text-decoration', 'line-through');
                         }
@@ -4188,12 +3913,6 @@ printBarcode(QRVS);
 printBarcode(QRMS);
 printBarcode(QRCOV);
 printBarcode(QRFORS);
-// this function shrinks an element.
-function shrink (barcode) {
-    barcode.addEventListener('click', (event) => {
-    $(event.target).width(100);
-})};
-
 // this is the function that is executed when the user clicks on the search button.
 function buttonClick () {
     for (let i = 0; i < list.children.length; i++) {
@@ -4298,15 +4017,8 @@ $(function() {
         if (e.target !== this) {
             return;
         }
-        // console.log(this);
         $(this).children().toggle(250);
     })
-    // $('#listNav ul li').on('click', function (e) {
-    //     if (e.target !== this) {
-    //         return
-    //     };
-    //     $(this).css('text-decoration', 'line-through');
-    // })
 })
 function getRelevancy(value, searchTerm) {
     if (value === searchTerm) {
@@ -4323,12 +4035,8 @@ function getRelevancy(value, searchTerm) {
 search.addEventListener('input', (event) => {
     let value = event.target.value;
     if (value && value.trim().length > 0) {
-        // value = value.trim().replace(/\s/g, "").toLowerCase();
-        // const res = '('
         value = value.replace(/\s/g, '.*'); 
         const re = new RegExp('\.*'+ value +'\.*', 'gi');
-        // const re = new RegExp(res, 'gi');
-        // console.log(re);
         setList(vials.filter(i => {
             for (let j = 0; j < i.keywords.length; j++) {
                 const keywords = i.keywords;
@@ -4361,28 +4069,11 @@ search.addEventListener('input', (event) => {
                     // console.log(Array.from(name));
                     return result;
                 }
-                // }).sort((personA, personB) => {
-                    //     return getRelevancy(personB.name, value) - getRelevancy(personA.name, value);   
                 }
                 if (i.name.replace(/\s/g, '').match(re)) {
                     const name = i.name;
                     const name1 = name.replace(/\s/g, '');
                     const result1 = name1.match(re);
-                    // console.log(result1);
-                    // console.log(name);
-                    // console.log(i);
-                    // console.log(re);
-                    // const res1 = ( name1 + '\.*(?=' + value + '\)');
-                    // console.log(res1);
-                    // const res = new RegExp (res1, 'gi');
-                    // const res = new RegExp ('\\' + name1 + '\\.*(?=' + value +'\)', 'gi');
-                    // console.log(res);
-                    // if (name1.match(res)) {
-                    //     console.log(name1);
-                    //     const result3 = name1.match(res);
-                    //     // console.log(result3);
-                    //     return result3;
-                    // }
                     return result1;
                     
                 }
@@ -4391,20 +4082,11 @@ search.addEventListener('input', (event) => {
                     // console.log(result2)
                     return result2;
                 }
-                // else {
-                //     setNoResults();
-                //     // clearList();
-                // }
-                // if (i.name.match(re) || i.name.replace(/\s/g, "").match(re)) {
-                //     const result = i.name.match(re) || i.name.replace(/\s/g, "").match(re);
-                //     return result;
-                // }
     }).sort((a, b) => {
         return getRelevancy(b.name, value) - getRelevancy(a.name, value);
     }));
 
     } else {
-        // setNoResults();
         clearList();
     }
 });
