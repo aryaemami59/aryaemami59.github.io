@@ -13,6 +13,7 @@
         background-color: rgba(0, 0, 0, 0.781);
         font-family: 'Montserrat', sans-serif;
         font-weight: 500;
+        line-height: 1.2;
     }
         #displayAllItems {
             position: relative;
@@ -293,6 +294,8 @@
                         max-height: 66px;
                         box-sizing: border-box;
                         padding: 2px;
+                        margin-block-end: 1em;
+                        margin-block-start: 1em;
                     }
                     .descVendor:hover {
                         cursor: pointer;
@@ -325,6 +328,8 @@
                         -webkit-transition: ease-in-out 0.1s;
                         transition: ease-in-out 0.1s;
                         max-height: 33px;
+                        margin-block-start: 1em;
+                        margin-block-end: 1em;
                     }
                     .itemNumberVendor:hover {
                         cursor: pointer;
@@ -595,6 +600,7 @@
         transition: max-height 0.1s ease-in-out;
         overflow: hidden;
         min-height: 10px;
+        box-sizing: content-box;
     }
     .liVendor:last-child {
         margin-bottom: 0;
@@ -802,6 +808,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        font-weight: 700;
     }
     
 .vendorItems {
@@ -824,6 +831,7 @@
         background-color: rgba(0, 0, 0, 0.781);
         font-family: 'Montserrat', sans-serif;
         font-weight: 500;
+        line-height: 1.2;
     }
         #displayAllItems {
             position: relative;
@@ -1092,6 +1100,8 @@
                         max-height: 200px;
                         box-sizing: border-box;
                         padding: 5px;
+                        margin-block-end: 1em;
+                        margin-block-start: 1em;
                     }
                     .descVendor:hover {
                         cursor: pointer;
@@ -1124,6 +1134,8 @@
                         -webkit-transition: ease-in-out 0.1s;
                         transition: ease-in-out 0.1s;
                         max-height: 100px;
+                        margin-block-start: 1em;
+                        margin-block-end: 1em;
                     }
                     .itemNumberVendor:hover {
                         cursor: pointer;
@@ -1408,6 +1420,7 @@
         transition: max-height 0.1s ease-in-out;
         overflow: hidden;
         min-height: 30px;
+        box-sizing: content-box;
     }
     .liVendor:last-child {
         margin-bottom: 0;
@@ -1617,6 +1630,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        font-weight: 700;
     }
     .vendorItems {
         min-height: 70px;
