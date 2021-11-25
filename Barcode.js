@@ -3042,6 +3042,7 @@ function removeButtonFunc (removeButtonMCK, array, image, char) {
             const element = array[i];
             if (numberItem == element) {
                 const index = array.indexOf(element);
+                array.splice(index, 1);
                 if (index > -1) {
                     if (array.length > 0) {
                         $(QR).show();
