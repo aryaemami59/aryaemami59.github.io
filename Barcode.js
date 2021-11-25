@@ -3908,6 +3908,7 @@ function buttonClick () {
         items = removeDuplicates (items);
         const listNew = document.createElement('li');
         listNew.setAttribute('id', "listNew");
+        listNew.setAttribute('tabindex', "3");
         listNew.append(Object.values(items)[i]);
         list2.appendChild(listNew);
         searchResults.appendChild(list2);
