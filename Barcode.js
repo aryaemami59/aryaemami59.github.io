@@ -1659,7 +1659,7 @@ const vials = [
   {
     name: "Nitrile Gloves Small",
     itemNumber: "100662786",
-    keywords: ["gnfr", 'small gloves'],
+    keywords: ["gnfr", "small gloves"],
     McKesson: false,
     OrderInsite: false,
     GNFR: true,
@@ -1667,7 +1667,7 @@ const vials = [
   {
     name: "Nitrile Gloves Medium",
     itemNumber: "100662787",
-    keywords: ["gnfr", 'medium gloves'],
+    keywords: ["gnfr", "medium gloves"],
     McKesson: false,
     OrderInsite: false,
     GNFR: true,
@@ -1675,7 +1675,7 @@ const vials = [
   {
     name: "Nitrile Gloves Large",
     itemNumber: "100662788",
-    keywords: ["gnfr", 'large gloves'],
+    keywords: ["gnfr", "large gloves"],
     McKesson: false,
     OrderInsite: false,
     GNFR: true,
@@ -1683,7 +1683,7 @@ const vials = [
   {
     name: "Nitrile Gloves X-Large",
     itemNumber: "100662789",
-    keywords: ["gnfr", 'x-large gloves'],
+    keywords: ["gnfr", "x-large gloves"],
     McKesson: false,
     OrderInsite: false,
     GNFR: true,
@@ -4712,8 +4712,8 @@ function getRelevancy(value, searchTerm) {
 // these are our event listeners:
 search.addEventListener("input", (event) => {
   let value = event.target.value;
-  if (value && value.trim().length > 0) {
-    value = value.replace(/\s/g, ".*");
+  if (value && value.trim().toLowerCase().length > 0) {
+    value = value.replace(/\s/g, ".*").toLowerCase();
     const re = new RegExp(".*" + value + ".*", "gi");
     setList(
       vials
