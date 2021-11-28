@@ -1659,7 +1659,7 @@ const vials = [
   {
     name: "Nitrile Gloves Small",
     itemNumber: "100662786",
-    keywords: ["gnfr"],
+    keywords: ["gnfr", 'small gloves'],
     McKesson: false,
     OrderInsite: false,
     GNFR: true,
@@ -1667,7 +1667,7 @@ const vials = [
   {
     name: "Nitrile Gloves Medium",
     itemNumber: "100662787",
-    keywords: ["gnfr"],
+    keywords: ["gnfr", 'medium gloves'],
     McKesson: false,
     OrderInsite: false,
     GNFR: true,
@@ -1675,7 +1675,7 @@ const vials = [
   {
     name: "Nitrile Gloves Large",
     itemNumber: "100662788",
-    keywords: ["gnfr"],
+    keywords: ["gnfr", 'large gloves'],
     McKesson: false,
     OrderInsite: false,
     GNFR: true,
@@ -1683,7 +1683,7 @@ const vials = [
   {
     name: "Nitrile Gloves X-Large",
     itemNumber: "100662789",
-    keywords: ["gnfr"],
+    keywords: ["gnfr", 'x-large gloves'],
     McKesson: false,
     OrderInsite: false,
     GNFR: true,
