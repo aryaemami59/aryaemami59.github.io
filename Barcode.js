@@ -4018,6 +4018,9 @@ function getRelevancy(value, searchTerm) {
     else if (value.includes(searchTerm)) {
         return 0;
     }
+    else {
+        return -1
+    }
 }
 // these are our event listeners:
 search.addEventListener('input', (event) => {
