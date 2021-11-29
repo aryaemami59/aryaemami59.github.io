@@ -4722,7 +4722,6 @@ search.addEventListener("input", (event) => {
         .filter((i) => {
           if (i.name.toLowerCase().trim().includes(value)) {
             const result = i.name;
-            console.log(result)
             return result;
           }
           else if (i.name.match(re)) {
@@ -4739,7 +4738,6 @@ search.addEventListener("input", (event) => {
             const element = i.keywords[j];
             if (element.match(re)) {
               const result = element.match(re);
-              console.log(result);
               return result;
             }
           }
