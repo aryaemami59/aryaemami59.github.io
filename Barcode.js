@@ -3191,6 +3191,14 @@ const bigClearButtonFORS = document.createElement("button");
 bigClearButtonFORS.textContent = "Remove All Items";
 bigClearButtonFORS.setAttribute("id", "bigClearButtonFORS");
 bigClearButtonFORS.setAttribute("class", "bigClearButtonVendor");
+const alert = document.getElementById("alert");
+const orderNumberMCK = document.getElementById("orderNumberMCK");
+const orderNumberOI = document.getElementById("orderNumberOI");
+const orderNumberGNFR = document.getElementById("orderNumberGNFR");
+const orderNumberSOC = document.getElementById("orderNumberSOC");
+const orderNumberVS = document.getElementById("orderNumberVS");
+const orderNumberMS = document.getElementById("orderNumberMS");
+const orderNumberCOV = document.getElementById("orderNumberCOV");
 
 function bigCollapseHideFunc(bigCollapseHideButtonGNFR) {
   $(bigCollapseHideButtonGNFR).on("click", function (e) {
@@ -3997,7 +4005,7 @@ function onClick(li) {
       removeButtonFunc(removeButtonMS, arr5, bigMSImage, ", ");
       removeButtonFunc(removeButtonCOV, arr6, bigCOVImage, ", ");
       removeButtonFunc(removeButtonFORS, arr7, bigFORSImage, ", ");
-      addedItems.push(li.textContent);
+      // addedItems.push(li.textContent);
       const collapseButtonMCK = document.createElement("button");
       collapseButtonMCK.setAttribute("id", "collapseButtonMCK");
       collapseButtonMCK.setAttribute("class", "collapseButtonVendor");
@@ -4150,112 +4158,24 @@ function onClick(li) {
       bigCollapseShowFunc(bigCollapseShowButtonMS);
       bigCollapseShowFunc(bigCollapseShowButtonCOV);
       bigCollapseShowFunc(bigCollapseShowButtonFORS);
-
       if (
         vials[index].McKesson === true &&
-        vials[index].OrderInsite === false &&
-        liMCK1.length < 10
+        vials[index].OrderInsite === false
       ) {
-        for (let t = 0; t < liMCK1.length; t++) {
-          const liMCK1Loop = liMCK1[t];
-          const right = liMCK1Loop.querySelector("#descMCK").textContent;
-          console.log(right);
-          if (target.textContent == right) {
-            return;
-          }
+        if (liMCK1.length == 10) {
+          $(alert).show().delay(3000).fadeOut("slow");
         }
-        arr.push(itemNumber1);
-        bigLinkMCK.text = "McKesson Website";
-        MckessonItems.append(liMCK);
-        MckessonItems.insertBefore(bigLinkMCK, testingMCK);
-        MckessonItems.insertBefore(bigCollapseShowButtonMCK, testingMCK);
-        MckessonItems.insertBefore(bigCollapseHideButtonMCK, testingMCK);
-        MckessonItems.insertBefore(bigClearButtonMCK, testingMCK);
-        $("#MCKQR").show();
-        QRMCK.append(document.getElementById("MCKQR"));
-        copyItemNumber(bigLinkMCK, arr.join(" OR "));
-        bigLinkMCK.setAttribute(
-          "href",
-          "https://connect.mckesson.com/portal/site/smo/menuitem.87a0666be7398a3ece3ee6105740d0a0/?query=" +
-            arr.join("%20or%20")
-        );
-        bigMCKImage.makeCode(arr.join(" OR "));
-        printBarcode(imageMCK);
-        orderNumberMCK.textContent = liMCK1.length += 1;
-        if (target.parentNode == list || target.parentNode == list2) {
-          $(target).hide();
-        }
-        if (target.parentNode.parentNode == listNav) {
-          $(target).css("text-decoration", "line-through");
-        }
-
-        for (let w = 0; w < listUl.length; w++) {
-          const listUlLoop = listUl[w];
-          const listUlLoopChildren = listUlLoop.querySelectorAll("li");
-          for (let q = 0; q < listUlLoopChildren.length; q++) {
-            const navLi = listUlLoopChildren[q];
-            console.log(navLi);
-            if (nameProp == navLi.textContent) {
-              $(navLi).css("text-decoration", "line-through");
-            }
-          }
-        }
-      }
-      if (
-        vials[index].OrderInsite === true &&
-        vials[index].McKesson === false &&
-        liOI1.length < 10
-      ) {
-        for (let t = 0; t < liOI1.length; t++) {
-          const liOI1Loop = liOI1[t];
-          const right = liOI1Loop.querySelector("#descOI").textContent;
-          console.log(right);
-          if (target.textContent == right) {
-            return;
-          }
-        }
-        arr1.push(itemNumber1);
-        bigLinkOI.text = "OrderInsite";
-        OrderInsiteItems.append(liOI);
-        OrderInsiteItems.insertBefore(bigLinkOI, testingOI);
-        OrderInsiteItems.insertBefore(bigCollapseShowButtonOI, testingOI);
-        OrderInsiteItems.insertBefore(bigCollapseHideButtonOI, testingOI);
-        OrderInsiteItems.insertBefore(bigClearButtonOI, testingOI);
-        $("#OIQR").show();
-        QROI.append(document.getElementById("OIQR"));
-        copyItemNumber(bigLinkOI, arr1.join(", "));
-        bigOIImage.makeCode(arr1.join(", "));
-        printBarcode(imageOI);
-        orderNumberOI.textContent = liOI1.length += 1;
-        if (target.parentNode == list || target.parentNode == list2) {
-          $(target).hide();
-        }
-        if (target.parentNode.parentNode == listNav) {
-          $(target).css("text-decoration", "line-through");
-        }
-        for (let w = 0; w < listUl.length; w++) {
-          const listUlLoop = listUl[w];
-          const listUlLoopChildren = listUlLoop.querySelectorAll("li");
-          for (let q = 0; q < listUlLoopChildren.length; q++) {
-            const navLi = listUlLoopChildren[q];
-            console.log(navLi);
-            if (nameProp == navLi.textContent) {
-              $(navLi).css("text-decoration", "line-through");
-            }
-          }
-        }
-      }
-      if (vials[index].McKesson === true && vials[index].OrderInsite === true) {
         if (liMCK1.length < 10) {
           for (let t = 0; t < liMCK1.length; t++) {
             const liMCK1Loop = liMCK1[t];
             const right = liMCK1Loop.querySelector("#descMCK").textContent;
+            console.log(right);
             if (target.textContent == right) {
               return;
             }
           }
-          const itemNumber1MCK = vials[index].itemNumber;
-          arr.push(itemNumber1MCK);
+          addedItems.push(li.textContent);
+          arr.push(itemNumber1);
           bigLinkMCK.text = "McKesson Website";
           MckessonItems.append(liMCK);
           MckessonItems.insertBefore(bigLinkMCK, testingMCK);
@@ -4265,9 +4185,77 @@ function onClick(li) {
           $("#MCKQR").show();
           QRMCK.append(document.getElementById("MCKQR"));
           copyItemNumber(bigLinkMCK, arr.join(" OR "));
+          bigLinkMCK.setAttribute(
+            "href",
+            "https://connect.mckesson.com/portal/site/smo/menuitem.87a0666be7398a3ece3ee6105740d0a0/?query=" +
+              arr.join("%20or%20")
+          );
           bigMCKImage.makeCode(arr.join(" OR "));
           printBarcode(imageMCK);
           orderNumberMCK.textContent = liMCK1.length += 1;
+          if (orderNumberMCK.textContent == 10) {
+            const li1 = Array.from(list.querySelectorAll("li[mck*=true]"));
+            for (let j = 0; j < li1.length; j++) {
+              const elem = li1[j];
+              $(elem).addClass("red");
+            }
+          }
+          if (target.parentNode == list || target.parentNode == list2) {
+            $(target).hide();
+          }
+          if (target.parentNode.parentNode == listNav) {
+            $(target).css("text-decoration", "line-through");
+          }
+          for (let w = 0; w < listUl.length; w++) {
+            const listUlLoop = listUl[w];
+            const listUlLoopChildren = listUlLoop.querySelectorAll("li");
+            for (let q = 0; q < listUlLoopChildren.length; q++) {
+              const navLi = listUlLoopChildren[q];
+              console.log(navLi);
+              if (nameProp == navLi.textContent) {
+                $(navLi).css("text-decoration", "line-through");
+              }
+            }
+          }
+        }
+      }
+      if (
+        vials[index].OrderInsite === true &&
+        vials[index].McKesson === false
+      ) {
+        if (liOI1.length == 10) {
+          $(alert).show().delay(3000).fadeOut("slow");
+        }
+        if (liOI1.length < 10) {
+          for (let t = 0; t < liOI1.length; t++) {
+            const liOI1Loop = liOI1[t];
+            const right = liOI1Loop.querySelector("#descOI").textContent;
+            console.log(right);
+            if (target.textContent == right) {
+              return;
+            }
+          }
+          addedItems.push(li.textContent);
+          arr1.push(itemNumber1);
+          bigLinkOI.text = "OrderInsite";
+          OrderInsiteItems.append(liOI);
+          OrderInsiteItems.insertBefore(bigLinkOI, testingOI);
+          OrderInsiteItems.insertBefore(bigCollapseShowButtonOI, testingOI);
+          OrderInsiteItems.insertBefore(bigCollapseHideButtonOI, testingOI);
+          OrderInsiteItems.insertBefore(bigClearButtonOI, testingOI);
+          $("#OIQR").show();
+          QROI.append(document.getElementById("OIQR"));
+          copyItemNumber(bigLinkOI, arr1.join(", "));
+          bigOIImage.makeCode(arr1.join(", "));
+          printBarcode(imageOI);
+          orderNumberOI.textContent = liOI1.length += 1;
+          if (orderNumberOI.textContent == 10) {
+            const li1 = Array.from(list.querySelectorAll("li[oi*=true]"));
+            for (let j = 0; j < li1.length; j++) {
+              const elem = li1[j];
+              $(elem).addClass("red");
+            }
+          }
           if (target.parentNode == list || target.parentNode == list2) {
             $(target).hide();
           }
@@ -4285,6 +4273,59 @@ function onClick(li) {
             }
           }
         }
+      }
+      if (vials[index].McKesson === true && vials[index].OrderInsite === true) {
+        if (liMCK1.length == 10) {
+          $(alert).show().delay(3000).fadeOut("slow");
+        }
+        if (liMCK1.length < 10) {
+          for (let t = 0; t < liMCK1.length; t++) {
+            const liMCK1Loop = liMCK1[t];
+            const right = liMCK1Loop.querySelector("#descMCK").textContent;
+            if (target.textContent == right) {
+              return;
+            }
+          }
+          const itemNumber1MCK = vials[index].itemNumber;
+          addedItems.push(li.textContent);
+          arr.push(itemNumber1MCK);
+          bigLinkMCK.text = "McKesson Website";
+          MckessonItems.append(liMCK);
+          MckessonItems.insertBefore(bigLinkMCK, testingMCK);
+          MckessonItems.insertBefore(bigCollapseShowButtonMCK, testingMCK);
+          MckessonItems.insertBefore(bigCollapseHideButtonMCK, testingMCK);
+          MckessonItems.insertBefore(bigClearButtonMCK, testingMCK);
+          $("#MCKQR").show();
+          QRMCK.append(document.getElementById("MCKQR"));
+          copyItemNumber(bigLinkMCK, arr.join(" OR "));
+          bigMCKImage.makeCode(arr.join(" OR "));
+          printBarcode(imageMCK);
+          orderNumberMCK.textContent = liMCK1.length += 1;
+          if (orderNumberMCK.textContent == 10) {
+            const li1 = Array.from(list.querySelectorAll("li[mck*=true]"));
+            for (let j = 0; j < li1.length; j++) {
+              const elem = li1[j];
+              $(elem).addClass("red");
+            }
+          }
+          if (target.parentNode == list || target.parentNode == list2) {
+            $(target).hide();
+          }
+          if (target.parentNode.parentNode == listNav) {
+            $(target).css("text-decoration", "line-through");
+          }
+          for (let w = 0; w < listUl.length; w++) {
+            const listUlLoop = listUl[w];
+            const listUlLoopChildren = listUlLoop.querySelectorAll("li");
+            for (let q = 0; q < listUlLoopChildren.length; q++) {
+              const navLi = listUlLoopChildren[q];
+              if (nameProp == navLi.textContent) {
+                $(navLi).css("text-decoration", "line-through");
+              }
+            }
+          }
+        }
+
         if (liOI1.length < 10) {
           for (let t = 0; t < liOI1.length; t++) {
             const liOI1Loop = liOI1[t];
@@ -4294,6 +4335,7 @@ function onClick(li) {
             }
           }
           const itemNumber1OI = vials[index].itemNumber;
+          addedItems.push(li.textContent);
           arr1.push(itemNumber1OI);
           bigLinkOI.text = "OrderInsite Website";
           OrderInsiteItems.append(liOI);
@@ -4307,6 +4349,13 @@ function onClick(li) {
           bigOIImage.makeCode(arr1.join(", "));
           printBarcode(imageOI);
           orderNumberOI.textContent = liOI1.length += 1;
+          if (orderNumberOI.textContent == 10) {
+            const li1 = Array.from(list.querySelectorAll("li[oi*=true]"));
+            for (let j = 0; j < li1.length; j++) {
+              const elem = li1[j];
+              $(elem).addClass("red");
+            }
+          }
           if (target.parentNode == list || target.parentNode == list2) {
             $(target).hide();
           }
@@ -4318,247 +4367,321 @@ function onClick(li) {
       if (
         vials[index].GNFR === true &&
         vials[index].OrderInsite === false &&
-        vials[index].McKesson === false &&
-        liGNFR1.length < 10
+        vials[index].McKesson === false
       ) {
-        for (let t = 0; t < liGNFR1.length; t++) {
-          const liGNFR1Loop = liGNFR1[t];
-          const right = liGNFR1Loop.querySelector("#descGNFR").textContent;
-          if (target.textContent == right) {
-            return;
+        if (liGNFR1.length == 10) {
+          $(alert).show().delay(3000).fadeOut("slow");
+        }
+        if (liGNFR1.length < 10) {
+          for (let t = 0; t < liGNFR1.length; t++) {
+            const liGNFR1Loop = liGNFR1[t];
+            const right = liGNFR1Loop.querySelector("#descGNFR").textContent;
+            if (target.textContent == right) {
+              return;
+            }
           }
-        }
-        arr2.push(itemNumber1);
-        bigLinkGNFR.text = "GNFR Website";
-        GNFRItems.append(liGNFR);
-        GNFRItems.insertBefore(bigLinkGNFR, testingGNFR);
-        GNFRItems.insertBefore(bigCollapseShowButtonGNFR, testingGNFR);
-        GNFRItems.insertBefore(bigCollapseHideButtonGNFR, testingGNFR);
-        GNFRItems.insertBefore(bigClearButtonGNFR, testingGNFR);
-        $("#GNFRQR").show();
-        QRGNFR.append(document.getElementById("GNFRQR"));
-        copyItemNumber(bigLinkGNFR, arr2.join(", "));
-        bigGNFRImage.makeCode(arr2.join(" OR "));
-        printBarcode(imageGNFR);
-        console.log(liGNFR1);
-        orderNumberGNFR.textContent = liGNFR1.length += 1;
-        if (target.parentNode == list || target.parentNode == list2) {
-          $(target).hide();
-        }
-        if (target.parentNode.parentNode == listNav) {
-          $(target).css("text-decoration", "line-through");
-        }
-        for (let w = 0; w < listUl.length; w++) {
-          const listUlLoop = listUl[w];
-          const listUlLoopChildren = listUlLoop.querySelectorAll("li");
-          for (let q = 0; q < listUlLoopChildren.length; q++) {
-            const navLi = listUlLoopChildren[q];
-            if (nameProp == navLi.textContent) {
-              $(navLi).css("text-decoration", "line-through");
+          addedItems.push(li.textContent);
+          arr2.push(itemNumber1);
+          bigLinkGNFR.text = "GNFR Website";
+          GNFRItems.append(liGNFR);
+          GNFRItems.insertBefore(bigLinkGNFR, testingGNFR);
+          GNFRItems.insertBefore(bigCollapseShowButtonGNFR, testingGNFR);
+          GNFRItems.insertBefore(bigCollapseHideButtonGNFR, testingGNFR);
+          GNFRItems.insertBefore(bigClearButtonGNFR, testingGNFR);
+          $("#GNFRQR").show();
+          QRGNFR.append(document.getElementById("GNFRQR"));
+          copyItemNumber(bigLinkGNFR, arr2.join(", "));
+          bigGNFRImage.makeCode(arr2.join(" OR "));
+          printBarcode(imageGNFR);
+          orderNumberGNFR.textContent = liGNFR1.length += 1;
+          if (orderNumberGNFR.textContent == 10) {
+            const li1 = Array.from(list.querySelectorAll("li[gnfr*=true]"));
+            for (let j = 0; j < li1.length; j++) {
+              const elem = li1[j];
+              $(elem).addClass("red");
+            }
+          }
+          if (target.parentNode == list || target.parentNode == list2) {
+            $(target).hide();
+          }
+          if (target.parentNode.parentNode == listNav) {
+            $(target).css("text-decoration", "line-through");
+          }
+          for (let w = 0; w < listUl.length; w++) {
+            const listUlLoop = listUl[w];
+            const listUlLoopChildren = listUlLoop.querySelectorAll("li");
+            for (let q = 0; q < listUlLoopChildren.length; q++) {
+              const navLi = listUlLoopChildren[q];
+              if (nameProp == navLi.textContent) {
+                $(navLi).css("text-decoration", "line-through");
+              }
             }
           }
         }
       }
-      if (vials[index].signOrderCatalog === true && liSOC1.length < 10) {
-        for (let t = 0; t < liSOC1.length; t++) {
-          const liSOC1Loop = liSOC1[t];
-          const right = liSOC1Loop.querySelector("#descSOC").textContent;
-          console.log(liSOC1Loop);
-          console.log(right);
-          if (target.textContent == right) {
-            return;
+      if (vials[index].signOrderCatalog === true) {
+        if (liSOC1.length == 10) {
+          $(alert).show().delay(3000).fadeOut("slow");
+        }
+        if (liSOC1.length < 10) {
+          for (let t = 0; t < liSOC1.length; t++) {
+            const liSOC1Loop = liSOC1[t];
+            const right = liSOC1Loop.querySelector("#descSOC").textContent;
+            if (target.textContent == right) {
+              return;
+            }
           }
-        }
-        arr3.push(itemNumber1);
-        bigLinkSOC.text = "Sign Order Catalog Website";
-        signOrderCatalogItems.append(liSOC);
-        signOrderCatalogItems.insertBefore(bigLinkSOC, testingSOC);
-        signOrderCatalogItems.insertBefore(
-          bigCollapseShowButtonSOC,
-          testingSOC
-        );
-        signOrderCatalogItems.insertBefore(
-          bigCollapseHideButtonSOC,
-          testingSOC
-        );
-        signOrderCatalogItems.insertBefore(bigClearButtonSOC, testingSOC);
-        $("#SOCQR").show();
-        QRSOC.append(document.getElementById("SOCQR"));
-        copyItemNumber(bigLinkSOC, arr3.join(", "));
-        bigSOCImage.makeCode(arr3.join(", "));
-        printBarcode(imageSOC);
-        orderNumberSOC.textContent = liSOC1.length += 1;
-        if (target.parentNode == list || target.parentNode == list2) {
-          $(target).hide();
-        }
-        if (target.parentNode.parentNode == listNav) {
-          $(target).css("text-decoration", "line-through");
-        }
-        for (let w = 0; w < listUl.length; w++) {
-          const listUlLoop = listUl[w];
-          const listUlLoopChildren = listUlLoop.querySelectorAll("li");
-          for (let q = 0; q < listUlLoopChildren.length; q++) {
-            const navLi = listUlLoopChildren[q];
-            if (nameProp == navLi.textContent) {
-              $(navLi).css("text-decoration", "line-through");
+          addedItems.push(li.textContent);
+          arr3.push(itemNumber1);
+          bigLinkSOC.text = "Sign Order Catalog Website";
+          signOrderCatalogItems.append(liSOC);
+          signOrderCatalogItems.insertBefore(bigLinkSOC, testingSOC);
+          signOrderCatalogItems.insertBefore(
+            bigCollapseShowButtonSOC,
+            testingSOC
+          );
+          signOrderCatalogItems.insertBefore(
+            bigCollapseHideButtonSOC,
+            testingSOC
+          );
+          signOrderCatalogItems.insertBefore(bigClearButtonSOC, testingSOC);
+          $("#SOCQR").show();
+          QRSOC.append(document.getElementById("SOCQR"));
+          copyItemNumber(bigLinkSOC, arr3.join(", "));
+          bigSOCImage.makeCode(arr3.join(", "));
+          printBarcode(imageSOC);
+          orderNumberSOC.textContent = liSOC1.length += 1;
+          if (orderNumberSOC.textContent == 10) {
+            const li1 = Array.from(list.querySelectorAll("li[soc*=true]"));
+            for (let j = 0; j < li1.length; j++) {
+              const elem = li1[j];
+              $(elem).addClass("red");
+            }
+          }
+          if (target.parentNode == list || target.parentNode == list2) {
+            $(target).hide();
+          }
+          if (target.parentNode.parentNode == listNav) {
+            $(target).css("text-decoration", "line-through");
+          }
+          for (let w = 0; w < listUl.length; w++) {
+            const listUlLoop = listUl[w];
+            const listUlLoopChildren = listUlLoop.querySelectorAll("li");
+            for (let q = 0; q < listUlLoopChildren.length; q++) {
+              const navLi = listUlLoopChildren[q];
+              if (nameProp == navLi.textContent) {
+                $(navLi).css("text-decoration", "line-through");
+              }
             }
           }
         }
       }
-      if (vials[index].vaxServe === true && liVS1.length < 10) {
-        for (let t = 0; t < liVS1.length; t++) {
-          const liVS1Loop = liVS1[t];
-          const right = liVS1Loop.querySelector("#descVS").textContent;
-          if (target.textContent == right) {
-            return;
+      if (vials[index].vaxServe === true) {
+        if (liVS1.length == 10) {
+          $(alert).show().delay(3000).fadeOut("slow");
+        }
+        if (liVS1.length < 10) {
+          for (let t = 0; t < liVS1.length; t++) {
+            const liVS1Loop = liVS1[t];
+            const right = liVS1Loop.querySelector("#descVS").textContent;
+            if (target.textContent == right) {
+              return;
+            }
           }
-        }
-        arr4.push(itemNumber1);
-        bigLinkVS.text = "VaxServe Website";
-        vaxServeItems.append(liVS);
-        vaxServeItems.insertBefore(bigLinkVS, testingVS);
-        vaxServeItems.insertBefore(bigCollapseShowButtonVS, testingVS);
-        vaxServeItems.insertBefore(bigCollapseHideButtonVS, testingVS);
-        vaxServeItems.insertBefore(bigClearButtonVS, testingVS);
-        $("#VSQR").show();
-        QRVS.append(document.getElementById("VSQR"));
-        copyItemNumber(bigLinkVS, arr4.join(", "));
-        bigVSImage.makeCode(arr4.join(", "));
-        printBarcode(imageVS);
-        orderNumberVS.textContent = liVS1.length += 1;
-        if (target.parentNode == list || target.parentNode == list2) {
-          $(target).hide();
-        }
-        if (target.parentNode.parentNode == listNav) {
-          $(target).css("text-decoration", "line-through");
-        }
-        for (let w = 0; w < listUl.length; w++) {
-          const listUlLoop = listUl[w];
-          const listUlLoopChildren = listUlLoop.querySelectorAll("li");
-          for (let q = 0; q < listUlLoopChildren.length; q++) {
-            const navLi = listUlLoopChildren[q];
-            if (nameProp == navLi.textContent) {
-              $(navLi).css("text-decoration", "line-through");
+          addedItems.push(li.textContent);
+          arr4.push(itemNumber1);
+          bigLinkVS.text = "VaxServe Website";
+          vaxServeItems.append(liVS);
+          vaxServeItems.insertBefore(bigLinkVS, testingVS);
+          vaxServeItems.insertBefore(bigCollapseShowButtonVS, testingVS);
+          vaxServeItems.insertBefore(bigCollapseHideButtonVS, testingVS);
+          vaxServeItems.insertBefore(bigClearButtonVS, testingVS);
+          $("#VSQR").show();
+          QRVS.append(document.getElementById("VSQR"));
+          copyItemNumber(bigLinkVS, arr4.join(", "));
+          bigVSImage.makeCode(arr4.join(", "));
+          printBarcode(imageVS);
+          orderNumberVS.textContent = liVS1.length += 1;
+          if (orderNumberVS.textContent == 10) {
+            const li1 = Array.from(list.querySelectorAll("li[vs*=true]"));
+            for (let j = 0; j < li1.length; j++) {
+              const elem = li1[j];
+              $(elem).addClass("red");
+            }
+          }
+          if (target.parentNode == list || target.parentNode == list2) {
+            $(target).hide();
+          }
+          if (target.parentNode.parentNode == listNav) {
+            $(target).css("text-decoration", "line-through");
+          }
+          for (let w = 0; w < listUl.length; w++) {
+            const listUlLoop = listUl[w];
+            const listUlLoopChildren = listUlLoop.querySelectorAll("li");
+            for (let q = 0; q < listUlLoopChildren.length; q++) {
+              const navLi = listUlLoopChildren[q];
+              if (nameProp == navLi.textContent) {
+                $(navLi).css("text-decoration", "line-through");
+              }
             }
           }
         }
       }
-      if (vials[index].medSurge === true && liMS1.length < 10) {
-        for (let t = 0; t < liMS1.length; t++) {
-          const liMS1Loop = liMS1[t];
-          const right = liMS1Loop.querySelector("#descMS").textContent;
-          console.log(liMS1Loop);
-          console.log(right);
-          if (target.textContent == right) {
-            return;
+      if (vials[index].medSurge === true) {
+        if (liMS1.length == 10) {
+          $(alert).show().delay(3000).fadeOut("slow");
+        }
+        if (liMS1.length < 10) {
+          for (let t = 0; t < liMS1.length; t++) {
+            const liMS1Loop = liMS1[t];
+            const right = liMS1Loop.querySelector("#descMS").textContent;
+            console.log(liMS1Loop);
+            console.log(right);
+            if (target.textContent == right) {
+              return;
+            }
           }
-        }
-        arr5.push(itemNumber1);
-        bigLinkMS.text = "McK MedSurge Website";
-        medSurgeItems.append(liMS);
-        medSurgeItems.insertBefore(bigLinkMS, testingMS);
-        medSurgeItems.insertBefore(bigCollapseShowButtonMS, testingMS);
-        medSurgeItems.insertBefore(bigCollapseHideButtonMS, testingMS);
-        medSurgeItems.insertBefore(bigClearButtonMS, testingMS);
-        $("#MSQR").show();
-        QRMS.append(document.getElementById("MSQR"));
-        copyItemNumber(bigLinkMS, arr5.join(", "));
-        bigMSImage.makeCode(arr5.join(", "));
-        printBarcode(imageMS);
-        orderNumberMS.textContent = liMS1.length += 1;
-        if (target.parentNode == list || target.parentNode == list2) {
-          $(target).hide();
-        }
-        if (target.parentNode.parentNode == listNav) {
-          $(target).css("text-decoration", "line-through");
-        }
-        for (let w = 0; w < listUl.length; w++) {
-          const listUlLoop = listUl[w];
-          const listUlLoopChildren = listUlLoop.querySelectorAll("li");
-          for (let q = 0; q < listUlLoopChildren.length; q++) {
-            const navLi = listUlLoopChildren[q];
-            if (nameProp == navLi.textContent) {
-              $(navLi).css("text-decoration", "line-through");
+          addedItems.push(li.textContent);
+          arr5.push(itemNumber1);
+          bigLinkMS.text = "McK MedSurge Website";
+          medSurgeItems.append(liMS);
+          medSurgeItems.insertBefore(bigLinkMS, testingMS);
+          medSurgeItems.insertBefore(bigCollapseShowButtonMS, testingMS);
+          medSurgeItems.insertBefore(bigCollapseHideButtonMS, testingMS);
+          medSurgeItems.insertBefore(bigClearButtonMS, testingMS);
+          $("#MSQR").show();
+          QRMS.append(document.getElementById("MSQR"));
+          copyItemNumber(bigLinkMS, arr5.join(", "));
+          bigMSImage.makeCode(arr5.join(", "));
+          printBarcode(imageMS);
+          orderNumberMS.textContent = liMS1.length += 1;
+          if (orderNumberMS.textContent == 10) {
+            const li1 = Array.from(list.querySelectorAll("li[ms*=true]"));
+            for (let j = 0; j < li1.length; j++) {
+              const elem = li1[j];
+              $(elem).addClass("red");
+            }
+          }
+          if (target.parentNode == list || target.parentNode == list2) {
+            $(target).hide();
+          }
+          if (target.parentNode.parentNode == listNav) {
+            $(target).css("text-decoration", "line-through");
+          }
+          for (let w = 0; w < listUl.length; w++) {
+            const listUlLoop = listUl[w];
+            const listUlLoopChildren = listUlLoop.querySelectorAll("li");
+            for (let q = 0; q < listUlLoopChildren.length; q++) {
+              const navLi = listUlLoopChildren[q];
+              if (nameProp == navLi.textContent) {
+                $(navLi).css("text-decoration", "line-through");
+              }
             }
           }
         }
       }
-      if (vials[index].covap === true && liCOV1.length < 10) {
-        for (let t = 0; t < liCOV1.length; t++) {
-          const liCOV1Loop = liCOV1[t];
-          const right = liCOV1Loop.querySelector("#descCOV").textContent;
-          console.log(liCOV1Loop);
-          console.log(right);
-          if (target.textContent == right) {
-            return;
+      if (vials[index].covap === true) {
+        if (liCOV1.length == 10) {
+          $(alert).show().delay(3000).fadeOut("slow");
+        }
+        if (liCOV1.length < 10) {
+          for (let t = 0; t < liCOV1.length; t++) {
+            const liCOV1Loop = liCOV1[t];
+            const right = liCOV1Loop.querySelector("#descCOV").textContent;
+            console.log(liCOV1Loop);
+            console.log(right);
+            if (target.textContent == right) {
+              return;
+            }
           }
-        }
-        arr6.push(itemNumber1);
-        bigLinkCOV.text = "Covap Website";
-        covapItems.append(liCOV);
-        covapItems.insertBefore(bigLinkCOV, testingCOV);
-        covapItems.insertBefore(bigCollapseShowButtonCOV, testingCOV);
-        covapItems.insertBefore(bigCollapseHideButtonCOV, testingCOV);
-        covapItems.insertBefore(bigClearButtonCOV, testingCOV);
-        $("#COVQR").show();
-        QRCOV.append(document.getElementById("COVQR"));
-        copyItemNumber(bigLinkCOV, arr6.join(", "));
-        bigCOVImage.makeCode(arr6.join(", "));
-        printBarcode(imageCOV);
-        orderNumberCOV.textContent = liCOV1.length += 1;
-        if (target.parentNode == list || target.parentNode == list2) {
-          $(target).hide();
-        }
-        if (target.parentNode.parentNode == listNav) {
-          $(target).css("text-decoration", "line-through");
-        }
-        for (let w = 0; w < listUl.length; w++) {
-          const listUlLoop = listUl[w];
-          const listUlLoopChildren = listUlLoop.querySelectorAll("li");
-          for (let q = 0; q < listUlLoopChildren.length; q++) {
-            const navLi = listUlLoopChildren[q];
-            if (nameProp == navLi.textContent) {
-              $(navLi).css("text-decoration", "line-through");
+          addedItems.push(li.textContent);
+          arr6.push(itemNumber1);
+          bigLinkCOV.text = "Covap Website";
+          covapItems.append(liCOV);
+          covapItems.insertBefore(bigLinkCOV, testingCOV);
+          covapItems.insertBefore(bigCollapseShowButtonCOV, testingCOV);
+          covapItems.insertBefore(bigCollapseHideButtonCOV, testingCOV);
+          covapItems.insertBefore(bigClearButtonCOV, testingCOV);
+          $("#COVQR").show();
+          QRCOV.append(document.getElementById("COVQR"));
+          copyItemNumber(bigLinkCOV, arr6.join(", "));
+          bigCOVImage.makeCode(arr6.join(", "));
+          printBarcode(imageCOV);
+          orderNumberCOV.textContent = liCOV1.length += 1;
+          if (orderNumberCOV.textContent == 10) {
+            const li1 = Array.from(list.querySelectorAll("li[cov*=true]"));
+            for (let j = 0; j < li1.length; j++) {
+              const elem = li1[j];
+              $(elem).addClass("red");
+            }
+          }
+          if (target.parentNode == list || target.parentNode == list2) {
+            $(target).hide();
+          }
+          if (target.parentNode.parentNode == listNav) {
+            $(target).css("text-decoration", "line-through");
+          }
+          for (let w = 0; w < listUl.length; w++) {
+            const listUlLoop = listUl[w];
+            const listUlLoopChildren = listUlLoop.querySelectorAll("li");
+            for (let q = 0; q < listUlLoopChildren.length; q++) {
+              const navLi = listUlLoopChildren[q];
+              if (nameProp == navLi.textContent) {
+                $(navLi).css("text-decoration", "line-through");
+              }
             }
           }
         }
       }
-      if (vials[index].FORS === true && liFORS1.length < 10) {
-        for (let t = 0; t < liFORS1.length; t++) {
-          const liFORS1Loop = liFORS1[t];
-          const right = liFORS1Loop.querySelector("#descFORS").textContent;
-          console.log(liFORS1Loop);
-          console.log(right);
-          if (target.textContent == right) {
-            return;
+      if (vials[index].FORS === true) {
+        if (liFORS1.length == 10) {
+          $(alert).show().delay(3000).fadeOut("slow");
+        }
+        if (liFORS1.length < 10) {
+          for (let t = 0; t < liFORS1.length; t++) {
+            const liFORS1Loop = liFORS1[t];
+            const right = liFORS1Loop.querySelector("#descFORS").textContent;
+            console.log(liFORS1Loop);
+            console.log(right);
+            if (target.textContent == right) {
+              return;
+            }
           }
-        }
-        arr7.push(itemNumber1);
-        bigLinkFORS.text = "FORS Website";
-        FORSItems.append(liFORS);
-        FORSItems.insertBefore(bigLinkFORS, testingFORS);
-        FORSItems.insertBefore(bigCollapseShowButtonFORS, testingFORS);
-        FORSItems.insertBefore(bigCollapseHideButtonFORS, testingFORS);
-        FORSItems.insertBefore(bigClearButtonFORS, testingFORS);
-        $("#FORSQR").show();
-        QRFORS.append(document.getElementById("FORSQR"));
-        copyItemNumber(bigLinkFORS, arr7.join(", "));
-        bigFORSImage.makeCode(arr7.join(", "));
-        printBarcode(imageFORS);
-        orderNumberFORS.textContent = liFORS1.length += 1;
-        if (target.parentNode == list || target.parentNode == list2) {
-          $(target).hide();
-        }
-        if (target.parentNode.parentNode == listNav) {
-          $(target).css("text-decoration", "line-through");
-        }
-        for (let w = 0; w < listUl.length; w++) {
-          const listUlLoop = listUl[w];
-          const listUlLoopChildren = listUlLoop.querySelectorAll("li");
-          for (let q = 0; q < listUlLoopChildren.length; q++) {
-            const navLi = listUlLoopChildren[q];
-            if (nameProp == navLi.textContent) {
-              $(navLi).css("text-decoration", "line-through");
+          addedItems.push(li.textContent);
+          arr7.push(itemNumber1);
+          bigLinkFORS.text = "FORS Website";
+          FORSItems.append(liFORS);
+          FORSItems.insertBefore(bigLinkFORS, testingFORS);
+          FORSItems.insertBefore(bigCollapseShowButtonFORS, testingFORS);
+          FORSItems.insertBefore(bigCollapseHideButtonFORS, testingFORS);
+          FORSItems.insertBefore(bigClearButtonFORS, testingFORS);
+          $("#FORSQR").show();
+          QRFORS.append(document.getElementById("FORSQR"));
+          copyItemNumber(bigLinkFORS, arr7.join(", "));
+          bigFORSImage.makeCode(arr7.join(", "));
+          printBarcode(imageFORS);
+          orderNumberFORS.textContent = liFORS1.length += 1;
+          if (orderNumberFORS.textContent == 10) {
+            const li1 = Array.from(list.querySelectorAll("li[fors*=true]"));
+            for (let j = 0; j < li1.length; j++) {
+              const elem = li1[j];
+              $(elem).addClass("red");
+            }
+          }
+          if (target.parentNode == list || target.parentNode == list2) {
+            $(target).hide();
+          }
+          if (target.parentNode.parentNode == listNav) {
+            $(target).css("text-decoration", "line-through");
+          }
+          for (let w = 0; w < listUl.length; w++) {
+            const listUlLoop = listUl[w];
+            const listUlLoopChildren = listUlLoop.querySelectorAll("li");
+            for (let q = 0; q < listUlLoopChildren.length; q++) {
+              const navLi = listUlLoopChildren[q];
+              if (nameProp == navLi.textContent) {
+                $(navLi).css("text-decoration", "line-through");
+              }
             }
           }
         }
@@ -4640,6 +4763,14 @@ function setList(array) {
     const li = document.createElement("li");
     const text = document.createTextNode(i.name);
     li.setAttribute("unit", i.name);
+    li.setAttribute("mck", i.McKesson);
+    li.setAttribute("oi", i.OrderInsite);
+    li.setAttribute("gnfr", i.GNFR);
+    li.setAttribute("soc", i.signOrderCatalog);
+    li.setAttribute("vs", i.vaxServe);
+    li.setAttribute("ms", i.medSurge);
+    li.setAttribute("cov", i.covap);
+    li.setAttribute("fors", i.FORS);
     li.appendChild(text);
     list.appendChild(li);
     li.setAttribute("id", "li");
@@ -4723,12 +4854,10 @@ search.addEventListener("input", (event) => {
           if (i.name.toLowerCase().trim().includes(value)) {
             const result = i.name;
             return result;
-          }
-          else if (i.name.match(re)) {
+          } else if (i.name.match(re)) {
             const result2 = i.name.match(re);
             return result2;
-          } 
-          else if (i.name.replace(/\s*/g, "").match(re)) {
+          } else if (i.name.replace(/\s*/g, "").match(re)) {
             const name = i.name;
             const name1 = name.replace(/\s*/g, "");
             const result1 = name1.match(re);
