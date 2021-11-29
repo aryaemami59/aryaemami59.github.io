@@ -4698,12 +4698,14 @@ $(function () {
     $(this).children().toggle(250);
   });
 });
-function getRelevancy(value, searchTerm) {
+function getRelevancy(value, searchTerm, re) {
   if (value === searchTerm) {
-    return 2;
+    return 3;
   } else if (value.startsWith(searchTerm)) {
-    return 1;
+    return 2;
   } else if (value.includes(searchTerm)) {
+    return 1;
+  } else if (value.match(re)) {
     return 0;
   } else {
     return -1;
@@ -4711,35 +4713,41 @@ function getRelevancy(value, searchTerm) {
 }
 // these are our event listeners:
 search.addEventListener("input", (event) => {
-  let value = event.target.value;
+  let value = event.target.value.trim().toLowerCase();
   if (value && value.trim().toLowerCase().length > 0) {
-    value = value.replace(/\s/g, ".*").toLowerCase();
-    const re = new RegExp(".*" + value + ".*", "gi");
+    value1 = value.replace(/\s/g, ".*").toLowerCase().trim();
+    const re = new RegExp(".*" + value1 + ".*", "gi");
     setList(
       vials
         .filter((i) => {
+          if (i.name.toLowerCase().trim().includes(value)) {
+            const result = i.name;
+            console.log(result)
+            return result;
+          }
+          else if (i.name.match(re)) {
+            const result2 = i.name.match(re);
+            return result2;
+          } 
+          else if (i.name.replace(/\s*/g, "").match(re)) {
+            const name = i.name;
+            const name1 = name.replace(/\s*/g, "");
+            const result1 = name1.match(re);
+            return result1;
+          }
           for (let j = 0; j < i.keywords.length; j++) {
             const element = i.keywords[j];
             if (element.match(re)) {
               const result = element.match(re);
+              console.log(result);
               return result;
             }
-          }
-          if (i.name.replace(/\s/g, "").match(re)) {
-            const name = i.name;
-            const name1 = name.replace(/\s/g, "");
-            const result1 = name1.match(re);
-            return result1;
-          }
-          if (i.name.match(re)) {
-            const result2 = i.name.match(re);
-            return result2;
           }
         })
         .sort((a, b) => {
           return (
-            getRelevancy(b.name.toLowerCase(), value) -
-            getRelevancy(a.name.toLowerCase(), value)
+            getRelevancy(b.name.toLowerCase().trim(), value, re) -
+            getRelevancy(a.name.toLowerCase().trim(), value, re)
           );
         })
     );
