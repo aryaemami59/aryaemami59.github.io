@@ -132,7 +132,7 @@ body {
   transition: ease-in-out 0.1s;
   transform: scale(1.2);
 }
-.red#li:active {
+.redMCK#li:active, .redOI#li:active, .redGNFR#li:active, .redSOC#li:active, .redVS#li:active, .redMS#li:active, .redCOV#li:active, .redFORS#li:active {
   background-color: red;
 }
 #button {

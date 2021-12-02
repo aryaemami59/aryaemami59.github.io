@@ -3265,6 +3265,14 @@ let arrFORSItemNames = [];
 let items = [];
 let items1 = [];
 let addedItems = [];
+let addedItemsMCK = [];
+let addedItemsOI = [];
+let addedItemsGNFR = [];
+let addedItemsSOC = [];
+let addedItemsVS = [];
+let addedItemsMS = [];
+let addedItemsCOV = [];
+let addedItemsFORS = [];
 let DisplayAllItems1arr = [];
 let McKessonItems1arr = [];
 let OrderInsiteItems1arr = [];
@@ -3524,8 +3532,16 @@ function pressEnter(event) {
   }
 }
 // this function executes the x button that removes list items.
-function removeButtonFunc(removeButtonMCK, array, image, char) {
+function removeButtonFunc(
+  removeButtonMCK,
+  array,
+  image,
+  char,
+  redMCK,
+  addedItemsMCK
+) {
   removeButtonMCK.addEventListener("click", function d(e) {
+    // addedItemsMCK = removeDuplicates(addedItemsMCK);
     const desc = e.target.parentNode.querySelector("p").textContent;
     const QR =
       e.target.parentNode.parentNode.querySelector(".QRVendor").firstChild;
@@ -3540,6 +3556,10 @@ function removeButtonFunc(removeButtonMCK, array, image, char) {
     for (let h = 0; h < li1.length; h++) {
       const elem = li1[h];
       const li1Text = elem.textContent;
+      if (orderNumberVendor.textContent <= 9) {
+        console.log(elem.className);
+        elem.classList.remove(redMCK);
+      }
       if (desc == li1Text) {
         $(elem).show();
       }
@@ -3567,12 +3587,13 @@ function removeButtonFunc(removeButtonMCK, array, image, char) {
         $(element).css("text-decoration", "none");
       }
     });
-    for (let j = 0; j < addedItems.length; j++) {
-      const addedItemsLoop = addedItems[j];
+    for (let j = 0; j < addedItemsMCK.length; j++) {
+      const addedItemsLoop = addedItemsMCK[j];
       if (desc == addedItemsLoop) {
-        const addedItemsLoopIndex = addedItems.indexOf(addedItemsLoop);
+        const addedItemsLoopIndex = addedItemsMCK.indexOf(addedItemsLoop);
         if (addedItemsLoopIndex > -1) {
-          addedItems.splice(addedItemsLoopIndex, 1);
+          addedItemsMCK.splice(addedItemsLoopIndex, 1);
+          console.log(addedItemsMCK);
         }
       }
     }
@@ -3585,6 +3606,7 @@ function removeButtonFunc(removeButtonMCK, array, image, char) {
       if (numberItem == element) {
         const index = array.indexOf(element);
         array.splice(index, 1);
+        // console.log(array);
         if (index > -1) {
           if (array.length > 0) {
             $(QR).show();
@@ -3997,14 +4019,70 @@ function onClick(li) {
       copyItemNumber(descMS, nameMain);
       copyItemNumber(descCOV, nameMain);
       copyItemNumber(descFORS, nameMain);
-      removeButtonFunc(removeButtonMCK, arr, bigMCKImage, " OR ");
-      removeButtonFunc(removeButtonOI, arr1, bigOIImage, ", ");
-      removeButtonFunc(removeButtonGNFR, arr2, bigGNFRImage, " OR ");
-      removeButtonFunc(removeButtonSOC, arr3, bigSOCImage, ", ");
-      removeButtonFunc(removeButtonVS, arr4, bigVSImage, ", ");
-      removeButtonFunc(removeButtonMS, arr5, bigMSImage, ", ");
-      removeButtonFunc(removeButtonCOV, arr6, bigCOVImage, ", ");
-      removeButtonFunc(removeButtonFORS, arr7, bigFORSImage, ", ");
+      removeButtonFunc(
+        removeButtonMCK,
+        arr,
+        bigMCKImage,
+        " OR ",
+        "redMCK",
+        addedItemsMCK
+      );
+      removeButtonFunc(
+        removeButtonOI,
+        arr1,
+        bigOIImage,
+        ", ",
+        "redOI",
+        addedItemsOI
+      );
+      removeButtonFunc(
+        removeButtonGNFR,
+        arr2,
+        bigGNFRImage,
+        " OR ",
+        "redGNFR",
+        addedItemsGNFR
+      );
+      removeButtonFunc(
+        removeButtonSOC,
+        arr3,
+        bigSOCImage,
+        ", ",
+        "redSOC",
+        addedItemsSOC
+      );
+      removeButtonFunc(
+        removeButtonVS,
+        arr4,
+        bigVSImage,
+        ", ",
+        "redVS",
+        addedItemsVS
+      );
+      removeButtonFunc(
+        removeButtonMS,
+        arr5,
+        bigMSImage,
+        ", ",
+        "redMS",
+        addedItemsMS
+      );
+      removeButtonFunc(
+        removeButtonCOV,
+        arr6,
+        bigCOVImage,
+        ", ",
+        "redCOV",
+        addedItemsCOV
+      );
+      removeButtonFunc(
+        removeButtonFORS,
+        arr7,
+        bigFORSImage,
+        ", ",
+        "redFORS",
+        addedItemsFORS
+      );
       // addedItems.push(li.textContent);
       const collapseButtonMCK = document.createElement("button");
       collapseButtonMCK.setAttribute("id", "collapseButtonMCK");
@@ -4163,7 +4241,7 @@ function onClick(li) {
         vials[index].OrderInsite === false
       ) {
         if (liMCK1.length == 10) {
-          $(alert).show().delay(3000).fadeOut("slow");
+          $(alert).show().delay(2000).fadeOut("slow");
         }
         if (liMCK1.length < 10) {
           for (let t = 0; t < liMCK1.length; t++) {
@@ -4174,7 +4252,7 @@ function onClick(li) {
               return;
             }
           }
-          addedItems.push(li.textContent);
+          addedItemsMCK.push(li.textContent);
           arr.push(itemNumber1);
           bigLinkMCK.text = "McKesson Website";
           MckessonItems.append(liMCK);
@@ -4197,7 +4275,7 @@ function onClick(li) {
             const li1 = Array.from(list.querySelectorAll("li[mck*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
-              $(elem).addClass("red");
+              $(elem).addClass("redMCK");
             }
           }
           if (target.parentNode == list || target.parentNode == list2) {
@@ -4224,7 +4302,7 @@ function onClick(li) {
         vials[index].McKesson === false
       ) {
         if (liOI1.length == 10) {
-          $(alert).show().delay(3000).fadeOut("slow");
+          $(alert).show().delay(2000).fadeOut("slow");
         }
         if (liOI1.length < 10) {
           for (let t = 0; t < liOI1.length; t++) {
@@ -4235,7 +4313,7 @@ function onClick(li) {
               return;
             }
           }
-          addedItems.push(li.textContent);
+          addedItemsOI.push(li.textContent);
           arr1.push(itemNumber1);
           bigLinkOI.text = "OrderInsite";
           OrderInsiteItems.append(liOI);
@@ -4253,7 +4331,7 @@ function onClick(li) {
             const li1 = Array.from(list.querySelectorAll("li[oi*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
-              $(elem).addClass("red");
+              $(elem).addClass("redOI");
             }
           }
           if (target.parentNode == list || target.parentNode == list2) {
@@ -4276,7 +4354,7 @@ function onClick(li) {
       }
       if (vials[index].McKesson === true && vials[index].OrderInsite === true) {
         if (liMCK1.length == 10) {
-          $(alert).show().delay(3000).fadeOut("slow");
+          $(alert).show().delay(2000).fadeOut("slow");
         }
         if (liMCK1.length < 10) {
           for (let t = 0; t < liMCK1.length; t++) {
@@ -4287,7 +4365,7 @@ function onClick(li) {
             }
           }
           const itemNumber1MCK = vials[index].itemNumber;
-          addedItems.push(li.textContent);
+          addedItemsMCK.push(li.textContent);
           arr.push(itemNumber1MCK);
           bigLinkMCK.text = "McKesson Website";
           MckessonItems.append(liMCK);
@@ -4305,7 +4383,7 @@ function onClick(li) {
             const li1 = Array.from(list.querySelectorAll("li[mck*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
-              $(elem).addClass("red");
+              $(elem).addClass("redMCK");
             }
           }
           if (target.parentNode == list || target.parentNode == list2) {
@@ -4335,7 +4413,7 @@ function onClick(li) {
             }
           }
           const itemNumber1OI = vials[index].itemNumber;
-          addedItems.push(li.textContent);
+          addedItemsOI.push(li.textContent);
           arr1.push(itemNumber1OI);
           bigLinkOI.text = "OrderInsite Website";
           OrderInsiteItems.append(liOI);
@@ -4353,7 +4431,7 @@ function onClick(li) {
             const li1 = Array.from(list.querySelectorAll("li[oi*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
-              $(elem).addClass("red");
+              $(elem).addClass("redOI");
             }
           }
           if (target.parentNode == list || target.parentNode == list2) {
@@ -4370,7 +4448,7 @@ function onClick(li) {
         vials[index].McKesson === false
       ) {
         if (liGNFR1.length == 10) {
-          $(alert).show().delay(3000).fadeOut("slow");
+          $(alert).show().delay(2000).fadeOut("slow");
         }
         if (liGNFR1.length < 10) {
           for (let t = 0; t < liGNFR1.length; t++) {
@@ -4380,7 +4458,7 @@ function onClick(li) {
               return;
             }
           }
-          addedItems.push(li.textContent);
+          addedItemsGNFR.push(li.textContent);
           arr2.push(itemNumber1);
           bigLinkGNFR.text = "GNFR Website";
           GNFRItems.append(liGNFR);
@@ -4398,7 +4476,7 @@ function onClick(li) {
             const li1 = Array.from(list.querySelectorAll("li[gnfr*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
-              $(elem).addClass("red");
+              $(elem).addClass("redGNFR");
             }
           }
           if (target.parentNode == list || target.parentNode == list2) {
@@ -4421,7 +4499,7 @@ function onClick(li) {
       }
       if (vials[index].signOrderCatalog === true) {
         if (liSOC1.length == 10) {
-          $(alert).show().delay(3000).fadeOut("slow");
+          $(alert).show().delay(2000).fadeOut("slow");
         }
         if (liSOC1.length < 10) {
           for (let t = 0; t < liSOC1.length; t++) {
@@ -4431,7 +4509,7 @@ function onClick(li) {
               return;
             }
           }
-          addedItems.push(li.textContent);
+          addedItemsSOC.push(li.textContent);
           arr3.push(itemNumber1);
           bigLinkSOC.text = "Sign Order Catalog Website";
           signOrderCatalogItems.append(liSOC);
@@ -4455,7 +4533,7 @@ function onClick(li) {
             const li1 = Array.from(list.querySelectorAll("li[soc*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
-              $(elem).addClass("red");
+              $(elem).addClass("redSOC");
             }
           }
           if (target.parentNode == list || target.parentNode == list2) {
@@ -4478,7 +4556,7 @@ function onClick(li) {
       }
       if (vials[index].vaxServe === true) {
         if (liVS1.length == 10) {
-          $(alert).show().delay(3000).fadeOut("slow");
+          $(alert).show().delay(2000).fadeOut("slow");
         }
         if (liVS1.length < 10) {
           for (let t = 0; t < liVS1.length; t++) {
@@ -4488,7 +4566,7 @@ function onClick(li) {
               return;
             }
           }
-          addedItems.push(li.textContent);
+          addedItemsVS.push(li.textContent);
           arr4.push(itemNumber1);
           bigLinkVS.text = "VaxServe Website";
           vaxServeItems.append(liVS);
@@ -4506,7 +4584,7 @@ function onClick(li) {
             const li1 = Array.from(list.querySelectorAll("li[vs*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
-              $(elem).addClass("red");
+              $(elem).addClass("redVS");
             }
           }
           if (target.parentNode == list || target.parentNode == list2) {
@@ -4529,7 +4607,7 @@ function onClick(li) {
       }
       if (vials[index].medSurge === true) {
         if (liMS1.length == 10) {
-          $(alert).show().delay(3000).fadeOut("slow");
+          $(alert).show().delay(2000).fadeOut("slow");
         }
         if (liMS1.length < 10) {
           for (let t = 0; t < liMS1.length; t++) {
@@ -4541,7 +4619,7 @@ function onClick(li) {
               return;
             }
           }
-          addedItems.push(li.textContent);
+          addedItemsMS.push(li.textContent);
           arr5.push(itemNumber1);
           bigLinkMS.text = "McK MedSurge Website";
           medSurgeItems.append(liMS);
@@ -4559,7 +4637,7 @@ function onClick(li) {
             const li1 = Array.from(list.querySelectorAll("li[ms*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
-              $(elem).addClass("red");
+              $(elem).addClass("redMS");
             }
           }
           if (target.parentNode == list || target.parentNode == list2) {
@@ -4582,7 +4660,7 @@ function onClick(li) {
       }
       if (vials[index].covap === true) {
         if (liCOV1.length == 10) {
-          $(alert).show().delay(3000).fadeOut("slow");
+          $(alert).show().delay(2000).fadeOut("slow");
         }
         if (liCOV1.length < 10) {
           for (let t = 0; t < liCOV1.length; t++) {
@@ -4594,7 +4672,7 @@ function onClick(li) {
               return;
             }
           }
-          addedItems.push(li.textContent);
+          addedItemsCOV.push(li.textContent);
           arr6.push(itemNumber1);
           bigLinkCOV.text = "Covap Website";
           covapItems.append(liCOV);
@@ -4612,7 +4690,7 @@ function onClick(li) {
             const li1 = Array.from(list.querySelectorAll("li[cov*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
-              $(elem).addClass("red");
+              $(elem).addClass("redCOV");
             }
           }
           if (target.parentNode == list || target.parentNode == list2) {
@@ -4635,7 +4713,7 @@ function onClick(li) {
       }
       if (vials[index].FORS === true) {
         if (liFORS1.length == 10) {
-          $(alert).show().delay(3000).fadeOut("slow");
+          $(alert).show().delay(2000).fadeOut("slow");
         }
         if (liFORS1.length < 10) {
           for (let t = 0; t < liFORS1.length; t++) {
@@ -4647,7 +4725,7 @@ function onClick(li) {
               return;
             }
           }
-          addedItems.push(li.textContent);
+          addedItemsFORS.push(li.textContent);
           arr7.push(itemNumber1);
           bigLinkFORS.text = "FORS Website";
           FORSItems.append(liFORS);
@@ -4665,7 +4743,7 @@ function onClick(li) {
             const li1 = Array.from(list.querySelectorAll("li[fors*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
-              $(elem).addClass("red");
+              $(elem).addClass("redFORS");
             }
           }
           if (target.parentNode == list || target.parentNode == list2) {
