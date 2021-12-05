@@ -3230,7 +3230,7 @@ const testingFORS = document.getElementById("testingFORS");
 const button = document.getElementById("button");
 const searchResults = document.getElementById("searchResults");
 const listNav = document.getElementById("listNav");
-const listUl = listNav.querySelectorAll("ul");
+const listUl = Array.from(listNav.querySelectorAll("ul"));
 const navLi = document.getElementById("navLi");
 const empty = document.getElementById("empty");
 const titleMCK = document.getElementById("mck-items");
@@ -3398,6 +3398,7 @@ function set(element) {
   element.setAttribute("id", b);
 }
 listNavChildren.forEach(set);
+// console.log(listNavChildren)
 // this function looks at certain terms or words in the name of an item in the vials array,
 // and puts that item in a certain array that corresponds to that term or word.
 function searchFunc(itemToFind, arr) {
@@ -3479,9 +3480,18 @@ function createListFromArray(arr, listParent) {
     const text = document.createTextNode(xName);
     li.appendChild(text);
     li.setAttribute("id", "navLi");
+    li.setAttribute("class", "navList");
     listParent.appendChild(li);
     li.style.display = "none";
     avoidDuplicatesOnClick(li);
+    li.setAttribute("mck", element.McKesson);
+    li.setAttribute("oi", element.OrderInsite);
+    li.setAttribute("gnfr", element.GNFR);
+    li.setAttribute("soc", element.signOrderCatalog);
+    li.setAttribute("vs", element.vaxServe);
+    li.setAttribute("ms", element.medSurge);
+    li.setAttribute("cov", element.covap);
+    li.setAttribute("fors", element.FORS);
   });
 }
 //this function removes children of an element.
@@ -3623,7 +3633,7 @@ function removeButtonFunc(
     liVendor.remove(liVendor.childNodes);
   });
 }
-function bigClearFunc(bigClearButtonMCK, array, image, char) {
+function bigClearFunc(bigClearButtonMCK, array, redMCK, redMCK1) {
   bigClearButtonMCK.addEventListener("click", function a(e) {
     const vendorItems = e.target.parentNode;
     if (vendorItems !== null) {
@@ -3648,6 +3658,11 @@ function bigClearFunc(bigClearButtonMCK, array, image, char) {
         const liVendorLoop = liVendor[i];
         const descVendor =
           liVendorLoop.querySelector(".descVendor").textContent;
+        const li2 = Array.from(document.querySelectorAll(redMCK));
+        for (let j = 0; j < li2.length; j++) {
+          const elem = li2[j];
+          elem.classList.remove(redMCK1);
+        }
         for (let u = 0; u < li1.length; u++) {
           const li1Loop = li1[u];
           const li1Text = li1Loop.textContent;
@@ -3673,14 +3688,14 @@ function bigClearFunc(bigClearButtonMCK, array, image, char) {
     }
   });
 }
-bigClearFunc(bigClearButtonMCK, arr);
-bigClearFunc(bigClearButtonOI, arr1);
-bigClearFunc(bigClearButtonGNFR, arr2);
-bigClearFunc(bigClearButtonSOC, arr3);
-bigClearFunc(bigClearButtonVS, arr4);
-bigClearFunc(bigClearButtonMS, arr5);
-bigClearFunc(bigClearButtonCOV, arr6);
-bigClearFunc(bigClearButtonFORS, arr7);
+bigClearFunc(bigClearButtonMCK, arr, ".redMCK", "redMCK");
+bigClearFunc(bigClearButtonOI, arr1, ".redOI", "redOI");
+bigClearFunc(bigClearButtonGNFR, arr2, ".redGNFR", "redGNFR");
+bigClearFunc(bigClearButtonSOC, arr3, ".redSOC", "redSOC");
+bigClearFunc(bigClearButtonVS, arr4, ".redVS", "redVS");
+bigClearFunc(bigClearButtonMS, arr5, ".redMS", "redMS");
+bigClearFunc(bigClearButtonCOV, arr6, ".redCOV", "redCOV");
+bigClearFunc(bigClearButtonFORS, arr7, ".redFORS", "redFORS");
 // this function takes list items and categorizes them based on vendor and adds vendor icons.
 function categorizeByClass(arr, a) {
   for (let j = 0; j < arr.length; j++) {
@@ -4272,11 +4287,17 @@ function onClick(li) {
           printBarcode(imageMCK);
           orderNumberMCK.textContent = liMCK1.length += 1;
           if (orderNumberMCK.textContent == 10) {
-            const li1 = Array.from(list.querySelectorAll("li[mck*=true]"));
+            const li1 = Array.from(document.querySelectorAll("li[mck*=true]"));
+            const li2 = Array.from(listNav.querySelectorAll("li[mck*=true]"));
+            console.log(li2);
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
               $(elem).addClass("redMCK");
             }
+            // for (let h = 0; h < li2.length; h++) {
+            //   const element = li2[h];
+            //   $(element).addClass("redMCK");
+            // }
           }
           if (target.parentNode == list || target.parentNode == list2) {
             $(target).hide();
@@ -4328,7 +4349,7 @@ function onClick(li) {
           printBarcode(imageOI);
           orderNumberOI.textContent = liOI1.length += 1;
           if (orderNumberOI.textContent == 10) {
-            const li1 = Array.from(list.querySelectorAll("li[oi*=true]"));
+            const li1 = Array.from(document.querySelectorAll("li[oi*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
               $(elem).addClass("redOI");
@@ -4380,7 +4401,8 @@ function onClick(li) {
           printBarcode(imageMCK);
           orderNumberMCK.textContent = liMCK1.length += 1;
           if (orderNumberMCK.textContent == 10) {
-            const li1 = Array.from(list.querySelectorAll("li[mck*=true]"));
+            const li1 = Array.from(document.querySelectorAll("li[mck*=true]"));
+            const li2 = Array.from(listNav.querySelectorAll("li[mck*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
               $(elem).addClass("redMCK");
@@ -4397,6 +4419,7 @@ function onClick(li) {
             const listUlLoopChildren = listUlLoop.querySelectorAll("li");
             for (let q = 0; q < listUlLoopChildren.length; q++) {
               const navLi = listUlLoopChildren[q];
+              // console.log(navLi)
               if (nameProp == navLi.textContent) {
                 $(navLi).css("text-decoration", "line-through");
               }
@@ -4428,7 +4451,7 @@ function onClick(li) {
           printBarcode(imageOI);
           orderNumberOI.textContent = liOI1.length += 1;
           if (orderNumberOI.textContent == 10) {
-            const li1 = Array.from(list.querySelectorAll("li[oi*=true]"));
+            const li1 = Array.from(document.querySelectorAll("li[oi*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
               $(elem).addClass("redOI");
@@ -4473,7 +4496,7 @@ function onClick(li) {
           printBarcode(imageGNFR);
           orderNumberGNFR.textContent = liGNFR1.length += 1;
           if (orderNumberGNFR.textContent == 10) {
-            const li1 = Array.from(list.querySelectorAll("li[gnfr*=true]"));
+            const li1 = Array.from(document.querySelectorAll("li[gnfr*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
               $(elem).addClass("redGNFR");
@@ -4530,7 +4553,7 @@ function onClick(li) {
           printBarcode(imageSOC);
           orderNumberSOC.textContent = liSOC1.length += 1;
           if (orderNumberSOC.textContent == 10) {
-            const li1 = Array.from(list.querySelectorAll("li[soc*=true]"));
+            const li1 = Array.from(document.querySelectorAll("li[soc*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
               $(elem).addClass("redSOC");
@@ -4581,7 +4604,7 @@ function onClick(li) {
           printBarcode(imageVS);
           orderNumberVS.textContent = liVS1.length += 1;
           if (orderNumberVS.textContent == 10) {
-            const li1 = Array.from(list.querySelectorAll("li[vs*=true]"));
+            const li1 = Array.from(document.querySelectorAll("li[vs*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
               $(elem).addClass("redVS");
@@ -4634,7 +4657,7 @@ function onClick(li) {
           printBarcode(imageMS);
           orderNumberMS.textContent = liMS1.length += 1;
           if (orderNumberMS.textContent == 10) {
-            const li1 = Array.from(list.querySelectorAll("li[ms*=true]"));
+            const li1 = Array.from(document.querySelectorAll("li[ms*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
               $(elem).addClass("redMS");
@@ -4687,7 +4710,7 @@ function onClick(li) {
           printBarcode(imageCOV);
           orderNumberCOV.textContent = liCOV1.length += 1;
           if (orderNumberCOV.textContent == 10) {
-            const li1 = Array.from(list.querySelectorAll("li[cov*=true]"));
+            const li1 = Array.from(document.querySelectorAll("li[cov*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
               $(elem).addClass("redCOV");
@@ -4740,7 +4763,7 @@ function onClick(li) {
           printBarcode(imageFORS);
           orderNumberFORS.textContent = liFORS1.length += 1;
           if (orderNumberFORS.textContent == 10) {
-            const li1 = Array.from(list.querySelectorAll("li[fors*=true]"));
+            const li1 = Array.from(document.querySelectorAll("li[fors*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
               $(elem).addClass("redFORS");
@@ -4795,6 +4818,14 @@ function buttonClick() {
     items = removeDuplicates(items);
     const listNew = document.createElement("li");
     listNew.setAttribute("id", "listNew");
+    listNew.setAttribute("mck", list.children[i].getAttribute("mck"));
+    listNew.setAttribute("oi", list.children[i].getAttribute("oi"));
+    listNew.setAttribute("gnfr", list.children[i].getAttribute("gnfr"));
+    listNew.setAttribute("soc", list.children[i].getAttribute("soc"));
+    listNew.setAttribute("vs", list.children[i].getAttribute("vs"));
+    listNew.setAttribute("ms", list.children[i].getAttribute("ms"));
+    listNew.setAttribute("cov", list.children[i].getAttribute("cov"));
+    listNew.setAttribute("fors", list.children[i].getAttribute("fors"));
     listNew.setAttribute("tabindex", "3");
     listNew.append(Object.values(items)[i]);
     list2.appendChild(listNew);
@@ -4803,6 +4834,11 @@ function buttonClick() {
     const descmck = document.querySelectorAll("p#descMCK");
     const descoi = document.querySelectorAll("p#descOI");
     const descgnfr = document.querySelectorAll("p#descGNFR");
+    const descsoc = document.querySelectorAll("p#descSOC");
+    const descvs = document.querySelectorAll("p#descVS");
+    const descms = document.querySelectorAll("p#descMS");
+    const desccov = document.querySelectorAll("p#descCOV");
+    const descfors = document.querySelectorAll("p#descFORS");
     for (let u = 0; u < descmck.length; u++) {
       const child = descmck[u];
       if (listNew.textContent === child.textContent) {
@@ -4817,6 +4853,36 @@ function buttonClick() {
     }
     for (let u = 0; u < descgnfr.length; u++) {
       const child = descgnfr[u];
+      if (listNew.textContent === child.textContent) {
+        $(listNew).css("text-decoration", "line-through");
+      }
+    }
+    for (let u = 0; u < descsoc.length; u++) {
+      const child = descsoc[u];
+      if (listNew.textContent === child.textContent) {
+        $(listNew).css("text-decoration", "line-through");
+      }
+    }
+    for (let u = 0; u < descvs.length; u++) {
+      const child = descvs[u];
+      if (listNew.textContent === child.textContent) {
+        $(listNew).css("text-decoration", "line-through");
+      }
+    }
+    for (let u = 0; u < descms.length; u++) {
+      const child = descms[u];
+      if (listNew.textContent === child.textContent) {
+        $(listNew).css("text-decoration", "line-through");
+      }
+    }
+    for (let u = 0; u < desccov.length; u++) {
+      const child = desccov[u];
+      if (listNew.textContent === child.textContent) {
+        $(listNew).css("text-decoration", "line-through");
+      }
+    }
+    for (let u = 0; u < descfors.length; u++) {
+      const child = descfors[u];
       if (listNew.textContent === child.textContent) {
         $(listNew).css("text-decoration", "line-through");
       }
@@ -4962,3 +5028,29 @@ search.addEventListener("input", (event) => {
 });
 search.addEventListener("keypress", pressEnter);
 button.addEventListener("click", combine);
+// const navListItems = Array.from(listNav.querySelectorAll('.navList'));
+// function classAddVendor (mck, vendor) {
+//   for (let k = 0; k < navListItems.length; k++) {
+//     const element = navListItems[k];
+//     for (let j = 0; j < vials.length; j++) {
+//       const elem = vials[j];
+//       element.setAttribute('mck', j.McKesson);
+//       if (element.textContent == elem[name]) {
+//         console.log(elem[vendor]);
+//         if (elem[vendor] == true) {
+//           element.setAttribute('class', mck);
+//           // $(element).addClass(mck);
+//           console.log(element)
+//         }
+//       }
+//     }
+//   }
+// }
+// classAddVendor('mck', McKesson);
+// classAddVendor('oi', OrderInsite);
+// classAddVendor('gnfr', GNFR);
+// classAddVendor('soc', signOrderCatalog);
+// classAddVendor('vs', vaxServe);
+// classAddVendor('ms', medSurge);
+// classAddVendor('cov', covap);
+// classAddVendor('fors', FORS);

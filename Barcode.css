@@ -135,6 +135,10 @@ body {
 .redMCK#li:active, .redOI#li:active, .redGNFR#li:active, .redSOC#li:active, .redVS#li:active, .redMS#li:active, .redCOV#li:active, .redFORS#li:active {
   background-color: red;
 }
+/* li.redMCK#navLi:active, li.redOI#navli:active, .redGNFR#navli:active, .redSOC#navli:active, .redVS#navli:active, .redMS#navli:active, .redCOV#navli:active, .redFORS#navli:active {
+  background-color: red;
+  transform: scale(1.1);
+} */
 #button {
   background-color: #7f7f7f;
   color: white;
