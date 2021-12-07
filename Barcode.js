@@ -3278,14 +3278,14 @@ let arrFORSItemNames = [];
 let items = [];
 let items1 = [];
 let addedItems = [];
-// let addedItemsMCK = [];
-// let addedItemsOI = [];
-// let addedItemsGNFR = [];
-// let addedItemsSOC = [];
-// let addedItemsVS = [];
-// let addedItemsMS = [];
-// let addedItemsCOV = [];
-// let addedItemsFORS = [];
+let addedItemsMCK = [];
+let addedItemsOI = [];
+let addedItemsGNFR = [];
+let addedItemsSOC = [];
+let addedItemsVS = [];
+let addedItemsMS = [];
+let addedItemsCOV = [];
+let addedItemsFORS = [];
 let DisplayAllItems1arr = [];
 let McKessonItems1arr = [];
 let OrderInsiteItems1arr = [];
@@ -3569,10 +3569,11 @@ function removeButtonFunc(
   image,
   char,
   redMCK,
-  addedItemsMCK
+  addedItemsMCK,
+  addedtomck
 ) {
   removeButtonMCK.addEventListener("click", function d(e) {
-    addedItems = removeDuplicates(addedItems);
+    // addedItems = removeDuplicates(addedItems);
     const desc = e.target.parentNode.querySelector("p").textContent;
     const QR =
       e.target.parentNode.parentNode.querySelector(".QRVendor").firstChild;
@@ -3599,6 +3600,9 @@ function removeButtonFunc(
       }
       if (desc == li1Text) {
         $(elem).show();
+        // delete elem.dataset[addedtomck];
+        elem.removeAttribute(addedtomck);
+        // console.log(elem.dataset);
       }
     }
     const listUl = listNav.querySelectorAll("ul");
@@ -3624,26 +3628,26 @@ function removeButtonFunc(
         $(element).css("text-decoration", "none");
       }
     });
-    // for (let j = 0; j < addedItemsMCK.length; j++) {
-    //   const addedItemsLoop = addedItemsMCK[j];
-    //   if (desc == addedItemsLoop) {
-    //     const addedItemsLoopIndex = addedItemsMCK.indexOf(addedItemsLoop);
-    //     if (addedItemsLoopIndex > -1) {
-    //       addedItemsMCK.splice(addedItemsLoopIndex, 1);
-    //     }
-    //   }
-    // }
-    for (let j = 0; j < addedItems.length; j++) {
-      const addedItemsLoop = addedItems[j];
-      console.log(addedItemsLoop)
+    for (let j = 0; j < addedItemsMCK.length; j++) {
+      const addedItemsLoop = addedItemsMCK[j];
       if (desc == addedItemsLoop) {
-        const addedItemsLoopIndex = addedItems.indexOf(addedItemsLoop);
+        const addedItemsLoopIndex = addedItemsMCK.indexOf(addedItemsLoop);
         if (addedItemsLoopIndex > -1) {
-          addedItems.splice(addedItemsLoopIndex, 1);
-          console.log(addedItems);
+          addedItemsMCK.splice(addedItemsLoopIndex, 1);
         }
       }
     }
+    // for (let j = 0; j < addedItems.length; j++) {
+    //   const addedItemsLoop = addedItems[j];
+    //   // console.log(addedItemsLoop)
+    //   if (desc == addedItemsLoop) {
+    //     const addedItemsLoopIndex = addedItems.indexOf(addedItemsLoop);
+    //     if (addedItemsLoopIndex > -1) {
+    //       addedItems.splice(addedItemsLoopIndex, 1);
+    //       console.log(addedItems);
+    //     }
+    //   }
+    // }
     const numberItem = liVendor
       .querySelector(".itemNumberVendor")
       .textContent.replace("Item Number: ", " ")
@@ -3764,6 +3768,8 @@ function categorizeByClass(arr, a) {
 function onClick(li) {
   for (i = 0; i < vials.length; i++) {
     if (li.textContent == vials[i].name) {
+      // addedItems = removeDuplicates(addedItems);
+      // addedItems.push(li.textContent);
       let index = vials.map((e) => e.name).indexOf(li.textContent);
       const target = event.target;
       const imageMCK = document.createElement("img");
@@ -4094,7 +4100,8 @@ function onClick(li) {
         bigMCKImage,
         " OR ",
         "redMCK",
-        // addedItemsMCK
+        addedItemsMCK,
+        "data-addedtomck"
       );
       removeButtonFunc(
         removeButtonOI,
@@ -4102,7 +4109,8 @@ function onClick(li) {
         bigOIImage,
         ", ",
         "redOI",
-        // addedItemsOI
+        addedItemsOI,
+        "data-addedtooi"
       );
       removeButtonFunc(
         removeButtonGNFR,
@@ -4110,7 +4118,8 @@ function onClick(li) {
         bigGNFRImage,
         " OR ",
         "redGNFR",
-        // addedItemsGNFR
+        addedItemsGNFR,
+        "data-addedtognfr"
       );
       removeButtonFunc(
         removeButtonSOC,
@@ -4118,7 +4127,8 @@ function onClick(li) {
         bigSOCImage,
         ", ",
         "redSOC",
-        // addedItemsSOC
+        addedItemsSOC,
+        "data-addedtosoc"
       );
       removeButtonFunc(
         removeButtonVS,
@@ -4126,7 +4136,8 @@ function onClick(li) {
         bigVSImage,
         ", ",
         "redVS",
-        // addedItemsVS
+        addedItemsVS,
+        "data-addedtovs"
       );
       removeButtonFunc(
         removeButtonMS,
@@ -4134,7 +4145,8 @@ function onClick(li) {
         bigMSImage,
         ", ",
         "redMS",
-        // addedItemsMS
+        addedItemsMS,
+        "data-addedtoms"
       );
       removeButtonFunc(
         removeButtonCOV,
@@ -4142,7 +4154,8 @@ function onClick(li) {
         bigCOVImage,
         ", ",
         "redCOV",
-        // addedItemsCOV
+        addedItemsCOV,
+        "data-addedtocov"
       );
       removeButtonFunc(
         removeButtonFORS,
@@ -4150,9 +4163,10 @@ function onClick(li) {
         bigFORSImage,
         ", ",
         "redFORS",
-        // addedItemsFORS
+        addedItemsFORS,
+        "data-addedtofors"
       );
-      addedItems.push(li.textContent);
+      // addedItems = removeDuplicates(addedItems);
       const collapseButtonMCK = document.createElement("button");
       collapseButtonMCK.setAttribute("id", "collapseButtonMCK");
       collapseButtonMCK.setAttribute("class", "collapseButtonVendor");
@@ -4389,7 +4403,7 @@ function onClick(li) {
               return;
             }
           }
-          addedItemsOI.push(li.textContent);
+          // addedItemsOI.push(li.textContent);
           // addedItems.push(li.textContent);
           arr1.push(itemNumber1);
           bigLinkOI.text = "OrderInsite";
@@ -4433,16 +4447,22 @@ function onClick(li) {
         if (liMCK1.length == 10) {
           $(alert).show().delay(2000).fadeOut("slow");
         }
-        if (liMCK1.length < 10) {
-          for (let t = 0; t < liMCK1.length; t++) {
-            const liMCK1Loop = liMCK1[t];
-            const right = liMCK1Loop.querySelector("#descMCK").textContent;
-            if (target.textContent == right) {
-              return;
-            }
-          }
+        if (liMCK1.length < 10 && !target.hasAttribute("data-addedtomck")) {
+          target.dataset.addedtomck = true;
+          // for (let t = 0; t < liMCK1.length; t++) {
+          //   const liMCK1Loop = liMCK1[t];
+          //   const right = liMCK1Loop.querySelector("#descMCK").textContent;
+          //   // const left = liOI1
+          //   // if (target.textContent == right) {
+          //   //   return;
+          //   // }
+          //   // if (target.hasAttribute('data-addedtomck')) {
+          //   //   console.log('yay');
+          //   //   return;
+          //   // }
+          // }
           const itemNumber1MCK = vials[index].itemNumber;
-          // addedItemsMCK.push(li.textContent);
+          addedItemsMCK.push(li.textContent);
           // addedItems.push(li.textContent);
           arr.push(itemNumber1MCK);
           bigLinkMCK.text = "McKesson Website";
@@ -4505,16 +4525,17 @@ function onClick(li) {
         if (liOI1.length == 10) {
           $(alert).show().delay(2000).fadeOut("slow");
         }
-        if (liOI1.length < 10) {
-          for (let t = 0; t < liOI1.length; t++) {
-            const liOI1Loop = liOI1[t];
-            const right = liOI1Loop.querySelector("#descOI").textContent;
-            if (target.textContent == right) {
-              return;
-            }
-          }
+        if (liOI1.length < 10 && !target.hasAttribute("data-addedtooi")) {
+          target.dataset.addedtooi = true;
+          // for (let t = 0; t < liOI1.length; t++) {
+          //   const liOI1Loop = liOI1[t];
+          //   const right = liOI1Loop.querySelector("#descOI").textContent;
+          //   if (target.textContent == right) {
+          //     return;
+          //   }
+          // }
           const itemNumber1OI = vials[index].itemNumber;
-          // addedItemsOI.push(li.textContent);
+          addedItemsOI.push(li.textContent);
           // addedItems.push(li.textContent);
           arr1.push(itemNumber1OI);
           bigLinkOI.text = "OrderInsite Website";
@@ -4580,15 +4601,16 @@ function onClick(li) {
         if (liGNFR1.length == 10) {
           $(alert).show().delay(2000).fadeOut("slow");
         }
-        if (liGNFR1.length < 10) {
-          for (let t = 0; t < liGNFR1.length; t++) {
-            const liGNFR1Loop = liGNFR1[t];
-            const right = liGNFR1Loop.querySelector("#descGNFR").textContent;
-            if (target.textContent == right) {
-              return;
-            }
-          }
-          // addedItemsGNFR.push(li.textContent);
+        if (liGNFR1.length < 10 && !target.hasAttribute("data-addedtognfr")) {
+          target.dataset.addedtognfr = true;
+          // for (let t = 0; t < liGNFR1.length; t++) {
+          //   const liGNFR1Loop = liGNFR1[t];
+          //   const right = liGNFR1Loop.querySelector("#descGNFR").textContent;
+          //   if (target.textContent == right) {
+          //     return;
+          //   }
+          // }
+          addedItemsGNFR.push(li.textContent);
           // addedItems.push(li.textContent);
           arr2.push(itemNumber1);
           bigLinkGNFR.text = "GNFR Website";
@@ -4632,15 +4654,16 @@ function onClick(li) {
         if (liSOC1.length == 10) {
           $(alert).show().delay(2000).fadeOut("slow");
         }
-        if (liSOC1.length < 10) {
-          for (let t = 0; t < liSOC1.length; t++) {
-            const liSOC1Loop = liSOC1[t];
-            const right = liSOC1Loop.querySelector("#descSOC").textContent;
-            if (target.textContent == right) {
-              return;
-            }
-          }
-          // addedItemsSOC.push(li.textContent);
+        if (liSOC1.length < 10 && !target.hasAttribute("data-addedtosoc")) {
+          target.dataset.addedtosoc = true;
+          // for (let t = 0; t < liSOC1.length; t++) {
+          //   const liSOC1Loop = liSOC1[t];
+          //   const right = liSOC1Loop.querySelector("#descSOC").textContent;
+          //   if (target.textContent == right) {
+          //     return;
+          //   }
+          // }
+          addedItemsSOC.push(li.textContent);
           // addedItems.push(li.textContent);
           arr3.push(itemNumber1);
           bigLinkSOC.text = "Sign Order Catalog Website";
@@ -4690,15 +4713,16 @@ function onClick(li) {
         if (liVS1.length == 10) {
           $(alert).show().delay(2000).fadeOut("slow");
         }
-        if (liVS1.length < 10) {
-          for (let t = 0; t < liVS1.length; t++) {
-            const liVS1Loop = liVS1[t];
-            const right = liVS1Loop.querySelector("#descVS").textContent;
-            if (target.textContent == right) {
-              return;
-            }
-          }
-          // addedItemsVS.push(li.textContent);
+        if (liVS1.length < 10 && !target.hasAttribute("data-addedtovs")) {
+          target.dataset.addedtovs = true;
+          // for (let t = 0; t < liVS1.length; t++) {
+          //   const liVS1Loop = liVS1[t];
+          //   const right = liVS1Loop.querySelector("#descVS").textContent;
+          //   if (target.textContent == right) {
+          //     return;
+          //   }
+          // }
+          addedItemsVS.push(li.textContent);
           // addedItems.push(li.textContent);
           arr4.push(itemNumber1);
           bigLinkVS.text = "VaxServe Website";
@@ -4742,17 +4766,18 @@ function onClick(li) {
         if (liMS1.length == 10) {
           $(alert).show().delay(2000).fadeOut("slow");
         }
-        if (liMS1.length < 10) {
-          for (let t = 0; t < liMS1.length; t++) {
-            const liMS1Loop = liMS1[t];
-            const right = liMS1Loop.querySelector("#descMS").textContent;
-            console.log(liMS1Loop);
-            console.log(right);
-            if (target.textContent == right) {
-              return;
-            }
-          }
-          // addedItemsMS.push(li.textContent);
+        if (liMS1.length < 10 && !target.hasAttribute("data-addedtoms")) {
+          target.dataset.addedtoms = true;
+          // for (let t = 0; t < liMS1.length; t++) {
+          //   const liMS1Loop = liMS1[t];
+          //   const right = liMS1Loop.querySelector("#descMS").textContent;
+          //   console.log(liMS1Loop);
+          //   console.log(right);
+          //   if (target.textContent == right) {
+          //     return;
+          //   }
+          // }
+          addedItemsMS.push(li.textContent);
           // addedItems.push(li.textContent);
           arr5.push(itemNumber1);
           bigLinkMS.text = "McK MedSurge Website";
@@ -4796,17 +4821,18 @@ function onClick(li) {
         if (liCOV1.length == 10) {
           $(alert).show().delay(2000).fadeOut("slow");
         }
-        if (liCOV1.length < 10) {
-          for (let t = 0; t < liCOV1.length; t++) {
-            const liCOV1Loop = liCOV1[t];
-            const right = liCOV1Loop.querySelector("#descCOV").textContent;
-            console.log(liCOV1Loop);
-            console.log(right);
-            if (target.textContent == right) {
-              return;
-            }
-          }
-          // addedItemsCOV.push(li.textContent);
+        if (liCOV1.length < 10 && !target.hasAttribute("data-addedtomck")) {
+          target.dataset.addedtocov = true;
+          // for (let t = 0; t < liCOV1.length; t++) {
+          //   const liCOV1Loop = liCOV1[t];
+          //   const right = liCOV1Loop.querySelector("#descCOV").textContent;
+          //   console.log(liCOV1Loop);
+          //   console.log(right);
+          //   if (target.textContent == right) {
+          //     return;
+          //   }
+          // }
+          addedItemsCOV.push(li.textContent);
           // addedItems.push(li.textContent);
           arr6.push(itemNumber1);
           bigLinkCOV.text = "Covap Website";
@@ -4850,17 +4876,18 @@ function onClick(li) {
         if (liFORS1.length == 10) {
           $(alert).show().delay(2000).fadeOut("slow");
         }
-        if (liFORS1.length < 10) {
-          for (let t = 0; t < liFORS1.length; t++) {
-            const liFORS1Loop = liFORS1[t];
-            const right = liFORS1Loop.querySelector("#descFORS").textContent;
-            console.log(liFORS1Loop);
-            console.log(right);
-            if (target.textContent == right) {
-              return;
-            }
-          }
-          // addedItemsFORS.push(li.textContent);
+        if (liFORS1.length < 10 && !target.hasAttribute("data-addedtomck")) {
+          target.dataset.addedtofors = true;
+          // for (let t = 0; t < liFORS1.length; t++) {
+          //   const liFORS1Loop = liFORS1[t];
+          //   const right = liFORS1Loop.querySelector("#descFORS").textContent;
+          //   console.log(liFORS1Loop);
+          //   console.log(right);
+          //   if (target.textContent == right) {
+          //     return;
+          //   }
+          // }
+          addedItemsFORS.push(li.textContent);
           // addedItems.push(li.textContent);
           arr7.push(itemNumber1);
           bigLinkFORS.text = "FORS Website";
@@ -5051,6 +5078,55 @@ function setList(array) {
     list.appendChild(li);
     li.setAttribute("id", "li");
     avoidDuplicatesOnClick(li);
+    const descMCK = Array.from(
+      itemContainers.querySelectorAll("p.descVendor#descMCK")
+    );
+    const descOI = Array.from(
+      itemContainers.querySelectorAll("p.descVendor#descOI")
+    );
+    const descGNFR = Array.from(
+      itemContainers.querySelectorAll("p.descVendor#descGNFR")
+    );
+    const descSOC = Array.from(
+      itemContainers.querySelectorAll("p.descVendor#descSOC")
+    );
+    const descVS = Array.from(
+      itemContainers.querySelectorAll("p.descVendor#descVS")
+    );
+    const descMS = Array.from(
+      itemContainers.querySelectorAll("p.descVendor#descMS")
+    );
+    const descCOV = Array.from(
+      itemContainers.querySelectorAll("p.descVendor#descCOV")
+    );
+    const descFORS = Array.from(
+      itemContainers.querySelectorAll("p.descVendor#descFORS")
+    );
+    function add(desc, addedtomck) {
+      desc.forEach((e) => {
+        if (li.textContent === e.textContent) {
+          li.setAttribute(addedtomck, true);
+        }
+      });
+    }
+    add(descMCK, "data-addedtomck");
+    add(descOI, "data-addedtooi");
+    add(descGNFR, "data-addedtognfr");
+    add(descSOC, "data-addedtosoc");
+    add(descVS, "data-addedtovs");
+    add(descMS, "data-addedtoms");
+    add(descCOV, "data-addedtocov");
+    add(descFORS, "data-addedtofors");
+    // function attributeAdd(descMCK) {
+    //   const descMCK = Array.from(
+    //     itemContainers.querySelectorAll("p.descVendor#" + descMCK)
+    //   );
+    //   descMCK.forEach(function add (e, addedtomck) {
+    //     if (li.textContent === e.textContent) {
+    //       li.dataset[addedtomck] = true;
+    //     }
+    //   });
+    // }
     // const descmck = MckessonItems.querySelectorAll('#descMCK');
     // console.log(descmck);
     // const descoi = OrderInsiteItems.querySelectorAll('#descOI');
