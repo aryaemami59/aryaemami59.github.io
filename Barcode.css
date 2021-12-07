@@ -132,7 +132,14 @@ body {
   transition: ease-in-out 0.1s;
   transform: scale(1.2);
 }
-.redMCK#li:active, .redOI#li:active, .redGNFR#li:active, .redSOC#li:active, .redVS#li:active, .redMS#li:active, .redCOV#li:active, .redFORS#li:active {
+.redMCK#li:active,
+.redOI#li:active,
+.redGNFR#li:active,
+.redSOC#li:active,
+.redVS#li:active,
+.redMS#li:active,
+.redCOV#li:active,
+.redFORS#li:active {
   background-color: red;
 }
 /* li.redMCK#navLi:active, li.redOI#navli:active, .redGNFR#navli:active, .redSOC#navli:active, .redVS#navli:active, .redMS#navli:active, .redCOV#navli:active, .redFORS#navli:active {
@@ -285,7 +292,8 @@ body {
 #bigCollapseHideButtonSOC,
 #bigClearButtonSOC,
 #removeButtonSOC,
-#collapseButtonSOC {
+#collapseButtonSOC,
+#removeDuplicatesSOC {
   background-image: linear-gradient(rgb(175, 0, 0, 1), rgba(175, 0, 0, 0));
 }
 #descVS,
@@ -296,7 +304,8 @@ body {
 #bigCollapseHideButtonVS,
 #bigClearButtonVS,
 #removeButtonVS,
-#collapseButtonVS {
+#collapseButtonVS,
+#removeDuplicatesVS {
   background-image: linear-gradient(rgb(67, 0, 192, 1), rgba(67, 0, 192, 0));
 }
 #descMS,
@@ -307,7 +316,8 @@ body {
 #bigCollapseHideButtonMS,
 #bigClearButtonMS,
 #removeButtonMS,
-#collapseButtonMS {
+#collapseButtonMS,
+#removeDuplicatesMS {
   background-image: linear-gradient(rgb(226, 102, 0, 1), rgba(226, 102, 0, 0));
 }
 #descCOV,
@@ -318,7 +328,8 @@ body {
 #bigCollapseHideButtonCOV,
 #bigClearButtonCOV,
 #removeButtonCOV,
-#collapseButtonCOV {
+#collapseButtonCOV,
+#removeDuplicatesCOV {
   background-image: linear-gradient(rgb(121, 0, 111, 1), rgba(121, 0, 111, 0));
 }
 #descFORS,
@@ -329,7 +340,8 @@ body {
 #bigCollapseHideButtonFORS,
 #bigClearButtonFORS,
 #removeButtonFORS,
-#collapseButtonFORS {
+#collapseButtonFORS,
+#removeDuplicatesFORS {
   background-image: linear-gradient(rgb(0, 100, 104, 1), rgba(0, 100, 104, 0));
 }
 .descVendor {
@@ -367,7 +379,8 @@ body {
 .bigClearButtonVendor:active,
 .removeButtonVendor:active,
 .collapseButtonVendor:active,
-.smallLinkVendor:active {
+.smallLinkVendor:active,
+.removeDuplicatesVendor:active {
   transform: scale(1.2);
   opacity: 0.5;
 }
@@ -831,7 +844,8 @@ body {
 }
 .bigCollapseHideButtonVendor,
 .bigCollapseShowButtonVendor,
-.bigClearButtonVendor {
+.bigClearButtonVendor,
+.removeDuplicatesVendor {
   color: white;
   font-family: "Montserrat", sans-serif;
   font-size: 4px;
@@ -848,7 +862,8 @@ body {
 }
 .bigCollapseHideButtonVendor:hover,
 .bigCollapseShowButtonVendor:hover,
-.bigClearButtonVendor:hover {
+.bigClearButtonVendor:hover,
+.removeDuplicatesVendor:hover {
   cursor: pointer;
   transform: scale(1.1);
   -webkit-transition: transform ease-in-out 0.1s;
@@ -856,17 +871,20 @@ body {
 }
 #bigCollapseHideButtonMCK,
 #bigCollapseShowButtonMCK,
-#bigClearButtonMCK {
+#bigClearButtonMCK,
+#removeDuplicatesMCK {
   background-image: linear-gradient(rgb(0, 100, 140, 1), rgba(0, 100, 140, 0));
 }
 #bigCollapseHideButtonOI,
 #bigCollapseShowButtonOI,
-#bigClearButtonOI {
+#bigClearButtonOI,
+#removeDuplicatesOI {
   background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
 }
 #bigCollapseHideButtonGNFR,
 #bigCollapseShowButtonGNFR,
-#bigClearButtonGNFR {
+#bigClearButtonGNFR,
+#removeDuplicatesGNFR {
   background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
 }
 .orderNumberVendor {
@@ -1188,7 +1206,7 @@ body {
     );
   }
   .descVendor {
-    height: 100px;
+    height: 110px;
     display: flex;
     justify-content: center;
     text-shadow: 2px 2px 2px #000000;
@@ -1250,6 +1268,7 @@ body {
     max-height: 100px;
     margin-block-start: 1em;
     margin-block-end: 1em;
+    position: relative;
   }
   .itemNumberVendor:hover {
     cursor: pointer;
@@ -1720,7 +1739,8 @@ body {
   }
   .bigCollapseHideButtonVendor,
   .bigCollapseShowButtonVendor,
-  .bigClearButtonVendor {
+  .bigClearButtonVendor,
+  .removeDuplicatesVendor {
     color: white;
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
@@ -1735,7 +1755,8 @@ body {
   }
   .bigCollapseHideButtonVendor:hover,
   .bigCollapseShowButtonVendor:hover,
-  .bigClearButtonVendor:hover {
+  .bigClearButtonVendor:hover,
+  .removeDuplicatesVendor:hover {
     cursor: pointer;
     transform: scale(1.1);
     -webkit-transition: transform ease-in-out 0.1s;
@@ -1743,7 +1764,8 @@ body {
   }
   #bigCollapseHideButtonMCK,
   #bigCollapseShowButtonMCK,
-  #bigClearButtonMCK {
+  #bigClearButtonMCK,
+  #removeDuplicatesMCK {
     background-image: linear-gradient(
       rgb(0, 100, 140, 1),
       rgba(0, 100, 140, 0)
@@ -1752,13 +1774,15 @@ body {
   }
   #bigCollapseHideButtonOI,
   #bigCollapseShowButtonOI,
-  #bigClearButtonOI {
+  #bigClearButtonOI,
+  #removeDuplicatesOI {
     background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
     background-color: inherit;
   }
   #bigCollapseHideButtonGNFR,
   #bigCollapseShowButtonGNFR,
-  #bigClearButtonGNFR {
+  #bigClearButtonGNFR,
+  #removeDuplicatesGNFR {
     background-image: linear-gradient(
       rgb(190, 190, 0, 1),
       rgba(190, 190, 0, 0)
@@ -1800,19 +1824,52 @@ body {
     box-shadow: 0px 0px 20px 0px rgb(255, 0, 0);
   }
   .duplicate span.sp::after {
-    content: '\0021';
-    background-color: rgba(255, 46, 46, 0.329);
-    border-radius: 10px;
-    /* display: none; */
-    /* display: ruby; */
-    /* text-align: center; */
+    /* content: '\0021'; */
+    content: "Duplicate Item!";
+    /* background-color: rgba(255, 46, 46, 0.329); */
+    background-color: rgb(255, 46, 46);
+    border-radius: 5px;
     position: absolute;
-    /* position: relative; */
-    padding: 5px;
-    font-size: 15px;
-    bottom: 85px;
-    /* right: 20px; */
-    left: 115px;
-    /* top: 30px; */
+    padding: 2px;
+    width: 70px;
+    /* font-size: 15px; */
+    /* left: 115px; */
+    /* bottom: 85px; */
+    bottom: 97px;
+    font-size: 8px;
+    left: 55px;
+  }
+  .popup {
+    position: absolute;
+    background-color: #555;
+    color: white;
+    font-size: 10px;
+    left: 4px;
+    bottom: 100px;
+    padding: 5px 2px;
+    border-radius: 5px;
+  }
+  .popup::after {
+    content: "";
+    position: absolute;
+    top: 99%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  .popup.number {
+    position: absolute;
+    background-color: #555;
+    color: white;
+    font-size: 10px;
+    left: 4px;
+    padding: 5px 2px;
+    border-radius: 5px;
+    bottom: 40px;
+  }
+  .removeDuplicatesVendor {
+    font-size: 12px;
   }
 }

@@ -2997,6 +2997,10 @@ const covItems = vials.filter((e) => e.covap === true);
 const forsItems = vials.filter((e) => e.FORS === true);
 const itemNames = vials.map((e) => e.name);
 const itemContainers = document.querySelector(".itemContainers");
+const popup = document.createElement("span");
+// this function turns a const or var name to a string that can be accessed in functions.
+const varToString = (varObj) => Object.keys(varObj)[0];
+// const displayName = varToString({somevar});
 // const sp = document.createElement('span');
 // sp.setAttribute('id', 'sp');
 const bigLinkMCK = document.createElement("a");
@@ -3212,6 +3216,27 @@ const orderNumberSOC = document.getElementById("orderNumberSOC");
 const orderNumberVS = document.getElementById("orderNumberVS");
 const orderNumberMS = document.getElementById("orderNumberMS");
 const orderNumberCOV = document.getElementById("orderNumberCOV");
+const removeDuplicatesMCK = document.createElement("button");
+const removeDuplicatesOI = document.createElement("button");
+const removeDuplicatesGNFR = document.createElement("button");
+const removeDuplicatesSOC = document.createElement("button");
+const removeDuplicatesVS = document.createElement("button");
+const removeDuplicatesMS = document.createElement("button");
+const removeDuplicatesCOV = document.createElement("button");
+const removeDuplicatesFORS = document.createElement("button");
+function createRemoveDuplicateButton(removeDuplicates, id) {
+  removeDuplicates.setAttribute("id", id);
+  removeDuplicates.setAttribute("class", "removeDuplicatesVendor");
+  removeDuplicates.textContent = "Remove Duplicate Items";
+}
+createRemoveDuplicateButton(removeDuplicatesMCK, "removeDuplicatesMCK");
+createRemoveDuplicateButton(removeDuplicatesOI, "removeDuplicatesOI");
+createRemoveDuplicateButton(removeDuplicatesGNFR, "removeDuplicatesGNFR");
+createRemoveDuplicateButton(removeDuplicatesSOC, "removeDuplicatesSOC");
+createRemoveDuplicateButton(removeDuplicatesVS, "removeDuplicatesVS");
+createRemoveDuplicateButton(removeDuplicatesMS, "removeDuplicatesMS");
+createRemoveDuplicateButton(removeDuplicatesCOV, "removeDuplicatesCOV");
+createRemoveDuplicateButton(removeDuplicatesFORS, "removeDuplicatesFORS");
 
 function bigCollapseHideFunc(bigCollapseHideButtonGNFR) {
   $(bigCollapseHideButtonGNFR).on("click", function (e) {
@@ -3585,12 +3610,6 @@ function removeButtonFunc(
     const listItemParent = liVendor.parentNode;
     const li1 = list.querySelectorAll("li");
     const childButtons = $(listItemParent).children().filter("button");
-
-    // alternativeDesc.forEach((e) => {
-    //   if (e.textContent === desc) {
-    //     console.log(desc);
-    //   }
-    // });
     for (let h = 0; h < li1.length; h++) {
       const elem = li1[h];
       const li1Text = elem.textContent;
@@ -3602,7 +3621,6 @@ function removeButtonFunc(
         $(elem).show();
         // delete elem.dataset[addedtomck];
         elem.removeAttribute(addedtomck);
-        // console.log(elem.dataset);
       }
     }
     const listUl = listNav.querySelectorAll("ul");
@@ -3657,7 +3675,6 @@ function removeButtonFunc(
       if (numberItem == element) {
         const index = array.indexOf(element);
         array.splice(index, 1);
-        // console.log(array);
         if (index > -1) {
           if (array.length > 0) {
             $(QR).show();
@@ -3672,14 +3689,15 @@ function removeButtonFunc(
       }
     }
     liVendor.remove(liVendor.childNodes);
-    // const alternativeDesc = Array.from(
-    //   itemContainers.querySelectorAll("p.descVendor")
-    // );
-    // alternativeDesc.forEach((e) => {
-    //   if (e.textContent === desc) {
-    //     $(e).removeClass("duplicate");
-    //   }
-    // });
+    const alternativeDesc = Array.from(
+      itemContainers.querySelectorAll("p.descVendor")
+    );
+    alternativeDesc.forEach((e) => {
+      if (e.textContent === desc) {
+        console.log(e);
+        $(e).removeClass("duplicate");
+      }
+    });
   });
 }
 function bigClearFunc(bigClearButtonMCK, array, redMCK, redMCK1) {
@@ -3698,10 +3716,15 @@ function bigClearFunc(bigClearButtonMCK, array, redMCK, redMCK1) {
       const li1 = list.querySelectorAll("li");
       const listUl = listNav.querySelectorAll("ul");
       const orderNumberVendor = vendorItems.querySelector(".orderNumberVendor");
+      const removeDuplicates = vendorItems.querySelector(
+        ".removeDuplicatesVendor"
+      );
+      const desc = Array.from(vendorItems.querySelectorAll(".descVendor"));
       $(vendorQR).hide();
       $(bigLinkVendor).remove();
       $(hideButton).remove();
       $(showButton).remove();
+      $(removeDuplicates).remove();
       bigClearButtonMCK.remove();
       for (let i = 0; i < liVendor.length; i++) {
         const liVendorLoop = liVendor[i];
@@ -3730,6 +3753,14 @@ function bigClearFunc(bigClearButtonMCK, array, redMCK, redMCK1) {
           }
         }
         liVendorLoop.remove(liVendorLoop.childNodes);
+        const alternativeDesc = Array.from(
+          itemContainers.querySelectorAll("p.descVendor")
+        );
+        alternativeDesc.forEach((e) => {
+          if (e.textContent === descVendor) {
+            $(e).removeClass("duplicate");
+          }
+        });
       }
       array.length = 0;
       addedItems.length = 0;
@@ -3745,6 +3776,53 @@ bigClearFunc(bigClearButtonVS, arr4, ".redVS", "redVS");
 bigClearFunc(bigClearButtonMS, arr5, ".redMS", "redMS");
 bigClearFunc(bigClearButtonCOV, arr6, ".redCOV", "redCOV");
 bigClearFunc(bigClearButtonFORS, arr7, ".redFORS", "redFORS");
+
+function removeDuplicatesFunc(removeDuplicates) {
+  removeDuplicates.addEventListener("click", (e) => {
+    const duplicates = Array.from(
+      e.target.parentNode.querySelectorAll(".duplicate")
+    );
+    // console.log(duplicates);
+    const vendorItems = e.target.parentNode;
+    const vendorQR = vendorItems.querySelector(".vendorQR");
+    const bigLinkVendor = vendorItems.querySelector(".bigLinkVendor");
+    const hideButton = vendorItems.querySelector(
+      ".bigCollapseHideButtonVendor"
+    );
+    const showButton = vendorItems.querySelector(
+      ".bigCollapseShowButtonVendor"
+    );
+    const clearButton = vendorItems.querySelector(".bigClearButtonVendor");
+    duplicates.forEach((e) => e.parentNode.remove());
+    const liVendor = vendorItems.querySelectorAll(".liVendor");
+    const orderNumberVendor = vendorItems.querySelector(".orderNumberVendor");
+    orderNumberVendor.textContent = liVendor.length;
+    const alternativeDesc = Array.from(
+      itemContainers.querySelectorAll("p.descVendor.duplicate")
+    );
+    alternativeDesc.forEach((e) => {
+        // console.log(e);
+        $(e).removeClass("duplicate");
+    });
+    if (liVendor.length === 0) {
+      $(vendorQR).hide();
+      $(bigLinkVendor).remove();
+      $(hideButton).remove();
+      $(showButton).remove();
+      $(clearButton).remove();
+      removeDuplicates.remove();
+    }
+  });
+}
+
+removeDuplicatesFunc(removeDuplicatesMCK);
+removeDuplicatesFunc(removeDuplicatesOI);
+removeDuplicatesFunc(removeDuplicatesGNFR);
+removeDuplicatesFunc(removeDuplicatesSOC);
+removeDuplicatesFunc(removeDuplicatesVS);
+removeDuplicatesFunc(removeDuplicatesMS);
+removeDuplicatesFunc(removeDuplicatesCOV);
+removeDuplicatesFunc(removeDuplicatesFORS);
 // this function takes list items and categorizes them based on vendor and adds vendor icons.
 function categorizeByClass(arr, a) {
   for (let j = 0; j < arr.length; j++) {
@@ -3845,13 +3923,6 @@ function onClick(li) {
       descMCK.setAttribute("title", "Click Here To Copy The Name of The Item");
       const spMCK = document.createElement("span");
       const spOI = document.createElement("span");
-      // spMCK.setAttribute("class", "sp");
-      // descMCK.parentNode.append(sp);
-      // spMCK.textContent = "!";
-      // const sp = document.createElement("span");
-      // descMCK.append(sp);
-      // $(".duplicate").append(sp);
-      // sp.textContent = "!";
       const descOI = document.createElement("p");
       descOI.textContent = nameMain;
       descOI.setAttribute("id", "descOI");
@@ -4073,9 +4144,40 @@ function onClick(li) {
       removeButtonFORS.textContent = "X";
       removeButtonFORS.setAttribute("id", "removeButtonFORS");
       removeButtonFORS.setAttribute("class", "removeButtonVendor");
+      // const removeDuplicatesMCK = document.createElement("button");
+      // const removeDuplicatesOI = document.createElement("button");
+      // const removeDuplicatesGNFR = document.createElement("button");
+      // const removeDuplicatesSOC = document.createElement("button");
+      // const removeDuplicatesVS = document.createElement("button");
+      // const removeDuplicatesMS = document.createElement("button");
+      // const removeDuplicatesCOV = document.createElement("button");
+      // const removeDuplicatesFORS = document.createElement("button");
+      // function createRemoveDuplicateButton(removeDuplicates, id) {
+      //   removeDuplicates.setAttribute("id", id);
+      //   removeDuplicates.setAttribute("class", "removeDuplicatesVendor");
+      //   removeDuplicates.textContent = "Remove Duplicate Items";
+      // }
+      // createRemoveDuplicateButton(removeDuplicatesMCK, "removeDuplicatesMCK");
+      // createRemoveDuplicateButton(removeDuplicatesOI, "removeDuplicatesOI");
+      // createRemoveDuplicateButton(removeDuplicatesGNFR, "removeDuplicatesGNFR");
+      // createRemoveDuplicateButton(removeDuplicatesSOC, "removeDuplicatesSOC");
+      // createRemoveDuplicateButton(removeDuplicatesVS, "removeDuplicatesVS");
+      // createRemoveDuplicateButton(removeDuplicatesMS, "removeDuplicatesMS");
+      // createRemoveDuplicateButton(removeDuplicatesCOV, "removeDuplicatesCOV");
+      // createRemoveDuplicateButton(removeDuplicatesFORS, "removeDuplicatesFORS");
       function copyItemNumber(itemNumberMCK, itemNumber1) {
         itemNumberMCK.addEventListener("click", (e) => {
           navigator.clipboard.writeText(itemNumber1);
+          popup.setAttribute("id", "popup");
+          popup.setAttribute("class", "popup");
+          const target1 = e.target;
+          popup.remove();
+          popup.textContent = "Copied!";
+          target1.appendChild(popup);
+          $(popup).show().delay(500).fadeOut("slow");
+          if (target1.classList.contains("itemNumberVendor")) {
+            $(popup).addClass("number");
+          }
         });
       }
       copyItemNumber(itemNumberMCK, itemNumber1);
@@ -4471,6 +4573,7 @@ function onClick(li) {
           MckessonItems.insertBefore(bigCollapseShowButtonMCK, testingMCK);
           MckessonItems.insertBefore(bigCollapseHideButtonMCK, testingMCK);
           MckessonItems.insertBefore(bigClearButtonMCK, testingMCK);
+          MckessonItems.insertBefore(removeDuplicatesMCK, testingMCK);
           $("#MCKQR").show();
           QRMCK.append(document.getElementById("MCKQR"));
           copyItemNumber(bigLinkMCK, arr.join(" OR "));
@@ -4544,6 +4647,7 @@ function onClick(li) {
           OrderInsiteItems.insertBefore(bigCollapseShowButtonOI, testingOI);
           OrderInsiteItems.insertBefore(bigCollapseHideButtonOI, testingOI);
           OrderInsiteItems.insertBefore(bigClearButtonOI, testingOI);
+          OrderInsiteItems.insertBefore(removeDuplicatesOI, testingOI);
           $("#OIQR").show();
           QROI.append(document.getElementById("OIQR"));
           copyItemNumber(bigLinkOI, arr1.join(", "));
@@ -4619,6 +4723,7 @@ function onClick(li) {
           GNFRItems.insertBefore(bigCollapseShowButtonGNFR, testingGNFR);
           GNFRItems.insertBefore(bigCollapseHideButtonGNFR, testingGNFR);
           GNFRItems.insertBefore(bigClearButtonGNFR, testingGNFR);
+          GNFRItems.insertBefore(removeDuplicatesGNFR, testingGNFR);
           $("#GNFRQR").show();
           QRGNFR.append(document.getElementById("GNFRQR"));
           copyItemNumber(bigLinkGNFR, arr2.join(", "));
@@ -4678,6 +4783,7 @@ function onClick(li) {
             testingSOC
           );
           signOrderCatalogItems.insertBefore(bigClearButtonSOC, testingSOC);
+          signOrderCatalogItems.insertBefore(removeDuplicatesSOC, testingSOC);
           $("#SOCQR").show();
           QRSOC.append(document.getElementById("SOCQR"));
           copyItemNumber(bigLinkSOC, arr3.join(", "));
@@ -4731,6 +4837,7 @@ function onClick(li) {
           vaxServeItems.insertBefore(bigCollapseShowButtonVS, testingVS);
           vaxServeItems.insertBefore(bigCollapseHideButtonVS, testingVS);
           vaxServeItems.insertBefore(bigClearButtonVS, testingVS);
+          vaxServeItems.insertBefore(removeDuplicatesVS, testingVS);
           $("#VSQR").show();
           QRVS.append(document.getElementById("VSQR"));
           copyItemNumber(bigLinkVS, arr4.join(", "));
@@ -4786,6 +4893,7 @@ function onClick(li) {
           medSurgeItems.insertBefore(bigCollapseShowButtonMS, testingMS);
           medSurgeItems.insertBefore(bigCollapseHideButtonMS, testingMS);
           medSurgeItems.insertBefore(bigClearButtonMS, testingMS);
+          medSurgeItems.insertBefore(removeDuplicatesMS, testingMS);
           $("#MSQR").show();
           QRMS.append(document.getElementById("MSQR"));
           copyItemNumber(bigLinkMS, arr5.join(", "));
@@ -4841,6 +4949,7 @@ function onClick(li) {
           covapItems.insertBefore(bigCollapseShowButtonCOV, testingCOV);
           covapItems.insertBefore(bigCollapseHideButtonCOV, testingCOV);
           covapItems.insertBefore(bigClearButtonCOV, testingCOV);
+          covapItems.insertBefore(removeDuplicatesCOV, testingCOV);
           $("#COVQR").show();
           QRCOV.append(document.getElementById("COVQR"));
           copyItemNumber(bigLinkCOV, arr6.join(", "));
@@ -4896,6 +5005,7 @@ function onClick(li) {
           FORSItems.insertBefore(bigCollapseShowButtonFORS, testingFORS);
           FORSItems.insertBefore(bigCollapseHideButtonFORS, testingFORS);
           FORSItems.insertBefore(bigClearButtonFORS, testingFORS);
+          FORSItems.insertBefore(removeDuplicatesFORS, testingFORS);
           $("#FORSQR").show();
           QRFORS.append(document.getElementById("FORSQR"));
           copyItemNumber(bigLinkFORS, arr7.join(", "));
@@ -5310,3 +5420,10 @@ button.addEventListener("click", combine);
 // })
 // const ab = keywords1.forEach(e => {
 //   console.log(e);});
+// function q(varm) {
+//   Object.keys(varm)[0];
+//   console.log(Object.keys(varm)[0]);
+// }
+// q(popup)
+// const display = q({popup})
+// console.log(display)
