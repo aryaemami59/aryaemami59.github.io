@@ -255,8 +255,8 @@ body {
   box-shadow: 1px 1px 3px -1px black;
   -webkit-transition: ease-in-out 0.1s;
   transition: ease-in-out 0.1s;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
   margin: 2px auto;
 }
 .bigLinkVendor:hover {
@@ -650,9 +650,9 @@ body {
 }
 .vendorQR > img {
   width: 33px;
-  margin-left: 8px;
+  /* margin-left: 8px;
   margin-top: 3px;
-  margin-bottom: 3px;
+  margin-bottom: 3px; */
   box-shadow: 1px 1px 5px -1px black;
   -webkit-transition: ease-in-out 0.1s;
   transition: ease-in-out 0.1s;
@@ -1079,7 +1079,7 @@ body {
   }
   .itemContainers {
     height: auto;
-    grid-area: 2/6/3/8;
+    grid-area: 2/5/3/8;
     display: grid;
     grid-row: 2;
     justify-items: flex-end;
@@ -1095,7 +1095,7 @@ body {
     background-color: rgb(0, 43, 66);
     height: auto;
     text-align: center;
-    width: 150px;
+    width: 300px;
     grid-column: 1/2;
     grid-row: 1;
     border-radius: 5px;
@@ -1105,7 +1105,7 @@ body {
     background-color: rgba(0, 255, 149, 0.151);
     box-shadow: 0px 0px 20px 0px rgb(0, 255, 149);
     height: auto;
-    width: 150px;
+    width: 300px;
     border-radius: 5px;
     text-align: center;
     grid-column: 2/3;
@@ -1158,7 +1158,8 @@ body {
   }
   .bigLinkVendor {
     display: flex;
-    width: 84%;
+    /* width: 84%; */
+    width: 40%;
     font-size: 16px;
     min-height: 55px;
     box-sizing: border-box;
@@ -1170,8 +1171,8 @@ body {
     box-shadow: 2px 2px 10px -2px black;
     -webkit-transition: ease-in-out 0.1s;
     transition: ease-in-out 0.1s;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     margin: 10px auto;
   }
   .bigLinkVendor:hover {
@@ -1207,7 +1208,7 @@ body {
   }
   .descVendor {
     height: 110px;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     text-shadow: 2px 2px 2px #000000;
     box-shadow: 2px 2px 10px -2px black;
@@ -1215,8 +1216,8 @@ body {
     width: 125px;
     align-self: center;
     align-items: center;
-    margin-right: 12.5px;
-    margin-left: 12.5px;
+    /* margin-right: 12.5px;
+    margin-left: 12.5px; */
     word-break: keep-all;
     -webkit-transition: transform ease-in-out 0.1s, max-height ease-in-out 0.1s,
       width ease-in-out 0.1s, font ease-in-out 0.1s;
@@ -1225,6 +1226,7 @@ body {
     max-height: 200px;
     box-sizing: border-box;
     padding: 5px;
+    float: left;
     margin-block-end: 1em;
     margin-block-start: 1em;
     position: relative;
@@ -1269,6 +1271,7 @@ body {
     margin-block-start: 1em;
     margin-block-end: 1em;
     position: relative;
+    display: inline-flex;
   }
   .itemNumberVendor:hover {
     cursor: pointer;
@@ -1531,13 +1534,18 @@ body {
     color: white;
   }
   .vendorQR > img {
-    min-width: 100px;
-    margin-left: 25px;
-    margin-top: 10px;
+    min-width: 150px;
+    /* margin-left: 25px;
+    margin-top: 10px; */
+    margin-left: 10px;
+    /* margin-right: 50px; */
     margin-bottom: 10px;
     box-shadow: 2px 2px 10px -2px black;
     -webkit-transition: ease-in-out 0.1s;
     transition: ease-in-out 0.1s;
+    display: inline !important;
+    float: left;
+
   }
   .vendorQR > img:hover {
     cursor: pointer;
@@ -1816,6 +1824,7 @@ body {
   }
   .vendorItems {
     min-height: 70px;
+    width: 300px !important;
   }
   #bigLinkMS {
     font-size: 14px;
