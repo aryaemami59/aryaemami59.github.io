@@ -648,7 +648,7 @@ body {
 #navLi:hover #navLi::before {
   color: white;
 }
-.vendorQR > img {
+.show .vendorQR > img {
   width: 33px;
   margin-left: 8px;
   margin-top: 3px;
@@ -657,7 +657,7 @@ body {
   -webkit-transition: ease-in-out 0.1s;
   transition: ease-in-out 0.1s;
 }
-.vendorQR > img:hover {
+.show .vendorQR > img:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
@@ -668,7 +668,7 @@ body {
   width: 10px;
   height: 5px;
 }
-.liVendor {
+.show .liVendor {
   margin-top: 3px;
   margin-bottom: 3px;
   border-bottom: white 2px;
@@ -687,7 +687,7 @@ body {
   min-height: 10px;
   box-sizing: content-box;
 }
-.liVendor:last-child {
+.show .liVendor:last-child {
   margin-bottom: 0;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
@@ -739,14 +739,14 @@ body {
   transition: max-height 0.4s ease-in-out !important;
   overflow: hidden;
 }
-.liVendor.collapseParent {
+.show .liVendor.collapseParent {
   max-height: 13px;
   clear: both;
   overflow: hidden;
   -webkit-transition: max-height 0.1s ease-in-out;
   transition: max-height 0.1s ease-in-out;
 }
-.liVendor.collapseParent > .descVendor {
+.show .liVendor.collapseParent > .descVendor {
   font-size: 3px;
   text-align: inherit;
   width: 60%;
@@ -757,7 +757,7 @@ body {
   transition: transform 0.1s ease-in-out, max-height 0.1s ease-in-out,
     width 0.1s ease-in-out, font 0.1s ease-in-out;
 }
-.liVendor.collapseParent > .collapseButtonVendor::after {
+.show .liVendor.collapseParent > .collapseButtonVendor::after {
   content: "+";
 }
 .collapseButtonVendor {
@@ -1530,7 +1530,7 @@ body {
     height: 10px;
     color: white;
   }
-  .vendorQR > img {
+  .show .vendorQR > img {
     min-width: 100px;
     margin-left: 25px;
     margin-top: 10px;
@@ -1539,7 +1539,7 @@ body {
     -webkit-transition: ease-in-out 0.1s;
     transition: ease-in-out 0.1s;
   }
-  .vendorQR > img:hover {
+  .show .vendorQR > img:hover {
     cursor: pointer;
     transform: scale(1.1);
   }
@@ -1550,7 +1550,7 @@ body {
     width: 30px;
     height: 15px;
   }
-  .liVendor {
+  .show .liVendor {
     margin-top: 10px;
     margin-bottom: 10px;
     border-bottom: white 5px;
@@ -1568,8 +1568,10 @@ body {
     overflow: hidden;
     min-height: 30px;
     box-sizing: content-box;
+    /* display: none; */
+    /* visibility: hidden; */
   }
-  .liVendor:last-child {
+  .show .liVendor:last-child {
     margin-bottom: 0;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -1627,14 +1629,14 @@ body {
     transition: max-height 0.4s ease-in-out !important;
     overflow: hidden;
   }
-  .liVendor.collapseParent {
+  .show .liVendor.collapseParent {
     max-height: 40px;
     clear: both;
     overflow: hidden;
     -webkit-transition: max-height 0.1s ease-in-out;
     transition: max-height 0.1s ease-in-out;
   }
-  .liVendor.collapseParent > .descVendor {
+  .show .liVendor.collapseParent > .descVendor {
     font-size: 9px;
     text-align: inherit;
     width: 50%;
@@ -1647,7 +1649,7 @@ body {
     transition: transform 0.1s ease-in-out, max-height 0.1s ease-in-out,
       width 0.1s ease-in-out, font 0.1s ease-in-out;
   }
-  .liVendor.collapseParent > .collapseButtonVendor::after {
+  .show .liVendor.collapseParent > .collapseButtonVendor::after {
     content: "+";
   }
   .collapseButtonVendor {
@@ -1797,6 +1799,7 @@ body {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     display: ruby;
+    visibility: hidden;
     margin: 0;
     left: 75px;
     bottom: 15px;
@@ -1871,5 +1874,15 @@ body {
   }
   .removeDuplicatesVendor {
     font-size: 12px;
+  }
+  .positive {
+    visibility: visible;
+  }
+  .vendorItems:not(.show) > :not(.titleVendor):not(canvas):not(.orderNumberVendor) {
+    display: none;
+  }
+  .show  :not(.titleVendor):not(canvas):not(.orderNumberVendor) {
+    /* visibility: hidden; */
+    /* display: inline-block; */
   }
 }

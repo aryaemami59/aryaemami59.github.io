@@ -3210,6 +3210,7 @@ bigClearButtonFORS.setAttribute("id", "bigClearButtonFORS");
 bigClearButtonFORS.setAttribute("class", "bigClearButtonVendor");
 const alert = document.getElementById("alert");
 const orderNumberMCK = document.getElementById("orderNumberMCK");
+// $(orderNumberMCK).hide();
 const orderNumberOI = document.getElementById("orderNumberOI");
 const orderNumberGNFR = document.getElementById("orderNumberGNFR");
 const orderNumberSOC = document.getElementById("orderNumberSOC");
@@ -3228,7 +3229,7 @@ function createRemoveDuplicateButton(removeDuplicates, id) {
   removeDuplicates.setAttribute("class", "removeDuplicatesVendor");
   removeDuplicates.textContent = "Remove Duplicate Items";
   // removeDuplicates.setAttribute("id", varToString(id));
-  removeDuplicates['id'] = varToString(id);
+  removeDuplicates["id"] = varToString(id);
   // console.log(removeDuplicates);
 }
 createRemoveDuplicateButton(removeDuplicatesMCK, { removeDuplicatesMCK });
@@ -3274,6 +3275,45 @@ const listUl = Array.from(listNav.querySelectorAll("ul"));
 const navLi = document.getElementById("navLi");
 const empty = document.getElementById("empty");
 const titleMCK = document.getElementById("mck-items");
+const titleOI = document.getElementById("OI-items");
+const titleGNFR = document.getElementById("G-items");
+const titleSOC = document.getElementById("SOC-items");
+const titleVS = document.getElementById("VS-items");
+const titleMS = document.getElementById("MS-items");
+const titleCOV = document.getElementById("COV-items");
+const titleFORS = document.getElementById("FORS-items");
+const titleVendor = Array.from(itemContainers.querySelectorAll(".titleVendor"));
+
+function titleClick(titleVendor) {
+  for (let i = 0; i < titleVendor.length; i++) {
+    const element = titleVendor[i];
+    element.addEventListener("click", (e) => {
+      const target = e.target;
+      const vendorItems = target.parentNode;
+      // const liVendor = Array.from(vendorItems.querySelectorAll(".liVendor"));
+      $(vendorItems).addClass("show");
+      const everything = Array.from(
+        vendorItems.querySelectorAll(
+          ".show > :not(.titleVendor):not(canvas):not(.orderNumberVendor)"
+        )
+      );
+      // $(everything).show();
+      // $('.show:not(.titleVendor):not(canvas):not(.orderNumberVendor)').show();
+
+      // $(everything).css('display', 'ruby');
+      console.log(everything);
+    });
+  }
+}
+
+function orderNumberFunc(orderNumberVendor) {
+  if (orderNumberVendor.textContent > 0) {
+    $(orderNumberVendor).addClass('positive');
+    $(orderNumberVendor).css('visibility', 'visible');
+  }
+}
+
+// titleClick(titleVendor);
 // these are the arrays used in the onclick function which is the function that is executed when the user clicks on the drop down search results.
 let arr = [];
 let arr1 = [];
@@ -4299,6 +4339,7 @@ function onClick(li) {
       const liMCK = document.createElement("li");
       liMCK.setAttribute("id", "liMCK");
       liMCK.setAttribute("class", "liVendor");
+      // $(liMCK).hide();
       const liOI = document.createElement("li");
       liOI.setAttribute("id", "liOI");
       liOI.setAttribute("class", "liVendor");
@@ -4424,6 +4465,7 @@ function onClick(li) {
       bigCollapseShowFunc(bigCollapseShowButtonMS);
       bigCollapseShowFunc(bigCollapseShowButtonCOV);
       bigCollapseShowFunc(bigCollapseShowButtonFORS);
+      // const aa = $('.')
       if (
         vials[index].McKesson === true &&
         vials[index].OrderInsite === false
@@ -4549,11 +4591,16 @@ function onClick(li) {
         }
       }
       if (vials[index].McKesson === true && vials[index].OrderInsite === true) {
+        // console.log(MckessonItems);
+        // titleMCK.addEventListener('click', (e) => {
+        //   $(liMCK).show();
+        // })
         if (liMCK1.length == 10) {
           $(alert).show().delay(2000).fadeOut("slow");
         }
         if (liMCK1.length < 10 && !target.hasAttribute("data-addedtomck")) {
           target.dataset.addedtomck = true;
+          titleClick(titleVendor);
           // for (let t = 0; t < liMCK1.length; t++) {
           //   const liMCK1Loop = liMCK1[t];
           //   const right = liMCK1Loop.querySelector("#descMCK").textContent;
@@ -4583,6 +4630,17 @@ function onClick(li) {
           bigMCKImage.makeCode(arr.join(" OR "));
           printBarcode(imageMCK);
           orderNumberMCK.textContent = liMCK1.length += 1;
+          orderNumberFunc(orderNumberMCK);
+          // if (orderNumberMCK.textContent > 0) {
+          //   $(orderNumberMCK).addClass("positive");
+          //   $(orderNumberMCK).css("visibility", "visible");
+          // }
+          const everything = Array.from(
+            MckessonItems.querySelectorAll(
+              ":not(.titleVendor):not(.orderNumberVendor):not(canvas)"
+            )
+          );
+          // $(everything).hide();
           const descmck = Array.from(
             MckessonItems.querySelectorAll("#descMCK")
           );
