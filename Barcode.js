@@ -3217,6 +3217,7 @@ const orderNumberSOC = document.getElementById("orderNumberSOC");
 const orderNumberVS = document.getElementById("orderNumberVS");
 const orderNumberMS = document.getElementById("orderNumberMS");
 const orderNumberCOV = document.getElementById("orderNumberCOV");
+const orderNumberFORS = document.getElementById("orderNumberFORS");
 const removeDuplicatesMCK = document.createElement("button");
 const removeDuplicatesOI = document.createElement("button");
 const removeDuplicatesGNFR = document.createElement("button");
@@ -3290,30 +3291,114 @@ function titleClick(titleVendor) {
     element.addEventListener("click", (e) => {
       const target = e.target;
       const vendorItems = target.parentNode;
-      // const liVendor = Array.from(vendorItems.querySelectorAll(".liVendor"));
       $(vendorItems).addClass("show");
-      const everything = Array.from(
-        vendorItems.querySelectorAll(
-          ".show > :not(.titleVendor):not(canvas):not(.orderNumberVendor)"
-        )
-      );
-      // $(everything).show();
-      // $('.show:not(.titleVendor):not(canvas):not(.orderNumberVendor)').show();
-
-      // $(everything).css('display', 'ruby');
-      console.log(everything);
+      // const everything = Array.from(
+      //   vendorItems.querySelectorAll(
+      //     ".show > :not(.titleVendor):not(canvas):not(.orderNumberVendor)"
+      //   )
+      // );
     });
   }
 }
 
 function orderNumberFunc(orderNumberVendor) {
   if (orderNumberVendor.textContent > 0) {
-    $(orderNumberVendor).addClass('positive');
-    $(orderNumberVendor).css('visibility', 'visible');
+    $(orderNumberVendor).addClass("positive");
+    $(orderNumberVendor).css("visibility", "visible");
   }
 }
 
-// titleClick(titleVendor);
+function clickVendor(
+  liOI1,
+  arr1,
+  bigLinkOI,
+  vendorWebsite,
+  OrderInsiteItems,
+  liOI,
+  testingOI,
+  bigCollapseShowButtonOI,
+  bigCollapseHideButtonOI,
+  bigClearButtonOI,
+  OIQR,
+  QROI,
+  OIQRID,
+  bigOIImage,
+  comma,
+  imageOI,
+  orderNumberOI,
+  redOI,
+  addedtoOI,
+  addedItemsOI,
+  descOI,
+  spOI,
+  index,
+  copyItemNumber,
+  nameProp,
+  target,
+  descVendor,
+  li,
+  OI, 
+) {
+  if (liOI1.length == 10) {
+    $(alert).show().delay(2000).fadeOut("slow");
+  }
+  if (liOI1.length < 10 && !target.hasAttribute(addedtoOI)) {
+    target.dataset.addedtoMCK = true;
+    titleClick(titleVendor);
+    const itemNumber1 = vials[index].itemNumber;
+    addedItemsOI.push(li.textContent);
+    arr1.push(itemNumber1);
+    bigLinkOI.text = vendorWebsite;
+    OrderInsiteItems.append(liOI);
+    OrderInsiteItems.insertBefore(bigLinkOI, testingOI);
+    OrderInsiteItems.insertBefore(bigCollapseShowButtonOI, testingOI);
+    OrderInsiteItems.insertBefore(bigCollapseHideButtonOI, testingOI);
+    OrderInsiteItems.insertBefore(bigClearButtonOI, testingOI);
+    $(OIQR).show();
+    QROI.append(document.getElementById(OIQRID));
+    copyItemNumber(bigLinkOI, arr1.join(comma));
+    bigOIImage.makeCode(arr1.join(comma));
+    printBarcode(imageOI);
+    orderNumberOI.textContent = liOI1.length += 1;
+    orderNumberFunc(orderNumberOI);
+    const alternateDesc = Array.from(
+      itemContainers.querySelectorAll(descVendor)
+    );
+    console.log(alternateDesc);
+    alternateDesc.forEach((e) => {
+      if (descOI.textContent === e.textContent) {
+        $(e).addClass("duplicate");
+        $(descOI).addClass("duplicate");
+      }
+    });
+    spOI.setAttribute("class", "sp");
+    descOI.append(spOI);
+    if (orderNumberOI.textContent == 10) {
+      const li1 = Array.from(document.querySelectorAll(OI));
+      for (let j = 0; j < li1.length; j++) {
+        const elem = li1[j];
+        $(elem).addClass(redOI);
+      }
+    }
+    if (target.parentNode == list || target.parentNode == list2) {
+      $(target).hide();
+    }
+    if (target.parentNode.parentNode == listNav) {
+      $(target).css("text-decoration", "line-through");
+    }
+    for (let w = 0; w < listUl.length; w++) {
+      const listUlLoop = listUl[w];
+      const listUlLoopChildren = listUlLoop.querySelectorAll("li");
+      for (let q = 0; q < listUlLoopChildren.length; q++) {
+        const navLi = listUlLoopChildren[q];
+        if (nameProp == navLi.textContent) {
+          $(navLi).css("text-decoration", "line-through");
+        }
+      }
+    }
+  }
+}
+
 // these are the arrays used in the onclick function which is the function that is executed when the user clicks on the drop down search results.
 let arr = [];
 let arr1 = [];
@@ -3637,7 +3722,7 @@ function removeButtonFunc(
   char,
   redMCK,
   addedItemsMCK,
-  addedtomck
+  addedtoMCK
 ) {
   removeButtonMCK.addEventListener("click", function d(e) {
     // addedItems = removeDuplicates(addedItems);
@@ -3661,8 +3746,8 @@ function removeButtonFunc(
       }
       if (desc == li1Text) {
         $(elem).show();
-        // delete elem.dataset[addedtomck];
-        elem.removeAttribute(addedtomck);
+        // delete elem.dataset[addedtoMCK];
+        elem.removeAttribute(addedtoMCK);
       }
     }
     const listUl = listNav.querySelectorAll("ul");
@@ -3966,6 +4051,12 @@ function onClick(li) {
       descMCK.setAttribute("title", "Click Here To Copy The Name of The Item");
       const spMCK = document.createElement("span");
       const spOI = document.createElement("span");
+      const spGNFR = document.createElement("span");
+      const spSOC = document.createElement("span");
+      const spVS = document.createElement("span");
+      const spMS = document.createElement("span");
+      const spCOV = document.createElement("span");
+      const spFORS = document.createElement("span");
       const descOI = document.createElement("p");
       descOI.textContent = nameMain;
       descOI.setAttribute("id", "descOI");
@@ -4246,7 +4337,7 @@ function onClick(li) {
         " OR ",
         "redMCK",
         addedItemsMCK,
-        "data-addedtomck"
+        "data-addedtoMCK"
       );
       removeButtonFunc(
         removeButtonOI,
@@ -4255,7 +4346,7 @@ function onClick(li) {
         ", ",
         "redOI",
         addedItemsOI,
-        "data-addedtooi"
+        "data-addedtoOI"
       );
       removeButtonFunc(
         removeButtonGNFR,
@@ -4264,7 +4355,7 @@ function onClick(li) {
         " OR ",
         "redGNFR",
         addedItemsGNFR,
-        "data-addedtognfr"
+        "data-addedtoGNFR"
       );
       removeButtonFunc(
         removeButtonSOC,
@@ -4273,7 +4364,7 @@ function onClick(li) {
         ", ",
         "redSOC",
         addedItemsSOC,
-        "data-addedtosoc"
+        "data-addedtoSOC"
       );
       removeButtonFunc(
         removeButtonVS,
@@ -4282,7 +4373,7 @@ function onClick(li) {
         ", ",
         "redVS",
         addedItemsVS,
-        "data-addedtovs"
+        "data-addedtoVS"
       );
       removeButtonFunc(
         removeButtonMS,
@@ -4291,7 +4382,7 @@ function onClick(li) {
         ", ",
         "redMS",
         addedItemsMS,
-        "data-addedtoms"
+        "data-addedtoMS"
       );
       removeButtonFunc(
         removeButtonCOV,
@@ -4300,7 +4391,7 @@ function onClick(li) {
         ", ",
         "redCOV",
         addedItemsCOV,
-        "data-addedtocov"
+        "data-addedtoCOV"
       );
       removeButtonFunc(
         removeButtonFORS,
@@ -4309,7 +4400,7 @@ function onClick(li) {
         ", ",
         "redFORS",
         addedItemsFORS,
-        "data-addedtofors"
+        "data-addedtoFORS"
       );
       // addedItems = removeDuplicates(addedItems);
       const collapseButtonMCK = document.createElement("button");
@@ -4550,8 +4641,6 @@ function onClick(li) {
               return;
             }
           }
-          // addedItemsOI.push(li.textContent);
-          // addedItems.push(li.textContent);
           arr1.push(itemNumber1);
           bigLinkOI.text = "OrderInsite";
           OrderInsiteItems.append(liOI);
@@ -4591,31 +4680,14 @@ function onClick(li) {
         }
       }
       if (vials[index].McKesson === true && vials[index].OrderInsite === true) {
-        // console.log(MckessonItems);
-        // titleMCK.addEventListener('click', (e) => {
-        //   $(liMCK).show();
-        // })
         if (liMCK1.length == 10) {
           $(alert).show().delay(2000).fadeOut("slow");
         }
-        if (liMCK1.length < 10 && !target.hasAttribute("data-addedtomck")) {
-          target.dataset.addedtomck = true;
+        if (liMCK1.length < 10 && !target.hasAttribute("data-addedtoMCK")) {
+          target.dataset.addedtoMCK = true;
           titleClick(titleVendor);
-          // for (let t = 0; t < liMCK1.length; t++) {
-          //   const liMCK1Loop = liMCK1[t];
-          //   const right = liMCK1Loop.querySelector("#descMCK").textContent;
-          //   // const left = liOI1
-          //   // if (target.textContent == right) {
-          //   //   return;
-          //   // }
-          //   // if (target.hasAttribute('data-addedtomck')) {
-          //   //   console.log('yay');
-          //   //   return;
-          //   // }
-          // }
           const itemNumber1MCK = vials[index].itemNumber;
           addedItemsMCK.push(li.textContent);
-          // addedItems.push(li.textContent);
           arr.push(itemNumber1MCK);
           bigLinkMCK.text = "McKesson Website";
           MckessonItems.append(liMCK);
@@ -4631,22 +4703,6 @@ function onClick(li) {
           printBarcode(imageMCK);
           orderNumberMCK.textContent = liMCK1.length += 1;
           orderNumberFunc(orderNumberMCK);
-          // if (orderNumberMCK.textContent > 0) {
-          //   $(orderNumberMCK).addClass("positive");
-          //   $(orderNumberMCK).css("visibility", "visible");
-          // }
-          const everything = Array.from(
-            MckessonItems.querySelectorAll(
-              ":not(.titleVendor):not(.orderNumberVendor):not(canvas)"
-            )
-          );
-          // $(everything).hide();
-          const descmck = Array.from(
-            MckessonItems.querySelectorAll("#descMCK")
-          );
-          const descoi = Array.from(
-            OrderInsiteItems.querySelectorAll("#descOI")
-          );
           const alternateDesc = Array.from(
             itemContainers.querySelectorAll("p.descVendor")
           );
@@ -4662,7 +4718,6 @@ function onClick(li) {
             const li1 = Array.from(
               document.querySelectorAll("li[data-mck*=true]")
             );
-            // const li2 = Array.from(listNav.querySelectorAll("li[mck*=true]"));
             for (let j = 0; j < li1.length; j++) {
               const elem = li1[j];
               $(elem).addClass("redMCK");
@@ -4679,7 +4734,6 @@ function onClick(li) {
             const listUlLoopChildren = listUlLoop.querySelectorAll("li");
             for (let q = 0; q < listUlLoopChildren.length; q++) {
               const navLi = listUlLoopChildren[q];
-              // console.log(navLi)
               if (nameProp == navLi.textContent) {
                 $(navLi).css("text-decoration", "line-through");
               }
@@ -4689,8 +4743,8 @@ function onClick(li) {
         if (liOI1.length == 10) {
           $(alert).show().delay(2000).fadeOut("slow");
         }
-        if (liOI1.length < 10 && !target.hasAttribute("data-addedtooi")) {
-          target.dataset.addedtooi = true;
+        if (liOI1.length < 10 && !target.hasAttribute("data-addedtoOI")) {
+          target.dataset.addedtoOI = true;
           // for (let t = 0; t < liOI1.length; t++) {
           //   const liOI1Loop = liOI1[t];
           //   const right = liOI1Loop.querySelector("#descOI").textContent;
@@ -4763,340 +4817,457 @@ function onClick(li) {
         vials[index].OrderInsite === false &&
         vials[index].McKesson === false
       ) {
-        if (liGNFR1.length == 10) {
-          $(alert).show().delay(2000).fadeOut("slow");
-        }
-        if (liGNFR1.length < 10 && !target.hasAttribute("data-addedtognfr")) {
-          target.dataset.addedtognfr = true;
-          // for (let t = 0; t < liGNFR1.length; t++) {
-          //   const liGNFR1Loop = liGNFR1[t];
-          //   const right = liGNFR1Loop.querySelector("#descGNFR").textContent;
-          //   if (target.textContent == right) {
-          //     return;
-          //   }
-          // }
-          addedItemsGNFR.push(li.textContent);
-          // addedItems.push(li.textContent);
-          arr2.push(itemNumber1);
-          bigLinkGNFR.text = "GNFR Website";
-          GNFRItems.append(liGNFR);
-          GNFRItems.insertBefore(bigLinkGNFR, testingGNFR);
-          GNFRItems.insertBefore(bigCollapseShowButtonGNFR, testingGNFR);
-          GNFRItems.insertBefore(bigCollapseHideButtonGNFR, testingGNFR);
-          GNFRItems.insertBefore(bigClearButtonGNFR, testingGNFR);
-          GNFRItems.insertBefore(removeDuplicatesGNFR, testingGNFR);
-          $("#GNFRQR").show();
-          QRGNFR.append(document.getElementById("GNFRQR"));
-          copyItemNumber(bigLinkGNFR, arr2.join(", "));
-          bigGNFRImage.makeCode(arr2.join(" OR "));
-          printBarcode(imageGNFR);
-          orderNumberGNFR.textContent = liGNFR1.length += 1;
-          if (orderNumberGNFR.textContent == 10) {
-            const li1 = Array.from(document.querySelectorAll("li[gnfr*=true]"));
-            for (let j = 0; j < li1.length; j++) {
-              const elem = li1[j];
-              $(elem).addClass("redGNFR");
-            }
-          }
-          if (target.parentNode == list || target.parentNode == list2) {
-            $(target).hide();
-          }
-          if (target.parentNode.parentNode == listNav) {
-            $(target).css("text-decoration", "line-through");
-          }
-          for (let w = 0; w < listUl.length; w++) {
-            const listUlLoop = listUl[w];
-            const listUlLoopChildren = listUlLoop.querySelectorAll("li");
-            for (let q = 0; q < listUlLoopChildren.length; q++) {
-              const navLi = listUlLoopChildren[q];
-              if (nameProp == navLi.textContent) {
-                $(navLi).css("text-decoration", "line-through");
-              }
-            }
-          }
-        }
+        clickVendor(
+          liGNFR1,
+          arr2,
+          bigLinkGNFR,
+          "GNFR Website",
+          GNFRItems,
+          liGNFR,
+          testingGNFR,
+          bigCollapseShowButtonGNFR,
+          bigCollapseHideButtonGNFR,
+          bigClearButtonGNFR,
+          "#GNFRQR",
+          QRGNFR,
+          "GNFRQR",
+          bigGNFRImage,
+          ", ",
+          imageGNFR,
+          orderNumberGNFR,
+          "redGNFR",
+          "data-addedtoGNFR",
+          addedItemsGNFR,
+          descGNFR,
+          spGNFR,
+          index,
+          copyItemNumber,
+          nameProp,
+          target,
+          "p.descVendor:not(#descGNFR)",
+          li,
+          `li[data-GNFR*=true]`, 
+        );
+        // if (liGNFR1.length == 10) {
+        //   $(alert).show().delay(2000).fadeOut("slow");
+        // }
+        // if (liGNFR1.length < 10 && !target.hasAttribute("data-addedtoGNFR")) {
+        //   target.dataset.addedtoGNFR = true;
+        //   addedItemsGNFR.push(li.textContent);
+        //   arr2.push(itemNumber1);
+        //   bigLinkGNFR.text = "GNFR Website";
+        //   GNFRItems.append(liGNFR);
+        //   GNFRItems.insertBefore(bigLinkGNFR, testingGNFR);
+        //   GNFRItems.insertBefore(bigCollapseShowButtonGNFR, testingGNFR);
+        //   GNFRItems.insertBefore(bigCollapseHideButtonGNFR, testingGNFR);
+        //   GNFRItems.insertBefore(bigClearButtonGNFR, testingGNFR);
+        //   GNFRItems.insertBefore(removeDuplicatesGNFR, testingGNFR);
+        //   $("#GNFRQR").show();
+        //   QRGNFR.append(document.getElementById("GNFRQR"));
+        //   copyItemNumber(bigLinkGNFR, arr2.join(", "));
+        //   bigGNFRImage.makeCode(arr2.join(" OR "));
+        //   printBarcode(imageGNFR);
+        //   orderNumberGNFR.textContent = liGNFR1.length += 1;
+        //   if (orderNumberGNFR.textContent == 10) {
+        //     const li1 = Array.from(document.querySelectorAll("li[gnfr*=true]"));
+        //     for (let j = 0; j < li1.length; j++) {
+        //       const elem = li1[j];
+        //       $(elem).addClass("redGNFR");
+        //     }
+        //   }
+        //   if (target.parentNode == list || target.parentNode == list2) {
+        //     $(target).hide();
+        //   }
+        //   if (target.parentNode.parentNode == listNav) {
+        //     $(target).css("text-decoration", "line-through");
+        //   }
+        //   for (let w = 0; w < listUl.length; w++) {
+        //     const listUlLoop = listUl[w];
+        //     const listUlLoopChildren = listUlLoop.querySelectorAll("li");
+        //     for (let q = 0; q < listUlLoopChildren.length; q++) {
+        //       const navLi = listUlLoopChildren[q];
+        //       if (nameProp == navLi.textContent) {
+        //         $(navLi).css("text-decoration", "line-through");
+        //       }
+        //     }
+        //   }
+        // }
       }
       if (vials[index].signOrderCatalog === true) {
-        if (liSOC1.length == 10) {
-          $(alert).show().delay(2000).fadeOut("slow");
-        }
-        if (liSOC1.length < 10 && !target.hasAttribute("data-addedtosoc")) {
-          target.dataset.addedtosoc = true;
-          // for (let t = 0; t < liSOC1.length; t++) {
-          //   const liSOC1Loop = liSOC1[t];
-          //   const right = liSOC1Loop.querySelector("#descSOC").textContent;
-          //   if (target.textContent == right) {
-          //     return;
-          //   }
-          // }
-          addedItemsSOC.push(li.textContent);
-          // addedItems.push(li.textContent);
-          arr3.push(itemNumber1);
-          bigLinkSOC.text = "Sign Order Catalog Website";
-          signOrderCatalogItems.append(liSOC);
-          signOrderCatalogItems.insertBefore(bigLinkSOC, testingSOC);
-          signOrderCatalogItems.insertBefore(
-            bigCollapseShowButtonSOC,
-            testingSOC
-          );
-          signOrderCatalogItems.insertBefore(
-            bigCollapseHideButtonSOC,
-            testingSOC
-          );
-          signOrderCatalogItems.insertBefore(bigClearButtonSOC, testingSOC);
-          signOrderCatalogItems.insertBefore(removeDuplicatesSOC, testingSOC);
-          $("#SOCQR").show();
-          QRSOC.append(document.getElementById("SOCQR"));
-          copyItemNumber(bigLinkSOC, arr3.join(", "));
-          bigSOCImage.makeCode(arr3.join(", "));
-          printBarcode(imageSOC);
-          orderNumberSOC.textContent = liSOC1.length += 1;
-          if (orderNumberSOC.textContent == 10) {
-            const li1 = Array.from(document.querySelectorAll("li[soc*=true]"));
-            for (let j = 0; j < li1.length; j++) {
-              const elem = li1[j];
-              $(elem).addClass("redSOC");
-            }
-          }
-          if (target.parentNode == list || target.parentNode == list2) {
-            $(target).hide();
-          }
-          if (target.parentNode.parentNode == listNav) {
-            $(target).css("text-decoration", "line-through");
-          }
-          for (let w = 0; w < listUl.length; w++) {
-            const listUlLoop = listUl[w];
-            const listUlLoopChildren = listUlLoop.querySelectorAll("li");
-            for (let q = 0; q < listUlLoopChildren.length; q++) {
-              const navLi = listUlLoopChildren[q];
-              if (nameProp == navLi.textContent) {
-                $(navLi).css("text-decoration", "line-through");
-              }
-            }
-          }
-        }
+        clickVendor(
+          liSOC1,
+          arr3,
+          bigLinkSOC,
+          "Sign Order Catalog Website",
+          signOrderCatalogItems,
+          liSOC,
+          testingSOC,
+          bigCollapseShowButtonSOC,
+          bigCollapseHideButtonSOC,
+          bigClearButtonSOC,
+          "#SOCQR",
+          QRSOC,
+          "SOCQR",
+          bigSOCImage,
+          ", ",
+          imageSOC,
+          orderNumberSOC,
+          "redSOC",
+          "data-addedtoSOC",
+          addedItemsSOC,
+          descSOC,
+          spSOC,
+          index,
+          copyItemNumber,
+          nameProp,
+          target
+        );
+        // if (liSOC1.length == 10) {
+        //   $(alert).show().delay(2000).fadeOut("slow");
+        // }
+        // if (liSOC1.length < 10 && !target.hasAttribute("data-addedtoSOC")) {
+        //   target.dataset.addedtoSOC = true;
+        //   addedItemsSOC.push(li.textContent);
+        //   arr3.push(itemNumber1);
+        //   bigLinkSOC.text = "Sign Order Catalog Website";
+        //   signOrderCatalogItems.append(liSOC);
+        //   signOrderCatalogItems.insertBefore(bigLinkSOC, testingSOC);
+        //   signOrderCatalogItems.insertBefore(
+        //     bigCollapseShowButtonSOC,
+        //     testingSOC
+        //   );
+        //   signOrderCatalogItems.insertBefore(
+        //     bigCollapseHideButtonSOC,
+        //     testingSOC
+        //   );
+        //   signOrderCatalogItems.insertBefore(bigClearButtonSOC, testingSOC);
+        //   signOrderCatalogItems.insertBefore(removeDuplicatesSOC, testingSOC);
+        //   $("#SOCQR").show();
+        //   QRSOC.append(document.getElementById("SOCQR"));
+        //   copyItemNumber(bigLinkSOC, arr3.join(", "));
+        //   bigSOCImage.makeCode(arr3.join(", "));
+        //   printBarcode(imageSOC);
+        //   orderNumberSOC.textContent = liSOC1.length += 1;
+        //   if (orderNumberSOC.textContent == 10) {
+        //     const li1 = Array.from(document.querySelectorAll("li[soc*=true]"));
+        //     for (let j = 0; j < li1.length; j++) {
+        //       const elem = li1[j];
+        //       $(elem).addClass("redSOC");
+        //     }
+        //   }
+        //   if (target.parentNode == list || target.parentNode == list2) {
+        //     $(target).hide();
+        //   }
+        //   if (target.parentNode.parentNode == listNav) {
+        //     $(target).css("text-decoration", "line-through");
+        //   }
+        //   for (let w = 0; w < listUl.length; w++) {
+        //     const listUlLoop = listUl[w];
+        //     const listUlLoopChildren = listUlLoop.querySelectorAll("li");
+        //     for (let q = 0; q < listUlLoopChildren.length; q++) {
+        //       const navLi = listUlLoopChildren[q];
+        //       if (nameProp == navLi.textContent) {
+        //         $(navLi).css("text-decoration", "line-through");
+        //       }
+        //     }
+        //   }
+        // }
       }
       if (vials[index].vaxServe === true) {
-        if (liVS1.length == 10) {
-          $(alert).show().delay(2000).fadeOut("slow");
-        }
-        if (liVS1.length < 10 && !target.hasAttribute("data-addedtovs")) {
-          target.dataset.addedtovs = true;
-          // for (let t = 0; t < liVS1.length; t++) {
-          //   const liVS1Loop = liVS1[t];
-          //   const right = liVS1Loop.querySelector("#descVS").textContent;
-          //   if (target.textContent == right) {
-          //     return;
-          //   }
-          // }
-          addedItemsVS.push(li.textContent);
-          // addedItems.push(li.textContent);
-          arr4.push(itemNumber1);
-          bigLinkVS.text = "VaxServe Website";
-          vaxServeItems.append(liVS);
-          vaxServeItems.insertBefore(bigLinkVS, testingVS);
-          vaxServeItems.insertBefore(bigCollapseShowButtonVS, testingVS);
-          vaxServeItems.insertBefore(bigCollapseHideButtonVS, testingVS);
-          vaxServeItems.insertBefore(bigClearButtonVS, testingVS);
-          vaxServeItems.insertBefore(removeDuplicatesVS, testingVS);
-          $("#VSQR").show();
-          QRVS.append(document.getElementById("VSQR"));
-          copyItemNumber(bigLinkVS, arr4.join(", "));
-          bigVSImage.makeCode(arr4.join(", "));
-          printBarcode(imageVS);
-          orderNumberVS.textContent = liVS1.length += 1;
-          if (orderNumberVS.textContent == 10) {
-            const li1 = Array.from(document.querySelectorAll("li[vs*=true]"));
-            for (let j = 0; j < li1.length; j++) {
-              const elem = li1[j];
-              $(elem).addClass("redVS");
-            }
-          }
-          if (target.parentNode == list || target.parentNode == list2) {
-            $(target).hide();
-          }
-          if (target.parentNode.parentNode == listNav) {
-            $(target).css("text-decoration", "line-through");
-          }
-          for (let w = 0; w < listUl.length; w++) {
-            const listUlLoop = listUl[w];
-            const listUlLoopChildren = listUlLoop.querySelectorAll("li");
-            for (let q = 0; q < listUlLoopChildren.length; q++) {
-              const navLi = listUlLoopChildren[q];
-              if (nameProp == navLi.textContent) {
-                $(navLi).css("text-decoration", "line-through");
-              }
-            }
-          }
-        }
+        clickVendor(
+          liVS1,
+          arr4,
+          bigLinkVS,
+          "VaxServe Website",
+          vaxServeItems,
+          liVS,
+          testingVS,
+          bigCollapseShowButtonVS,
+          bigCollapseHideButtonVS,
+          bigClearButtonVS,
+          "#VSQR",
+          QRVS,
+          "VSQR",
+          bigVSImage,
+          ", ",
+          imageVS,
+          orderNumberVS,
+          "redVS",
+          "data-addedtoVS",
+          addedItemsVS,
+          descVS,
+          spVS,
+          index,
+          copyItemNumber,
+          nameProp,
+          target
+        );
+        // if (liVS1.length == 10) {
+        //   $(alert).show().delay(2000).fadeOut("slow");
+        // }
+        // if (liVS1.length < 10 && !target.hasAttribute("data-addedtoVS")) {
+        //   target.dataset.addedtoVS = true;
+        //   addedItemsVS.push(li.textContent);
+        //   arr4.push(itemNumber1);
+        //   bigLinkVS.text = "VaxServe Website";
+        //   vaxServeItems.append(liVS);
+        //   vaxServeItems.insertBefore(bigLinkVS, testingVS);
+        //   vaxServeItems.insertBefore(bigCollapseShowButtonVS, testingVS);
+        //   vaxServeItems.insertBefore(bigCollapseHideButtonVS, testingVS);
+        //   vaxServeItems.insertBefore(bigClearButtonVS, testingVS);
+        //   vaxServeItems.insertBefore(removeDuplicatesVS, testingVS);
+        //   $("#VSQR").show();
+        //   QRVS.append(document.getElementById("VSQR"));
+        //   copyItemNumber(bigLinkVS, arr4.join(", "));
+        //   bigVSImage.makeCode(arr4.join(", "));
+        //   printBarcode(imageVS);
+        //   orderNumberVS.textContent = liVS1.length += 1;
+        //   if (orderNumberVS.textContent == 10) {
+        //     const li1 = Array.from(document.querySelectorAll("li[vs*=true]"));
+        //     for (let j = 0; j < li1.length; j++) {
+        //       const elem = li1[j];
+        //       $(elem).addClass("redVS");
+        //     }
+        //   }
+        //   if (target.parentNode == list || target.parentNode == list2) {
+        //     $(target).hide();
+        //   }
+        //   if (target.parentNode.parentNode == listNav) {
+        //     $(target).css("text-decoration", "line-through");
+        //   }
+        //   for (let w = 0; w < listUl.length; w++) {
+        //     const listUlLoop = listUl[w];
+        //     const listUlLoopChildren = listUlLoop.querySelectorAll("li");
+        //     for (let q = 0; q < listUlLoopChildren.length; q++) {
+        //       const navLi = listUlLoopChildren[q];
+        //       if (nameProp == navLi.textContent) {
+        //         $(navLi).css("text-decoration", "line-through");
+        //       }
+        //     }
+        //   }
+        // }
       }
       if (vials[index].medSurge === true) {
-        if (liMS1.length == 10) {
-          $(alert).show().delay(2000).fadeOut("slow");
-        }
-        if (liMS1.length < 10 && !target.hasAttribute("data-addedtoms")) {
-          target.dataset.addedtoms = true;
-          // for (let t = 0; t < liMS1.length; t++) {
-          //   const liMS1Loop = liMS1[t];
-          //   const right = liMS1Loop.querySelector("#descMS").textContent;
-          //   console.log(liMS1Loop);
-          //   console.log(right);
-          //   if (target.textContent == right) {
-          //     return;
-          //   }
-          // }
-          addedItemsMS.push(li.textContent);
-          // addedItems.push(li.textContent);
-          arr5.push(itemNumber1);
-          bigLinkMS.text = "McK MedSurge Website";
-          medSurgeItems.append(liMS);
-          medSurgeItems.insertBefore(bigLinkMS, testingMS);
-          medSurgeItems.insertBefore(bigCollapseShowButtonMS, testingMS);
-          medSurgeItems.insertBefore(bigCollapseHideButtonMS, testingMS);
-          medSurgeItems.insertBefore(bigClearButtonMS, testingMS);
-          medSurgeItems.insertBefore(removeDuplicatesMS, testingMS);
-          $("#MSQR").show();
-          QRMS.append(document.getElementById("MSQR"));
-          copyItemNumber(bigLinkMS, arr5.join(", "));
-          bigMSImage.makeCode(arr5.join(", "));
-          printBarcode(imageMS);
-          orderNumberMS.textContent = liMS1.length += 1;
-          if (orderNumberMS.textContent == 10) {
-            const li1 = Array.from(document.querySelectorAll("li[ms*=true]"));
-            for (let j = 0; j < li1.length; j++) {
-              const elem = li1[j];
-              $(elem).addClass("redMS");
-            }
-          }
-          if (target.parentNode == list || target.parentNode == list2) {
-            $(target).hide();
-          }
-          if (target.parentNode.parentNode == listNav) {
-            $(target).css("text-decoration", "line-through");
-          }
-          for (let w = 0; w < listUl.length; w++) {
-            const listUlLoop = listUl[w];
-            const listUlLoopChildren = listUlLoop.querySelectorAll("li");
-            for (let q = 0; q < listUlLoopChildren.length; q++) {
-              const navLi = listUlLoopChildren[q];
-              if (nameProp == navLi.textContent) {
-                $(navLi).css("text-decoration", "line-through");
-              }
-            }
-          }
-        }
+        clickVendor(
+          liMS1,
+          arr5,
+          bigLinkMS,
+          "McKesson MedSurge Website",
+          medSurgeItems,
+          liMS,
+          testingMS,
+          bigCollapseShowButtonMS,
+          bigCollapseHideButtonMS,
+          bigClearButtonMS,
+          "#MSQR",
+          QRMS,
+          "MSQR",
+          bigMSImage,
+          ", ",
+          imageMS,
+          orderNumberMS,
+          "redMS",
+          "data-addedtoMS",
+          addedItemsMS,
+          descMS,
+          spMS,
+          index,
+          copyItemNumber,
+          nameProp,
+          target
+        );
+        // if (liMS1.length == 10) {
+        //   $(alert).show().delay(2000).fadeOut("slow");
+        // }
+        // if (liMS1.length < 10 && !target.hasAttribute("data-addedtoMS")) {
+        //   target.dataset.addedtoMS = true;
+        //   addedItemsMS.push(li.textContent);
+        //   arr5.push(itemNumber1);
+        //   bigLinkMS.text = "McK MedSurge Website";
+        //   medSurgeItems.append(liMS);
+        //   medSurgeItems.insertBefore(bigLinkMS, testingMS);
+        //   medSurgeItems.insertBefore(bigCollapseShowButtonMS, testingMS);
+        //   medSurgeItems.insertBefore(bigCollapseHideButtonMS, testingMS);
+        //   medSurgeItems.insertBefore(bigClearButtonMS, testingMS);
+        //   medSurgeItems.insertBefore(removeDuplicatesMS, testingMS);
+        //   $("#MSQR").show();
+        //   QRMS.append(document.getElementById("MSQR"));
+        //   copyItemNumber(bigLinkMS, arr5.join(", "));
+        //   bigMSImage.makeCode(arr5.join(", "));
+        //   printBarcode(imageMS);
+        //   orderNumberMS.textContent = liMS1.length += 1;
+        //   if (orderNumberMS.textContent == 10) {
+        //     const li1 = Array.from(document.querySelectorAll("li[ms*=true]"));
+        //     for (let j = 0; j < li1.length; j++) {
+        //       const elem = li1[j];
+        //       $(elem).addClass("redMS");
+        //     }
+        //   }
+        //   if (target.parentNode == list || target.parentNode == list2) {
+        //     $(target).hide();
+        //   }
+        //   if (target.parentNode.parentNode == listNav) {
+        //     $(target).css("text-decoration", "line-through");
+        //   }
+        //   for (let w = 0; w < listUl.length; w++) {
+        //     const listUlLoop = listUl[w];
+        //     const listUlLoopChildren = listUlLoop.querySelectorAll("li");
+        //     for (let q = 0; q < listUlLoopChildren.length; q++) {
+        //       const navLi = listUlLoopChildren[q];
+        //       if (nameProp == navLi.textContent) {
+        //         $(navLi).css("text-decoration", "line-through");
+        //       }
+        //     }
+        //   }
+        // }
       }
       if (vials[index].covap === true) {
-        if (liCOV1.length == 10) {
-          $(alert).show().delay(2000).fadeOut("slow");
-        }
-        if (liCOV1.length < 10 && !target.hasAttribute("data-addedtomck")) {
-          target.dataset.addedtocov = true;
-          // for (let t = 0; t < liCOV1.length; t++) {
-          //   const liCOV1Loop = liCOV1[t];
-          //   const right = liCOV1Loop.querySelector("#descCOV").textContent;
-          //   console.log(liCOV1Loop);
-          //   console.log(right);
-          //   if (target.textContent == right) {
-          //     return;
-          //   }
-          // }
-          addedItemsCOV.push(li.textContent);
-          // addedItems.push(li.textContent);
-          arr6.push(itemNumber1);
-          bigLinkCOV.text = "Covap Website";
-          covapItems.append(liCOV);
-          covapItems.insertBefore(bigLinkCOV, testingCOV);
-          covapItems.insertBefore(bigCollapseShowButtonCOV, testingCOV);
-          covapItems.insertBefore(bigCollapseHideButtonCOV, testingCOV);
-          covapItems.insertBefore(bigClearButtonCOV, testingCOV);
-          covapItems.insertBefore(removeDuplicatesCOV, testingCOV);
-          $("#COVQR").show();
-          QRCOV.append(document.getElementById("COVQR"));
-          copyItemNumber(bigLinkCOV, arr6.join(", "));
-          bigCOVImage.makeCode(arr6.join(", "));
-          printBarcode(imageCOV);
-          orderNumberCOV.textContent = liCOV1.length += 1;
-          if (orderNumberCOV.textContent == 10) {
-            const li1 = Array.from(document.querySelectorAll("li[cov*=true]"));
-            for (let j = 0; j < li1.length; j++) {
-              const elem = li1[j];
-              $(elem).addClass("redCOV");
-            }
-          }
-          if (target.parentNode == list || target.parentNode == list2) {
-            $(target).hide();
-          }
-          if (target.parentNode.parentNode == listNav) {
-            $(target).css("text-decoration", "line-through");
-          }
-          for (let w = 0; w < listUl.length; w++) {
-            const listUlLoop = listUl[w];
-            const listUlLoopChildren = listUlLoop.querySelectorAll("li");
-            for (let q = 0; q < listUlLoopChildren.length; q++) {
-              const navLi = listUlLoopChildren[q];
-              if (nameProp == navLi.textContent) {
-                $(navLi).css("text-decoration", "line-through");
-              }
-            }
-          }
-        }
+        clickVendor(
+          liCOV1,
+          arr6,
+          bigLinkCOV,
+          "Covap Website",
+          covapItems,
+          liCOV,
+          testingCOV,
+          bigCollapseShowButtonCOV,
+          bigCollapseHideButtonCOV,
+          bigClearButtonCOV,
+          "#COVQR",
+          QRCOV,
+          "COVQR",
+          bigCOVImage,
+          ", ",
+          imageCOV,
+          orderNumberCOV,
+          "redCOV",
+          "data-addedtoCOV",
+          addedItemsCOV,
+          descCOV,
+          spCOV,
+          index,
+          copyItemNumber,
+          nameProp,
+          target
+        );
+        // if (liCOV1.length == 10) {
+        //   $(alert).show().delay(2000).fadeOut("slow");
+        // }
+        // if (liCOV1.length < 10 && !target.hasAttribute("data-addedtoMCK")) {
+        //   target.dataset.addedtoCOV = true;
+        //   addedItemsCOV.push(li.textContent);
+        //   arr6.push(itemNumber1);
+        //   bigLinkCOV.text = "Covap Website";
+        //   covapItems.append(liCOV);
+        //   covapItems.insertBefore(bigLinkCOV, testingCOV);
+        //   covapItems.insertBefore(bigCollapseShowButtonCOV, testingCOV);
+        //   covapItems.insertBefore(bigCollapseHideButtonCOV, testingCOV);
+        //   covapItems.insertBefore(bigClearButtonCOV, testingCOV);
+        //   covapItems.insertBefore(removeDuplicatesCOV, testingCOV);
+        //   $("#COVQR").show();
+        //   QRCOV.append(document.getElementById("COVQR"));
+        //   copyItemNumber(bigLinkCOV, arr6.join(", "));
+        //   bigCOVImage.makeCode(arr6.join(", "));
+        //   printBarcode(imageCOV);
+        //   orderNumberCOV.textContent = liCOV1.length += 1;
+        //   if (orderNumberCOV.textContent == 10) {
+        //     const li1 = Array.from(document.querySelectorAll("li[cov*=true]"));
+        //     for (let j = 0; j < li1.length; j++) {
+        //       const elem = li1[j];
+        //       $(elem).addClass("redCOV");
+        //     }
+        //   }
+        //   if (target.parentNode == list || target.parentNode == list2) {
+        //     $(target).hide();
+        //   }
+        //   if (target.parentNode.parentNode == listNav) {
+        //     $(target).css("text-decoration", "line-through");
+        //   }
+        //   for (let w = 0; w < listUl.length; w++) {
+        //     const listUlLoop = listUl[w];
+        //     const listUlLoopChildren = listUlLoop.querySelectorAll("li");
+        //     for (let q = 0; q < listUlLoopChildren.length; q++) {
+        //       const navLi = listUlLoopChildren[q];
+        //       if (nameProp == navLi.textContent) {
+        //         $(navLi).css("text-decoration", "line-through");
+        //       }
+        //     }
+        //   }
+        // }
       }
       if (vials[index].FORS === true) {
-        if (liFORS1.length == 10) {
-          $(alert).show().delay(2000).fadeOut("slow");
-        }
-        if (liFORS1.length < 10 && !target.hasAttribute("data-addedtomck")) {
-          target.dataset.addedtofors = true;
-          // for (let t = 0; t < liFORS1.length; t++) {
-          //   const liFORS1Loop = liFORS1[t];
-          //   const right = liFORS1Loop.querySelector("#descFORS").textContent;
-          //   console.log(liFORS1Loop);
-          //   console.log(right);
-          //   if (target.textContent == right) {
-          //     return;
-          //   }
-          // }
-          addedItemsFORS.push(li.textContent);
-          // addedItems.push(li.textContent);
-          arr7.push(itemNumber1);
-          bigLinkFORS.text = "FORS Website";
-          FORSItems.append(liFORS);
-          FORSItems.insertBefore(bigLinkFORS, testingFORS);
-          FORSItems.insertBefore(bigCollapseShowButtonFORS, testingFORS);
-          FORSItems.insertBefore(bigCollapseHideButtonFORS, testingFORS);
-          FORSItems.insertBefore(bigClearButtonFORS, testingFORS);
-          FORSItems.insertBefore(removeDuplicatesFORS, testingFORS);
-          $("#FORSQR").show();
-          QRFORS.append(document.getElementById("FORSQR"));
-          copyItemNumber(bigLinkFORS, arr7.join(", "));
-          bigFORSImage.makeCode(arr7.join(", "));
-          printBarcode(imageFORS);
-          orderNumberFORS.textContent = liFORS1.length += 1;
-          if (orderNumberFORS.textContent == 10) {
-            const li1 = Array.from(document.querySelectorAll("li[fors*=true]"));
-            for (let j = 0; j < li1.length; j++) {
-              const elem = li1[j];
-              $(elem).addClass("redFORS");
-            }
-          }
-          if (target.parentNode == list || target.parentNode == list2) {
-            $(target).hide();
-          }
-          if (target.parentNode.parentNode == listNav) {
-            $(target).css("text-decoration", "line-through");
-          }
-          for (let w = 0; w < listUl.length; w++) {
-            const listUlLoop = listUl[w];
-            const listUlLoopChildren = listUlLoop.querySelectorAll("li");
-            for (let q = 0; q < listUlLoopChildren.length; q++) {
-              const navLi = listUlLoopChildren[q];
-              if (nameProp == navLi.textContent) {
-                $(navLi).css("text-decoration", "line-through");
-              }
-            }
-          }
-        }
+        clickVendor(
+          liFORS1,
+          arr7,
+          bigLinkFORS,
+          "FORS Website",
+          FORSItems,
+          liFORS,
+          testingFORS,
+          bigCollapseShowButtonFORS,
+          bigCollapseHideButtonFORS,
+          bigClearButtonFORS,
+          "#FORSQR",
+          QRFORS,
+          "FORSQR",
+          bigFORSImage,
+          ", ",
+          imageFORS,
+          orderNumberFORS,
+          "redFORS",
+          "data-addedtoFORS",
+          addedItemsFORS,
+          descFORS,
+          spFORS,
+          index,
+          copyItemNumber,
+          nameProp,
+          target
+        );
+        // if (liFORS1.length == 10) {
+        //   $(alert).show().delay(2000).fadeOut("slow");
+        // }
+        // if (liFORS1.length < 10 && !target.hasAttribute("data-addedtoMCK")) {
+        //   target.dataset.addedtoFORS = true;
+        //   addedItemsFORS.push(li.textContent);
+        //   arr7.push(itemNumber1);
+        //   bigLinkFORS.text = "FORS Website";
+        //   FORSItems.append(liFORS);
+        //   FORSItems.insertBefore(bigLinkFORS, testingFORS);
+        //   FORSItems.insertBefore(bigCollapseShowButtonFORS, testingFORS);
+        //   FORSItems.insertBefore(bigCollapseHideButtonFORS, testingFORS);
+        //   FORSItems.insertBefore(bigClearButtonFORS, testingFORS);
+        //   FORSItems.insertBefore(removeDuplicatesFORS, testingFORS);
+        //   $("#FORSQR").show();
+        //   QRFORS.append(document.getElementById("FORSQR"));
+        //   copyItemNumber(bigLinkFORS, arr7.join(", "));
+        //   bigFORSImage.makeCode(arr7.join(", "));
+        //   printBarcode(imageFORS);
+        //   orderNumberFORS.textContent = liFORS1.length += 1;
+        //   if (orderNumberFORS.textContent == 10) {
+        //     const li1 = Array.from(document.querySelectorAll("li[fors*=true]"));
+        //     for (let j = 0; j < li1.length; j++) {
+        //       const elem = li1[j];
+        //       $(elem).addClass("redFORS");
+        //     }
+        //   }
+        //   if (target.parentNode == list || target.parentNode == list2) {
+        //     $(target).hide();
+        //   }
+        //   if (target.parentNode.parentNode == listNav) {
+        //     $(target).css("text-decoration", "line-through");
+        //   }
+        //   for (let w = 0; w < listUl.length; w++) {
+        //     const listUlLoop = listUl[w];
+        //     const listUlLoopChildren = listUlLoop.querySelectorAll("li");
+        //     for (let q = 0; q < listUlLoopChildren.length; q++) {
+        //       const navLi = listUlLoopChildren[q];
+        //       if (nameProp == navLi.textContent) {
+        //         $(navLi).css("text-decoration", "line-through");
+        //       }
+        //     }
+        //   }
+        // }
       }
     }
   }
@@ -5239,7 +5410,7 @@ function setList(array) {
     // console.log(li.attributes.name);
     // li.setAttribute("data-mck", i.McKesson);
     // li.setAttribute("data-oi", i.OrderInsite);
-    // li.setAttribute("data-gnfr", i.GNFR);
+    // li.setAttribute("data-GNFR", i.GNFR);
     // li.setAttribute("data-soc", i.signOrderCatalog);
     // li.setAttribute("data-vs", i.vaxServe);
     // li.setAttribute("data-ms", i.medSurge);
@@ -5273,28 +5444,28 @@ function setList(array) {
     const descFORS = Array.from(
       itemContainers.querySelectorAll("p.descVendor#descFORS")
     );
-    function add(desc, addedtomck) {
+    function add(desc, addedtoMCK) {
       desc.forEach((e) => {
         if (li.textContent === e.textContent) {
-          li.setAttribute(addedtomck, true);
+          li.setAttribute(addedtoMCK, true);
         }
       });
     }
-    add(descMCK, "data-addedtomck");
-    add(descOI, "data-addedtooi");
-    add(descGNFR, "data-addedtognfr");
-    add(descSOC, "data-addedtosoc");
-    add(descVS, "data-addedtovs");
-    add(descMS, "data-addedtoms");
-    add(descCOV, "data-addedtocov");
-    add(descFORS, "data-addedtofors");
+    add(descMCK, "data-addedtoMCK");
+    add(descOI, "data-addedtoOI");
+    add(descGNFR, "data-addedtoGNFR");
+    add(descSOC, "data-addedtoSOC");
+    add(descVS, "data-addedtoVS");
+    add(descMS, "data-addedtoMS");
+    add(descCOV, "data-addedtoCOV");
+    add(descFORS, "data-addedtoFORS");
     // function attributeAdd(descMCK) {
     //   const descMCK = Array.from(
     //     itemContainers.querySelectorAll("p.descVendor#" + descMCK)
     //   );
-    //   descMCK.forEach(function add (e, addedtomck) {
+    //   descMCK.forEach(function add (e, addedtoMCK) {
     //     if (li.textContent === e.textContent) {
-    //       li.dataset[addedtomck] = true;
+    //       li.dataset[addedtoMCK] = true;
     //     }
     //   });
     // }
