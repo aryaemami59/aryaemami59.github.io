@@ -114,7 +114,8 @@ body {
   background-color: thistle;
   color: black;
 }
-#li:hover {
+#li:hover,
+#li:focus {
   cursor: pointer;
   transform: scale(1.1);
   color: white;
@@ -128,8 +129,8 @@ body {
 }
 #li:active {
   background-color: rgb(0, 225, 255);
-  -webkit-transition: ease-in-out 0.1s;
-  transition: ease-in-out 0.1s;
+  /* -webkit-transition: ease-in-out 0.1s;
+  transition: ease-in-out 0.1s; */
   transform: scale(1.2);
 }
 .redMCK#li:active,
@@ -366,6 +367,8 @@ body {
   padding: 2px;
   margin-block-end: 1em;
   margin-block-start: 1em;
+  position: relative;
+  overflow-wrap: break-word;
 }
 .descVendor:hover {
   cursor: pointer;
@@ -857,8 +860,8 @@ body {
   -webkit-transition: transform ease-in-out 0.1s;
   transition: transform ease-in-out 0.1s;
   background-color: #000000;
-  height: 12px;
   margin-bottom: 0px;
+  height: 12px;
 }
 .bigCollapseHideButtonVendor:hover,
 .bigCollapseShowButtonVendor:hover,
@@ -874,18 +877,21 @@ body {
 #bigClearButtonMCK,
 #removeDuplicatesMCK {
   background-image: linear-gradient(rgb(0, 100, 140, 1), rgba(0, 100, 140, 0));
+  background-color: inherit;
 }
 #bigCollapseHideButtonOI,
 #bigCollapseShowButtonOI,
 #bigClearButtonOI,
 #removeDuplicatesOI {
   background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
+  background-color: inherit;
 }
 #bigCollapseHideButtonGNFR,
 #bigCollapseShowButtonGNFR,
 #bigClearButtonGNFR,
 #removeDuplicatesGNFR {
   background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
+  background-color: inherit;
 }
 .orderNumberVendor {
   text-align: center;
@@ -895,10 +901,12 @@ body {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 3px;
   display: ruby;
+  visibility: hidden;
   margin: 0;
   left: 25px;
   bottom: 12px;
   font-size: 8px;
+  font-weight: 900;
 }
 .titleVendor {
   font-size: 6px;
@@ -911,10 +919,99 @@ body {
   align-items: center;
   justify-content: center;
   font-weight: 700;
+  transition: transform 0.1s ease-in-out;
 }
-
 .vendorItems {
   min-height: 30px;
+}
+#bigLinkMS {
+  font-size: 3.75px;
+}
+p.duplicate {
+  box-shadow: 0px 0px 8const const li = document.createElement('li'); = document.createElement('li');px 0px rgb(255, 0, 0);
+}
+.duplicate span.sp::after {
+  content: "Duplicate Item!";
+  background-color: rgb(255, 46, 46);
+  border-radius: 1.5px;
+  position: absolute;
+  padding: .8px;
+  width: 25px;
+  bottom: 29px;
+  font-size: 2.5px;
+  left: 17px;
+}
+.popup {
+  position: absolute;
+  background-color: #555;
+  color: white;
+  font-size: 3px;
+  left: 2px;
+  bottom: 33px;
+  padding: 2px 1px;
+  border-radius: 2px;
+}
+.popup::after {
+  content: "";
+  position: absolute;
+  top: 99%;
+  left: 50%;
+  margin-left: -2px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+.popup.number {
+  position: absolute;
+  background-color: #555;
+  color: white;
+  font-size: 3px;
+  left: 2px;
+  padding: 2px 1px;
+  border-radius: 2px;
+  bottom: 15px;
+}
+.removeDuplicatesVendor {
+  font-size: 3.75px;
+}
+.positive {
+  visibility: visible;
+}
+.vendorItems:not(.show)
+  > :not(.titleVendor):not(canvas):not(.orderNumberVendor) {
+  display: none;
+}
+.show :not(.titleVendor):not(canvas):not(.orderNumberVendor) {
+  /* visibility: hidden; */
+  /* display: inline-block; */
+}
+.titleVendor:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.titleVendor:active {
+  transform: scale(1.2);
+}
+li#li[data-OI="true"] {
+  background-color: rgb(0, 255, 149);
+}
+li#li[data-GNFR="true"] {
+  background-color: rgb(255, 255, 0);
+}
+li#li[data-SOC="true"] {
+  background-color: rgb(255, 113, 113);
+}
+li#li[data-VS="true"] {
+  background-color: rgb(154, 100, 255);
+}
+li#li[data-MS="true"] {
+  background-color: rgb(255, 160, 82);
+}
+li#li[data-COV="true"] {
+  background-color: rgb(255, 67, 239);
+}
+li#li[data-FORS="true"] {
+  background-color: rgb(76, 249, 255);
 }
 @media only screen and (min-width: 1000px) {
   html {
@@ -1032,7 +1129,7 @@ body {
     background-color: thistle;
     color: black;
   }
-  #li:hover {
+  #li:hover #li:focus {
     cursor: pointer;
     transform: scale(1.1);
     color: white;
@@ -1046,8 +1143,8 @@ body {
   }
   #li:active {
     background-color: rgb(0, 225, 255);
-    -webkit-transition: ease-in-out 0.1s;
-    transition: ease-in-out 0.1s;
+    /* -webkit-transition: ease-in-out 0.1s;
+    transition: ease-in-out 0.1s; */
     transform: scale(1.2);
   }
   .red#li:active {
@@ -1228,6 +1325,7 @@ body {
     margin-block-end: 1em;
     margin-block-start: 1em;
     position: relative;
+    overflow-wrap: break-word;
   }
   .descVendor:hover {
     cursor: pointer;
@@ -1494,10 +1592,12 @@ body {
   }
   #alert {
     grid-row: 1;
-    grid-column: 6/9;
+    grid-column: 6/8;
     margin-top: 10px;
     margin-right: 10px;
     display: none;
+    position: relative;
+    left: 50px;
   }
   #navSpan {
     width: 250px;
@@ -1817,6 +1917,7 @@ body {
     align-items: center;
     justify-content: center;
     font-weight: 700;
+    transition: transform 0.1s ease-in-out;
   }
   .vendorItems {
     min-height: 70px;
@@ -1828,17 +1929,12 @@ body {
     box-shadow: 0px 0px 20px 0px rgb(255, 0, 0);
   }
   .duplicate span.sp::after {
-    /* content: '\0021'; */
     content: "Duplicate Item!";
-    /* background-color: rgba(255, 46, 46, 0.329); */
     background-color: rgb(255, 46, 46);
     border-radius: 5px;
     position: absolute;
     padding: 2px;
     width: 70px;
-    /* font-size: 15px; */
-    /* left: 115px; */
-    /* bottom: 85px; */
     bottom: 97px;
     font-size: 8px;
     left: 55px;
@@ -1890,12 +1986,29 @@ body {
   .titleVendor:hover {
     cursor: pointer;
     transform: scale(1.1);
-    -webkit-transition: ease-in-out 0.1s;
-    transition: ease-in-out 0.1s;
   }
   .titleVendor:active {
     transform: scale(1.2);
-    -webkit-transition: ease-in-out 0.1s;
-    transition: ease-in-out 0.1s;
+  }
+  li#li[data-OI="true"] {
+    background-color: rgb(0, 255, 149);
+  }
+  li#li[data-GNFR="true"] {
+    background-color: rgb(255, 255, 0);
+  }
+  li#li[data-SOC="true"] {
+    background-color: rgb(255, 113, 113);
+  }
+  li#li[data-VS="true"] {
+    background-color: rgb(154, 100, 255);
+  }
+  li#li[data-MS="true"] {
+    background-color: rgb(255, 160, 82);
+  }
+  li#li[data-COV="true"] {
+    background-color: rgb(255, 67, 239);
+  }
+  li#li[data-FORS="true"] {
+    background-color: rgb(76, 249, 255);
   }
 }
