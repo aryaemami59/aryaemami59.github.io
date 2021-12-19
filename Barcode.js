@@ -3983,12 +3983,11 @@ function removeDuplicatesFunc(
   image,
   char
 ) {
-  removeDuplicates.addEventListener("click", function a (e) {
+  removeDuplicates.addEventListener("click", (e) => {
     const duplicates = Array.from(
       e.target.parentNode.querySelectorAll(".duplicate")
     );
     const li = Array.from(list.querySelectorAll("li"));
-    // console.log(duplicates);
     const vendorItems = e.target.parentNode;
     const vendorQR = vendorItems.querySelector(".vendorQR");
     const bigLinkVendor = vendorItems.querySelector(".bigLinkVendor");
@@ -4010,20 +4009,6 @@ function removeDuplicatesFunc(
         }
       }
     }
-    duplicates.forEach((e) => e.parentNode.remove());
-    const liVendor = vendorItems.querySelectorAll(".liVendor");
-    const orderNumberVendor = vendorItems.querySelector(".orderNumberVendor");
-    orderNumberVendor.textContent = liVendor.length;
-    const alternativeDesc = Array.from(
-      itemContainers.querySelectorAll("p.descVendor.duplicate")
-    );
-    alternativeDesc.forEach((e) => {
-      // console.log(e);
-      $(e).removeClass("duplicate");
-    });
-    // const nonDuplicates = Array.from(
-    //   e.target.parentNode.querySelectorAll(".descVendor:not(.duplicate)")
-    // );
     for (let k = 0; k < duplicates.length; k++) {
       const elem = duplicates[k];
       const itemNumber = elem.parentNode
@@ -4041,6 +4026,19 @@ function removeDuplicatesFunc(
         }
       }
     }
+    duplicates.forEach((e) => e.parentNode.remove());
+    const liVendor = vendorItems.querySelectorAll(".liVendor");
+    const orderNumberVendor = vendorItems.querySelector(".orderNumberVendor");
+    orderNumberVendor.textContent = liVendor.length;
+    const alternativeDesc = Array.from(
+      itemContainers.querySelectorAll("p.descVendor.duplicate")
+    );
+    alternativeDesc.forEach((e) => {
+      $(e).removeClass("duplicate");
+    });
+    // const nonDuplicates = Array.from(
+    //   e.target.parentNode.querySelectorAll(".descVendor:not(.duplicate)")
+    // );
     // const nonDuplicates = (e.target.parentNode.querySelector('.descVendor:not(.duplicate)'));
     // const parent = nonDuplicates.parentNode.parentNode;
     // console.log(parent);
@@ -4067,14 +4065,14 @@ function removeDuplicatesFunc(
   });
 }
 
-// removeDuplicatesFunc(removeDuplicatesMCK, "data-addedtomck", arr, bigMCKImage, ' OR ');
-// removeDuplicatesFunc(removeDuplicatesOI, "data-addedtooi", arr1, bigOIImage, ', ');
-// removeDuplicatesFunc(removeDuplicatesGNFR, "data-addedtognfr", arr2, bigGNFRImage, ' , ');
-// removeDuplicatesFunc(removeDuplicatesSOC, "data-addedtosoc", arr3, bigSOCImage, ' , ');
-// removeDuplicatesFunc(removeDuplicatesVS, "data-addedtovs", arr4, bigVSImage, ' , ');
-// removeDuplicatesFunc(removeDuplicatesMS, "data-addedtoms", arr5, bigMSImage, ' , ');
-// removeDuplicatesFunc(removeDuplicatesCOV, "data-addedtocov", arr6, bigCOVImage, ' , ');
-// removeDuplicatesFunc(removeDuplicatesFORS, "data-addedtofors", arr7, bigFORSImage, ' , ');
+removeDuplicatesFunc(removeDuplicatesMCK, "data-addedtomck", arr, bigMCKImage, ' OR ');
+removeDuplicatesFunc(removeDuplicatesOI, "data-addedtooi", arr1, bigOIImage, ', ');
+removeDuplicatesFunc(removeDuplicatesGNFR, "data-addedtognfr", arr2, bigGNFRImage, ' , ');
+removeDuplicatesFunc(removeDuplicatesSOC, "data-addedtosoc", arr3, bigSOCImage, ' , ');
+removeDuplicatesFunc(removeDuplicatesVS, "data-addedtovs", arr4, bigVSImage, ' , ');
+removeDuplicatesFunc(removeDuplicatesMS, "data-addedtoms", arr5, bigMSImage, ' , ');
+removeDuplicatesFunc(removeDuplicatesCOV, "data-addedtocov", arr6, bigCOVImage, ' , ');
+removeDuplicatesFunc(removeDuplicatesFORS, "data-addedtofors", arr7, bigFORSImage, ' , ');
 // this function takes list items and categorizes them based on vendor and adds vendor icons.
 function categorizeByClass(arr, a) {
   for (let j = 0; j < arr.length; j++) {
@@ -4531,62 +4529,62 @@ function onClick(li) {
         addedItemsFORS,
         "data-addedtoFORS"
       );
-      removeDuplicatesFunc(
-        removeDuplicatesMCK,
-        "data-addedtomck",
-        arr,
-        bigMCKImage,
-        " OR "
-      );
-      removeDuplicatesFunc(
-        removeDuplicatesOI,
-        "data-addedtooi",
-        arr1,
-        bigOIImage,
-        ", "
-      );
-      removeDuplicatesFunc(
-        removeDuplicatesGNFR,
-        "data-addedtognfr",
-        arr2,
-        bigGNFRImage,
-        " , "
-      );
-      removeDuplicatesFunc(
-        removeDuplicatesSOC,
-        "data-addedtosoc",
-        arr3,
-        bigSOCImage,
-        " , "
-      );
-      removeDuplicatesFunc(
-        removeDuplicatesVS,
-        "data-addedtovs",
-        arr4,
-        bigVSImage,
-        " , "
-      );
-      removeDuplicatesFunc(
-        removeDuplicatesMS,
-        "data-addedtoms",
-        arr5,
-        bigMSImage,
-        " , "
-      );
-      removeDuplicatesFunc(
-        removeDuplicatesCOV,
-        "data-addedtocov",
-        arr6,
-        bigCOVImage,
-        " , "
-      );
-      removeDuplicatesFunc(
-        removeDuplicatesFORS,
-        "data-addedtofors",
-        arr7,
-        bigFORSImage,
-        " , "
-      );
+      // removeDuplicatesFunc(
+      //   removeDuplicatesMCK,
+      //   "data-addedtomck",
+      //   arr,
+      //   bigMCKImage,
+      //   " OR "
+      // );
+      // removeDuplicatesFunc(
+      //   removeDuplicatesOI,
+      //   "data-addedtooi",
+      //   arr1,
+      //   bigOIImage,
+      //   ", "
+      // );
+      // removeDuplicatesFunc(
+      //   removeDuplicatesGNFR,
+      //   "data-addedtognfr",
+      //   arr2,
+      //   bigGNFRImage,
+      //   " , "
+      // );
+      // removeDuplicatesFunc(
+      //   removeDuplicatesSOC,
+      //   "data-addedtosoc",
+      //   arr3,
+      //   bigSOCImage,
+      //   " , "
+      // );
+      // removeDuplicatesFunc(
+      //   removeDuplicatesVS,
+      //   "data-addedtovs",
+      //   arr4,
+      //   bigVSImage,
+      //   " , "
+      // );
+      // removeDuplicatesFunc(
+      //   removeDuplicatesMS,
+      //   "data-addedtoms",
+      //   arr5,
+      //   bigMSImage,
+      //   " , "
+      // );
+      // removeDuplicatesFunc(
+      //   removeDuplicatesCOV,
+      //   "data-addedtocov",
+      //   arr6,
+      //   bigCOVImage,
+      //   " , "
+      // );
+      // removeDuplicatesFunc(
+      //   removeDuplicatesFORS,
+      //   "data-addedtofors",
+      //   arr7,
+      //   bigFORSImage,
+      //   " , "
+      // );
       // addedItems = removeDuplicates(addedItems);
       const collapseButtonMCK = document.createElement("button");
       collapseButtonMCK.setAttribute("id", "collapseButtonMCK");
