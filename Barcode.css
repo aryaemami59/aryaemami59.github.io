@@ -109,6 +109,7 @@ body {
   z-index: 9;
   -webkit-transition: ease-in-out 0.2s;
   transition: ease-in-out 0.2s;
+  user-select: none;
 }
 #li text {
   background-color: thistle;
@@ -1918,6 +1919,7 @@ li#li[data-FORS="true"] {
     justify-content: center;
     font-weight: 700;
     transition: transform 0.1s ease-in-out;
+    user-select: none;
   }
   .vendorItems {
     min-height: 70px;

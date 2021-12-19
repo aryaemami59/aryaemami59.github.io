@@ -3332,12 +3332,10 @@ function titleClick(titleVendor) {
     element.addEventListener("click", (e) => {
       const target = e.target;
       const vendorItems = target.parentNode;
-      $(vendorItems).addClass("show");
-      // const everything = Array.from(
-      //   vendorItems.querySelectorAll(
-      //     ".show > :not(.titleVendor):not(canvas):not(.orderNumberVendor)"
-      //   )
-      // );
+      const orderNumberVendor = vendorItems.querySelector('.positive');
+      if (orderNumberVendor) {
+        $(vendorItems).addClass("show");
+      }
     });
   }
 }
@@ -3780,6 +3778,7 @@ function removeButtonFunc(
     const liVendor = e.target.parentNode;
     orderNumberVendor.textContent -= 1;
     const listItemParent = liVendor.parentNode;
+    const liVendorAll = Array(listItemParent.querySelectorAll(".liVendor"));
     const li1 = list.querySelectorAll("li");
     const childButtons = $(listItemParent).children().filter("button");
     for (let h = 0; h < li1.length; h++) {
@@ -3860,7 +3859,6 @@ function removeButtonFunc(
             $(orderNumberVendor).removeClass("positive");
             $(orderNumberVendor).css("visibility", "hidden");
             $(listItemParent).removeClass("show");
-            // $(listItemParent).addClass("hide");
           }
         }
       }
@@ -3871,10 +3869,17 @@ function removeButtonFunc(
     );
     alternativeDesc.forEach((e) => {
       if (e.textContent === desc) {
-        // console.log(e);
         $(e).removeClass("duplicate");
       }
     });
+    if (liVendorAll.length === 0) {
+      $(QR).hide();
+      $(bigLink).remove();
+      $(childButtons).remove();
+      $(orderNumberVendor).removeClass("positive");
+      $(orderNumberVendor).css("visibility", "hidden");
+      $(listItemParent).removeClass("show");
+    }
   });
 }
 function bigClearFunc(bigClearButtonMCK, array, redMCK, redMCK1, addedtomck) {
@@ -3976,7 +3981,7 @@ function removeDuplicatesFunc(removeDuplicates, addedtomck) {
     const duplicates = Array.from(
       e.target.parentNode.querySelectorAll(".duplicate")
     );
-    const li = Array.from(list.querySelectorAll('li'));
+    const li = Array.from(list.querySelectorAll("li"));
     // console.log(duplicates);
     const vendorItems = e.target.parentNode;
     const vendorQR = vendorItems.querySelector(".vendorQR");
@@ -4025,14 +4030,14 @@ function removeDuplicatesFunc(removeDuplicates, addedtomck) {
   });
 }
 
-removeDuplicatesFunc(removeDuplicatesMCK, 'data-addedtomck');
-removeDuplicatesFunc(removeDuplicatesOI, 'data-addedtooi');
-removeDuplicatesFunc(removeDuplicatesGNFR, 'data-addedtognfr');
-removeDuplicatesFunc(removeDuplicatesSOC, 'data-addedtosoc');
-removeDuplicatesFunc(removeDuplicatesVS, 'data-addedtovs');
-removeDuplicatesFunc(removeDuplicatesMS, 'data-addedtoms');
-removeDuplicatesFunc(removeDuplicatesCOV, 'data-addedtocov');
-removeDuplicatesFunc(removeDuplicatesFORS, 'data-addedtofors');
+removeDuplicatesFunc(removeDuplicatesMCK, "data-addedtomck");
+removeDuplicatesFunc(removeDuplicatesOI, "data-addedtooi");
+removeDuplicatesFunc(removeDuplicatesGNFR, "data-addedtognfr");
+removeDuplicatesFunc(removeDuplicatesSOC, "data-addedtosoc");
+removeDuplicatesFunc(removeDuplicatesVS, "data-addedtovs");
+removeDuplicatesFunc(removeDuplicatesMS, "data-addedtoms");
+removeDuplicatesFunc(removeDuplicatesCOV, "data-addedtocov");
+removeDuplicatesFunc(removeDuplicatesFORS, "data-addedtofors");
 // this function takes list items and categorizes them based on vendor and adds vendor icons.
 function categorizeByClass(arr, a) {
   for (let j = 0; j < arr.length; j++) {
