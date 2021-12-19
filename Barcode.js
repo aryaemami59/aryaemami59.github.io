@@ -4003,7 +4003,6 @@ function removeDuplicatesFunc(
       for (let j = 0; j < duplicates.length; j++) {
         const DuplicatesLoop = duplicates[j].textContent;
         if (liLoop === DuplicatesLoop) {
-          // console.log(liLoop);
           $(li[i]).show();
           $(li[i]).removeAttr(addedtomck);
         }
@@ -4036,20 +4035,6 @@ function removeDuplicatesFunc(
     alternativeDesc.forEach((e) => {
       $(e).removeClass("duplicate");
     });
-    // const nonDuplicates = Array.from(
-    //   e.target.parentNode.querySelectorAll(".descVendor:not(.duplicate)")
-    // );
-    // const nonDuplicates = (e.target.parentNode.querySelector('.descVendor:not(.duplicate)'));
-    // const parent = nonDuplicates.parentNode.parentNode;
-    // console.log(parent);
-    // const itemNumber = Array.from(parent.querySelectorAll('.itemNumberVendor'))
-    // console.log(nonDuplicates)
-    // nonDuplicates.forEach((e) => {
-    //   const lili = Array.from(e.parentNode.parentNode.querySelectorAll('.itemNumberVendor'));
-    //   console.log(lili)
-    //   // console.log(e.parentNode);
-    // })
-    // const nonDuplicatesItemNumbers =
     if (liVendor.length === 0) {
       $(vendorQR).hide();
       $(bigLinkVendor).remove();
@@ -4060,7 +4045,6 @@ function removeDuplicatesFunc(
       $(orderNumberVendor).removeClass("positive");
       $(orderNumberVendor).css("visibility", "hidden");
       $(vendorItems).removeClass("show");
-      // $(vendorItems).addClass("hide");
     }
   });
 }
@@ -4074,31 +4058,30 @@ removeDuplicatesFunc(removeDuplicatesMS, "data-addedtoms", arr5, bigMSImage, ' ,
 removeDuplicatesFunc(removeDuplicatesCOV, "data-addedtocov", arr6, bigCOVImage, ' , ');
 removeDuplicatesFunc(removeDuplicatesFORS, "data-addedtofors", arr7, bigFORSImage, ' , ');
 // this function takes list items and categorizes them based on vendor and adds vendor icons.
-function categorizeByClass(arr, a) {
-  for (let j = 0; j < arr.length; j++) {
-    const element1 = arr[j];
-    const name1 = arr[j].name;
-    for (let i = 0; i < list2.children.length; i++) {
-      const element = list2.children[i];
-      if (element.childNodes[0].textContent === name1) {
-        element.style.backgroundColor = "lightblue";
-        const lim = document.createElement("li");
-        const icon = document.createElement("img");
-        icon.setAttribute("src", a);
-        icon.setAttribute("id", "icon");
-        lim.appendChild(icon);
-        element.appendChild(lim);
-      }
-    }
-  }
-}
+// function categorizeByClass(arr, a) {
+//   for (let j = 0; j < arr.length; j++) {
+//     const element1 = arr[j];
+//     const name1 = arr[j].name;
+//     for (let i = 0; i < list2.children.length; i++) {
+//       const element = list2.children[i];
+//       if (element.childNodes[0].textContent === name1) {
+//         element.style.backgroundColor = "lightblue";
+//         const lim = document.createElement("li");
+//         const icon = document.createElement("img");
+//         icon.setAttribute("src", a);
+//         icon.setAttribute("id", "icon");
+//         lim.appendChild(icon);
+//         element.appendChild(lim);
+//       }
+//     }
+//   }
+// }
 // this is the function that is executed when the user click on drop down list items from the search results of the input field.
 function onClick(li) {
   for (i = 0; i < vials.length; i++) {
     if (li.childNodes[0].textContent == vials[i].name) {
       // addedItems = removeDuplicates(addedItems);
       // addedItems.push(li.childNodes[0].textContent);
-      // console.log(addedItems)
       let index = vials
         .map((e) => e.name)
         .indexOf(li.childNodes[0].textContent);
@@ -4106,7 +4089,6 @@ function onClick(li) {
       const target = li;
       const imageMCK = document.createElement("img");
       imageMCK.setAttribute("id", "imageMCK");
-      // console.log(varToString(vials.name));
       imageMCK.setAttribute("class", "imageVendor");
       imageMCK.setAttribute(
         "title",
@@ -5635,31 +5617,19 @@ function avoidDuplicatesOnClick(li) {
   li.addEventListener(
     "click",
     (e) => {
-      // const element = this.target.childNodes[0].textContent;
-      const element = li.childNodes[0].textContent;
-      // console.log(element);
-      // if (e.target !== li) {
-      //   return;
-      // }
-      // console.log(element)
-      // const target = e.target;
-      const check = (currentItem) => currentItem !== element;
-      avoidDuplciateResults(function () {
-        onClick(li);
-      }, check);
-    },
-    false
+      onClick(li);
+      // const element = li.childNodes[0].textContent;
+      // const check = (currentItem) => currentItem !== element;
+      // avoidDuplciateResults(function () {
+      //   onClick(li);
+      // }, check);
+    }
   );
 }
 function avoidDuplicatesOnEnter(li) {
   li.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
-      const element = li.childNodes[0].textContent;
-      const target = e.target;
-      const check = (currentItem) => currentItem !== element;
-      avoidDuplciateResults(function () {
-        onClick(li);
-      }, check);
+      onClick(li);
     }
   });
 }
@@ -5678,23 +5648,6 @@ function setList(array) {
     li.dataset.ms = i.medSurge;
     li.dataset.cov = i.covap;
     li.dataset.fors = i.FORS;
-    // console.log(li.dataset);
-    // const a = li.getAttribute('data-MCK');
-    // console.log(a)
-    // const attr = Array.from(li.attributes);
-    // // console.log(attr);
-    // attr.forEach(e => {
-    //   console.log(e);
-    // })
-    // console.log(li.attributes.name);
-    // li.setAttribute("data-MCK", i.McKesson);
-    // li.setAttribute("data-OI", i.OrderInsite);
-    // li.setAttribute("data-GNFR", i.GNFR);
-    // li.setAttribute("data-SOC", i.signOrderCatalog);
-    // li.setAttribute("data-VS", i.vaxServe);
-    // li.setAttribute("data-MS", i.medSurge);
-    // li.setAttribute("data-cov", i.covap);
-    // li.setAttribute("data-FORS", i.FORS);
     li.appendChild(text);
     list.appendChild(li);
     li.setAttribute("id", "li");
