@@ -189,7 +189,7 @@ body {
   background-color: rgb(0, 43, 66);
   height: auto;
   text-align: center;
-  width: 50px;
+  /* width: 50px; */
   grid-column: 1/2;
   grid-row: 1;
   border-radius: 2px;
@@ -936,7 +936,7 @@ p.duplicate {
   background-color: rgb(255, 46, 46);
   border-radius: 1.5px;
   position: absolute;
-  padding: .8px;
+  padding: 0.8px;
   width: 25px;
   bottom: 29px;
   font-size: 2.5px;
@@ -1177,10 +1177,10 @@ li#li[data-FORS="true"] {
   }
   .itemContainers {
     height: auto;
-    grid-area: 2/6/3/8;
+    grid-area: 2/5/3/8;
     display: grid;
     grid-row: 2;
-    justify-items: flex-end;
+    justify-items: start;
     align-items: flex-start;
     align-content: flex-start;
     column-gap: 50px;
@@ -1193,7 +1193,7 @@ li#li[data-FORS="true"] {
     background-color: rgb(0, 43, 66);
     height: auto;
     text-align: center;
-    width: 150px;
+    /* width: 300px; */
     grid-column: 1/2;
     grid-row: 1;
     border-radius: 5px;
@@ -1256,9 +1256,9 @@ li#li[data-FORS="true"] {
   }
   .bigLinkVendor {
     display: flex;
-    width: 84%;
+    width: 35%;
     font-size: 16px;
-    min-height: 55px;
+    min-height: 60px;
     box-sizing: border-box;
     padding: 5px;
     text-decoration: none;
@@ -1270,7 +1270,10 @@ li#li[data-FORS="true"] {
     transition: ease-in-out 0.1s;
     align-items: center;
     justify-content: center;
-    margin: 10px auto;
+    /* margin: 10px auto; */
+    margin: 0 0;
+    margin-right: 15px;
+    float: left;
   }
   .bigLinkVendor:hover {
     transform: scale(1.1);
@@ -1283,6 +1286,13 @@ li#li[data-FORS="true"] {
     transition: ease-in-out 0.1s;
     max-height: 200px;
     height: 45px;
+    float: right;
+    clear: right;
+    /* position: relative;
+    top: 30px;
+    display: inline-block; */
+    margin-right: 15px;
+    /* margin-top: 10px; */
   }
   .imageVendor:hover {
     cursor: pointer;
@@ -1315,6 +1325,8 @@ li#li[data-FORS="true"] {
     align-items: center;
     margin-right: 12.5px;
     margin-left: 12.5px;
+    float: left;
+    clear: right;
     word-break: keep-all;
     -webkit-transition: transform ease-in-out 0.1s, max-height ease-in-out 0.1s,
       width ease-in-out 0.1s, font ease-in-out 0.1s;
@@ -1327,6 +1339,8 @@ li#li[data-FORS="true"] {
     margin-block-start: 1em;
     position: relative;
     overflow-wrap: break-word;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   .descVendor:hover {
     cursor: pointer;
@@ -1367,7 +1381,14 @@ li#li[data-FORS="true"] {
     max-height: 100px;
     margin-block-start: 1em;
     margin-block-end: 1em;
-    position: relative;
+    margin-bottom: 0;
+    margin-top: 20px;
+    /* position: relative;
+    top: 20px; */
+    /* float: inline-start; */
+    float: left;
+    clear: right;
+    /* display: flex; */
   }
   .itemNumberVendor:hover {
     cursor: pointer;
@@ -1412,6 +1433,12 @@ li#li[data-FORS="true"] {
     text-decoration: none;
     margin-bottom: 10px;
     font-size: 14px;
+    /* float: left;
+    clear: right; */
+    position: relative;
+    top: 20px;
+    left: -50px;
+    width: 110px;
   }
   .smallLinkVendor:hover {
     cursor: pointer;
@@ -1632,13 +1659,17 @@ li#li[data-FORS="true"] {
     color: white;
   }
   .show .vendorQR > img {
-    min-width: 100px;
-    margin-left: 25px;
+    min-width: 200px;
+    margin: 0 0;
+    /* margin-left: 25px; */
     margin-top: 10px;
     margin-bottom: 10px;
     box-shadow: 2px 2px 10px -2px black;
     -webkit-transition: ease-in-out 0.1s;
     transition: ease-in-out 0.1s;
+    /* float: left; */
+    margin-left: 50px;
+    margin-right: 50px;
   }
   .show .vendorQR > img:hover {
     cursor: pointer;
@@ -1659,7 +1690,7 @@ li#li[data-FORS="true"] {
     border-left: 0;
     border-right: 0;
     border-style: groove;
-    height: 330px;
+    height: 220px;
     max-height: 330px;
     list-style: none;
     font-size: 15px;
@@ -1682,7 +1713,8 @@ li#li[data-FORS="true"] {
     border-radius: 5px;
     font-weight: bold;
     position: relative;
-    left: 42px;
+    /* left: 42px; */
+    left: 0;
     box-shadow: 1px 1px 5px black;
     text-shadow: 1px 1px 2px black;
     -webkit-transition: ease-in-out 0.1s;
@@ -1694,6 +1726,9 @@ li#li[data-FORS="true"] {
     padding: auto;
     background-color: #000000;
     border: none;
+    clear: both;
+    margin-bottom: 10px;
+    float: right;
   }
   .removeButtonVendor:hover {
     cursor: pointer;
@@ -1756,6 +1791,7 @@ li#li[data-FORS="true"] {
   .collapseButtonVendor {
     position: relative;
     float: right;
+    /* float: none; */
     border-radius: 5px;
     font-weight: bold;
     box-shadow: 1px 1px 5px black;
@@ -1768,6 +1804,7 @@ li#li[data-FORS="true"] {
     right: 2px;
     height: 24px;
     border: none;
+    clear: left;
   }
   #collapseButtonMCK {
     background-image: linear-gradient(
@@ -1847,14 +1884,32 @@ li#li[data-FORS="true"] {
     color: white;
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
-    width: 125px;
+    width: 80px;
     border-radius: 5px;
     text-shadow: 2px 2px 2px #000000;
     box-shadow: 2px 2px 10px -2px black;
     -webkit-transition: transform ease-in-out 0.1s;
     transition: transform ease-in-out 0.1s;
     margin-bottom: 12px;
-    height: 36px;
+    /* height: 36px; */
+    height: 70px;
+    /* float: left; */
+    /* clear: left; */
+    /* clear: right; */
+  }
+  .bigCollapseShowButtonVendor {
+    float: left;
+  }
+  .bigCollapseHideButtonVendor {
+    float: left;
+  }
+  .bigClearButtonVendor {
+    float: left;
+    clear: left;
+  }
+  .removeDuplicatesVendor {
+    /* float: right; */
+    /* clear: right; */
   }
   .bigCollapseHideButtonVendor:hover,
   .bigCollapseShowButtonVendor:hover,
@@ -1923,6 +1978,7 @@ li#li[data-FORS="true"] {
   }
   .vendorItems {
     min-height: 70px;
+    width: 300px;
   }
   #bigLinkMS {
     font-size: 14px;
