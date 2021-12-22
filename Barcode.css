@@ -1016,6 +1016,7 @@ li#li[data-FORS="true"] {
 }
 .badge.bg-primary {
   border-radius: 2px;
+  font-size: 0.65em;
 }
 @media only screen and (min-width: 1000px) {
   html {
@@ -2018,5 +2019,6 @@ li#li[data-FORS="true"] {
   }
   .badge.bg-primary {
     border-radius: 0.25rem;
+    font-size: 0.75em;
   }
 }
