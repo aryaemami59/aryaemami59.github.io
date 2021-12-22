@@ -929,7 +929,7 @@ body {
   font-size: 3.75px;
 }
 p.duplicate {
-  box-shadow: 0px 0px 8px 0px rgb(255, 0, 0);
+  box-shadow: 0px 0px 6px 0px rgb(255, 0, 0);
 }
 .duplicate span.sp::after {
   content: "Duplicate Item!";
@@ -939,7 +939,7 @@ p.duplicate {
   padding: .8px;
   width: 25px;
   bottom: 29px;
-  font-size: 2.5px;
+  font-size: 2px;
   left: 17px;
 }
 .popup {
@@ -1013,6 +1013,9 @@ li#li[data-COV="true"] {
 }
 li#li[data-FORS="true"] {
   background-color: rgb(76, 249, 255);
+}
+.badge.bg-primary {
+  border-radius: 2px;
 }
 @media only screen and (min-width: 1000px) {
   html {
@@ -2012,5 +2015,8 @@ li#li[data-FORS="true"] {
   }
   li#li[data-FORS="true"] {
     background-color: rgb(76, 249, 255);
+  }
+  .badge.bg-primary {
+    border-radius: 0.25rem;
   }
 }
