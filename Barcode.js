@@ -3605,15 +3605,14 @@ function set(element) {
   element.setAttribute("id", b);
 }
 listNavChildren.forEach(set);
-// console.log(listNavChildren)
 // this function looks at certain terms or words in the name of an item in the vials array,
 // and puts that item in a certain array that corresponds to that term or word.
 function searchFunc(itemToFind, arr) {
-  vials.forEach((element) => {
-    const x = element.name;
+  vials.forEach((e) => {
+    const x = e.name;
     const g = new RegExp(itemToFind, "gi");
     if (x.match(g)) {
-      arr.push(element);
+      arr.push(e);
     }
   });
 }
@@ -3769,6 +3768,9 @@ function removeButtonFunc(
 ) {
   removeButtonMCK.addEventListener("click", function d(e) {
     // addedItems = removeDuplicates(addedItems);
+    // return new Promise((resolve, reject) => {
+    //   removeButtonMCK.parentNode
+    // })
     const desc = e.target.parentNode.querySelector("p").textContent;
     const QR =
       e.target.parentNode.parentNode.querySelector(".QRVendor").firstChild;
@@ -3785,14 +3787,12 @@ function removeButtonFunc(
       const elem = li1[h];
       const li1Text = elem.childNodes[0].textContent;
       if (orderNumberVendor.textContent <= 9) {
-        // console.log(elem.className);
         elem.classList.remove(redMCK);
       }
       if (desc == li1Text) {
         $(elem).show();
         // delete elem.dataset[addedtoMCK];
         elem.removeAttribute(addedtoMCK);
-        // console.log(elem);
       }
     }
     const listUl = listNav.querySelectorAll("ul");
@@ -4049,14 +4049,62 @@ function removeDuplicatesFunc(
   });
 }
 
-removeDuplicatesFunc(removeDuplicatesMCK, "data-addedtomck", arr, bigMCKImage, ' OR ');
-removeDuplicatesFunc(removeDuplicatesOI, "data-addedtooi", arr1, bigOIImage, ', ');
-removeDuplicatesFunc(removeDuplicatesGNFR, "data-addedtognfr", arr2, bigGNFRImage, ' , ');
-removeDuplicatesFunc(removeDuplicatesSOC, "data-addedtosoc", arr3, bigSOCImage, ' , ');
-removeDuplicatesFunc(removeDuplicatesVS, "data-addedtovs", arr4, bigVSImage, ' , ');
-removeDuplicatesFunc(removeDuplicatesMS, "data-addedtoms", arr5, bigMSImage, ' , ');
-removeDuplicatesFunc(removeDuplicatesCOV, "data-addedtocov", arr6, bigCOVImage, ' , ');
-removeDuplicatesFunc(removeDuplicatesFORS, "data-addedtofors", arr7, bigFORSImage, ' , ');
+removeDuplicatesFunc(
+  removeDuplicatesMCK,
+  "data-addedtomck",
+  arr,
+  bigMCKImage,
+  " OR "
+);
+removeDuplicatesFunc(
+  removeDuplicatesOI,
+  "data-addedtooi",
+  arr1,
+  bigOIImage,
+  ", "
+);
+removeDuplicatesFunc(
+  removeDuplicatesGNFR,
+  "data-addedtognfr",
+  arr2,
+  bigGNFRImage,
+  " , "
+);
+removeDuplicatesFunc(
+  removeDuplicatesSOC,
+  "data-addedtosoc",
+  arr3,
+  bigSOCImage,
+  " , "
+);
+removeDuplicatesFunc(
+  removeDuplicatesVS,
+  "data-addedtovs",
+  arr4,
+  bigVSImage,
+  " , "
+);
+removeDuplicatesFunc(
+  removeDuplicatesMS,
+  "data-addedtoms",
+  arr5,
+  bigMSImage,
+  " , "
+);
+removeDuplicatesFunc(
+  removeDuplicatesCOV,
+  "data-addedtocov",
+  arr6,
+  bigCOVImage,
+  " , "
+);
+removeDuplicatesFunc(
+  removeDuplicatesFORS,
+  "data-addedtofors",
+  arr7,
+  bigFORSImage,
+  " , "
+);
 // this function takes list items and categorizes them based on vendor and adds vendor icons.
 // function categorizeByClass(arr, a) {
 //   for (let j = 0; j < arr.length; j++) {
@@ -4076,6 +4124,15 @@ removeDuplicatesFunc(removeDuplicatesFORS, "data-addedtofors", arr7, bigFORSImag
 //     }
 //   }
 // }
+
+// function abb() {
+//   return new Promise((resolve, reject) => {
+//     const imageMCK1 = document.createElement("img");
+
+//     resolve(imageMCK1);
+//   });
+// }
+
 // this is the function that is executed when the user click on drop down list items from the search results of the input field.
 function onClick(li) {
   for (i = 0; i < vials.length; i++) {
@@ -4087,6 +4144,30 @@ function onClick(li) {
         .indexOf(li.childNodes[0].textContent);
       // const target = event.target;
       const target = li;
+      // function imageMCK() {
+      //   abb().then((e) => {
+      //     e.setAttribute("id", "imageMCK");
+      //     e.setAttribute("class", "imageVendor");
+      //     e.setAttribute(
+      //       "title",
+      //       "Click Here To Print The Barcode For The Item Number"
+      //     );
+      //     console.log(e);
+      //     x;
+      //     return e;
+      //   });
+      // }
+      // const imageMCK = (imageMCK1) => {
+      //   imageMCK1 = document.createElement("img");
+      //   imageMCK1.setAttribute("id", "imageMCK");
+      //   imageMCK1.setAttribute("class", "imageVendor");
+      //   imageMCK1.setAttribute(
+      //     "title",
+      //     "Click Here To Print The Barcode For The Item Number"
+      //   );
+      //   return imageMCK1;
+      // };
+
       const imageMCK = document.createElement("img");
       imageMCK.setAttribute("id", "imageMCK");
       imageMCK.setAttribute("class", "imageVendor");
@@ -4730,7 +4811,7 @@ function onClick(li) {
           liMCK1,
           arr,
           bigLinkMCK,
-          "MCK Website",
+          "McKesson Website",
           MckessonItems,
           liMCK,
           testingMCK,
@@ -4745,7 +4826,7 @@ function onClick(li) {
           imageMCK,
           orderNumberMCK,
           "redMCK",
-          "data-addedtoMCK",
+          "data-addedtomck",
           addedItemsMCK,
           descMCK,
           spMCK,
@@ -5533,7 +5614,7 @@ function buttonClick() {
   const li = list.children;
   for (let i = 0; i < li.length; i++) {
     const textList = document.createTextNode(
-      Object.values(li)[i].textContent
+      Object.values(li)[i].childNodes[0].textContent
     ).textContent;
     items.push(textList);
     items = removeDuplicates(items);
@@ -5614,17 +5695,14 @@ function buttonClick() {
 }
 // this function includes the onclick event listener that also avoids adding duplicates.
 function avoidDuplicatesOnClick(li) {
-  li.addEventListener(
-    "click",
-    (e) => {
-      onClick(li);
-      // const element = li.childNodes[0].textContent;
-      // const check = (currentItem) => currentItem !== element;
-      // avoidDuplciateResults(function () {
-      //   onClick(li);
-      // }, check);
-    }
-  );
+  li.addEventListener("click", () => {
+    onClick(li);
+    // const element = li.childNodes[0].textContent;
+    // const check = (currentItem) => currentItem !== element;
+    // avoidDuplciateResults(function () {
+    //   onClick(li);
+    // }, check);
+  });
 }
 function avoidDuplicatesOnEnter(li) {
   li.addEventListener("keypress", (e) => {
@@ -5653,6 +5731,20 @@ function setList(array) {
     li.setAttribute("id", "li");
     avoidDuplicatesOnClick(li);
     avoidDuplicatesOnEnter(li);
+    // let uu = new Promise((resolve, reject) => {
+    //   const descMCK = Array.from(
+    //     itemContainers.querySelectorAll("p.descVendor#descMCK")
+    //   );
+    //   resolve(descMCK);
+    // })
+    // uu.then((e) => {
+    //   e.forEach((a) => {
+    //     if (li.childNodes[0].textContent === a.textContent) {
+    //       li.setAttribute('data-addedtomck', true);
+    //     }
+    //   });
+    //   return e[0].textContent;
+    // }).then( f => {console.log(f);})
     const descMCK = Array.from(
       itemContainers.querySelectorAll("p.descVendor#descMCK")
     );
@@ -5974,8 +6066,74 @@ const dramVials10 = new vial("10 dram vials", "10000", "mckesson orderinsite");
 const dramVials13 = new vial("13 dram vials", "10000", "mckesson orderinsite");
 // console.log(dramVials10);
 x.push(dramVials10);
+
+// function hh() {
+//   return new Promise((resolve, reject) => {
+//     resolve(vials[0].name);
+//   });
+// }
+// function aa(a) {
+//   return new Promise(function (resolve, reject) {
+//     resolve(a + " item");
+//   });
+// }
+// let promises = [];
+// let yy = new Promise((resolve, reject) => {
+//   for (let i = 0; i < vials.length; i++) {
+//     const element = vials[i];
+//     if (element.McKesson === true) {
+//       resolve(i);
+//     }
+//   }
+// });
+// yy.then((e) => {
+//   for (let e = 0; e < vials.length; e++) {
+//     const element = vials[e];
+//     console.log(e);
+//   }
+// });
+// function app() {
+//   return new Promise((resolve, reject) => {
+//     const titleVendor = Array.from(
+//       itemContainers.querySelectorAll(".titleVendor")
+//     );
+//     for (let i = 0; i < titleVendor.length; i++) {
+//       const element = titleVendor[i];
+//       resolve(element);
+//     }
+//   });
+// }
+// function ff(a) {
+//   return new Promise((resolve, reject) => {
+//     resolve(a.textContent);
+//   });
+// }
+// app().then((e) => console.log(ff(e)));
+// document.body.addEventListener('click', app);
+// console.log(hh());
+// hh().then((e) => { return (aa(e)); }).then((e) => {console.log(e);})
+
 // console.log(x)
 // console.log(Object.keys(dramVials10)[0]);
 // console.log(removeDuplicatesMCK);
 // console.log(varToString({removeDuplicatesMCK}));
 // console.log(Object.keys({removeDuplicatesMCK}));
+// function word() {
+//   var result = 1 + 2;
+//   return result;
+// }
+// // var word = 3
+// function i(o) {
+//   console.log(o);
+// }
+// i(word())
+// // console.log(word());
+// word('arya', 'emami')
+// let array = [1,2,3,4,];
+// arya = {
+//   name: 'arya',
+//   age: '26'
+// }
+// arya.penis = '6 inch'
+// console.log(arya);
+// console.log(word(1,2));
