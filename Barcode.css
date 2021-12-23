@@ -654,7 +654,7 @@ body {
 }
 .show .vendorQR > img {
   width: 33px;
-  margin-left: 8px;
+  margin-left: 0px;
   margin-top: 3px;
   margin-bottom: 3px;
   box-shadow: 1px 1px 5px -1px black;
@@ -850,6 +850,7 @@ body {
 .bigCollapseShowButtonVendor,
 .bigClearButtonVendor,
 .removeDuplicatesVendor {
+  display: flex;
   color: white;
   font-family: "Montserrat", sans-serif;
   font-size: 4px;
@@ -863,6 +864,8 @@ body {
   background-color: #000000;
   margin-bottom: 0px;
   height: 12px;
+  align-items: center;
+  margin-right: 0;
 }
 .bigCollapseHideButtonVendor:hover,
 .bigCollapseShowButtonVendor:hover,
@@ -894,36 +897,89 @@ body {
   background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
   background-color: inherit;
 }
-.orderNumberVendor {
-  text-align: center;
-  padding: 2px;
+
+.vendorItems {
   position: relative;
-  color: white;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 3px;
-  display: ruby;
-  visibility: hidden;
-  margin: 0;
-  left: 25px;
-  bottom: 12px;
-  font-size: 8px;
-  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  min-height: 20px;
+  margin: 0 0;
 }
 .titleVendor {
   font-size: 6px;
-  margin: 0;
-  position: relative;
+  margin: 0 0;
+  /* flex: auto; */
+  /* margin: auto;
+  margin-top: auto;
+  margin-bottom: auto; */
+  /* display: inline-block; */
+  /* min-height: 30px; */
+  /* align-self: center; */
+  /* height: fit-content; */
+  /* flex: 1;
+  box-sizing: border-box; */
+  /* height: 20px;
+  min-height: 20px; */
+  /* max-height: fit-content; */
+  /* justify-self: flex-end; */
+  /* justify-self: center; */
+  /* position: relative;
   bottom: 10px;
   height: 10px;
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+  /* position: relative; */
+  /* bottom: 10px; */
+  /* order: 0;
+  min-height: 0; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* flex-grow: 2; */
+  /* justify-self: stretch; */
+  /* height: 100%; */
+  /* min-height: 30px; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* position: relative; */
+  /* height: 100%; */
+  /* min-height: 100%; */
+  /* white-space: nowrap; */
+  /* bottom: 13px; */
+  /* order: 0; */
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  justify-self: flex-start;
   font-weight: 700;
   transition: transform 0.1s ease-in-out;
+  /* margin-bottom: 0; */
 }
-.vendorItems {
-  min-height: 30px;
+.orderNumberVendor {
+  /* display: inline !important; */
+  text-align: center;
+  padding: 2px;
+  /* position: relative; */
+  position: absolute;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  /* display: ruby; */
+  visibility: hidden;
+  margin: 0;
+  /* left: 25px;
+  bottom: 12px; */
+  top: -8px;
+  left: 46px;
+  font-size: 8px;
+  font-weight: 900;
+  width: fit-content;
+  justify-self: start;
+  align-self: flex-end;
+  /* order: 0; */
 }
 #bigLinkMS {
   font-size: 3.75px;
