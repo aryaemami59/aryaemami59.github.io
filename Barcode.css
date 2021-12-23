@@ -861,8 +861,9 @@ body {
   box-shadow: 1px 1px 5px -1px black;
   -webkit-transition: transform ease-in-out 0.1s;
   transition: transform ease-in-out 0.1s;
-  background-color: #000000;
-  margin-bottom: 0px;
+  /* background-color: #000000; */
+  background-color: inherit;
+  /* margin-bottom: 0px; */
   height: 12px;
   align-items: center;
   margin-right: 0;
@@ -888,7 +889,8 @@ body {
 #bigClearButtonOI,
 #removeDuplicatesOI {
   background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
-  background-color: inherit;
+  background-color: #00ff9527;
+  /* background-color: inherit; */
 }
 #bigCollapseHideButtonGNFR,
 #bigCollapseShowButtonGNFR,
@@ -903,60 +905,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   min-height: 20px;
   margin: 0 0;
 }
 .titleVendor {
   font-size: 6px;
   margin: 0 0;
-  /* flex: auto; */
-  /* margin: auto;
-  margin-top: auto;
-  margin-bottom: auto; */
-  /* display: inline-block; */
-  /* min-height: 30px; */
-  /* align-self: center; */
-  /* height: fit-content; */
-  /* flex: 1;
-  box-sizing: border-box; */
-  /* height: 20px;
-  min-height: 20px; */
-  /* max-height: fit-content; */
-  /* justify-self: flex-end; */
-  /* justify-self: center; */
-  /* position: relative;
-  bottom: 10px;
-  height: 10px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center; */
-  /* position: relative; */
-  /* bottom: 10px; */
-  /* order: 0;
-  min-height: 0; */
-  /* display: flex; */
-  /* align-items: center; */
-  /* flex-grow: 2; */
-  /* justify-self: stretch; */
-  /* height: 100%; */
-  /* min-height: 30px; */
-  /* display: flex; */
-  /* align-items: center; */
-  /* position: relative; */
-  /* height: 100%; */
-  /* min-height: 100%; */
-  /* white-space: nowrap; */
-  /* bottom: 13px; */
-  /* order: 0; */
   display: flex;
   min-height: 20px;
   align-items: center;
   justify-self: flex-start;
   font-weight: 700;
   transition: transform 0.1s ease-in-out;
-  /* margin-bottom: 0; */
 }
 .orderNumberVendor {
   /* display: inline !important; */
@@ -976,10 +937,7 @@ body {
   left: 46px;
   font-size: 8px;
   font-weight: 900;
-  width: fit-content;
-  justify-self: start;
   align-self: flex-end;
-  /* order: 0; */
 }
 #bigLinkMS {
   font-size: 3.75px;
@@ -992,7 +950,7 @@ p.duplicate {
   background-color: rgb(255, 46, 46);
   border-radius: 1.5px;
   position: absolute;
-  padding: .8px;
+  padding: 0.8px;
   width: 25px;
   bottom: 29px;
   font-size: 2px;
@@ -1260,7 +1218,7 @@ li#li[data-FORS="true"] {
     box-shadow: 0px 0px 20px 0px rgb(0, 166, 255);
   }
   #OrderInsite-Items {
-    background-color: rgba(0, 255, 149, 0.151);
+    background-color: rgba(0, 255, 149, 0.153);
     box-shadow: 0px 0px 20px 0px rgb(0, 255, 149);
     height: auto;
     width: 150px;
@@ -1693,7 +1651,7 @@ li#li[data-FORS="true"] {
   }
   .show .vendorQR > img {
     min-width: 100px;
-    margin-left: 25px;
+    /* margin-left: 25px; */
     margin-top: 10px;
     margin-bottom: 10px;
     box-shadow: 2px 2px 10px -2px black;
@@ -1930,17 +1888,21 @@ li#li[data-FORS="true"] {
   #bigClearButtonMCK,
   #removeDuplicatesMCK {
     background-image: linear-gradient(
-      rgb(0, 100, 140, 1),
+      rgb(0, 100, 140),
       rgba(0, 100, 140, 0)
     );
-    background-color: inherit;
+    /* background-color: inherit; */
   }
   #bigCollapseHideButtonOI,
   #bigCollapseShowButtonOI,
   #bigClearButtonOI,
   #removeDuplicatesOI {
-    background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
-    background-color: inherit;
+    background-color: rgba(0, 255, 149, 0.153);
+    background-image: linear-gradient(
+      rgb(0, 146, 85), 
+    rgba(0, 146, 85, 0));
+    /* background-color: inherit; */
+    /* background-color: #00ff9527; */
   }
   #bigCollapseHideButtonGNFR,
   #bigCollapseShowButtonGNFR,
@@ -1955,20 +1917,23 @@ li#li[data-FORS="true"] {
   .orderNumberVendor {
     text-align: center;
     padding: 5px;
-    position: relative;
+    position: absolute;
     color: white;
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     display: ruby;
     visibility: hidden;
     margin: 0;
-    left: 75px;
-    bottom: 15px;
+    /* left: 75px;
+    bottom: 15px; */
+    top: -16px;
+    left: 140px;
     font-size: 20px;
     font-weight: 900;
+    align-self: flex-end;
   }
   .titleVendor {
-    font-size: 20px;
+    /* font-size: 20px;
     margin: 0;
     position: relative;
     bottom: 10px;
@@ -1979,10 +1944,24 @@ li#li[data-FORS="true"] {
     justify-content: center;
     font-weight: 700;
     transition: transform 0.1s ease-in-out;
-    user-select: none;
+    user-select: none; */
+    font-size: 20px;
+    margin: 0 0;
+    display: flex;
+    min-height: 70px;
+    align-items: center;
+    justify-self: flex-start;
+    font-weight: 700;
+    transition: transform 0.1s ease-in-out;
   }
   .vendorItems {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-height: 70px;
+    margin: 0 0;
   }
   #bigLinkMS {
     font-size: 14px;
