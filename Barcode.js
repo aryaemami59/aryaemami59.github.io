@@ -3987,12 +3987,13 @@ function removeDuplicatesFunc(
   descMCK
 ) {
   removeDuplicates.addEventListener("click", (e) => {
+    let duplicateItems = [];
+    const descVendor = Array.from(itemContainers.querySelectorAll('.descVendor'));
     const vendorItems = e.target.parentNode;
-    const alternateDesc = Array.from(itemContainers.querySelectorAll(`p.descVendor:not(#${descMCK}`))
-    // console.log(alternateDesc)
-    const duplicates = Array.from(
-      vendorItems.querySelectorAll(".duplicate")
+    const alternateDesc = Array.from(
+      itemContainers.querySelectorAll(`p.descVendor:not(#${descMCK}`)
     );
+    const duplicates = Array.from(vendorItems.querySelectorAll(".duplicate"));
     const li = Array.from(list.querySelectorAll("li"));
     const vendorQR = vendorItems.querySelector(".vendorQR");
     const bigLinkVendor = vendorItems.querySelector(".bigLinkVendor");
@@ -4030,28 +4031,27 @@ function removeDuplicatesFunc(
         }
       }
     }
-    // const alternativeDesc = Array.from(
-    //   itemContainers.querySelectorAll("p.descVendor.duplicate")
-    // );
     duplicates.forEach((e) => {
       alternateDesc.forEach((elem) => {
-        // console.log(elem);
-        if (e.textContent === elem.textContent && alternateDesc.length == 1) {
+        if (e.textContent === elem.textContent) {
+          const index = alternateDesc.indexOf(elem);
+          duplicateItems.push(alternateDesc[index].textContent);
           $(elem).removeClass("duplicate");
-          console.log(elem);
         }
       });
-      e.parentNode.remove()});
+      e.parentNode.remove();
+    });
+    const tt = duplicateItems.filter((e, index) => duplicateItems.indexOf(e) !== index)
+    descVendor.forEach((e) => {
+      tt.forEach((elem) => {
+        if (e.textContent === elem) {
+          $(e).addClass('duplicate');
+        }
+      })
+    })
     const liVendor = vendorItems.querySelectorAll(".liVendor");
     const orderNumberVendor = vendorItems.querySelector(".orderNumberVendor");
     orderNumberVendor.textContent = liVendor.length;
-    // const alternativeDesc = Array.from(
-    //   itemContainers.querySelectorAll("p.descVendor.duplicate")
-    // );
-    // alternativeDesc.forEach((e) => {
-    //   console.log(e);
-    //   $(e).removeClass("duplicate");
-    // });
     if (liVendor.length === 0) {
       $(vendorQR).hide();
       $(bigLinkVendor).remove();
@@ -4072,7 +4072,7 @@ removeDuplicatesFunc(
   arr,
   bigMCKImage,
   " OR ",
-  'descMCK'
+  "descMCK"
 );
 removeDuplicatesFunc(
   removeDuplicatesOI,
@@ -4080,7 +4080,7 @@ removeDuplicatesFunc(
   arr1,
   bigOIImage,
   ", ",
-  'descOI'
+  "descOI"
 );
 removeDuplicatesFunc(
   removeDuplicatesGNFR,
@@ -4088,7 +4088,7 @@ removeDuplicatesFunc(
   arr2,
   bigGNFRImage,
   " , ",
-  'descGNFR'
+  "descGNFR"
 );
 removeDuplicatesFunc(
   removeDuplicatesSOC,
@@ -4096,7 +4096,7 @@ removeDuplicatesFunc(
   arr3,
   bigSOCImage,
   " , ",
-  'descSOC'
+  "descSOC"
 );
 removeDuplicatesFunc(
   removeDuplicatesVS,
@@ -4104,7 +4104,7 @@ removeDuplicatesFunc(
   arr4,
   bigVSImage,
   " , ",
-  'descVS'
+  "descVS"
 );
 removeDuplicatesFunc(
   removeDuplicatesMS,
@@ -4112,7 +4112,7 @@ removeDuplicatesFunc(
   arr5,
   bigMSImage,
   " , ",
-  'descMS'
+  "descMS"
 );
 removeDuplicatesFunc(
   removeDuplicatesCOV,
@@ -4120,7 +4120,7 @@ removeDuplicatesFunc(
   arr6,
   bigCOVImage,
   " , ",
-  'descCOV'
+  "descCOV"
 );
 removeDuplicatesFunc(
   removeDuplicatesFORS,
@@ -4128,7 +4128,7 @@ removeDuplicatesFunc(
   arr7,
   bigFORSImage,
   " , ",
-  'descFORS'
+  "descFORS"
 );
 // this function takes list items and categorizes them based on vendor and adds vendor icons.
 // function categorizeByClass(arr, a) {
@@ -4157,7 +4157,6 @@ function onClick(li) {
         .map((e) => e.name)
         .indexOf(li.childNodes[0].textContent);
       const target = li;
-
       const imageMCK = document.createElement("img");
       imageMCK.setAttribute("id", "imageMCK");
       imageMCK.setAttribute("class", "imageVendor");
@@ -4714,8 +4713,10 @@ function onClick(li) {
       bigCollapseShowFunc(bigCollapseShowButtonCOV);
       bigCollapseShowFunc(bigCollapseShowButtonFORS);
       if (
-        vials[index].McKesson === true &&
-        vials[index].OrderInsite === false
+        // vials[index].McKesson === true &&
+        target['data-mck'] == 'true'
+        // target['data-mck'] == 'true' &&
+        // vials[index].OrderInsite === false
       ) {
         clickVendor(
           liMCK1,
@@ -4785,7 +4786,9 @@ function onClick(li) {
           `li[data-oi*=true]`
         );
       }
-      if (vials[index].McKesson === true && vials[index].OrderInsite === true) {
+      if (
+        target.dataset.mck == "true" &&
+        target.dataset.oi == "true") {
         if (liMCK1.length == 10) {
           $(alert).show().delay(2000).fadeOut("slow");
         }
@@ -5267,14 +5270,14 @@ function setList(array) {
         }
       });
     }
-    add(descMCK, "data-addedtoMCK");
-    add(descOI, "data-addedtoOI");
-    add(descGNFR, "data-addedtoGNFR");
-    add(descSOC, "data-addedtoSOC");
-    add(descVS, "data-addedtoVS");
-    add(descMS, "data-addedtoMS");
-    add(descCOV, "data-addedtoCOV");
-    add(descFORS, "data-addedtoFORS");
+    add(descMCK, "data-addedtomck");
+    add(descOI, "data-addedtooi");
+    add(descGNFR, "data-addedtognfr");
+    add(descSOC, "data-addedtosoc");
+    add(descVS, "data-addedtovs");
+    add(descMS, "data-addedtoms");
+    add(descCOV, "data-addedtocov");
+    add(descFORS, "data-addedtofors");
     li["tabIndex"] = 0;
   }
   if (array.length === 0) {
