@@ -889,8 +889,8 @@ body {
 #bigClearButtonOI,
 #removeDuplicatesOI {
   background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
-  background-color: #00ff9527;
-  /* background-color: inherit; */
+  /* background-color: #00ff9527; */
+  background-color: inherit;
 }
 #bigCollapseHideButtonGNFR,
 #bigCollapseShowButtonGNFR,
@@ -1887,21 +1887,16 @@ li#li[data-FORS="true"] {
   #bigCollapseShowButtonMCK,
   #bigClearButtonMCK,
   #removeDuplicatesMCK {
-    background-image: linear-gradient(
-      rgb(0, 100, 140),
-      rgba(0, 100, 140, 0)
-    );
-    /* background-color: inherit; */
+    background-image: linear-gradient(rgb(0, 100, 140), rgba(0, 100, 140, 0));
+    background-color: inherit;
   }
   #bigCollapseHideButtonOI,
   #bigCollapseShowButtonOI,
   #bigClearButtonOI,
   #removeDuplicatesOI {
-    background-color: rgba(0, 255, 149, 0.153);
-    background-image: linear-gradient(
-      rgb(0, 146, 85), 
-    rgba(0, 146, 85, 0));
-    /* background-color: inherit; */
+    /* background-color: rgba(0, 255, 149, 0.153); */
+    background-image: linear-gradient(rgb(0, 146, 85), rgba(0, 146, 85, 0));
+    background-color: inherit;
     /* background-color: #00ff9527; */
   }
   #bigCollapseHideButtonGNFR,

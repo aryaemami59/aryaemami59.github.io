@@ -3380,7 +3380,8 @@ function clickVendor(
   target,
   descVendor,
   li,
-  OI
+  OI,
+  removeDuplicatesVendor
 ) {
   if (liOI1.length == 10) {
     $(alert).show().delay(2000).fadeOut("slow");
@@ -3397,6 +3398,7 @@ function clickVendor(
     OrderInsiteItems.insertBefore(bigCollapseShowButtonOI, testingOI);
     OrderInsiteItems.insertBefore(bigCollapseHideButtonOI, testingOI);
     OrderInsiteItems.insertBefore(bigClearButtonOI, testingOI);
+    OrderInsiteItems.insertBefore(removeDuplicatesVendor, testingOI);
     $(OIQR).show();
     QROI.append(document.getElementById(OIQRID));
     copyItemNumber(bigLinkOI, arr1.join(comma));
@@ -3981,14 +3983,17 @@ function removeDuplicatesFunc(
   addedtomck,
   array,
   image,
-  char
+  char,
+  descMCK
 ) {
   removeDuplicates.addEventListener("click", (e) => {
+    const vendorItems = e.target.parentNode;
+    const alternateDesc = Array.from(itemContainers.querySelectorAll(`p.descVendor:not(#${descMCK}`))
+    // console.log(alternateDesc)
     const duplicates = Array.from(
-      e.target.parentNode.querySelectorAll(".duplicate")
+      vendorItems.querySelectorAll(".duplicate")
     );
     const li = Array.from(list.querySelectorAll("li"));
-    const vendorItems = e.target.parentNode;
     const vendorQR = vendorItems.querySelector(".vendorQR");
     const bigLinkVendor = vendorItems.querySelector(".bigLinkVendor");
     const hideButton = vendorItems.querySelector(
@@ -4025,16 +4030,28 @@ function removeDuplicatesFunc(
         }
       }
     }
-    duplicates.forEach((e) => e.parentNode.remove());
+    // const alternativeDesc = Array.from(
+    //   itemContainers.querySelectorAll("p.descVendor.duplicate")
+    // );
+    duplicates.forEach((e) => {
+      alternateDesc.forEach((elem) => {
+        // console.log(elem);
+        if (e.textContent === elem.textContent && alternateDesc.length == 1) {
+          $(elem).removeClass("duplicate");
+          console.log(elem);
+        }
+      });
+      e.parentNode.remove()});
     const liVendor = vendorItems.querySelectorAll(".liVendor");
     const orderNumberVendor = vendorItems.querySelector(".orderNumberVendor");
     orderNumberVendor.textContent = liVendor.length;
-    const alternativeDesc = Array.from(
-      itemContainers.querySelectorAll("p.descVendor.duplicate")
-    );
-    alternativeDesc.forEach((e) => {
-      $(e).removeClass("duplicate");
-    });
+    // const alternativeDesc = Array.from(
+    //   itemContainers.querySelectorAll("p.descVendor.duplicate")
+    // );
+    // alternativeDesc.forEach((e) => {
+    //   console.log(e);
+    //   $(e).removeClass("duplicate");
+    // });
     if (liVendor.length === 0) {
       $(vendorQR).hide();
       $(bigLinkVendor).remove();
@@ -4054,56 +4071,64 @@ removeDuplicatesFunc(
   "data-addedtomck",
   arr,
   bigMCKImage,
-  " OR "
+  " OR ",
+  'descMCK'
 );
 removeDuplicatesFunc(
   removeDuplicatesOI,
   "data-addedtooi",
   arr1,
   bigOIImage,
-  ", "
+  ", ",
+  'descOI'
 );
 removeDuplicatesFunc(
   removeDuplicatesGNFR,
   "data-addedtognfr",
   arr2,
   bigGNFRImage,
-  " , "
+  " , ",
+  'descGNFR'
 );
 removeDuplicatesFunc(
   removeDuplicatesSOC,
   "data-addedtosoc",
   arr3,
   bigSOCImage,
-  " , "
+  " , ",
+  'descSOC'
 );
 removeDuplicatesFunc(
   removeDuplicatesVS,
   "data-addedtovs",
   arr4,
   bigVSImage,
-  " , "
+  " , ",
+  'descVS'
 );
 removeDuplicatesFunc(
   removeDuplicatesMS,
   "data-addedtoms",
   arr5,
   bigMSImage,
-  " , "
+  " , ",
+  'descMS'
 );
 removeDuplicatesFunc(
   removeDuplicatesCOV,
   "data-addedtocov",
   arr6,
   bigCOVImage,
-  " , "
+  " , ",
+  'descCOV'
 );
 removeDuplicatesFunc(
   removeDuplicatesFORS,
   "data-addedtofors",
   arr7,
   bigFORSImage,
-  " , "
+  " , ",
+  'descFORS'
 );
 // this function takes list items and categorizes them based on vendor and adds vendor icons.
 // function categorizeByClass(arr, a) {
@@ -4836,7 +4861,7 @@ function onClick(li) {
           target,
           "p.descVendor:not(#descMCK)",
           li,
-          `li[data-MCK*=true]`
+          `li[data-mck*=true]`
         );
         // if (liMCK1.length == 10) {
         //   $(alert).show().delay(2000).fadeOut("slow");
@@ -4916,7 +4941,7 @@ function onClick(li) {
           imageOI,
           orderNumberOI,
           "redOI",
-          "data-addedtoOI",
+          "data-addedtooi",
           addedItemsOI,
           descOI,
           spOI,
@@ -4926,7 +4951,7 @@ function onClick(li) {
           target,
           "p.descVendor:not(#descOI)",
           li,
-          `li[data-OI*=true]`
+          `li[data-oi*=true]`
         );
         // if (liOI1.length == 10) {
         //   $(alert).show().delay(2000).fadeOut("slow");
@@ -4999,7 +5024,7 @@ function onClick(li) {
           QRMCK.append(document.getElementById("MCKQR"));
           // const itemNumberVendor = $('.itemNumberVendor')[0].childNodes[0].nodeValue;
           // console.log(itemNumberVendor)
-          // for (let k = 0; k < itemNumberVendor.length; k++) {
+          // for (let k = 0; k <   itemNumberVendor.length; k++) {
           //   const itemNumberVendorLoop = itemNumberVendor[k].textContent.slice(13);
           //   console.log(itemNumberVendorLoop)
 
@@ -5150,7 +5175,8 @@ function onClick(li) {
           target,
           "p.descVendor:not(#descGNFR)",
           li,
-          `li[data-gnfr*=true]`
+          `li[data-gnfr*=true]`,
+          removeDuplicatesGNFR
         );
         // if (liGNFR1.length == 10) {
         //   $(alert).show().delay(2000).fadeOut("slow");
@@ -5217,7 +5243,7 @@ function onClick(li) {
           imageSOC,
           orderNumberSOC,
           "redSOC",
-          "data-addedtoSOC",
+          "data-addedtosoc",
           addedItemsSOC,
           descSOC,
           spSOC,
@@ -5227,7 +5253,8 @@ function onClick(li) {
           target,
           "p.descVendor:not(#descSOC)",
           li,
-          `li[data-SOC*=true]`
+          `li[data-soc*=true]`,
+          removeDuplicatesSOC
         );
         // if (liSOC1.length == 10) {
         //   $(alert).show().delay(2000).fadeOut("slow");
@@ -5300,7 +5327,7 @@ function onClick(li) {
           imageVS,
           orderNumberVS,
           "redVS",
-          "data-addedtoVS",
+          "data-addedtovs",
           addedItemsVS,
           descVS,
           spVS,
@@ -5310,7 +5337,8 @@ function onClick(li) {
           target,
           "p.descVendor:not(#descVS)",
           li,
-          `li[data-VS*=true]`
+          `li[data-vs*=true]`,
+          removeDuplicatesVS
         );
         // if (liVS1.length == 10) {
         //   $(alert).show().delay(2000).fadeOut("slow");
@@ -5377,7 +5405,7 @@ function onClick(li) {
           imageMS,
           orderNumberMS,
           "redMS",
-          "data-addedtoMS",
+          "data-addedtoms",
           addedItemsMS,
           descMS,
           spMS,
@@ -5387,7 +5415,8 @@ function onClick(li) {
           target,
           "p.descVendor:not(#descMS)",
           li,
-          `li[data-MS*=true]`
+          `li[data-ms*=true]`,
+          removeDuplicatesMS
         );
         // if (liMS1.length == 10) {
         //   $(alert).show().delay(2000).fadeOut("slow");
@@ -5454,7 +5483,7 @@ function onClick(li) {
           imageCOV,
           orderNumberCOV,
           "redCOV",
-          "data-addedtoCOV",
+          "data-addedtocov",
           addedItemsCOV,
           descCOV,
           spCOV,
@@ -5464,7 +5493,8 @@ function onClick(li) {
           target,
           "p.descVendor:not(#descCOV)",
           li,
-          `li[data-COV*=true]`
+          `li[data-cov*=true]`,
+          removeDuplicatesCOV
         );
         // if (liCOV1.length == 10) {
         //   $(alert).show().delay(2000).fadeOut("slow");
@@ -5531,7 +5561,7 @@ function onClick(li) {
           imageFORS,
           orderNumberFORS,
           "redFORS",
-          "data-addedtoFORS",
+          "data-addedtofors",
           addedItemsFORS,
           descFORS,
           spFORS,
@@ -5541,7 +5571,8 @@ function onClick(li) {
           target,
           "p.descVendor:not(#descFORS)",
           li,
-          `li[data-FORS*=true]`
+          `li[data-fors*=true]`,
+          removeDuplicatesFORS
         );
         // if (liFORS1.length == 10) {
         //   $(alert).show().delay(2000).fadeOut("slow");
