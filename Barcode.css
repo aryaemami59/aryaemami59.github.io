@@ -296,7 +296,11 @@ body {
 #removeButtonSOC,
 #collapseButtonSOC,
 #removeDuplicatesSOC {
+  background-color: rgba(209, 0, 0, 0);
   background-image: linear-gradient(rgb(175, 0, 0, 1), rgba(175, 0, 0, 0));
+}
+#bigLinkSOC {
+  font-size: 13px;
 }
 #descVS,
 #itemNumberVS,
@@ -308,6 +312,7 @@ body {
 #removeButtonVS,
 #collapseButtonVS,
 #removeDuplicatesVS {
+  background-color: rgba(89, 0, 255, 0);
   background-image: linear-gradient(rgb(67, 0, 192, 1), rgba(67, 0, 192, 0));
 }
 #descMS,
@@ -320,6 +325,7 @@ body {
 #removeButtonMS,
 #collapseButtonMS,
 #removeDuplicatesMS {
+  background-color: rgba(226, 102, 0, 0);
   background-image: linear-gradient(rgb(226, 102, 0, 1), rgba(226, 102, 0, 0));
 }
 #descCOV,
@@ -332,6 +338,7 @@ body {
 #removeButtonCOV,
 #collapseButtonCOV,
 #removeDuplicatesCOV {
+  background-color: rgba(131, 0, 120, 0);
   background-image: linear-gradient(rgb(121, 0, 111, 1), rgba(121, 0, 111, 0));
 }
 #descFORS,
@@ -344,6 +351,7 @@ body {
 #removeButtonFORS,
 #collapseButtonFORS,
 #removeDuplicatesFORS {
+  background-color: rgba(0, 136, 141, 0);
   background-image: linear-gradient(rgb(0, 100, 104, 1), rgba(0, 100, 104, 0));
 }
 .descVendor {
@@ -358,7 +366,7 @@ body {
   align-items: center;
   margin-right: 4px;
   margin-left: 4px;
-  word-break: keep-all;
+  word-break: break-word;
   -webkit-transition: transform ease-in-out 0.1s, max-height ease-in-out 0.1s,
     width ease-in-out 0.1s, font ease-in-out 0.1s;
   transition: transform ease-in-out 0.1s, max-height ease-in-out 0.1s,
@@ -862,7 +870,7 @@ body {
   -webkit-transition: transform ease-in-out 0.1s;
   transition: transform ease-in-out 0.1s;
   /* background-color: #000000; */
-  background-color: inherit;
+  /* background-color: inherit; */
   /* margin-bottom: 0px; */
   height: 12px;
   align-items: center;
@@ -888,16 +896,15 @@ body {
 #bigCollapseShowButtonOI,
 #bigClearButtonOI,
 #removeDuplicatesOI {
-  background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
-  /* background-color: #00ff9527; */
-  background-color: inherit;
+  background-color: rgba(0, 255, 149, 0);
+  background-image: linear-gradient(rgb(0, 146, 85, 1), rgb(0, 146, 85, 0));
 }
 #bigCollapseHideButtonGNFR,
 #bigCollapseShowButtonGNFR,
 #bigClearButtonGNFR,
 #removeDuplicatesGNFR {
+  background-color: rgba(255, 255, 0, 0);
   background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
-  background-color: inherit;
 }
 
 .vendorItems {
@@ -1333,7 +1340,7 @@ li#li[data-FORS="true"] {
     align-items: center;
     margin-right: 12.5px;
     margin-left: 12.5px;
-    word-break: keep-all;
+    word-break: break-word;
     -webkit-transition: transform ease-in-out 0.1s, max-height ease-in-out 0.1s,
       width ease-in-out 0.1s, font ease-in-out 0.1s;
     transition: transform ease-in-out 0.1s, max-height ease-in-out 0.1s,
@@ -1895,8 +1902,10 @@ li#li[data-FORS="true"] {
   #bigClearButtonOI,
   #removeDuplicatesOI {
     /* background-color: rgba(0, 255, 149, 0.153); */
-    background-image: linear-gradient(rgb(0, 146, 85), rgba(0, 146, 85, 0));
-    background-color: inherit;
+    /* background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0)); */
+    /* background-color: inherit; */
+    /* background-color: #000000; */
+    /* background-color: none; */
     /* background-color: #00ff9527; */
   }
   #bigCollapseHideButtonGNFR,
@@ -1907,7 +1916,7 @@ li#li[data-FORS="true"] {
       rgb(190, 190, 0, 1),
       rgba(190, 190, 0, 0)
     );
-    background-color: inherit;
+    background-color: rgba(255, 255, 0, 0);
   }
   .orderNumberVendor {
     text-align: center;
