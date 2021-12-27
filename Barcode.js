@@ -228,8 +228,15 @@ const vials = [
     OrderInsite: true,
   },
   {
-    name: "Labels For RX Vials",
+    name: "Labels For RX Vials (Neighborhood)",
     itemNumber: "3959517",
+    keywords: ["mck", "mckesson", "orderinsite", "oi"],
+    McKesson: true,
+    OrderInsite: true,
+  },
+  {
+    name: "Labels For RX Vials (SuperCenter)",
+    itemNumber: "3959483",
     keywords: ["mck", "mckesson", "orderinsite", "oi"],
     McKesson: true,
     OrderInsite: true,
@@ -272,7 +279,7 @@ const vials = [
     vaxServe: true,
   },
   {
-    name: "Nitrile Small Exam Gloves mckesson brand",
+    name: "Nitrile Small Exam Gloves McKesson brand",
     itemNumber: "61247912113",
     keywords: ["mck", "mckesson", "orderinsite", "oi", "small", "gloves"],
     McKesson: true,
@@ -694,6 +701,13 @@ const vials = [
   {
     name: "10 ML BD Syringes 22G x 1",
     itemNumber: "08290309640",
+    keywords: ["mck", "mckesson", "orderinsite", "oi"],
+    McKesson: true,
+    OrderInsite: true,
+  },
+  {
+    name: "McKesson Alcohol Prep Pads",
+    itemNumber: "68599580402",
     keywords: ["mck", "mckesson", "orderinsite", "oi"],
     McKesson: true,
     OrderInsite: true,
@@ -3387,7 +3401,7 @@ function clickVendor(
     $(alert).show().delay(2000).fadeOut("slow");
   }
   if (liOI1.length < 10 && !target.hasAttribute(addedtooi)) {
-    target.setAttribute(addedtooi, 'true');
+    target.setAttribute(addedtooi, "true");
     titleClick(titleVendor);
     const itemNumber1 = vials[index].itemNumber;
     addedItemsOI.push(li.childNodes[0].textContent);
@@ -3988,7 +4002,9 @@ function removeDuplicatesFunc(
 ) {
   removeDuplicates.addEventListener("click", (e) => {
     let duplicateItems = [];
-    const descVendor = Array.from(itemContainers.querySelectorAll('.descVendor'));
+    const descVendor = Array.from(
+      itemContainers.querySelectorAll(".descVendor")
+    );
     const vendorItems = e.target.parentNode;
     const alternateDesc = Array.from(
       itemContainers.querySelectorAll(`p.descVendor:not(#${descMCK}`)
@@ -4041,14 +4057,16 @@ function removeDuplicatesFunc(
       });
       e.parentNode.remove();
     });
-    const tt = duplicateItems.filter((e, index) => duplicateItems.indexOf(e) !== index)
+    const tt = duplicateItems.filter(
+      (e, index) => duplicateItems.indexOf(e) !== index
+    );
     descVendor.forEach((e) => {
       tt.forEach((elem) => {
         if (e.textContent === elem) {
-          $(e).addClass('duplicate');
+          $(e).addClass("duplicate");
         }
-      })
-    })
+      });
+    });
     const liVendor = vendorItems.querySelectorAll(".liVendor");
     const orderNumberVendor = vendorItems.querySelector(".orderNumberVendor");
     orderNumberVendor.textContent = liVendor.length;
@@ -4714,7 +4732,7 @@ function onClick(li) {
       bigCollapseShowFunc(bigCollapseShowButtonFORS);
       if (
         // vials[index].McKesson === true &&
-        target.dataset.mck === 'true'
+        target.dataset.mck === "true"
         // target['data-mck'] == 'true' &&
         // vials[index].OrderInsite === false
       ) {
@@ -4737,7 +4755,7 @@ function onClick(li) {
           imageMCK,
           orderNumberMCK,
           "redMCK",
-          'data-addedtomck',
+          "data-addedtomck",
           addedItemsMCK,
           descMCK,
           spMCK,
@@ -4754,7 +4772,7 @@ function onClick(li) {
       if (
         // vials[index].OrderInsite === true &&
         // vials[index].McKesson === false
-        target.dataset.oi === 'true'
+        target.dataset.oi === "true"
       ) {
         clickVendor(
           liOI1,
@@ -4775,7 +4793,7 @@ function onClick(li) {
           imageOI,
           orderNumberOI,
           "redOI",
-          'data-addedtooi',
+          "data-addedtooi",
           addedItemsOI,
           descOI,
           spOI,
@@ -4908,7 +4926,7 @@ function onClick(li) {
         // vials[index].GNFR === true &&
         // vials[index].OrderInsite === false &&
         // vials[index].McKesson === false
-        target.dataset.gnfr === 'true'
+        target.dataset.gnfr === "true"
       ) {
         clickVendor(
           liGNFR1,
@@ -4945,8 +4963,8 @@ function onClick(li) {
       }
       if (
         // vials[index].signOrderCatalog === true
-        target.dataset.soc === 'true'
-        ) {
+        target.dataset.soc === "true"
+      ) {
         clickVendor(
           liSOC1,
           arr3,
@@ -4982,8 +5000,8 @@ function onClick(li) {
       }
       if (
         // vials[index].vaxServe === true
-        target.dataset.vs === 'true'
-        ) {
+        target.dataset.vs === "true"
+      ) {
         clickVendor(
           liVS1,
           arr4,
@@ -5019,8 +5037,8 @@ function onClick(li) {
       }
       if (
         // vials[index].medSurge === true
-        target.dataset.ms === 'true'
-        ) {
+        target.dataset.ms === "true"
+      ) {
         clickVendor(
           liMS1,
           arr5,
@@ -5056,8 +5074,8 @@ function onClick(li) {
       }
       if (
         // vials[index].covap === true
-        target.dataset.cov === 'true'
-        ) {
+        target.dataset.cov === "true"
+      ) {
         clickVendor(
           liCOV1,
           arr6,
@@ -5093,8 +5111,8 @@ function onClick(li) {
       }
       if (
         // vials[index].FORS === true
-        target.dataset.fors === 'true'
-        ) {
+        target.dataset.fors === "true"
+      ) {
         clickVendor(
           liFORS1,
           arr7,
