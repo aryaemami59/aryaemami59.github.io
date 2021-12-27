@@ -3413,7 +3413,7 @@ function clickVendor(
     OrderInsiteItems.insertBefore(bigCollapseHideButtonOI, testingOI);
     OrderInsiteItems.insertBefore(bigClearButtonOI, testingOI);
     OrderInsiteItems.insertBefore(removeDuplicatesVendor, testingOI);
-    $(OIQR).show();
+    // $(OIQR).show();
     QROI.append(document.getElementById(OIQRID));
     copyItemNumber(bigLinkOI, arr1.join(comma));
     bigOIImage.makeCode(arr1.join(comma));
