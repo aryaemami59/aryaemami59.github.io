@@ -3053,6 +3053,7 @@ const forsItems = vials.filter((e) => e.FORS === true);
 const itemNames = vials.map((e) => e.name);
 const itemContainers = document.querySelector(".itemContainers");
 const popup = document.createElement("span");
+const navButton = document.getElementById('navButton');
 // this function turns a const or var name to a string that can be accessed in functions.
 const varToString = (varObj) => Object.keys(varObj)[0];
 // const displayName = varToString({somevar});
@@ -3376,7 +3377,7 @@ function clickVendor(
   bigCollapseShowButtonOI,
   bigCollapseHideButtonOI,
   bigClearButtonOI,
-  OIQR,
+  // OIQR,
   QROI,
   OIQRID,
   bigOIImage,
@@ -5531,6 +5532,12 @@ const dramVials10 = new vial("10 dram vials", "10000", "mckesson orderinsite");
 const dramVials13 = new vial("13 dram vials", "10000", "mckesson orderinsite");
 // console.log(dramVials10);
 x.push(dramVials10);
+
+// $('#listNav ul').hide();
+// $('#navSpan').hide();
+$('#navButton').on('click', function () {
+  $('#listNav ul:not(#navButton)').toggle(250);
+});
 
 // function hh() {
 //   return new Promise((resolve, reject) => {
