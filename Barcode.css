@@ -76,8 +76,8 @@ body {
   text-shadow: 0.5px 0.5px 1px black;
   box-shadow: 1px 1px 5px -1px black;
   z-index: 0;
-  -webkit-transition: ease-in-out 0.1s;
-  transition: ease-in-out 0.1s;
+  /* -webkit-transition: ease-in-out 0.1s;
+  transition: ease-in-out 0.1s; */
   text-indent: 2px;
 }
 #box:focus {
@@ -107,8 +107,8 @@ body {
   box-shadow: 1px 1px 1px black;
   position: relative;
   z-index: 9;
-  -webkit-transition: ease-in-out 0.2s;
-  transition: ease-in-out 0.2s;
+  /* -webkit-transition: ease-in-out 0.2s;
+  transition: ease-in-out 0.2s; */
   user-select: none;
 }
 #li text {
@@ -164,8 +164,8 @@ body {
   text-shadow: 1px 1px 1px black;
   border-radius: 2px;
   border: 0;
-  -webkit-transition: ease-in-out 0.1s;
-  transition: ease-in-out 0.1s;
+  /* -webkit-transition: ease-in-out 0.1s;
+  transition: ease-in-out 0.1s; */
 }
 #button:hover {
   cursor: pointer;
@@ -255,8 +255,8 @@ body {
   text-shadow: 1px 1px 1px #000000;
   border-radius: 2px;
   box-shadow: 1px 1px 3px -1px black;
-  -webkit-transition: ease-in-out 0.1s;
-  transition: ease-in-out 0.1s;
+  /* -webkit-transition: ease-in-out 0.1s;
+  transition: ease-in-out 0.1s; */
   align-items: center;
   justify-content: center;
   margin: 2px auto;
@@ -268,8 +268,8 @@ body {
 .imageVendor {
   width: 42px;
   box-shadow: 1px 1px 3px -1px black;
-  -webkit-transition: ease-in-out 0.1s;
-  transition: ease-in-out 0.1s;
+  /* -webkit-transition: ease-in-out 0.1s;
+  transition: ease-in-out 0.1s; */
   max-height: 68px;
   height: 15px;
 }
@@ -367,10 +367,10 @@ body {
   margin-right: 4px;
   margin-left: 4px;
   word-break: break-word;
-  -webkit-transition: transform ease-in-out 0.1s, max-height ease-in-out 0.1s,
+  /* -webkit-transition: transform ease-in-out 0.1s, max-height ease-in-out 0.1s,
     width ease-in-out 0.1s, font ease-in-out 0.1s;
   transition: transform ease-in-out 0.1s, max-height ease-in-out 0.1s,
-    width ease-in-out 0.1s, font ease-in-out 0.1s;
+    width ease-in-out 0.1s, font ease-in-out 0.1s; */
   max-height: 66px;
   box-sizing: border-box;
   padding: 2px;
@@ -382,8 +382,8 @@ body {
 .descVendor:hover {
   cursor: pointer;
   transform: scale(1.1);
-  -webkit-transition: transform ease-in-out 0.1s;
-  transition: transform ease-in-out 0.1s;
+  /* -webkit-transition: transform ease-in-out 0.1s;
+  transition: transform ease-in-out 0.1s; */
 }
 .descVendor:active,
 .bigCollapseShowButtonVendor:active,
@@ -414,8 +414,8 @@ body {
   width: 42px;
   background-clip: content-box;
   box-shadow: 1px 1px 3px -1px black;
-  -webkit-transition: ease-in-out 0.1s;
-  transition: ease-in-out 0.1s;
+  /* -webkit-transition: ease-in-out 0.1s;
+  transition: ease-in-out 0.1s; */
   max-height: 33px;
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -451,8 +451,8 @@ body {
   border-radius: 2px;
   margin-right: 4px;
   margin-left: 4px;
-  -webkit-transition: ease-in-out 0.1s;
-  transition: ease-in-out 0.1s;
+  /* -webkit-transition: ease-in-out 0.1s;
+  transition: ease-in-out 0.1s; */
   text-decoration: none;
   margin-bottom: 5px;
   font-size: 4px;
@@ -492,8 +492,8 @@ body {
   width: 90%;
   box-shadow: 0px 0px 2px 0px rgb(183, 0, 255);
   text-shadow: 1px 1px 1px black;
-  -webkit-transition: ease-in-out 0.1s;
-  transition: ease-in-out 0.1s;
+  /* -webkit-transition: ease-in-out 0.1s;
+  transition: ease-in-out 0.1s; */
 }
 #listNew:hover {
   transform: scale(1.1);
@@ -529,9 +529,9 @@ body {
   padding-bottom: 2px;
   padding-top: 2px;
   padding-left: 10px;
-  -webkit-transition: transform ease-in-out 0.1s,
+  /* -webkit-transition: transform ease-in-out 0.1s,
     background-color ease-in-out 0.1s;
-  transition: transform ease-in-out 0.1s, background-color ease-in-out 0.1s;
+  transition: transform ease-in-out 0.1s, background-color ease-in-out 0.1s; */
 }
 #listNav > ul::before {
   content: "";
@@ -544,8 +544,8 @@ body {
   left: -0.9em;
   top: 0.7em;
   position: relative;
-  -webkit-transition: ease-in-out 0.1s;
-  transition: ease-in-out 0.1s;
+  /* -webkit-transition: ease-in-out 0.1s;
+  transition: ease-in-out 0.1s; */
 }
 #listNav ul > li::before {
   content: "";
@@ -560,8 +560,8 @@ body {
   position: relative;
   color: white;
   text-shadow: 1px 1px 1px black;
-  -webkit-transition: ease-in-out 0.1s;
-  transition: ease-in-out 0.1s;
+  /* -webkit-transition: ease-in-out 0.1s;
+  transition: ease-in-out 0.1s; */
   margin-left: -2px;
 }
 #listNav > ul > li {
@@ -573,9 +573,9 @@ body {
   padding-top: 3px;
   padding-left: 1px;
   text-shadow: 0.5px 0.5px 0.5px #000000;
-  -webkit-transition: background-color ease-in-out 0.1s,
+  /* -webkit-transition: background-color ease-in-out 0.1s,
     transform ease-in-out 0.1s;
-  transition: background-color ease-in-out 0.1s, transform ease-in-out 0.1s;
+  transition: background-color ease-in-out 0.1s, transform ease-in-out 0.1s; */
 }
 #listNav ul > li:last-child {
   border-bottom: 0;
@@ -585,8 +585,8 @@ body {
   cursor: pointer;
   color: black;
   text-shadow: 0.5px 0.5px 1px #000000;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  /* -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out; */
 }
 #listNav ul:hover > li::before {
   content: "";
@@ -600,8 +600,8 @@ body {
   top: 0.7em;
   position: relative;
   color: white;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  /* -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out; */
 }
 #listNav ul:hover:before {
   content: "";
@@ -614,8 +614,8 @@ body {
   left: -0.9em;
   top: 0.7em;
   position: relative;
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
+  /* -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out; */
 }
 #mainHeader {
   color: white;
@@ -628,11 +628,16 @@ body {
   width: 300px;
 }
 #alert {
+  font-size: 4px;
+  height: 20px;
   grid-row: 1;
-  grid-column: 6/9;
-  margin-top: 3px;
+  grid-column: 3/4;
+  margin-top: 16px;
   margin-right: 3px;
+  margin-bottom: 0;
   display: none;
+  border-radius: 2px;
+  padding: 2px 2px;
 }
 #navSpan {
   width: 70px;
@@ -666,8 +671,8 @@ body {
   margin-top: 3px;
   margin-bottom: 3px;
   box-shadow: 1px 1px 5px -1px black;
-  -webkit-transition: ease-in-out 0.1s;
-  transition: ease-in-out 0.1s;
+  /* -webkit-transition: ease-in-out 0.1s;
+  transition: ease-in-out 0.1s; */
 }
 .show .vendorQR > img:hover {
   cursor: pointer;
@@ -693,8 +698,8 @@ body {
   list-style: none;
   font-size: 5px;
   color: white;
-  -webkit-transition: max-height 0.1s ease-in-out;
-  transition: max-height 0.1s ease-in-out;
+  /* -webkit-transition: max-height 0.1s ease-in-out;
+  transition: max-height 0.1s ease-in-out; */
   overflow: hidden;
   min-height: 10px;
   box-sizing: content-box;
@@ -712,8 +717,8 @@ body {
   left: 16px;
   box-shadow: 0.5px 0.5px 2.5px black;
   text-shadow: 0.5px 0.5px 1px black;
-  -webkit-transition: ease-in-out 0.1s;
-  transition: ease-in-out 0.1s;
+  /* -webkit-transition: ease-in-out 0.1s;
+  transition: ease-in-out 0.1s; */
   font-size: 4px;
   width: 8px;
   height: 8px;
@@ -747,16 +752,16 @@ body {
 }
 .collapse {
   max-height: 0px !important;
-  -webkit-transition: max-height 0.4s ease-in-out !important;
-  transition: max-height 0.4s ease-in-out !important;
+  /* -webkit-transition: max-height 0.4s ease-in-out !important;
+  transition: max-height 0.4s ease-in-out !important; */
   overflow: hidden;
 }
 .show .liVendor.collapseParent {
   max-height: 13px;
   clear: both;
   overflow: hidden;
-  -webkit-transition: max-height 0.1s ease-in-out;
-  transition: max-height 0.1s ease-in-out;
+  /* -webkit-transition: max-height 0.1s ease-in-out;
+  transition: max-height 0.1s ease-in-out; */
 }
 .show .liVendor.collapseParent > .descVendor {
   font-size: 3px;
@@ -764,10 +769,10 @@ body {
   width: 60%;
   max-height: 13px;
   transform: translate(-3px, -11px);
-  -webkit-transition: transform 0.1s ease-in-out, max-height 0.1s ease-in-out,
+  /* -webkit-transition: transform 0.1s ease-in-out, max-height 0.1s ease-in-out,
     width 0.1s ease-in-out, font 0.1s ease-in-out;
   transition: transform 0.1s ease-in-out, max-height 0.1s ease-in-out,
-    width 0.1s ease-in-out, font 0.1s ease-in-out;
+    width 0.1s ease-in-out, font 0.1s ease-in-out; */
 }
 .show .liVendor.collapseParent > .collapseButtonVendor::after {
   content: "+";
@@ -780,8 +785,8 @@ body {
   box-shadow: 0.5px 0.5px 2.5px black;
   text-shadow: 0.5px 0.5px 1px black;
   color: white;
-  -webkit-transition: ease-in-out 0.1s;
-  transition: ease-in-out 0.1s;
+  /* -webkit-transition: ease-in-out 0.1s;
+  transition: ease-in-out 0.1s; */
   font-size: 4px;
   width: 8px;
   padding: 0;
@@ -851,8 +856,8 @@ body {
   box-shadow: 0px 0px 6px 0px rgb(76, 249, 255);
 }
 #bigCollapseButtonGNFR::after {
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+  /* -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out; */
 }
 .bigCollapseHideButtonVendor,
 .bigCollapseShowButtonVendor,
@@ -867,8 +872,8 @@ body {
   border: none;
   text-shadow: 1px 1px 1px #000000;
   box-shadow: 1px 1px 5px -1px black;
-  -webkit-transition: transform ease-in-out 0.1s;
-  transition: transform ease-in-out 0.1s;
+  /* -webkit-transition: transform ease-in-out 0.1s;
+  transition: transform ease-in-out 0.1s; */
   /* background-color: #000000; */
   /* background-color: inherit; */
   /* margin-bottom: 0px; */
@@ -882,8 +887,8 @@ body {
 .removeDuplicatesVendor:hover {
   cursor: pointer;
   transform: scale(1.1);
-  -webkit-transition: transform ease-in-out 0.1s;
-  transition: transform ease-in-out 0.1s;
+  /* -webkit-transition: transform ease-in-out 0.1s;
+  transition: transform ease-in-out 0.1s; */
 }
 #bigCollapseHideButtonMCK,
 #bigCollapseShowButtonMCK,
@@ -924,7 +929,7 @@ body {
   align-items: center;
   justify-self: flex-start;
   font-weight: 700;
-  transition: transform 0.1s ease-in-out;
+  /* transition: transform 0.1s ease-in-out; */
 }
 .orderNumberVendor {
   /* display: inline !important; */
@@ -1117,8 +1122,8 @@ li#li[data-FORS="true"] {
     text-shadow: 1px 1px 2px black;
     box-shadow: 2px 2px 10px -2px black;
     z-index: 0;
-    -webkit-transition: ease-in-out 0.1s;
-    transition: ease-in-out 0.1s;
+    /* -webkit-transition: ease-in-out 0.1s;
+    transition: ease-in-out 0.1s; */
     text-indent: 6px;
   }
   #box:focus {
@@ -1148,8 +1153,8 @@ li#li[data-FORS="true"] {
     box-shadow: 2px 2px 2px black;
     position: relative;
     z-index: 9;
-    -webkit-transition: ease-in-out 0.2s;
-    transition: ease-in-out 0.2s;
+    /* -webkit-transition: ease-in-out 0.2s;
+    transition: ease-in-out 0.2s; */
   }
   #li text {
     background-color: thistle;
