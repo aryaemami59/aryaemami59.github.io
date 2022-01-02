@@ -3377,7 +3377,7 @@ function clickVendor(
   bigCollapseShowButtonOI,
   bigCollapseHideButtonOI,
   bigClearButtonOI,
-  // OIQR,
+  OIQR,
   QROI,
   OIQRID,
   bigOIImage,
