@@ -1149,8 +1149,8 @@ li#li[data-FORS="true"] {
     box-shadow: 2px 2px 2px black;
     position: relative;
     z-index: 9;
-    /* -webkit-transition: ease-in-out 0.2s;
-    transition: ease-in-out 0.2s; */
+    -webkit-transition: ease-in-out 0.2s;
+    transition: ease-in-out 0.2s;
   }
   #li text {
     background-color: thistle;
