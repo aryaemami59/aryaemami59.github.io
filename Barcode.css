@@ -9,6 +9,7 @@ html {
   width: 100%;
   margin: 0;
   font-size: 4px;
+  font-family: 'Montserrat', sans-serif;
 }
 body {
   margin: 0;
@@ -17,7 +18,7 @@ body {
   width: 100%;
   max-width: 100%;
   background-color: rgba(0, 0, 0, 0.781);
-  font-family: "Montserrat", sans-serif;
+  font-family: Montserrat, sans-serif;
   /* font-family: Montserrat-regular, sans-serif; */
   font-weight: 500;
   line-height: 1.2;
