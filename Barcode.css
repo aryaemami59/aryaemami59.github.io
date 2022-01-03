@@ -1,9 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"); */
 
-/* @font-face {
+@font-face {
   font-family: "Montserrat";
-  src: url('https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2') format('woff2');
-} */
+  src: local('Montserrat-Black');
+  /* src: url('https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2') format('woff2'); */
+}
 
 html {
   width: 100%;
