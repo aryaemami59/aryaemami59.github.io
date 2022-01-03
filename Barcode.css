@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap");
 
 @font-face {
-  font-family: "Montserrat" !important;
+  font-family: "Montserrat";
   src: url(https://fonts.gstatic.com/s/montserrat/v18/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
 }
 
@@ -17,7 +17,8 @@ body {
   width: 100%;
   max-width: 100%;
   background-color: rgba(0, 0, 0, 0.781);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
+  /* font-family: Montserrat-regular, sans-serif; */
   font-weight: 500;
   line-height: 1.2;
 }
