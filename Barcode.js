@@ -3037,7 +3037,7 @@ const vaxServeItems = document.getElementById("vaxServeItems");
 const medSurgeItems = document.getElementById("medSurgeItems");
 const covapItems = document.getElementById("covapItems");
 const FORSItems = document.getElementById("FORSItems");
-var list = document.getElementById("list");
+let list = document.getElementById("list");
 const search = document.getElementById("box");
 const list2 = document.createElement("ul");
 list2.setAttribute("id", "list2");
