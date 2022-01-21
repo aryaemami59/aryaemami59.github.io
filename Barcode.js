@@ -936,7 +936,7 @@ const vials = [
   },
   {
     name: "RX Thank You Cards",
-    itemNumber: "60538801653",
+    itemNumber: "40009940230",
     keywords: ["gnfr"],
     McKesson: false,
     OrderInsite: false,
