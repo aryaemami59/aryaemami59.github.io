@@ -934,14 +934,14 @@ const vials = [
     OrderInsite: false,
     GNFR: true,
   },
-  {
-    name: "RX Thank You Cards",
-    itemNumber: "60538801653",
-    keywords: ["gnfr"],
-    McKesson: false,
-    OrderInsite: false,
-    GNFR: true,
-  },
+  // {
+  //   name: "RX Thank You Cards",
+  //   itemNumber: "60538801653",
+  //   keywords: ["gnfr"],
+  //   McKesson: false,
+  //   OrderInsite: false,
+  //   GNFR: true,
+  // },
   {
     name: "Teal Clinical Service Cards",
     itemNumber: "68113116660",
@@ -3037,7 +3037,7 @@ const vaxServeItems = document.getElementById("vaxServeItems");
 const medSurgeItems = document.getElementById("medSurgeItems");
 const covapItems = document.getElementById("covapItems");
 const FORSItems = document.getElementById("FORSItems");
-var list = document.getElementById("list");
+let list = document.getElementById("list");
 const search = document.getElementById("box");
 const list2 = document.createElement("ul");
 list2.setAttribute("id", "list2");
@@ -3053,125 +3053,144 @@ const forsItems = vials.filter((e) => e.FORS === true);
 const itemNames = vials.map((e) => e.name);
 const itemContainers = document.querySelector(".itemContainers");
 const popup = document.createElement("span");
-const navButton = document.getElementById('navButton');
+const navButton = document.getElementById("navButton");
+const done = document.getElementById("done");
 // this function turns a const or var name to a string that can be accessed in functions.
-const varToString = (varObj) => Object.keys(varObj)[0];
-// const displayName = varToString({somevar});
-// const sp = document.createElement('span');
-// sp.setAttribute('id', 'sp');
-const bigLinkMCK = document.createElement("a");
-bigLinkMCK.setAttribute("id", "bigLinkMCK");
-bigLinkMCK.setAttribute("class", "bigLinkVendor");
-bigLinkMCK.setAttribute(
-  "title",
-  "This Link Will Take You To The McKesson Website With All The Items Already Shown"
+const varToString = (varObj) => {
+  // varObj.setAttribute('id', varObj);
+  // console.log(varObj);
+  return Object.keys(varObj)[0];
+};
+// let elementNames = { MckessonItems, OrderInsiteItems };
+function DOMFactory(element, elementClass) {
+  let array = [];
+  for (let i = 0; i < 8; i++) {
+    array.push(document.createElement(element));
+    array[i].className = elementClass;
+  }
+  return array;
+}
+let bigLinkVendor = DOMFactory("a", 'bigLinkVendor');
+// console.log(bigLinkVendor);
+// const ll = document.querySelectorAll('.bigLinkVendor');
+// console.log(ll)
+// let bigLinkVendor = new Map(DOMFactory("a", "bigLinkVendor")) ;
+// let bigCollapseHideButtonVendor = DOMFactory("button", "bigCollapseHideButtonVendor");
+let bigCollapseHideButtonVendor = DOMFactory(
+  "button",
+  "bigCollapseHideButtonVendor"
 );
-bigLinkMCK.addEventListener("click", function () {
-  setTimeout((e) => {
-    window.open(
-      "https://connect.mckesson.com/portal/site/smo/menuitem.87a0666be7398a3ece3ee6105740d0a0/?query=" +
-        arr.join("%20or%20")
-    );
-  }, 1);
-});
-bigLinkMCK.setAttribute("target", "_blank");
-const bigLinkOI = document.createElement("a");
-bigLinkOI.setAttribute("id", "bigLinkOI");
-bigLinkOI.setAttribute("class", "bigLinkVendor");
-bigLinkOI.setAttribute(
-  "title",
-  "This Link Will Take You To The OrderInsite Website With The Item Numbers Copied"
-);
-bigLinkOI.addEventListener("click", function () {
-  setTimeout((e) => {
-    window.open("https://acloud.orderinsite.com/rs/logon/walmart");
-  }, 1);
-});
-bigLinkOI.setAttribute("target", "_blank");
-const bigLinkGNFR = document.createElement("a");
-bigLinkGNFR.setAttribute("id", "bigLinkGNFR");
-bigLinkGNFR.setAttribute("class", "bigLinkVendor");
-bigLinkGNFR.setAttribute(
-  "title",
-  "This Link Will Take You To The GNFR Website With The Item Numbers Copied"
-);
-bigLinkGNFR.addEventListener("click", function () {
-  setTimeout((e) => {
-    window.open("https://ppa01.wal-mart.com/irj/portal");
-  }, 1);
-});
-bigLinkGNFR.setAttribute("target", "_blank");
-const bigLinkSOC = document.createElement("a");
-bigLinkSOC.setAttribute("id", "bigLinkSOC");
-bigLinkSOC.setAttribute("class", "bigLinkVendor");
-bigLinkSOC.setAttribute(
-  "title",
-  "This Link Will Take You To The Sign Order Catalog Website With The Item Numbers Copied"
-);
-bigLinkSOC.addEventListener("click", function () {
-  setTimeout((e) => {
-    window.open("https://ecom.schwarz.com/Default.aspx?page=ProductCatalog");
-  }, 1);
-});
-bigLinkSOC.setAttribute("target", "_blank");
-const bigLinkVS = document.createElement("a");
-bigLinkVS.setAttribute("id", "bigLinkVS");
-bigLinkVS.setAttribute("class", "bigLinkVendor");
-bigLinkVS.setAttribute(
-  "title",
-  "This Link Will Take You To The VaxServe Website With The Item Numbers Copied"
-);
-bigLinkVS.addEventListener("click", function () {
-  setTimeout((e) => {
-    window.open("https://unify.vaxserve.com/index.cfm?fa=portal.selectStore");
-  }, 1);
-});
-bigLinkVS.setAttribute("target", "_blank");
-const bigLinkMS = document.createElement("a");
-bigLinkMS.setAttribute("id", "bigLinkMS");
-bigLinkMS.setAttribute("class", "bigLinkVendor");
-bigLinkMS.setAttribute(
-  "title",
-  "This Link Will Take You To The McKesson MedSurge Website With The Item Numbers Copied"
-);
-bigLinkMS.addEventListener("click", function () {
-  setTimeout((e) => {
-    window.open("https://mms.mckesson.com/portal/login");
-  }, 1);
-});
-bigLinkMS.setAttribute("target", "_blank");
-const bigLinkCOV = document.createElement("a");
-bigLinkCOV.setAttribute("id", "bigLinkCOV");
-bigLinkCOV.setAttribute("class", "bigLinkVendor");
-bigLinkCOV.setAttribute(
-  "title",
-  "This Link Will Take You To The Covap Website With The Item Numbers Copied"
-);
-bigLinkCOV.addEventListener("click", function () {
-  setTimeout((e) => {
-    window.open("https://www.covap.com/");
-  }, 1);
-});
-bigLinkCOV.setAttribute("target", "_blank");
-const bigLinkFORS = document.createElement("a");
-bigLinkFORS.setAttribute("id", "bigLinkFORS");
-bigLinkFORS.setAttribute("class", "bigLinkVendor");
-bigLinkFORS.setAttribute(
-  "title",
-  "This Link Will Take You To The FORS Website With The Item Numbers Copied"
-);
-bigLinkFORS.addEventListener("click", function () {
-  setTimeout((e) => {
-    window.open(
-      "https://psz01.wal-mart.com/webdynpro/dispatcher/sap.com/tc~mdm~srmcat~uisearch/ProcurementCatalog7Ehp1#"
-    );
-  }, 1);
-});
-bigLinkFORS.setAttribute("target", "_blank");
-const bigCollapseHideButtonMCK = document.createElement("button");
-bigCollapseHideButtonMCK.textContent = "Minimize All Items";
-bigCollapseHideButtonMCK.setAttribute("id", "bigCollapseHideButtonMCK");
-bigCollapseHideButtonMCK.setAttribute("class", "bigCollapseHideButtonVendor");
+// console.log(bigCollapseHideButtonVendor);
+// const [bigCollapseHideButtonMCK, bigCollapseHideButtonOI, bigCollapseHideButtonGNFR, bigCollapseHideButtonSOC, bigCollapseHideButtonVS, bigCollapseHideButtonMS, bigCollapseHideButtonCOV, bigCollapseHideButtonFORS] = bigCollapseHideButtonVendor;
+const [
+  bigCollapseHideButtonMCK,
+  bigCollapseHideButtonOI,
+  bigCollapseHideButtonGNFR,
+  bigCollapseHideButtonSOC,
+  bigCollapseHideButtonVS,
+  bigCollapseHideButtonMS,
+  bigCollapseHideButtonCOV,
+  bigCollapseHideButtonFORS,
+] = bigCollapseHideButtonVendor;
+// bigCollapseHideButtonMCK.setAttribute('id', 'bigCollapseHideButtonMCK');
+// console.log(bigCollapseHideButtonMCK.id);
+
+const [
+  bigLinkMCK,
+  bigLinkOI,
+  bigLinkGNFR,
+  bigLinkSOC,
+  bigLinkVS,
+  bigLinkMS,
+  bigLinkCOV,
+  bigLinkFORS,
+] = bigLinkVendor;
+
+// const ids = new Map([
+//   [bigCollapseHideButtonMCK,  function () {
+//     console.log('yay');
+//   }]
+// ]);
+// const ii = {
+//   id: 'big',
+//   display: function () {
+//     return this.id;
+//   },
+// }
+// console.log(ii.display());
+// console.log(ids.get(bigCollapseHideButtonMCK));
+// console.log(ids.get(Object.keys({bigCollapseHideButtonMCK})));
+// console.log(ids);
+// console.log(Object.keys(ids));
+// for (const { id } in bigCollapseHideButtonMCK) {
+//   // if (Object.hasOwnProperty.call(bigCollapseHideButtonMCK, id)) {
+//     const element = bigCollapseHideButtonMCK[id];
+//     console.log({id});
+//     // console.log(element);
+//   // }
+// }
+// console.log(bigCollapseHideButtonMCK);
+// bigCollapseHideButtonVendor.forEach((e) => {
+//   e.displayID = function () {
+//     this.id;
+//   };
+  // e.setAttribute('id', ids.get(Object.keys(e)));
+  // console.log(e.id);
+// });
+// console.log(bigCollapseHideButtonMCK.displayID());
+// function setID(element) {
+//   switch (element) {
+//     case bigCollapseShowButtonMCK:
+//       id = 'bigCollapseShowButtonMCK';
+//       break;
+
+//     case :
+
+//       break;
+
+//     case :
+
+//       break;
+
+//     case :
+
+//       break;
+
+//     case :
+
+//       break;
+
+//     case :
+
+//       break;
+
+//     case :
+
+//       break;
+
+//     case :
+
+//       break;
+
+//   }
+// }
+// console.log(bigCollapseHideButtonVendor[0]);
+let setID = {
+  bigCollapseHideButtonMCK: "bigCollapseHideButtonMCK",
+  bigCollapseHideButtonOI: "bigCollapseHideButtonOI",
+};
+// bigCollapseHideButtonVendor.forEach(e => {
+//   console.log(e);
+// })
+// const { name: ten, itemNumber} = vials[0];
+// console.log(ten);
+// console.log(itemNumber);
+// console.log(setID.bigCollapseHideButtonMCK);
+
+// const bigCollapseHideButtonMCK = document.createElement("button");
+// bigCollapseHideButtonMCK.textContent = "Minimize All Items";
+// bigCollapseHideButtonMCK.setAttribute("id", "bigCollapseHideButtonMCK");
+// bigCollapseHideButtonMCK.setAttribute("class", "bigCollapseHideButtonVendor");
 const bigCollapseShowButtonMCK = document.createElement("button");
 bigCollapseShowButtonMCK.textContent = "Expand All Items";
 bigCollapseShowButtonMCK.setAttribute("id", "bigCollapseShowButtonMCK");
@@ -3180,10 +3199,10 @@ const bigClearButtonMCK = document.createElement("button");
 bigClearButtonMCK.textContent = "Remove All Items";
 bigClearButtonMCK.setAttribute("id", "bigClearButtonMCK");
 bigClearButtonMCK.setAttribute("class", "bigClearButtonVendor");
-const bigCollapseHideButtonOI = document.createElement("button");
-bigCollapseHideButtonOI.textContent = "Minimize All Items";
-bigCollapseHideButtonOI.setAttribute("id", "bigCollapseHideButtonOI");
-bigCollapseHideButtonOI.setAttribute("class", "bigCollapseHideButtonVendor");
+// const bigCollapseHideButtonOI = document.createElement("button");
+// bigCollapseHideButtonOI.textContent = "Minimize All Items";
+// bigCollapseHideButtonOI.setAttribute("id", "bigCollapseHideButtonOI");
+// bigCollapseHideButtonOI.setAttribute("class", "bigCollapseHideButtonVendor");
 const bigCollapseShowButtonOI = document.createElement("button");
 bigCollapseShowButtonOI.textContent = "Expand All Items";
 bigCollapseShowButtonOI.setAttribute("id", "bigCollapseShowButtonOI");
@@ -3192,10 +3211,10 @@ const bigClearButtonOI = document.createElement("button");
 bigClearButtonOI.textContent = "Remove All Items";
 bigClearButtonOI.setAttribute("id", "bigClearButtonOI");
 bigClearButtonOI.setAttribute("class", "bigClearButtonVendor");
-const bigCollapseHideButtonGNFR = document.createElement("button");
-bigCollapseHideButtonGNFR.textContent = "Minimize All Items";
-bigCollapseHideButtonGNFR.setAttribute("id", "bigCollapseHideButtonGNFR");
-bigCollapseHideButtonGNFR.setAttribute("class", "bigCollapseHideButtonVendor");
+// const bigCollapseHideButtonGNFR = document.createElement("button");
+// bigCollapseHideButtonGNFR.textContent = "Minimize All Items";
+// bigCollapseHideButtonGNFR.setAttribute("id", "bigCollapseHideButtonGNFR");
+// bigCollapseHideButtonGNFR.setAttribute("class", "bigCollapseHideButtonVendor");
 const bigCollapseShowButtonGNFR = document.createElement("button");
 bigCollapseShowButtonGNFR.textContent = "Expand All Items";
 bigCollapseShowButtonGNFR.setAttribute("id", "bigCollapseShowButtonGNFR");
@@ -3204,10 +3223,10 @@ const bigClearButtonGNFR = document.createElement("button");
 bigClearButtonGNFR.textContent = "Remove All Items";
 bigClearButtonGNFR.setAttribute("id", "bigClearButtonGNFR");
 bigClearButtonGNFR.setAttribute("class", "bigClearButtonVendor");
-const bigCollapseHideButtonSOC = document.createElement("button");
-bigCollapseHideButtonSOC.textContent = "Minimize All Items";
-bigCollapseHideButtonSOC.setAttribute("id", "bigCollapseHideButtonSOC");
-bigCollapseHideButtonSOC.setAttribute("class", "bigCollapseHideButtonVendor");
+// const bigCollapseHideButtonSOC = document.createElement("button");
+// bigCollapseHideButtonSOC.textContent = "Minimize All Items";
+// bigCollapseHideButtonSOC.setAttribute("id", "bigCollapseHideButtonSOC");
+// bigCollapseHideButtonSOC.setAttribute("class", "bigCollapseHideButtonVendor");
 const bigCollapseShowButtonSOC = document.createElement("button");
 bigCollapseShowButtonSOC.textContent = "Expand All Items";
 bigCollapseShowButtonSOC.setAttribute("id", "bigCollapseShowButtonSOC");
@@ -3216,10 +3235,10 @@ const bigClearButtonSOC = document.createElement("button");
 bigClearButtonSOC.textContent = "Remove All Items";
 bigClearButtonSOC.setAttribute("id", "bigClearButtonSOC");
 bigClearButtonSOC.setAttribute("class", "bigClearButtonVendor");
-const bigCollapseHideButtonVS = document.createElement("button");
-bigCollapseHideButtonVS.textContent = "Minimize All Items";
-bigCollapseHideButtonVS.setAttribute("id", "bigCollapseHideButtonVS");
-bigCollapseHideButtonVS.setAttribute("class", "bigCollapseHideButtonVendor");
+// const bigCollapseHideButtonVS = document.createElement("button");
+// bigCollapseHideButtonVS.textContent = "Minimize All Items";
+// bigCollapseHideButtonVS.setAttribute("id", "bigCollapseHideButtonVS");
+// bigCollapseHideButtonVS.setAttribute("class", "bigCollapseHideButtonVendor");
 const bigCollapseShowButtonVS = document.createElement("button");
 bigCollapseShowButtonVS.textContent = "Expand All Items";
 bigCollapseShowButtonVS.setAttribute("id", "bigCollapseShowButtonVS");
@@ -3228,10 +3247,10 @@ const bigClearButtonVS = document.createElement("button");
 bigClearButtonVS.textContent = "Remove All Items";
 bigClearButtonVS.setAttribute("id", "bigClearButtonVS");
 bigClearButtonVS.setAttribute("class", "bigClearButtonVendor");
-const bigCollapseHideButtonMS = document.createElement("button");
-bigCollapseHideButtonMS.textContent = "Minimize All Items";
-bigCollapseHideButtonMS.setAttribute("id", "bigCollapseHideButtonMS");
-bigCollapseHideButtonMS.setAttribute("class", "bigCollapseHideButtonVendor");
+// const bigCollapseHideButtonMS = document.createElement("button");
+// bigCollapseHideButtonMS.textContent = "Minimize All Items";
+// bigCollapseHideButtonMS.setAttribute("id", "bigCollapseHideButtonMS");
+// bigCollapseHideButtonMS.setAttribute("class", "bigCollapseHideButtonVendor");
 const bigCollapseShowButtonMS = document.createElement("button");
 bigCollapseShowButtonMS.textContent = "Expand All Items";
 bigCollapseShowButtonMS.setAttribute("id", "bigCollapseShowButtonMS");
@@ -3240,10 +3259,10 @@ const bigClearButtonMS = document.createElement("button");
 bigClearButtonMS.textContent = "Remove All Items";
 bigClearButtonMS.setAttribute("id", "bigClearButtonMS");
 bigClearButtonMS.setAttribute("class", "bigClearButtonVendor");
-const bigCollapseHideButtonCOV = document.createElement("button");
-bigCollapseHideButtonCOV.textContent = "Minimize All Items";
-bigCollapseHideButtonCOV.setAttribute("id", "bigCollapseHideButtonCOV");
-bigCollapseHideButtonCOV.setAttribute("class", "bigCollapseHideButtonVendor");
+// const bigCollapseHideButtonCOV = document.createElement("button");
+// bigCollapseHideButtonCOV.textContent = "Minimize All Items";
+// bigCollapseHideButtonCOV.setAttribute("id", "bigCollapseHideButtonCOV");
+// bigCollapseHideButtonCOV.setAttribute("class", "bigCollapseHideButtonVendor");
 const bigCollapseShowButtonCOV = document.createElement("button");
 bigCollapseShowButtonCOV.textContent = "Expand All Items";
 bigCollapseShowButtonCOV.setAttribute("id", "bigCollapseShowButtonCOV");
@@ -3252,10 +3271,10 @@ const bigClearButtonCOV = document.createElement("button");
 bigClearButtonCOV.textContent = "Remove All Items";
 bigClearButtonCOV.setAttribute("id", "bigClearButtonCOV");
 bigClearButtonCOV.setAttribute("class", "bigClearButtonVendor");
-const bigCollapseHideButtonFORS = document.createElement("button");
-bigCollapseHideButtonFORS.textContent = "Minimize All Items";
-bigCollapseHideButtonFORS.setAttribute("id", "bigCollapseHideButtonFORS");
-bigCollapseHideButtonFORS.setAttribute("class", "bigCollapseHideButtonVendor");
+// const bigCollapseHideButtonFORS = document.createElement("button");
+// bigCollapseHideButtonFORS.textContent = "Minimize All Items";
+// bigCollapseHideButtonFORS.setAttribute("id", "bigCollapseHideButtonFORS");
+// bigCollapseHideButtonFORS.setAttribute("class", "bigCollapseHideButtonVendor");
 const bigCollapseShowButtonFORS = document.createElement("button");
 bigCollapseShowButtonFORS.textContent = "Expand All Items";
 bigCollapseShowButtonFORS.setAttribute("id", "bigCollapseShowButtonFORS");
@@ -3264,7 +3283,7 @@ const bigClearButtonFORS = document.createElement("button");
 bigClearButtonFORS.textContent = "Remove All Items";
 bigClearButtonFORS.setAttribute("id", "bigClearButtonFORS");
 bigClearButtonFORS.setAttribute("class", "bigClearButtonVendor");
-const alert = document.getElementById("alert");
+const alert1 = document.getElementById("alert");
 const orderNumberMCK = document.getElementById("orderNumberMCK");
 // $(orderNumberMCK).hide();
 const orderNumberOI = document.getElementById("orderNumberOI");
@@ -3282,12 +3301,14 @@ const removeDuplicatesVS = document.createElement("button");
 const removeDuplicatesMS = document.createElement("button");
 const removeDuplicatesCOV = document.createElement("button");
 const removeDuplicatesFORS = document.createElement("button");
-function createRemoveDuplicateButton(removeDuplicates, id) {
-  removeDuplicates.setAttribute("class", "removeDuplicatesVendor");
-  removeDuplicates.textContent = "Remove Duplicate Items";
-  // removeDuplicates.setAttribute("id", varToString(id));
-  removeDuplicates["id"] = varToString(id);
-  // console.log(removeDuplicates);
+function createRemoveDuplicateButton(removeDuplicates1, id) {
+  removeDuplicates1.setAttribute("class", "removeDuplicatesVendor");
+  removeDuplicates1.textContent = "Remove Duplicate Items";
+  // removeDuplicates1.setAttribute("id", varToString(id));
+  removeDuplicates1["id"] = varToString(id);
+  // removeDuplicates2 = Object.values({removeDuplicates1: removeDuplicates1})
+  // console.log(Object.keys({removeDuplicates1}));
+  // console.log(removeDuplicates2);
 }
 createRemoveDuplicateButton(removeDuplicatesMCK, { removeDuplicatesMCK });
 createRemoveDuplicateButton(removeDuplicatesOI, { removeDuplicatesOI });
@@ -3399,7 +3420,7 @@ function clickVendor(
   removeDuplicatesVendor
 ) {
   if (liOI1.length == 10) {
-    $(alert).show().delay(2000).fadeOut("slow");
+    $(alert1).show().delay(2000).fadeOut("slow");
   }
   if (liOI1.length < 10 && !target.hasAttribute(addedtooi)) {
     target.setAttribute(addedtooi, "true");
@@ -3414,7 +3435,7 @@ function clickVendor(
     OrderInsiteItems.insertBefore(bigCollapseHideButtonOI, testingOI);
     OrderInsiteItems.insertBefore(bigClearButtonOI, testingOI);
     OrderInsiteItems.insertBefore(removeDuplicatesVendor, testingOI);
-    // $(OIQR).show();
+    $(OIQR).show();
     QROI.append(document.getElementById(OIQRID));
     copyItemNumber(bigLinkOI, arr1.join(comma));
     bigOIImage.makeCode(arr1.join(comma));
@@ -3549,6 +3570,107 @@ let itemsVS = [];
 let itemsMS = [];
 let itemsCOV = [];
 let itemsFORS = [];
+
+function switchLink(link) {
+  switch (link) {
+    case bigLinkMCK:
+      id = "bigLinkMCK";
+      message =
+        "This Link Will Take You To The McKesson Website With All The Items Already Shown";
+      link.addEventListener("click", () => {
+        setTimeout(() => {
+          window.open(
+            "https://connect.mckesson.com/portal/site/smo/menuitem.87a0666be7398a3ece3ee6105740d0a0/?query=" +
+              arr.join("%20or%20")
+          );
+        }, 1);
+      });
+      break;
+    case bigLinkOI:
+      id = "bigLinkOI";
+      message =
+        "This Link Will Take You To The OrderInsite Website With The Item Numbers Copied";
+      link.addEventListener("click", () => {
+        setTimeout(() => {
+          window.open("https://acloud.orderinsite.com/rs/logon/walmart");
+        }, 1);
+      });
+      break;
+    case bigLinkGNFR:
+      id = "bigLinkGNFR";
+      message =
+        "This Link Will Take You To The GNFR Website With The Item Numbers Copied";
+      link.addEventListener("click", () => {
+        setTimeout(() => {
+          window.open("https://ppa01.wal-mart.com/irj/portal");
+        }, 1);
+      });
+      break;
+    case bigLinkSOC:
+      id = "bigLinkSOC";
+      message =
+        "This Link Will Take You To The Sign Order Catalog Website With The Item Numbers Copied";
+      link.addEventListener("click", () => {
+        setTimeout(() => {
+          window.open(
+            "https://ecom.schwarz.com/Default.aspx?page=ProductCatalog"
+          );
+        }, 1);
+      });
+      break;
+    case bigLinkVS:
+      id = "bigLinkVS";
+      message =
+        "This Link Will Take You To The VaxServe Website With The Item Numbers Copied";
+      link.addEventListener("click", () => {
+        setTimeout(() => {
+          window.open(
+            "https://unify.vaxserve.com/index.cfm?fa=portal.selectStore"
+          );
+        }, 1);
+      });
+      break;
+    case bigLinkMS:
+      id = "bigLinkMS";
+      message =
+        "This Link Will Take You To The McKesson MedSurge Website With The Item Numbers Copied";
+      link.addEventListener("click", () => {
+        setTimeout(() => {
+          window.open("https://mms.mckesson.com/portal/login");
+        }, 1);
+      });
+      break;
+    case bigLinkCOV:
+      id = "bigLinkCOV";
+      message =
+        "This Link Will Take You To The Covap Website With The Item Numbers Copied";
+      link.addEventListener("click", () => {
+        setTimeout(() => {
+          window.open("https://www.covap.com/");
+        }, 1);
+      });
+      break;
+    case bigLinkFORS:
+      id = "bigLinkFORS";
+      message =
+        "This Link Will Take You To The FORS Website With The Item Numbers Copied";
+      link.addEventListener("click", () => {
+        setTimeout(() => {
+          window.open(
+            "https://psz01.wal-mart.com/wkebdynpro/dispatcher/sap.com/tc~mdm~srmcat~uisearch/ProcurementCatalog7Ehp1#"
+          );
+        }, 1);
+      });
+      break;
+  }
+  link.setAttribute("id", id);
+  link.setAttribute("title", message);
+  link.setAttribute("target", "_blank");
+}
+bigLinkVendor.forEach((e) => {
+  switchLink(e);
+});
+// console.log(bigLinkVendor);
 // these are QR codes created that will be appended when the user clicks on a list item.
 let bigMCKImage = new QRCode(document.getElementById("MCKQR"), {
   width: 100,
@@ -4168,6 +4290,90 @@ removeDuplicatesFunc(
 //     }
 //   }
 // }
+let images = [];
+//
+function makeElement(image) {
+  return [
+    document.createElement(image),
+    document.createElement(image),
+    document.createElement(image),
+    document.createElement(image),
+    document.createElement(image),
+    document.createElement(image),
+    document.createElement(image),
+    document.createElement(image),
+  ];
+}
+//
+// function putElementInArray(array, number, element) {
+//   for (let i = 0; i < number; i++) {
+//     array.push(element);
+//   }
+//   return array;
+// }
+// putElementInArray(images, 8, makeElement("img"));
+//
+function c(params) {
+  console.log(params);
+}
+const [
+  imageMCK,
+  imageOI,
+  imageGNFR,
+  imageSOC,
+  imageVS,
+  imageMS,
+  imageCOV,
+  imageFORS,
+] = makeElement("img");
+// function setID(element, id) {
+//   element.setAttribute("id", id);
+// }
+// const ids =
+// Object.keys({
+//   imageMCK,
+//   imageOI,
+//   imageGNFR,
+//   imageSOC,
+//   imageVS,
+//   imageMS,
+//   imageCOV,
+//   imageFORS,
+// });
+const [
+  imageMCKID,
+  imageOIID,
+  imageGNFRID,
+  imageSOCID,
+  imageVSID,
+  imageMSID,
+  imageCOVID,
+  imageFORSID,
+] = Object.keys({
+  imageMCK,
+  imageOI,
+  imageGNFR,
+  imageSOC,
+  imageVS,
+  imageMS,
+  imageCOV,
+  imageFORS,
+});
+// console.log([
+//   imageMCKID,
+//   imageOIID,
+//   imageGNFRID,
+//   imageSOCID,
+//   imageVSID,
+//   imageMSID,
+//   imageCOVID,
+//   imageFORSID,
+// ]);
+// setID(imageMCK, imageMCKID)
+// console.log(imageMCK);
+// console.log(varToString({ imageMCK }));
+// console.log(Object.keys({ imageMCK, imageOI }));
+// console.log(ids);
 // this is the function that is executed when the user click on drop down list items from the search results of the input field.
 function onClick(li) {
   for (i = 0; i < vials.length; i++) {
@@ -4176,7 +4382,8 @@ function onClick(li) {
         .map((e) => e.name)
         .indexOf(li.childNodes[0].textContent);
       const target = li;
-      const imageMCK = document.createElement("img");
+
+      // const imageMCK = document.createElement("img");
       imageMCK.setAttribute("id", "imageMCK");
       imageMCK.setAttribute("class", "imageVendor");
       imageMCK.setAttribute(
@@ -4185,7 +4392,7 @@ function onClick(li) {
       );
       const itemNumber1 = vials[index].itemNumber;
       JsBarcode(imageMCK, itemNumber1, { height: 40 });
-      const imageOI = document.createElement("img");
+      // const imageOI = document.createElement("img");
       imageOI.setAttribute("id", "imageOI");
       imageOI.setAttribute("class", "imageVendor");
       imageOI.setAttribute(
@@ -4193,7 +4400,7 @@ function onClick(li) {
         "Click Here To Print The Barcode For The Item Number"
       );
       JsBarcode(imageOI, itemNumber1, { height: 40 });
-      const imageGNFR = document.createElement("img");
+      // const imageGNFR = document.createElement("img");
       imageGNFR.setAttribute("id", "imageGNFR");
       imageGNFR.setAttribute("class", "imageVendor");
       imageGNFR.setAttribute(
@@ -4201,7 +4408,7 @@ function onClick(li) {
         "Click Here To Print The Barcode For The Item Number"
       );
       JsBarcode(imageGNFR, itemNumber1, { height: 40 });
-      const imageSOC = document.createElement("img");
+      // const imageSOC = document.createElement("img");
       imageSOC.setAttribute("id", "imageSOC");
       imageSOC.setAttribute("class", "imageVendor");
       imageSOC.setAttribute(
@@ -4209,7 +4416,7 @@ function onClick(li) {
         "Click Here To Print The Barcode For The Item Number"
       );
       JsBarcode(imageSOC, itemNumber1, { height: 40 });
-      const imageVS = document.createElement("img");
+      // const imageVS = document.createElement("img");
       imageVS.setAttribute("id", "imageVS");
       imageVS.setAttribute("class", "imageVendor");
       imageVS.setAttribute(
@@ -4217,7 +4424,7 @@ function onClick(li) {
         "Click Here To Print The Barcode For The Item Number"
       );
       JsBarcode(imageVS, itemNumber1, { height: 40 });
-      const imageMS = document.createElement("img");
+      // const imageMS = document.createElement("img");
       imageMS.setAttribute("id", "imageMS");
       imageMS.setAttribute("class", "imageVendor");
       imageMS.setAttribute(
@@ -4225,7 +4432,7 @@ function onClick(li) {
         "Click Here To Print The Barcode For The Item Number"
       );
       JsBarcode(imageMS, itemNumber1, { height: 40 });
-      const imageCOV = document.createElement("img");
+      // const imageCOV = document.createElement("img");
       imageCOV.setAttribute("id", "imageCOV");
       imageCOV.setAttribute("class", "imageVendor");
       imageCOV.setAttribute(
@@ -4233,7 +4440,7 @@ function onClick(li) {
         "Click Here To Print The Barcode For The Item Number"
       );
       JsBarcode(imageCOV, itemNumber1, { height: 40 });
-      const imageFORS = document.createElement("img");
+      // const imageFORS = document.createElement("img");
       imageFORS.setAttribute("id", "imageFORS");
       imageFORS.setAttribute("class", "imageVendor");
       imageFORS.setAttribute(
@@ -4241,6 +4448,16 @@ function onClick(li) {
         "Click Here To Print The Barcode For The Item Number"
       );
       JsBarcode(imageFORS, itemNumber1, { height: 40 });
+      // console.log([
+      //   imageMCK,
+      //   imageOI,
+      //   imageGNFR,
+      //   imageSOC,
+      //   imageVS,
+      //   imageMS,
+      //   imageCOV,
+      //   imageFORS,
+      // ]);
       const descMCK = document.createElement("p");
       const nameMain = vials[index].name;
       descMCK.append(nameMain);
@@ -5535,8 +5752,8 @@ x.push(dramVials10);
 
 // $('#listNav ul').hide();
 // $('#navSpan').hide();
-$('#navButton').on('click', function () {
-  $('#listNav ul:not(#navButton)').toggle(250);
+$("#navButton").on("click", function () {
+  $("#listNav ul:not(#navButton)").toggle(250);
 });
 
 // function hh() {
@@ -5580,3 +5797,98 @@ $('#navButton').on('click', function () {
 //     resolve(a.textContent);
 //   });
 // }
+done.addEventListener("click", (e) => {
+  search.value = "";
+  $("#list li").hide();
+});
+// search.addEventListener("blur", (e) => {
+//   $("#list li").hide();
+// });
+// let images = []
+// images.length = 10;
+// function jj () {
+//   images.fill(document.createElement('img'),0)
+//   return images;
+// }
+// const [a, b, c, d] = jj()
+// console.log(a)
+// console.log(b)
+// console.log(c)
+// console.log(d)
+let names = [];
+let itemNumbers = [];
+// let keywordsarr = []
+// function getNames({ name }) {
+//   names.push(name);
+// }
+// function getItemNumbers({ itemNumber }) {
+//   itemNumbers.push(itemNumber);
+// }
+// function getProp(getNames) {
+//   vials.forEach(getNames);
+// }
+// getProp(getNames);
+// getProp(getItemNumbers);
+// console.log(names);
+// console.log(itemNumbers);
+
+function aa({ name }) {
+  // console.log(name);
+}
+aa(vials[0]);
+const getNames = (e) => e.name;
+const getItemNumber = (e) => e.itemNumber;
+// vials.map(getNames);
+// console.log(vials.map(getNames))
+// console.log(vials.map(getItemNumber))
+// vials.forEach(getNames);
+// vials.forEach(getItemNumber);
+for (const { name } of vials) {
+  // console.log(name);
+}
+// const { name } = vials[0];
+
+// console.log(Object.keys({MckessonItems: MckessonItems.id})[0]);
+// console.log({MckessonItems});
+for (const key in MckessonItems) {
+  // console.log(key);
+  const element = MckessonItems[key];
+  // console.log(element);
+}
+// for (const value of MckessonItems) {
+//   console.log(value);
+// }
+// console.log(Object.keys({MckessonItems}));
+// const {id1} = MckessonItems
+// console.log(id1);
+function kk({ id }) {
+  // console.log(id);
+  return id;
+}
+// const MckessonItemsID =  kk(MckessonItems)
+// console.log(MckessonItemsID)
+// function setID1({ id }, j) {
+//   // id.id = id;
+//   // console.log(Object.values({k: j}));
+//   // console.log(id);
+// }
+// setID1(MckessonItems, MckessonItems);
+function ret({ name, itemNumber }) {
+  // console.log([name, itemNumber]);
+  return [name, itemNumber];
+}
+let nameAndNumber = [];
+const hh = vials.forEach((e) => {
+  const result = ret(e);
+  // console.log(result)
+  nameAndNumber.push(result);
+  // return result;
+});
+// console.log(nameAndNumber)
+// console.log(hh);
+// ret(vials[0])
+// console.log(setID1({MckessonItems}))
+vials.forEach(({ itemNumber, name }) => {
+  // console.log(`${name} : ${itemNumber}`);
+  // console.log(Object.getPrototypeOf(e));
+});

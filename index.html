@@ -23,13 +23,13 @@
             <span id="FORSQR" class="vendorQR"></span>
         </span>
         <div class="control">
-            <header id="mainHeader">Simply Supplies</header>
+            <!-- <header id="mainHeader">Simply Supplies</header> -->
             <div class="alert alert-danger" role="alert" id="alert">
                 <strong>Oh snap!</strong> A Maximum of 10 Items per column is allowed.
               </div>
                 <span id="navSpan">
                     <ul id="listNav">
-                        <button id="navButton" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                        <button id="navButton" type="button"  data-toggle="button" aria-pressed="false" autocomplete="off">
                             <div></div>
                             <div></div>
                             <div></div>
@@ -60,14 +60,15 @@
                 <ul >BD Syringes</ul>
                     </ul>
                 </span>
-            <span id="searchResults">
+            <!-- <span id="searchResults">
                 <p id="results">Search Results:</p>
-            </span>
-                <span class="search">
+            </span> -->
+                <form class="search">
                     <input type="text" autofocus name="" id="box" placeholder="Search..." tabindex="1">
                     <ul id="list" ></ul>
-                </span>
-                <button id="button" type="submit" tabindex="2"><i class="fa fa-search"></i></button>
+                    <button id="done" type="reset" tabindex="2">Done</button>
+                    <button id="button" type="submit" tabindex="2"><i class="fa fa-search"></i></button>
+                </form>
                 <span class="itemContainers">
                     <span id="Mckesson-Items" class = "vendorItems">
                         <span id="orderNumberMCK" class="orderNumberVendor">0</span>
