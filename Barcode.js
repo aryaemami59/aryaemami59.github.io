@@ -3238,7 +3238,6 @@ const [bigClearButtonMCK, bigClearButtonOI, bigClearButtonGNFR, bigClearButtonSO
 const removeDuplicatesArr = DOMFactory('button', 'removeDuplicatesVendor');
 classAdd(removeDuplicatesArr, vendorClass, 'textContent', 'Remove Duplicate Items');
 const [removeDuplicatesMCK, removeDuplicatesOI, removeDuplicatesGNFR, removeDuplicatesSOC, removeDuplicatesVS, removeDuplicatesMS, removeDuplicatesCOV, removeDuplicatesFORS] = removeDuplicatesArr;
-console.log(removeDuplicatesMCK)
 // const bigCollapseHideButtonMCK = document.createElement("button");
 // bigCollapseHideButtonMCK['textContent'] = "Minimize All Items";
 // bigCollapseHideButtonMCK.setAttribute("id", "bigCollapseHideButtonMCK");
@@ -3400,7 +3399,6 @@ function bigCollapseShowFunc(bigCollapseShowButtonGNFR) {
 }
 const testingArr = [...document.querySelectorAll('.testing')];
 const [testingMCK, testingOI, testingGNFR, testingSOC, testingVS, testingMS, testingCOV, testingFORS] = testingArr;
-console.log(testingMCK)
 // const testingMCK = document.getElementById("testingMCK");
 // const testingOI = document.getElementById("testingOI");
 // const testingGNFR = document.getElementById("testingGNFR");
@@ -3415,19 +3413,21 @@ const listNav = document.getElementById("listNav");
 const listUl = Array.from(listNav.querySelectorAll("ul"));
 const navLi = document.getElementById("navLi");
 const empty = document.getElementById("empty");
-const titleMCK = document.getElementById("mck-items");
-const titleOI = document.getElementById("OI-items");
-const titleGNFR = document.getElementById("G-items");
-const titleSOC = document.getElementById("SOC-items");
-const titleVS = document.getElementById("VS-items");
-const titleMS = document.getElementById("MS-items");
-const titleCOV = document.getElementById("COV-items");
-const titleFORS = document.getElementById("FORS-items");
-const titleVendor = Array.from(itemContainers.querySelectorAll(".titleVendor"));
+const titleArr = [...document.querySelectorAll('.titleVendor')];
+const [titleMCK, titleOI, titleGNFR, titleSOC, titleVS, titleMS, titleCOV, titleFORS] = titleArr;
+// const titleMCK = document.getElementById("mck-items");
+// const titleOI = document.getElementById("OI-items");
+// const titleGNFR = document.getElementById("G-items");
+// const titleSOC = document.getElementById("SOC-items");
+// const titleVS = document.getElementById("VS-items");
+// const titleMS = document.getElementById("MS-items");
+// const titleCOV = document.getElementById("COV-items");
+// const titleFORS = document.getElementById("FORS-items");
+// const titleVendor = Array.from(itemContainers.querySelectorAll(".titleVendor"));
 
-function titleClick(titleVendor) {
-  for (let i = 0; i < titleVendor.length; i++) {
-    const element = titleVendor[i];
+function titleClick(titleArr) {
+  for (let i = 0; i < titleArr.length; i++) {
+    const element = titleArr[i];
     element.addEventListener("click", (e) => {
       const target = e.target;
       const column = target.parentNode;
@@ -3487,7 +3487,7 @@ function clickVendor(
   }
   if (liOI1.length < 10 && !target.hasAttribute(addedtooi)) {
     target.setAttribute(addedtooi, "true");
-    titleClick(titleVendor);
+    titleClick(titleArr);
     const itemNumber1 = vials[index].itemNumber;
     addedItemsOI.push(li.childNodes[0].textContent);
     arr1.push(itemNumber1);
