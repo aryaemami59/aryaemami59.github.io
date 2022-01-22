@@ -4275,77 +4275,78 @@ function onClick(li) {
         .map((e) => e.name)
         .indexOf(li.childNodes[0].textContent);
       const target = li;
-      const imageMCK = document.createElement("img");
-      imageMCK.setAttribute("id", "imageMCK");
-      imageMCK.setAttribute("class", "imageVendor");
-      imageMCK.setAttribute(
-        "title",
-        "Click Here To Print The Barcode For The Item Number"
-      );
       const itemNumber1 = vials[index].itemNumber;
-      JsBarcode(imageMCK, itemNumber1, { height: 40 });
-      const imageOI = document.createElement("img");
-      imageOI.setAttribute("id", "imageOI");
-      imageOI.setAttribute("class", "imageVendor");
-      imageOI.setAttribute(
-        "title",
-        "Click Here To Print The Barcode For The Item Number"
-      );
-      JsBarcode(imageOI, itemNumber1, { height: 40 });
-      const imageGNFR = document.createElement("img");
-      imageGNFR.setAttribute("id", "imageGNFR");
-      imageGNFR.setAttribute("class", "imageVendor");
-      imageGNFR.setAttribute(
-        "title",
-        "Click Here To Print The Barcode For The Item Number"
-      );
-      JsBarcode(imageGNFR, itemNumber1, { height: 40 });
-      const imageSOC = document.createElement("img");
-      imageSOC.setAttribute("id", "imageSOC");
-      imageSOC.setAttribute("class", "imageVendor");
-      imageSOC.setAttribute(
-        "title",
-        "Click Here To Print The Barcode For The Item Number"
-      );
-      JsBarcode(imageSOC, itemNumber1, { height: 40 });
-      const imageVS = document.createElement("img");
-      imageVS.setAttribute("id", "imageVS");
-      imageVS.setAttribute("class", "imageVendor");
-      imageVS.setAttribute(
-        "title",
-        "Click Here To Print The Barcode For The Item Number"
-      );
-      JsBarcode(imageVS, itemNumber1, { height: 40 });
-      const imageMS = document.createElement("img");
-      imageMS.setAttribute("id", "imageMS");
-      imageMS.setAttribute("class", "imageVendor");
-      imageMS.setAttribute(
-        "title",
-        "Click Here To Print The Barcode For The Item Number"
-      );
-      JsBarcode(imageMS, itemNumber1, { height: 40 });
-      const imageCOV = document.createElement("img");
-      imageCOV.setAttribute("id", "imageCOV");
-      imageCOV.setAttribute("class", "imageVendor");
-      imageCOV.setAttribute(
-        "title",
-        "Click Here To Print The Barcode For The Item Number"
-      );
-      JsBarcode(imageCOV, itemNumber1, { height: 40 });
-      const imageFORS = document.createElement("img");
-      imageFORS.setAttribute("id", "imageFORS");
-      imageFORS.setAttribute("class", "imageVendor");
-      imageFORS.setAttribute(
-        "title",
-        "Click Here To Print The Barcode For The Item Number"
-      );
-      JsBarcode(imageFORS, itemNumber1, { height: 40 });
-      const descMCK = document.createElement("p");
       const nameMain = vials[index].name;
-      descMCK.append(nameMain);
-      descMCK.setAttribute("id", "descMCK");
-      descMCK.setAttribute("class", "descVendor");
-      descMCK.setAttribute("title", "Click Here To Copy The Name of The Item");
+      const imageArr = DOMFactory('img', 'imageVendor');
+      classAdd(imageArr, vendorClass, 'title', 'Click Here To Print The Barcode For The Item Number');
+      const [imageMCK, imageOI, imageGNFR, imageSOC, imageVS, imageMS, imageCOV, imageFORS] = imageArr;
+      imageArr.forEach(e => {
+        JsBarcode(e, itemNumber1, { height: 40 });
+      })
+      // const imageMCK = document.createElement("img");
+      // imageMCK.setAttribute("id", "imageMCK");
+      // imageMCK.setAttribute("class", "imageVendor");
+      // imageMCK.setAttribute(
+      //   "title",
+      //   "Click Here To Print The Barcode For The Item Number"
+      // );
+      // JsBarcode(imageMCK, itemNumber1, { height: 40 });
+      // const imageOI = document.createElement("img");
+      // imageOI.setAttribute("id", "imageOI");
+      // imageOI.setAttribute("class", "imageVendor");
+      // imageOI.setAttribute(
+      //   "title",
+      //   "Click Here To Print The Barcode For The Item Number"
+      // );
+      // JsBarcode(imageOI, itemNumber1, { height: 40 });
+      // const imageGNFR = document.createElement("img");
+      // imageGNFR.setAttribute("id", "imageGNFR");
+      // imageGNFR.setAttribute("class", "imageVendor");
+      // imageGNFR.setAttribute(
+      //   "title",
+      //   "Click Here To Print The Barcode For The Item Number"
+      // );
+      // JsBarcode(imageGNFR, itemNumber1, { height: 40 });
+      // const imageSOC = document.createElement("img");
+      // imageSOC.setAttribute("id", "imageSOC");
+      // imageSOC.setAttribute("class", "imageVendor");
+      // imageSOC.setAttribute(
+      //   "title",
+      //   "Click Here To Print The Barcode For The Item Number"
+      // );
+      // JsBarcode(imageSOC, itemNumber1, { height: 40 });
+      // const imageVS = document.createElement("img");
+      // imageVS.setAttribute("id", "imageVS");
+      // imageVS.setAttribute("class", "imageVendor");
+      // imageVS.setAttribute(
+      //   "title",
+      //   "Click Here To Print The Barcode For The Item Number"
+      // );
+      // JsBarcode(imageVS, itemNumber1, { height: 40 });
+      // const imageMS = document.createElement("img");
+      // imageMS.setAttribute("id", "imageMS");
+      // imageMS.setAttribute("class", "imageVendor");
+      // imageMS.setAttribute(
+      //   "title",
+      //   "Click Here To Print The Barcode For The Item Number"
+      // );
+      // JsBarcode(imageMS, itemNumber1, { height: 40 });
+      // const imageCOV = document.createElement("img");
+      // imageCOV.setAttribute("id", "imageCOV");
+      // imageCOV.setAttribute("class", "imageVendor");
+      // imageCOV.setAttribute(
+      //   "title",
+      //   "Click Here To Print The Barcode For The Item Number"
+      // );
+      // JsBarcode(imageCOV, itemNumber1, { height: 40 });
+      // const imageFORS = document.createElement("img");
+      // imageFORS.setAttribute("id", "imageFORS");
+      // imageFORS.setAttribute("class", "imageVendor");
+      // imageFORS.setAttribute(
+      //   "title",
+      //   "Click Here To Print The Barcode For The Item Number"
+      // );
+      // JsBarcode(imageFORS, itemNumber1, { height: 40 });
       const spMCK = document.createElement("span");
       const spOI = document.createElement("span");
       const spGNFR = document.createElement("span");
@@ -4354,45 +4355,59 @@ function onClick(li) {
       const spMS = document.createElement("span");
       const spCOV = document.createElement("span");
       const spFORS = document.createElement("span");
-      const descOI = document.createElement("p");
-      descOI.textContent = nameMain;
-      descOI.setAttribute("id", "descOI");
-      descOI.setAttribute("class", "descVendor");
-      descOI.setAttribute("title", "Click Here To Copy The Name of The Item");
-      const descGNFR = document.createElement("p");
-      descGNFR.textContent = nameMain;
-      descGNFR.setAttribute("id", "descGNFR");
-      descGNFR.setAttribute("class", "descVendor");
-      descGNFR.setAttribute("title", "Click Here To Copy The Name of The Item");
-      const descSOC = document.createElement("p");
-      descSOC.textContent = nameMain;
-      descSOC.setAttribute("id", "descSOC");
-      descSOC.setAttribute("class", "descVendor");
-      descSOC.setAttribute("title", "Click Here To Copy The Name of The Item");
-      const descVS = document.createElement("p");
-      descVS.textContent = nameMain;
-      descVS.setAttribute("id", "descVS");
-      descVS.setAttribute("class", "descVendor");
-      descVS.setAttribute("title", "Click Here To Copy The Name of The Item");
-      const descMS = document.createElement("p");
-      descMS.textContent = nameMain;
-      descMS.setAttribute("id", "descMS");
-      descMS.setAttribute("class", "descVendor");
-      descMS.setAttribute("title", "Click Here To Copy The Name of The Item");
-      const descCOV = document.createElement("p");
-      descCOV.textContent = nameMain;
-      descCOV.setAttribute("id", "descCOV");
-      descCOV.setAttribute("class", "descVendor");
-      descCOV.setAttribute("title", "Click Here To Copy The Name of The Item");
-      const descFORS = document.createElement("p");
-      descFORS.textContent = nameMain;
-      descFORS.setAttribute("id", "descFORS");
-      descFORS.setAttribute("class", "descVendor");
-      descFORS.setAttribute("title", "Click Here To Copy The Name of The Item");
-      const smallLinkMCK = document.createElement("a");
-      smallLinkMCK.setAttribute("target", "_blank");
-      smallLinkMCK.setAttribute("id", "smallLinkMCK");
-      smallLinkMCK.setAttribute("class", "smallLinkVendor");
+      const descArr = DOMFactory('p', 'descVendor');
+      classAdd(descArr, vendorClass, 'title', 'Click Here To Copy The Name of The Item');
+      const [descMCK, descOI, descGNFR, descSOC, descVS, descMS, descCOV, descFORS] = descArr;
+      descArr.forEach(e => {
+        e.append(nameMain);
+      })
+      // const descMCK = document.createElement("p");
+      // descMCK.append(nameMain);
+      // descMCK.setAttribute("id", "descMCK");
+      // descMCK.setAttribute("class", "descVendor");
+      // descMCK.setAttribute("title", "Click Here To Copy The Name of The Item");
+      // const descOI = document.createElement("p");
+      // descOI.textContent = nameMain;
+      // descOI.setAttribute("id", "descOI");
+      // descOI.setAttribute("class", "descVendor");
+      // descOI.setAttribute("title", "Click Here To Copy The Name of The Item");
+      // const descGNFR = document.createElement("p");
+      // descGNFR.textContent = nameMain;
+      // descGNFR.setAttribute("id", "descGNFR");
+      // descGNFR.setAttribute("class", "descVendor");
+      // descGNFR.setAttribute("title", "Click Here To Copy The Name of The Item");
+      // const descSOC = document.createElement("p");
+      // descSOC.textContent = nameMain;
+      // descSOC.setAttribute("id", "descSOC");
+      // descSOC.setAttribute("class", "descVendor");
+      // descSOC.setAttribute("title", "Click Here To Copy The Name of The Item");
+      // const descVS = document.createElement("p");
+      // descVS.textContent = nameMain;
+      // descVS.setAttribute("id", "descVS");
+      // descVS.setAttribute("class", "descVendor");
+      // descVS.setAttribute("title", "Click Here To Copy The Name of The Item");
+      // const descMS = document.createElement("p");
+      // descMS.textContent = nameMain;
+      // descMS.setAttribute("id", "descMS");
+      // descMS.setAttribute("class", "descVendor");
+      // descMS.setAttribute("title", "Click Here To Copy The Name of The Item");
+      // const descCOV = document.createElement("p");
+      // descCOV.textContent = nameMain;
+      // descCOV.setAttribute("id", "descCOV");
+      // descCOV.setAttribute("class", "descVendor");
+      // descCOV.setAttribute("title", "Click Here To Copy The Name of The Item");
+      // const descFORS = document.createElement("p");
+      // descFORS.textContent = nameMain;
+      // descFORS.setAttribute("id", "descFORS");
+      // descFORS.setAttribute("class", "descVendor");
+      // descFORS.setAttribute("title", "Click Here To Copy The Name of The Item");
+      const smallLinkArr = DOMFactory('a', 'smallLinkVendor');
+      classAdd(smallLinkArr, vendorClass, 'target', '_blank');
+      const [smallLinkMCK, smallLinkOI, smallLinkGNFR, smallLinkSOC, smallLinkVS, smallLinkMS, smallLinkCOV, smallLinkFORS] = smallLinkArr;
+      // const smallLinkMCK = document.createElement("a");
+      // smallLinkMCK.setAttribute("target", "_blank");
+      // smallLinkMCK.setAttribute("id", "smallLinkMCK");
+      // smallLinkMCK.setAttribute("class", "smallLinkVendor");
       smallLinkMCK.setAttribute(
         "title",
         "This Link Will Take You To The McKesson Website With The Item Already Shown"
@@ -4403,10 +4418,10 @@ function onClick(li) {
           itemNumber1
       );
       smallLinkMCK.text = "Order on McKesson";
-      const smallLinkOI = document.createElement("a");
-      smallLinkOI.setAttribute("target", "_blank");
-      smallLinkOI.setAttribute("id", "smallLinkOI");
-      smallLinkOI.setAttribute("class", "smallLinkVendor");
+      // const smallLinkOI = document.createElement("a");
+      // smallLinkOI.setAttribute("target", "_blank");
+      // smallLinkOI.setAttribute("id", "smallLinkOI");
+      // smallLinkOI.setAttribute("class", "smallLinkVendor");
       smallLinkOI.setAttribute(
         "title",
         "This Link Will Take You To The OrderInsite Website With The Item Number Copied"
@@ -4416,10 +4431,10 @@ function onClick(li) {
         "https://acloud.orderinsite.com/rs/logon/walmart"
       );
       smallLinkOI.text = "Order on OrderInsite";
-      const smallLinkGNFR = document.createElement("a");
-      smallLinkGNFR.setAttribute("target", "_blank");
-      smallLinkGNFR.setAttribute("id", "smallLinkGNFR");
-      smallLinkGNFR.setAttribute("class", "smallLinkVendor");
+      // const smallLinkGNFR = document.createElement("a");
+      // smallLinkGNFR.setAttribute("target", "_blank");
+      // smallLinkGNFR.setAttribute("id", "smallLinkGNFR");
+      // smallLinkGNFR.setAttribute("class", "smallLinkVendor");
       smallLinkGNFR.setAttribute(
         "title",
         "This Link Will Take You To The GNFR Website"
@@ -4429,10 +4444,10 @@ function onClick(li) {
         "https://ppa01.wal-mart.com/irj/portal"
       );
       smallLinkGNFR.text = "Order on GNFR";
-      const smallLinkSOC = document.createElement("a");
-      smallLinkSOC.setAttribute("target", "_blank");
-      smallLinkSOC.setAttribute("id", "smallLinkSOC");
-      smallLinkSOC.setAttribute("class", "smallLinkVendor");
+      // const smallLinkSOC = document.createElement("a");
+      // smallLinkSOC.setAttribute("target", "_blank");
+      // smallLinkSOC.setAttribute("id", "smallLinkSOC");
+      // smallLinkSOC.setAttribute("class", "smallLinkVendor");
       smallLinkSOC.setAttribute(
         "title",
         "This Link Will Take You To The Sign Order Catalog Website"
@@ -4442,10 +4457,10 @@ function onClick(li) {
         "https://ecom.schwarz.com/Default.aspx?page=ProductCatalog"
       );
       smallLinkSOC.text = "Order on Sign Order Catalog";
-      const smallLinkVS = document.createElement("a");
-      smallLinkVS.setAttribute("target", "_blank");
-      smallLinkVS.setAttribute("id", "smallLinkVS");
-      smallLinkVS.setAttribute("class", "smallLinkVendor");
+      // const smallLinkVS = document.createElement("a");
+      // smallLinkVS.setAttribute("target", "_blank");
+      // smallLinkVS.setAttribute("id", "smallLinkVS");
+      // smallLinkVS.setAttribute("class", "smallLinkVendor");
       smallLinkVS.setAttribute(
         "title",
         "This Link Will Take You To The VaxServe Website"
@@ -4455,30 +4470,30 @@ function onClick(li) {
         "https://unify.vaxserve.com/index.cfm?fa=portal.selectStore"
       );
       smallLinkVS.text = "Order on VaxServe";
-      const smallLinkMS = document.createElement("a");
-      smallLinkMS.setAttribute("target", "_blank");
-      smallLinkMS.setAttribute("id", "smallLinkMS");
-      smallLinkMS.setAttribute("class", "smallLinkVendor");
+      // const smallLinkMS = document.createElement("a");
+      // smallLinkMS.setAttribute("target", "_blank");
+      // smallLinkMS.setAttribute("id", "smallLinkMS");
+      // smallLinkMS.setAttribute("class", "smallLinkVendor");
       smallLinkMS.setAttribute(
         "title",
         "This Link Will Take You To The McKesson MedSurge Website"
       );
       smallLinkMS.setAttribute("href", "https://mms.mckesson.com/portal/login");
       smallLinkMS.text = "Order on McK MedSurge";
-      const smallLinkCOV = document.createElement("a");
-      smallLinkCOV.setAttribute("target", "_blank");
-      smallLinkCOV.setAttribute("id", "smallLinkCOV");
-      smallLinkCOV.setAttribute("class", "smallLinkVendor");
+      // const smallLinkCOV = document.createElement("a");
+      // smallLinkCOV.setAttribute("target", "_blank");
+      // smallLinkCOV.setAttribute("id", "smallLinkCOV");
+      // smallLinkCOV.setAttribute("class", "smallLinkVendor");
       smallLinkCOV.setAttribute(
         "title",
         "This Link Will Take You To The Covap Website"
       );
       smallLinkCOV.setAttribute("href", "https://www.covap.com/" + itemNumber1);
       smallLinkCOV.text = "Order on Covap";
-      const smallLinkFORS = document.createElement("a");
-      smallLinkFORS.setAttribute("target", "_blank");
-      smallLinkFORS.setAttribute("id", "smallLinkFORS");
-      smallLinkFORS.setAttribute("class", "smallLinkVendor");
+      // const smallLinkFORS = document.createElement("a");
+      // smallLinkFORS.setAttribute("target", "_blank");
+      // smallLinkFORS.setAttribute("id", "smallLinkFORS");
+      // smallLinkFORS.setAttribute("class", "smallLinkVendor");
       smallLinkFORS.setAttribute(
         "title",
         "This Link Will Take You To The FORS Website"
@@ -4488,93 +4503,104 @@ function onClick(li) {
         " https://psz01.wal-mart.com/webdynpro/dispatcher/sap.com/tc~mdm~srmcat~uisearch/ProcurementCatalog7Ehp1#"
       );
       smallLinkFORS.text = "Order on FORS";
-      const itemNumberMCK = document.createElement("p");
-      itemNumberMCK.textContent = "Item Number: " + itemNumber1;
-      itemNumberMCK.setAttribute("id", "itemNumberMCK");
-      itemNumberMCK.setAttribute("class", "itemNumberVendor");
-      itemNumberMCK.setAttribute("title", "Click Here To Copy The Item Number");
-      const itemNumberOI = document.createElement("p");
-      itemNumberOI.textContent = "Item Number: " + itemNumber1;
-      itemNumberOI.setAttribute("id", "itemNumberOI");
-      itemNumberOI.setAttribute("class", "itemNumberVendor");
-      itemNumberOI.setAttribute("title", "Click Here To Copy The Item Number");
-      const itemNumberGNFR = document.createElement("p");
-      itemNumberGNFR.textContent = "Item Number: " + itemNumber1;
-      itemNumberGNFR.setAttribute("id", "itemNumberGNFR");
-      itemNumberGNFR.setAttribute("class", "itemNumberVendor");
-      itemNumberGNFR.setAttribute(
-        "title",
-        "Click Here To Copy The Item Number"
-      );
-      const itemNumberSOC = document.createElement("p");
-      itemNumberSOC.textContent = "Item Number: " + itemNumber1;
-      itemNumberSOC.setAttribute("id", "itemNumberSOC");
-      itemNumberSOC.setAttribute("class", "itemNumberVendor");
-      itemNumberSOC.setAttribute("title", "Click Here To Copy The Item Number");
-      const itemNumberVS = document.createElement("p");
-      itemNumberVS.textContent = "Item Number: " + itemNumber1;
-      itemNumberVS.setAttribute("id", "itemNumberVS");
-      itemNumberVS.setAttribute("class", "itemNumberVendor");
-      itemNumberVS.setAttribute("title", "Click Here To Copy The Item Number");
-      const itemNumberMS = document.createElement("p");
-      itemNumberMS.textContent = "Item Number: " + itemNumber1;
-      itemNumberMS.setAttribute("id", "itemNumberMS");
-      itemNumberMS.setAttribute("class", "itemNumberVendor");
-      itemNumberMS.setAttribute("title", "Click Here To Copy The Item Number");
-      const itemNumberCOV = document.createElement("p");
-      itemNumberCOV.textContent = "Item Number: " + itemNumber1;
-      itemNumberCOV.setAttribute("id", "itemNumberCOV");
-      itemNumberCOV.setAttribute("class", "itemNumberVendor");
-      itemNumberCOV.setAttribute("title", "Click Here To Copy The Item Number");
-      const itemNumberFORS = document.createElement("p");
-      itemNumberFORS.textContent = "Item Number: " + itemNumber1;
-      itemNumberFORS.setAttribute("id", "itemNumberFORS");
-      itemNumberFORS.setAttribute("class", "itemNumberVendor");
-      itemNumberFORS.setAttribute(
-        "title",
-        "Click Here To Copy The Item Number"
-      );
+      const itemNumberArr = DOMFactory('p', 'itemNumberVendor');
+      classAdd(itemNumberArr, vendorClass, 'title', 'Click Here To Copy The Item Number');
+      const [itemNumberMCK, itemNumberOI, itemNumberGNFR, itemNumberSOC, itemNumberVS, itemNumberMS, itemNumberCOV, itemNumberFORS] = itemNumberArr;
+      itemNumberArr.forEach(e => {
+        e.textContent = "Item Number: " + itemNumber1;
+      })
+      // const itemNumberMCK = document.createElement("p");
+      // itemNumberMCK.textContent = "Item Number: " + itemNumber1;
+      // itemNumberMCK.setAttribute("id", "itemNumberMCK");
+      // itemNumberMCK.setAttribute("class", "itemNumberVendor");
+      // itemNumberMCK.setAttribute("title", "Click Here To Copy The Item Number");
+      // const itemNumberOI = document.createElement("p");
+      // itemNumberOI.textContent = "Item Number: " + itemNumber1;
+      // itemNumberOI.setAttribute("id", "itemNumberOI");
+      // itemNumberOI.setAttribute("class", "itemNumberVendor");
+      // itemNumberOI.setAttribute("title", "Click Here To Copy The Item Number");
+      // const itemNumberGNFR = document.createElement("p");
+      // itemNumberGNFR.textContent = "Item Number: " + itemNumber1;
+      // itemNumberGNFR.setAttribute("id", "itemNumberGNFR");
+      // itemNumberGNFR.setAttribute("class", "itemNumberVendor");
+      // itemNumberGNFR.setAttribute(
+      //   "title",
+      //   "Click Here To Copy The Item Number"
+      // );
+      // const itemNumberSOC = document.createElement("p");
+      // itemNumberSOC.textContent = "Item Number: " + itemNumber1;
+      // itemNumberSOC.setAttribute("id", "itemNumberSOC");
+      // itemNumberSOC.setAttribute("class", "itemNumberVendor");
+      // itemNumberSOC.setAttribute("title", "Click Here To Copy The Item Number");
+      // const itemNumberVS = document.createElement("p");
+      // itemNumberVS.textContent = "Item Number: " + itemNumber1;
+      // itemNumberVS.setAttribute("id", "itemNumberVS");
+      // itemNumberVS.setAttribute("class", "itemNumberVendor");
+      // itemNumberVS.setAttribute("title", "Click Here To Copy The Item Number");
+      // const itemNumberMS = document.createElement("p");
+      // itemNumberMS.textContent = "Item Number: " + itemNumber1;
+      // itemNumberMS.setAttribute("id", "itemNumberMS");
+      // itemNumberMS.setAttribute("class", "itemNumberVendor");
+      // itemNumberMS.setAttribute("title", "Click Here To Copy The Item Number");
+      // const itemNumberCOV = document.createElement("p");
+      // itemNumberCOV.textContent = "Item Number: " + itemNumber1;
+      // itemNumberCOV.setAttribute("id", "itemNumberCOV");
+      // itemNumberCOV.setAttribute("class", "itemNumberVendor");
+      // itemNumberCOV.setAttribute("title", "Click Here To Copy The Item Number");
+      // const itemNumberFORS = document.createElement("p");
+      // itemNumberFORS.textContent = "Item Number: " + itemNumber1;
+      // itemNumberFORS.setAttribute("id", "itemNumberFORS");
+      // itemNumberFORS.setAttribute("class", "itemNumberVendor");
+      // itemNumberFORS.setAttribute(
+      //   "title",
+      //   "Click Here To Copy The Item Number"
+      // );
       const nameProp = getProperty(target.childNodes[0].textContent, "name");
-      const QRMCK = document.getElementById("QRMCK");
-      const QROI = document.getElementById("QROI");
-      const QRGNFR = document.getElementById("QRGNFR");
-      const QRSOC = document.getElementById("QRSOC");
-      const QRVS = document.getElementById("QRVS");
-      const QRMS = document.getElementById("QRMS");
-      const QRCOV = document.getElementById("QRCOV");
-      const QRFORS = document.getElementById("QRFORS");
-      const removeButtonMCK = document.createElement("button");
-      removeButtonMCK.textContent = "X";
-      removeButtonMCK.setAttribute("id", "removeButtonMCK");
-      removeButtonMCK.setAttribute("class", "removeButtonVendor");
-      const removeButtonOI = document.createElement("button");
-      removeButtonOI.textContent = "X";
-      removeButtonOI.setAttribute("id", "removeButtonOI");
-      removeButtonOI.setAttribute("class", "removeButtonVendor");
-      const removeButtonGNFR = document.createElement("button");
-      removeButtonGNFR.textContent = "X";
-      removeButtonGNFR.setAttribute("id", "removeButtonGNFR");
-      removeButtonGNFR.setAttribute("class", "removeButtonVendor");
-      const removeButtonSOC = document.createElement("button");
-      removeButtonSOC.textContent = "X";
-      removeButtonSOC.setAttribute("id", "removeButtonSOC");
-      removeButtonSOC.setAttribute("class", "removeButtonVendor");
-      const removeButtonVS = document.createElement("button");
-      removeButtonVS.textContent = "X";
-      removeButtonVS.setAttribute("id", "removeButtonVS");
-      removeButtonVS.setAttribute("class", "removeButtonVendor");
-      const removeButtonMS = document.createElement("button");
-      removeButtonMS.textContent = "X";
-      removeButtonMS.setAttribute("id", "removeButtonMS");
-      removeButtonMS.setAttribute("class", "removeButtonVendor");
-      const removeButtonCOV = document.createElement("button");
-      removeButtonCOV.textContent = "X";
-      removeButtonCOV.setAttribute("id", "removeButtonCOV");
-      removeButtonCOV.setAttribute("class", "removeButtonVendor");
-      const removeButtonFORS = document.createElement("button");
-      removeButtonFORS.textContent = "X";
-      removeButtonFORS.setAttribute("id", "removeButtonFORS");
-      removeButtonFORS.setAttribute("class", "removeButtonVendor");
+      const QRContainerArr = [...document.querySelectorAll('.QRContainer')];
+      const [QRMCK, QROI, QRGNFR, QRSOC, QRVS, QRMS, QRCOV, QRFORS] = QRContainerArr;
+      // const QRMCK = document.getElementById("QRMCK");
+      // const QROI = document.getElementById("QROI");
+      // const QRGNFR = document.getElementById("QRGNFR");
+      // const QRSOC = document.getElementById("QRSOC");
+      // const QRVS = document.getElementById("QRVS");
+      // const QRMS = document.getElementById("QRMS");
+      // const QRCOV = document.getElementById("QRCOV");
+      // const QRFORS = document.getElementById("QRFORS");
+      const removeButtonArr = DOMFactory('button', 'removeButtonVendor');
+      classAdd(removeButtonArr, vendorClass, 'textContent', 'X');
+      const [removeButtonMCK, removeButtonOI, removeButtonGNFR, removeButtonSOC, removeButtonVS, removeButtonMS, removeButtonCOV, removeButtonFORS] = removeButtonArr;
+      // const removeButtonMCK = document.createElement("button");
+      // removeButtonMCK.textContent = "X";
+      // removeButtonMCK.setAttribute("id", "removeButtonMCK");
+      // removeButtonMCK.setAttribute("class", "removeButtonVendor");
+      // const removeButtonOI = document.createElement("button");
+      // removeButtonOI.textContent = "X";
+      // removeButtonOI.setAttribute("id", "removeButtonOI");
+      // removeButtonOI.setAttribute("class", "removeButtonVendor");
+      // const removeButtonGNFR = document.createElement("button");
+      // removeButtonGNFR.textContent = "X";
+      // removeButtonGNFR.setAttribute("id", "removeButtonGNFR");
+      // removeButtonGNFR.setAttribute("class", "removeButtonVendor");
+      // const removeButtonSOC = document.createElement("button");
+      // removeButtonSOC.textContent = "X";
+      // removeButtonSOC.setAttribute("id", "removeButtonSOC");
+      // removeButtonSOC.setAttribute("class", "removeButtonVendor");
+      // const removeButtonVS = document.createElement("button");
+      // removeButtonVS.textContent = "X";
+      // removeButtonVS.setAttribute("id", "removeButtonVS");
+      // removeButtonVS.setAttribute("class", "removeButtonVendor");
+      // const removeButtonMS = document.createElement("button");
+      // removeButtonMS.textContent = "X";
+      // removeButtonMS.setAttribute("id", "removeButtonMS");
+      // removeButtonMS.setAttribute("class", "removeButtonVendor");
+      // const removeButtonCOV = document.createElement("button");
+      // removeButtonCOV.textContent = "X";
+      // removeButtonCOV.setAttribute("id", "removeButtonCOV");
+      // removeButtonCOV.setAttribute("class", "removeButtonVendor");
+      // const removeButtonFORS = document.createElement("button");
+      // removeButtonFORS.textContent = "X";
+      // removeButtonFORS.setAttribute("id", "removeButtonFORS");
+      // removeButtonFORS.setAttribute("class", "removeButtonVendor");
       function copyItemNumber(itemNumberMCK, itemNumber1) {
         itemNumberMCK.addEventListener("click", (e) => {
           navigator.clipboard.writeText(itemNumber1);
@@ -4678,54 +4704,60 @@ function onClick(li) {
         addedItemsFORS,
         "data-addedtoFORS"
       );
-      const collapseButtonMCK = document.createElement("button");
-      collapseButtonMCK.setAttribute("id", "collapseButtonMCK");
-      collapseButtonMCK.setAttribute("class", "collapseButtonVendor");
-      const collapseButtonOI = document.createElement("button");
-      collapseButtonOI.setAttribute("id", "collapseButtonOI");
-      collapseButtonOI.setAttribute("class", "collapseButtonVendor");
-      const collapseButtonGNFR = document.createElement("button");
-      collapseButtonGNFR.setAttribute("id", "collapseButtonGNFR");
-      collapseButtonGNFR.setAttribute("class", "collapseButtonVendor");
-      const collapseButtonSOC = document.createElement("button");
-      collapseButtonSOC.setAttribute("id", "collapseButtonSOC");
-      collapseButtonSOC.setAttribute("class", "collapseButtonVendor");
-      const collapseButtonVS = document.createElement("button");
-      collapseButtonVS.setAttribute("id", "collapseButtonVS");
-      collapseButtonVS.setAttribute("class", "collapseButtonVendor");
-      const collapseButtonMS = document.createElement("button");
-      collapseButtonMS.setAttribute("id", "collapseButtonMS");
-      collapseButtonMS.setAttribute("class", "collapseButtonVendor");
-      const collapseButtonCOV = document.createElement("button");
-      collapseButtonCOV.setAttribute("id", "collapseButtonCOV");
-      collapseButtonCOV.setAttribute("class", "collapseButtonVendor");
-      const collapseButtonFORS = document.createElement("button");
-      collapseButtonFORS.setAttribute("id", "collapseButtonFORS");
-      collapseButtonFORS.setAttribute("class", "collapseButtonVendor");
-      const liMCK = document.createElement("li");
-      liMCK.setAttribute("id", "liMCK");
-      liMCK.setAttribute("class", "liVendor");
-      const liOI = document.createElement("li");
-      liOI.setAttribute("id", "liOI");
-      liOI.setAttribute("class", "liVendor");
-      const liGNFR = document.createElement("li");
-      liGNFR.setAttribute("id", "liGNFR");
-      liGNFR.setAttribute("class", "liVendor");
-      const liSOC = document.createElement("li");
-      liSOC.setAttribute("class", "liVendor");
-      liSOC.setAttribute("id", "liSOC");
-      const liVS = document.createElement("li");
-      liVS.setAttribute("class", "liVendor");
-      liVS.setAttribute("id", "liVS");
-      const liMS = document.createElement("li");
-      liMS.setAttribute("class", "liVendor");
-      liMS.setAttribute("id", "liMS");
-      const liCOV = document.createElement("li");
-      liCOV.setAttribute("class", "liVendor");
-      liCOV.setAttribute("id", "liCOV");
-      const liFORS = document.createElement("li");
-      liFORS.setAttribute("class", "liVendor");
-      liFORS.setAttribute("id", "liFORS");
+      const collapseButtonArr = DOMFactory('button', 'collapseButtonVendor');
+      classAdd(collapseButtonArr, vendorClass);
+      const [collapseButtonMCK, collapseButtonOI, collapseButtonGNFR, collapseButtonSOC, collapseButtonVS, collapseButtonMS, collapseButtonCOV, collapseButtonFORS] = collapseButtonArr;
+      // const collapseButtonMCK = document.createElement("button");
+      // collapseButtonMCK.setAttribute("id", "collapseButtonMCK");
+      // collapseButtonMCK.setAttribute("class", "collapseButtonVendor");
+      // const collapseButtonOI = document.createElement("button");
+      // collapseButtonOI.setAttribute("id", "collapseButtonOI");
+      // collapseButtonOI.setAttribute("class", "collapseButtonVendor");
+      // const collapseButtonGNFR = document.createElement("button");
+      // collapseButtonGNFR.setAttribute("id", "collapseButtonGNFR");
+      // collapseButtonGNFR.setAttribute("class", "collapseButtonVendor");
+      // const collapseButtonSOC = document.createElement("button");
+      // collapseButtonSOC.setAttribute("id", "collapseButtonSOC");
+      // collapseButtonSOC.setAttribute("class", "collapseButtonVendor");
+      // const collapseButtonVS = document.createElement("button");
+      // collapseButtonVS.setAttribute("id", "collapseButtonVS");
+      // collapseButtonVS.setAttribute("class", "collapseButtonVendor");
+      // const collapseButtonMS = document.createElement("button");
+      // collapseButtonMS.setAttribute("id", "collapseButtonMS");
+      // collapseButtonMS.setAttribute("class", "collapseButtonVendor");
+      // const collapseButtonCOV = document.createElement("button");
+      // collapseButtonCOV.setAttribute("id", "collapseButtonCOV");
+      // collapseButtonCOV.setAttribute("class", "collapseButtonVendor");
+      // const collapseButtonFORS = document.createElement("button");
+      // collapseButtonFORS.setAttribute("id", "collapseButtonFORS");
+      // collapseButtonFORS.setAttribute("class", "collapseButtonVendor");
+      const liArr = DOMFactory('li', 'liVendor');
+      classAdd(liArr, vendorClass);
+      const [liMCK, liOI, liGNFR, liSOC, liVS, liMS, liCOV, liFORS] = liArr;
+      // const liMCK = document.createElement("li");
+      // liMCK.setAttribute("id", "liMCK");
+      // liMCK.setAttribute("class", "liVendor");
+      // const liOI = document.createElement("li");
+      // liOI.setAttribute("id", "liOI");
+      // liOI.setAttribute("class", "liVendor");
+      // const liGNFR = document.createElement("li");
+      // liGNFR.setAttribute("id", "liGNFR");
+      // liGNFR.setAttribute("class", "liVendor");
+      // const liSOC = document.createElement("li");
+      // liSOC.setAttribute("class", "liVendor");
+      // liSOC.setAttribute("id", "liSOC");
+      // const liVS = document.createElement("li");
+      // liVS.setAttribute("class", "liVendor");
+      // liVS.setAttribute("id", "liVS");
+      // const liMS = document.createElement("li");
+      // liMS.setAttribute("class", "liVendor");
+      // liMS.setAttribute("id", "liMS");
+      // const liCOV = document.createElement("li");
+      // liCOV.setAttribute("class", "liVendor");
+      // liCOV.setAttribute("id", "liCOV");
+      // const liFORS = document.createElement("li");
+      // liFORS.setAttribute("class", "liVendor");
+      // liFORS.setAttribute("id", "liFORS");
       liMCK.append(
         removeButtonMCK,
         collapseButtonMCK,

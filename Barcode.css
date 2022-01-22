@@ -251,24 +251,24 @@ body {
   cursor: pointer;
   transform: scale(1.1);
 }
-#descMCK {
+.descVendor.MCK {
   background-image: linear-gradient(rgb(0, 100, 140, 1), rgba(0, 100, 140, 0));
 }
-#descOI {
+.descVendor.OI {
   background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
 }
-#descGNFR {
+.descVendor.GNFR {
   background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
 }
-#descSOC,
-#itemNumberSOC,
+.descVendor.SOC,
+.itemNumberVendor.SOC,
 .bigLink.SOC,
-#smallLinkSOC,
+.smallLinkVendor.SOC,
 .bigCollapseShowButtonVendor.SOC,
 .bigCollapseHideButtonVendor.SOC,
 .bigClearButtonVendor.SOC,
-#removeButtonSOC,
-#collapseButtonSOC,
+.removeButtonVendor.SOC,
+.collapseButtonVendor.SOC,
 .removeDuplicatesVendor.SOC {
   background-color: rgba(209, 0, 0, 0);
   background-image: linear-gradient(rgb(175, 0, 0, 1), rgba(175, 0, 0, 0));
@@ -276,54 +276,54 @@ body {
 .bigLink.SOC {
   font-size: 13px;
 }
-#descVS,
-#itemNumberVS,
+.descVendor.VS,
+.itemNumberVendor.VS,
 .bigLink.VS,
-#smallLinkVS,
+.smallLinkVendor.VS,
 .bigCollapseShowButtonVendor.VS,
 .bigCollapseHideButtonVendor.VS,
 .bigClearButtonVendor.VS,
-#removeButtonVS,
-#collapseButtonVS,
+.removeButtonVendor.VS,
+.collapseButtonVendor.VS,
 .removeDuplicatesVendor.VS {
   background-color: rgba(89, 0, 255, 0);
   background-image: linear-gradient(rgb(67, 0, 192, 1), rgba(67, 0, 192, 0));
 }
-#descMS,
-#itemNumberMS,
+.descVendor.MS,
+.itemNumberVendor.MS,
 .bigLink.MS,
-#smallLinkMS,
+.smallLinkVendor.MS,
 .bigCollapseShowButtonVendor.MS,
 .bigCollapseHideButtonVendor.MS,
 .bigClearButtonVendor.MS,
-#removeButtonMS,
-#collapseButtonMS,
+.removeButtonVendor.MS,
+.collapseButtonVendor.MS,
 .removeDuplicatesVendor.MS {
   background-color: rgba(226, 102, 0, 0);
   background-image: linear-gradient(rgb(226, 102, 0, 1), rgba(226, 102, 0, 0));
 }
-#descCOV,
-#itemNumberCOV,
+.descVendor.COV,
+.itemNumberVendor.COV,
 .bigLink.COV,
-#smallLinkCOV,
+.smallLinkVendor.COV,
 .bigCollapseShowButtonVendor.COV,
 .bigCollapseHideButtonVendor.COV,
 .bigClearButtonVendor.COV,
-#removeButtonCOV,
-#collapseButtonCOV,
+.removeButtonVendor.COV,
+.collapseButtonVendor.COV,
 .removeDuplicatesVendor.COV {
   background-color: rgba(131, 0, 120, 0);
   background-image: linear-gradient(rgb(121, 0, 111, 1), rgba(121, 0, 111, 0));
 }
-#descFORS,
-#itemNumberFORS,
+.descVendor.FORS,
+.itemNumberVendor.FORS,
 .bigLink.FORS,
-#smallLinkFORS,
+.smallLinkVendor.FORS,
 .bigCollapseShowButtonVendor.FORS,
 .bigCollapseHideButtonVendor.FORS,
 .bigClearButtonVendor.FORS,
-#removeButtonFORS,
-#collapseButtonFORS,
+.removeButtonVendor.FORS,
+.collapseButtonVendor.FORS,
 .removeDuplicatesVendor.FORS {
   background-color: rgba(0, 136, 141, 0);
   background-image: linear-gradient(rgb(0, 100, 104, 1), rgba(0, 100, 104, 0));
@@ -370,13 +370,13 @@ body {
   transform: scale(1.2);
   opacity: 0.5;
 }
-#itemNumberMCK {
+.itemNumberVendor.MCK {
   background-image: linear-gradient(rgb(0, 100, 140, 1), rgba(0, 100, 140, 0));
 }
-#itemNumberOI {
+.itemNumberVendor.OI {
   background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
 }
-#itemNumberGNFR {
+.itemNumberVendor.GNFR {
   background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
 }
 .itemNumberVendor {
@@ -401,14 +401,14 @@ body {
 .itemNumberVendor:active {
   transform: scale(1.2);
 }
-#smallLinkMCK {
+.smallLinkVendor.MCK {
   background-image: linear-gradient(rgb(0, 100, 140, 1), rgba(0, 100, 140, 0));
   max-height: 66px;
 }
-#smallLinkOI {
+.smallLinkVendor.OI {
   background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
 }
-#smallLinkGNFR {
+.smallLinkVendor.GNFR {
   background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
 }
 .smallLinkVendor {
@@ -699,13 +699,13 @@ body {
   cursor: pointer;
   transform: scale(1.1);
 }
-#removeButtonMCK {
+.removeButtonVendor.MCK {
   background-image: linear-gradient(rgb(0, 100, 140, 1), rgba(0, 100, 140, 0));
 }
-#removeButtonOI {
+.removeButtonVendor.OI {
   background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
 }
-#removeButtonGNFR {
+.removeButtonVendor.GNFR {
   background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
 }
 #empty {
@@ -762,13 +762,13 @@ body {
   background-color: #000000;
   border: none;
 }
-#collapseButtonMCK {
+.collapseButtonVendor.MCK {
   background-image: linear-gradient(rgb(0, 100, 140, 1), rgba(0, 100, 140, 0));
 }
-#collapseButtonOI {
+.collapseButtonVendor.OI {
   background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
 }
-#collapseButtonGNFR {
+.collapseButtonVendor.GNFR {
   background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
 }
 .collapseButtonVendor::after {
@@ -1244,16 +1244,16 @@ li#li[data-FORS="true"] {
     cursor: pointer;
     transform: scale(1.1);
   }
-  #descMCK {
+  .descVendor.MCK {
     background-image: linear-gradient(
       rgb(0, 100, 140, 1),
       rgba(0, 100, 140, 0)
     );
   }
-  #descOI {
+  .descVendor.OI {
     background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
   }
-  #descGNFR {
+  .descVendor.GNFR {
     background-image: linear-gradient(
       rgb(190, 190, 0, 1),
       rgba(190, 190, 0, 0)
@@ -1294,16 +1294,16 @@ li#li[data-FORS="true"] {
     transform: scale(1.2);
     opacity: 0.5;
   }
-  #itemNumberMCK {
+  .itemNumberVendor.MCK {
     background-image: linear-gradient(
       rgb(0, 100, 140, 1),
       rgba(0, 100, 140, 0)
     );
   }
-  #itemNumberOI {
+  .itemNumberVendor.OI {
     background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
   }
-  #itemNumberGNFR {
+  .itemNumberVendor.GNFR {
     background-image: linear-gradient(
       rgb(190, 190, 0, 1),
       rgba(190, 190, 0, 0)
@@ -1333,17 +1333,17 @@ li#li[data-FORS="true"] {
     transform: scale(1.2);
     opacity: 0.5;
   }
-  #smallLinkMCK {
+  .smallLinkVendor.MCK {
     background-image: linear-gradient(
       rgb(0, 100, 140, 1),
       rgba(0, 100, 140, 0)
     );
     max-height: 200px;
   }
-  #smallLinkOI {
+  .smallLinkVendor.OI {
     background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
   }
-  #smallLinkGNFR {
+  .smallLinkVendor.GNFR {
     background-image: linear-gradient(
       rgb(190, 190, 0, 1),
       rgba(190, 190, 0, 0)
@@ -1656,16 +1656,16 @@ li#li[data-FORS="true"] {
     cursor: pointer;
     transform: scale(1.1);
   }
-  #removeButtonMCK {
+  .removeButtonVendor.MCK {
     background-image: linear-gradient(
       rgb(0, 100, 140, 1),
       rgba(0, 100, 140, 0)
     );
   }
-  #removeButtonOI {
+  .removeButtonVendor.OI {
     background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
   }
-  #removeButtonGNFR {
+  .removeButtonVendor.GNFR {
     background-image: linear-gradient(
       rgb(190, 190, 0, 1),
       rgba(190, 190, 0, 0)
@@ -1726,16 +1726,16 @@ li#li[data-FORS="true"] {
     height: 24px;
     border: none;
   }
-  #collapseButtonMCK {
+  .collapseButtonVendor.MCK {
     background-image: linear-gradient(
       rgb(0, 100, 140, 1),
       rgba(0, 100, 140, 0)
     );
   }
-  #collapseButtonOI {
+  .collapseButtonVendor.OI {
     background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
   }
-  #collapseButtonGNFR {
+  .collapseButtonVendor.GNFR {
     background-image: linear-gradient(
       rgb(190, 190, 0, 1),
       rgba(190, 190, 0, 0)
