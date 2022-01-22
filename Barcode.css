@@ -911,7 +911,7 @@ body {
   background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
 }
 
-.vendorItems {
+.column {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1003,7 +1003,7 @@ p.duplicate {
 .positive {
   visibility: visible;
 }
-.vendorItems:not(.show)
+.column:not(.show)
   > :not(.titleVendor):not(canvas):not(.orderNumberVendor) {
   display: none;
 }
@@ -1949,7 +1949,7 @@ li#li[data-FORS="true"] {
     font-weight: 700;
     transition: transform 0.1s ease-in-out;
   }
-  .vendorItems {
+  .column {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -2011,7 +2011,7 @@ li#li[data-FORS="true"] {
   .positive {
     visibility: visible;
   }
-  .vendorItems:not(.show)
+  .column:not(.show)
     > :not(.titleVendor):not(canvas):not(.orderNumberVendor) {
     display: none;
   }

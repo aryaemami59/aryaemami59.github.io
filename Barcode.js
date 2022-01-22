@@ -3029,7 +3029,9 @@ const vials = [
   },
 ];
 // this is where we assign and grab elements from DOM.
-const MckessonItems = document.getElementById("Mckesson-Items");
+// const MckessonItems = document.getElementById("Mckesson-Items");
+const MckessonItems = document.querySelector('.column.MCK');
+console.log(MckessonItems)
 const OrderInsiteItems = document.getElementById("OrderInsite-Items");
 const GNFRItems = document.getElementById("GNFR-Items");
 const signOrderCatalogItems = document.getElementById("signOrderCatalogItems");
@@ -3345,10 +3347,10 @@ function titleClick(titleVendor) {
     const element = titleVendor[i];
     element.addEventListener("click", (e) => {
       const target = e.target;
-      const vendorItems = target.parentNode;
-      const orderNumberVendor = vendorItems.querySelector(".positive");
+      const column = target.parentNode;
+      const orderNumberVendor = column.querySelector(".positive");
       if (orderNumberVendor) {
-        $(vendorItems).addClass("show");
+        $(column).addClass("show");
       }
     });
   }
@@ -3916,24 +3918,24 @@ function removeButtonFunc(
 }
 function bigClearFunc(bigClearButtonMCK, array, redMCK, redMCK1, addedtomck) {
   bigClearButtonMCK.addEventListener("click", function a(e) {
-    const vendorItems = e.target.parentNode;
-    if (vendorItems !== null) {
-      const liVendor = vendorItems.querySelectorAll(".liVendor");
-      const vendorQR = vendorItems.querySelector(".QRSpan");
-      const bigLinkVendor = vendorItems.querySelector(".bigLinkVendor");
-      const hideButton = vendorItems.querySelector(
+    const column = e.target.parentNode;
+    if (column !== null) {
+      const liVendor = column.querySelectorAll(".liVendor");
+      const vendorQR = column.querySelector(".QRSpan");
+      const bigLinkVendor = column.querySelector(".bigLinkVendor");
+      const hideButton = column.querySelector(
         ".bigCollapseHideButtonVendor"
       );
-      const showButton = vendorItems.querySelector(
+      const showButton = column.querySelector(
         ".bigCollapseShowButtonVendor"
       );
       const li1 = list.querySelectorAll("li");
       const listUl = listNav.querySelectorAll("ul");
-      const orderNumberVendor = vendorItems.querySelector(".orderNumberVendor");
-      const removeDuplicates = vendorItems.querySelector(
+      const orderNumberVendor = column.querySelector(".orderNumberVendor");
+      const removeDuplicates = column.querySelector(
         ".removeDuplicatesVendor"
       );
-      const desc = Array.from(vendorItems.querySelectorAll(".descVendor"));
+      const desc = Array.from(column.querySelectorAll(".descVendor"));
       $(vendorQR).hide();
       $(bigLinkVendor).remove();
       $(hideButton).remove();
@@ -3942,8 +3944,8 @@ function bigClearFunc(bigClearButtonMCK, array, redMCK, redMCK1, addedtomck) {
       bigClearButtonMCK.remove();
       $(orderNumberVendor).removeClass("positive");
       $(orderNumberVendor).css("visibility", "hidden");
-      $(vendorItems).removeClass("show");
-      // $(vendorItems).addClass("hide");
+      $(column).removeClass("show");
+      // $(column).addClass("hide");
       for (let i = 0; i < liVendor.length; i++) {
         const liVendorLoop = liVendor[i];
         const descVendor =
@@ -4021,21 +4023,21 @@ function removeDuplicatesFunc(
     const descVendor = Array.from(
       itemContainers.querySelectorAll(".descVendor")
     );
-    const vendorItems = e.target.parentNode;
+    const column = e.target.parentNode;
     const alternateDesc = Array.from(
       itemContainers.querySelectorAll(`p.descVendor:not(#${descMCK}`)
     );
-    const duplicates = Array.from(vendorItems.querySelectorAll(".duplicate"));
+    const duplicates = Array.from(column.querySelectorAll(".duplicate"));
     const li = Array.from(list.querySelectorAll("li"));
-    const vendorQR = vendorItems.querySelector(".QRSpan");
-    const bigLinkVendor = vendorItems.querySelector(".bigLinkVendor");
-    const hideButton = vendorItems.querySelector(
+    const vendorQR = column.querySelector(".QRSpan");
+    const bigLinkVendor = column.querySelector(".bigLinkVendor");
+    const hideButton = column.querySelector(
       ".bigCollapseHideButtonVendor"
     );
-    const showButton = vendorItems.querySelector(
+    const showButton = column.querySelector(
       ".bigCollapseShowButtonVendor"
     );
-    const clearButton = vendorItems.querySelector(".bigClearButtonVendor");
+    const clearButton = column.querySelector(".bigClearButtonVendor");
     for (let i = 0; i < li.length; i++) {
       const liLoop = li[i].childNodes[0].textContent;
       for (let j = 0; j < duplicates.length; j++) {
@@ -4083,8 +4085,8 @@ function removeDuplicatesFunc(
         }
       });
     });
-    const liVendor = vendorItems.querySelectorAll(".liVendor");
-    const orderNumberVendor = vendorItems.querySelector(".orderNumberVendor");
+    const liVendor = column.querySelectorAll(".liVendor");
+    const orderNumberVendor = column.querySelector(".orderNumberVendor");
     orderNumberVendor.textContent = liVendor.length;
     if (liVendor.length === 0) {
       $(vendorQR).hide();
@@ -4095,7 +4097,7 @@ function removeDuplicatesFunc(
       removeDuplicates.remove();
       $(orderNumberVendor).removeClass("positive");
       $(orderNumberVendor).css("visibility", "hidden");
-      $(vendorItems).removeClass("show");
+      $(column).removeClass("show");
     }
   });
 }
