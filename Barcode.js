@@ -3227,14 +3227,18 @@ bigLinkFORS.addEventListener("click", function () {
 });
 // bigLinkFORS.setAttribute("target", "_blank");
 const hideButtonArr = DOMFactory('button', 'bigCollapseHideButtonVendor');
-const [bigCollapseHideButtonMCK, bigCollapseHideButtonOI, bigCollapseHideButtonGNFR, bigCollapseHideButtonSOC, bigCollapseHideButtonVS, bigCollapseHideButtonMS, bigCollapseHideButtonCOV, bigCollapseHideButtonFORS] = hideButtonArr;
 classAdd(hideButtonArr, vendorClass, 'textContent', 'Minimize All Items');
+const [bigCollapseHideButtonMCK, bigCollapseHideButtonOI, bigCollapseHideButtonGNFR, bigCollapseHideButtonSOC, bigCollapseHideButtonVS, bigCollapseHideButtonMS, bigCollapseHideButtonCOV, bigCollapseHideButtonFORS] = hideButtonArr;
 const showButtonArr = DOMFactory('button', 'bigCollapseShowButtonVendor');
 classAdd(showButtonArr, vendorClass, 'textContent', 'Expand All Items');
 const [bigCollapseShowButtonMCK, bigCollapseShowButtonOI, bigCollapseShowButtonGNFR, bigCollapseShowButtonSOC, bigCollapseShowButtonVS, bigCollapseShowButtonMS, bigCollapseShowButtonCOV, bigCollapseShowButtonFORS] = showButtonArr;
 const clearButtonArr = DOMFactory('button', 'bigClearButtonVendor');
 classAdd(clearButtonArr, vendorClass, 'textContent', 'Remove All Items');
 const [bigClearButtonMCK, bigClearButtonOI, bigClearButtonGNFR, bigClearButtonSOC, bigClearButtonVS, bigClearButtonMS, bigClearButtonCOV, bigClearButtonFORS] = clearButtonArr;
+const removeDuplicatesArr = DOMFactory('button', 'removeDuplicatesVendor');
+classAdd(removeDuplicatesArr, vendorClass, 'textContent', 'Remove Duplicate Items');
+const [removeDuplicatesMCK, removeDuplicatesOI, removeDuplicatesGNFR, removeDuplicatesSOC, removeDuplicatesVS, removeDuplicatesMS, removeDuplicatesCOV, removeDuplicatesFORS] = removeDuplicatesArr;
+console.log(removeDuplicatesMCK)
 // const bigCollapseHideButtonMCK = document.createElement("button");
 // bigCollapseHideButtonMCK['textContent'] = "Minimize All Items";
 // bigCollapseHideButtonMCK.setAttribute("id", "bigCollapseHideButtonMCK");
@@ -3351,29 +3355,29 @@ const [
 // const orderNumberMS = document.getElementById("orderNumberMS");
 // const orderNumberCOV = document.getElementById("orderNumberCOV");
 // const orderNumberFORS = document.getElementById("orderNumberFORS");
-const removeDuplicatesMCK = document.createElement("button");
-const removeDuplicatesOI = document.createElement("button");
-const removeDuplicatesGNFR = document.createElement("button");
-const removeDuplicatesSOC = document.createElement("button");
-const removeDuplicatesVS = document.createElement("button");
-const removeDuplicatesMS = document.createElement("button");
-const removeDuplicatesCOV = document.createElement("button");
-const removeDuplicatesFORS = document.createElement("button");
-function createRemoveDuplicateButton(removeDuplicates, id) {
-  removeDuplicates.setAttribute("class", "removeDuplicatesVendor");
-  removeDuplicates.textContent = "Remove Duplicate Items";
-  // removeDuplicates.setAttribute("id", varToString(id));
-  removeDuplicates["id"] = varToString(id);
-  // console.log(removeDuplicates);
-}
-createRemoveDuplicateButton(removeDuplicatesMCK, { removeDuplicatesMCK });
-createRemoveDuplicateButton(removeDuplicatesOI, { removeDuplicatesOI });
-createRemoveDuplicateButton(removeDuplicatesGNFR, { removeDuplicatesGNFR });
-createRemoveDuplicateButton(removeDuplicatesSOC, { removeDuplicatesSOC });
-createRemoveDuplicateButton(removeDuplicatesVS, { removeDuplicatesVS });
-createRemoveDuplicateButton(removeDuplicatesMS, { removeDuplicatesMS });
-createRemoveDuplicateButton(removeDuplicatesCOV, { removeDuplicatesCOV });
-createRemoveDuplicateButton(removeDuplicatesFORS, { removeDuplicatesFORS });
+// const removeDuplicatesMCK = document.createElement("button");
+// const removeDuplicatesOI = document.createElement("button");
+// const removeDuplicatesGNFR = document.createElement("button");
+// const removeDuplicatesSOC = document.createElement("button");
+// const removeDuplicatesVS = document.createElement("button");
+// const removeDuplicatesMS = document.createElement("button");
+// const removeDuplicatesCOV = document.createElement("button");
+// const removeDuplicatesFORS = document.createElement("button");
+// function createRemoveDuplicateButton(removeDuplicates, id) {
+//   removeDuplicates.setAttribute("class", "removeDuplicatesVendor");
+//   removeDuplicates.textContent = "Remove Duplicate Items";
+//   removeDuplicates.setAttribute("id", varToString(id));
+//   removeDuplicates["id"] = varToString(id);
+//   console.log(removeDuplicates);
+// }
+// createRemoveDuplicateButton(removeDuplicatesMCK, { removeDuplicatesMCK });
+// createRemoveDuplicateButton(removeDuplicatesOI, { removeDuplicatesOI });
+// createRemoveDuplicateButton(removeDuplicatesGNFR, { removeDuplicatesGNFR });
+// createRemoveDuplicateButton(removeDuplicatesSOC, { removeDuplicatesSOC });
+// createRemoveDuplicateButton(removeDuplicatesVS, { removeDuplicatesVS });
+// createRemoveDuplicateButton(removeDuplicatesMS, { removeDuplicatesMS });
+// createRemoveDuplicateButton(removeDuplicatesCOV, { removeDuplicatesCOV });
+// createRemoveDuplicateButton(removeDuplicatesFORS, { removeDuplicatesFORS });
 
 function bigCollapseHideFunc(bigCollapseHideButtonGNFR) {
   $(bigCollapseHideButtonGNFR).on("click", function (e) {
@@ -3394,14 +3398,17 @@ function bigCollapseShowFunc(bigCollapseShowButtonGNFR) {
     });
   });
 }
-const testingMCK = document.getElementById("testingMCK");
-const testingOI = document.getElementById("testingOI");
-const testingGNFR = document.getElementById("testingGNFR");
-const testingSOC = document.getElementById("testingSOC");
-const testingVS = document.getElementById("testingVS");
-const testingMS = document.getElementById("testingMS");
-const testingCOV = document.getElementById("testingCOV");
-const testingFORS = document.getElementById("testingFORS");
+const testingArr = [...document.querySelectorAll('.testing')];
+const [testingMCK, testingOI, testingGNFR, testingSOC, testingVS, testingMS, testingCOV, testingFORS] = testingArr;
+console.log(testingMCK)
+// const testingMCK = document.getElementById("testingMCK");
+// const testingOI = document.getElementById("testingOI");
+// const testingGNFR = document.getElementById("testingGNFR");
+// const testingSOC = document.getElementById("testingSOC");
+// const testingVS = document.getElementById("testingVS");
+// const testingMS = document.getElementById("testingMS");
+// const testingCOV = document.getElementById("testingCOV");
+// const testingFORS = document.getElementById("testingFORS");
 const button = document.getElementById("button");
 const searchResults = document.getElementById("searchResults");
 const listNav = document.getElementById("listNav");

@@ -304,7 +304,7 @@ body {
 .bigClearButtonVendor.SOC,
 #removeButtonSOC,
 #collapseButtonSOC,
-#removeDuplicatesSOC {
+.removeDuplicatesVendor.SOC {
   background-color: rgba(209, 0, 0, 0);
   background-image: linear-gradient(rgb(175, 0, 0, 1), rgba(175, 0, 0, 0));
 }
@@ -320,7 +320,7 @@ body {
 .bigClearButtonVendor.VS,
 #removeButtonVS,
 #collapseButtonVS,
-#removeDuplicatesVS {
+.removeDuplicatesVendor.VS {
   background-color: rgba(89, 0, 255, 0);
   background-image: linear-gradient(rgb(67, 0, 192, 1), rgba(67, 0, 192, 0));
 }
@@ -333,7 +333,7 @@ body {
 .bigClearButtonVendor.MS,
 #removeButtonMS,
 #collapseButtonMS,
-#removeDuplicatesMS {
+.removeDuplicatesVendor.MS {
   background-color: rgba(226, 102, 0, 0);
   background-image: linear-gradient(rgb(226, 102, 0, 1), rgba(226, 102, 0, 0));
 }
@@ -346,7 +346,7 @@ body {
 .bigClearButtonVendor.COV,
 #removeButtonCOV,
 #collapseButtonCOV,
-#removeDuplicatesCOV {
+.removeDuplicatesVendor.COV {
   background-color: rgba(131, 0, 120, 0);
   background-image: linear-gradient(rgb(121, 0, 111, 1), rgba(121, 0, 111, 0));
 }
@@ -359,7 +359,7 @@ body {
 .bigClearButtonVendor.FORS,
 #removeButtonFORS,
 #collapseButtonFORS,
-#removeDuplicatesFORS {
+.removeDuplicatesVendor.FORS {
   background-color: rgba(0, 136, 141, 0);
   background-image: linear-gradient(rgb(0, 100, 104, 1), rgba(0, 100, 104, 0));
 }
@@ -892,21 +892,21 @@ body {
 .bigCollapseHideButtonVendor.MCK,
 .bigCollapseShowButtonVendor.MCK,
 .bigClearButtonVendor.MCK,
-#removeDuplicatesMCK {
+.removeDuplicatesVendor.MCK {
   background-image: linear-gradient(rgb(0, 100, 140, 1), rgba(0, 100, 140, 0));
   background-color: inherit;
 }
 .bigCollapseHideButtonVendor.OI,
 .bigCollapseShowButtonVendor.OI,
 .bigClearButtonVendor.OI,
-#removeDuplicatesOI {
+.removeDuplicatesVendor.OI {
   background-color: rgba(0, 255, 149, 0);
   background-image: linear-gradient(rgb(0, 146, 85, 1), rgb(0, 146, 85, 0));
 }
 .bigCollapseHideButtonVendor.GNFR,
 .bigCollapseShowButtonVendor.GNFR,
 .bigClearButtonVendor.GNFR,
-#removeDuplicatesGNFR {
+.removeDuplicatesVendor.GNFR {
   background-color: rgba(255, 255, 0, 0);
   background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
 }
@@ -1895,14 +1895,14 @@ li#li[data-FORS="true"] {
   .bigCollapseHideButtonVendor.MCK,
   .bigCollapseShowButtonVendor.MCK,
   .bigClearButtonVendor.MCK,
-  #removeDuplicatesMCK {
+  .removeDuplicatesVendor.MCK {
     background-image: linear-gradient(rgb(0, 100, 140), rgba(0, 100, 140, 0));
     background-color: inherit;
   }
   .bigCollapseHideButtonVendor.GNFR,
   .bigCollapseShowButtonVendor.GNFR,
   .bigClearButtonVendor.GNFR,
-  #removeDuplicatesGNFR {
+  .removeDuplicatesVendor.GNFR {
     background-image: linear-gradient(
       rgb(190, 190, 0, 1),
       rgba(190, 190, 0, 0)
