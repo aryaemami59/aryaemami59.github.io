@@ -3549,38 +3549,54 @@ let itemsMS = [];
 let itemsCOV = [];
 let itemsFORS = [];
 // these are QR codes created that will be appended when the user clicks on a list item.
-let bigMCKImage = new QRCode(document.getElementById("MCKQR"), {
-  width: 100,
-  height: 100,
-});
-let bigOIImage = new QRCode(document.getElementById("OIQR"), {
-  width: 100,
-  height: 100,
-});
-let bigGNFRImage = new QRCode(document.getElementById("GNFRQR"), {
-  width: 100,
-  height: 100,
-});
-let bigSOCImage = new QRCode(document.getElementById("SOCQR"), {
-  width: 100,
-  height: 100,
-});
-let bigVSImage = new QRCode(document.getElementById("VSQR"), {
-  width: 100,
-  height: 100,
-});
-let bigMSImage = new QRCode(document.getElementById("MSQR"), {
-  width: 100,
-  height: 100,
-});
-let bigCOVImage = new QRCode(document.getElementById("COVQR"), {
-  width: 100,
-  height: 100,
-});
-let bigFORSImage = new QRCode(document.getElementById("FORSQR"), {
-  width: 100,
-  height: 100,
-});
+const QRSpanArr = [...document.querySelectorAll('.QRSpan')];
+console.log(QRSpanArr);
+function createQRCodes() {
+  let array = [];
+  QRSpanArr.forEach(e => {
+    let code = new QRCode(e, {
+      width: 100,
+      height: 100,
+    });
+    code.className = ''
+    array.push(code);
+  })
+  return array;
+}
+const QRCodeImages = createQRCodes();
+let [bigMCKImage, bigOIImage, bigGNFRImage, bigSOCImage, bigVSImage, bigMSImage, bigCOVImage, bigFORSImage] = QRCodeImages;
+// let bigMCKImage = new QRCode(document.getElementById("MCKQR"), {
+//   width: 100,
+//   height: 100,
+// });
+// let bigOIImage = new QRCode(document.getElementById("OIQR"), {
+//   width: 100,
+//   height: 100,
+// });
+// let bigGNFRImage = new QRCode(document.getElementById("GNFRQR"), {
+//   width: 100,
+//   height: 100,
+// });
+// let bigSOCImage = new QRCode(document.getElementById("SOCQR"), {
+//   width: 100,
+//   height: 100,
+// });
+// let bigVSImage = new QRCode(document.getElementById("VSQR"), {
+//   width: 100,
+//   height: 100,
+// });
+// let bigMSImage = new QRCode(document.getElementById("MSQR"), {
+//   width: 100,
+//   height: 100,
+// });
+// let bigCOVImage = new QRCode(document.getElementById("COVQR"), {
+//   width: 100,
+//   height: 100,
+// });
+// let bigFORSImage = new QRCode(document.getElementById("FORSQR"), {
+//   width: 100,
+//   height: 100,
+// });
 // this function will make sure that no duplicate results are added.
 function avoidDuplciateResults(myFunc, checkFunc) {
   if (addedItems.every(checkFunc)) {
@@ -3789,7 +3805,7 @@ function removeButtonFunc(
     // })
     const desc = e.target.parentNode.querySelector("p").textContent;
     const QR =
-      e.target.parentNode.parentNode.querySelector(".QRVendor").firstChild;
+      e.target.parentNode.parentNode.querySelector(".QRContainer").firstChild;
     const bigLink = e.target.parentNode.parentNode.querySelector("a");
     const orderNumberVendor =
       e.target.parentNode.parentNode.querySelector(".orderNumberVendor");
@@ -3903,7 +3919,7 @@ function bigClearFunc(bigClearButtonMCK, array, redMCK, redMCK1, addedtomck) {
     const vendorItems = e.target.parentNode;
     if (vendorItems !== null) {
       const liVendor = vendorItems.querySelectorAll(".liVendor");
-      const vendorQR = vendorItems.querySelector(".vendorQR");
+      const vendorQR = vendorItems.querySelector(".QRSpan");
       const bigLinkVendor = vendorItems.querySelector(".bigLinkVendor");
       const hideButton = vendorItems.querySelector(
         ".bigCollapseHideButtonVendor"
@@ -4011,7 +4027,7 @@ function removeDuplicatesFunc(
     );
     const duplicates = Array.from(vendorItems.querySelectorAll(".duplicate"));
     const li = Array.from(list.querySelectorAll("li"));
-    const vendorQR = vendorItems.querySelector(".vendorQR");
+    const vendorQR = vendorItems.querySelector(".QRSpan");
     const bigLinkVendor = vendorItems.querySelector(".bigLinkVendor");
     const hideButton = vendorItems.querySelector(
       ".bigCollapseHideButtonVendor"
@@ -4435,8 +4451,8 @@ function onClick(li) {
         "Click Here To Copy The Item Number"
       );
       const nameProp = getProperty(target.childNodes[0].textContent, "name");
-      const QROI = document.getElementById("QROI");
       const QRMCK = document.getElementById("QRMCK");
+      const QROI = document.getElementById("QROI");
       const QRGNFR = document.getElementById("QRGNFR");
       const QRSOC = document.getElementById("QRSOC");
       const QRVS = document.getElementById("QRVS");

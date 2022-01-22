@@ -668,7 +668,7 @@ body {
 #navLi:hover #navLi::before {
   color: white;
 }
-.show .vendorQR > img {
+.show .QRSpan > img {
   width: 33px;
   margin-left: 0px;
   margin-top: 3px;
@@ -677,7 +677,7 @@ body {
   /* -webkit-transition: ease-in-out 0.1s;
   transition: ease-in-out 0.1s; */
 }
-.show .vendorQR > img:hover {
+.show .QRSpan > img:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
@@ -1658,7 +1658,7 @@ li#li[data-FORS="true"] {
     height: 10px;
     color: white;
   }
-  .show .vendorQR > img {
+  .show .QRSpan > img {
     min-width: 100px;
     /* margin-left: 25px; */
     margin-top: 10px;
@@ -1667,7 +1667,7 @@ li#li[data-FORS="true"] {
     -webkit-transition: ease-in-out 0.1s;
     transition: ease-in-out 0.1s;
   }
-  .show .vendorQR > img:hover {
+  .show .QRSpan > img:hover {
     cursor: pointer;
     transform: scale(1.1);
   }
