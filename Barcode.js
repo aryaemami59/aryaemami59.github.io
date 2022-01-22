@@ -3387,6 +3387,7 @@ const [
   orderNumberCOV,
   orderNumberFORS,
 ] = orderNumberArr;
+console.log(orderNumberFORS);
 // const orderNumberMCK = document.getElementById("orderNumberMCK");
 // const orderNumberOI = document.getElementById("orderNumberOI");
 // const orderNumberGNFR = document.getElementById("orderNumberGNFR");
@@ -4965,16 +4966,31 @@ function onClick(li) {
       collapseFunc(collapseButtonMS);
       collapseFunc(collapseButtonCOV);
       collapseFunc(collapseButtonFORS);
-      const liMCK1 = Array.from(MckessonItems.querySelectorAll("#liMCK"));
-      const liOI1 = Array.from(OrderInsiteItems.querySelectorAll("#liOI"));
-      const liGNFR1 = Array.from(GNFRItems.querySelectorAll("#liGNFR"));
-      const liSOC1 = Array.from(
-        signOrderCatalogItems.querySelectorAll("#liSOC")
+      // const liVendor1 = [...document.querySelectorAll('.liVendor')];
+      // const liMCK1 = Array.from(MckessonItems.querySelectorAll("#liMCK"));
+      // const liOI1 = Array.from(OrderInsiteItems.querySelectorAll("#liOI"));
+      // const liGNFR1 = Array.from(GNFRItems.querySelectorAll("#liGNFR"));
+      // const liSOC1 = Array.from(
+      //   signOrderCatalogItems.querySelectorAll("#liSOC")
+      // );
+      // const liVS1 = Array.from(vaxServeItems.querySelectorAll("#liVS"));
+      // const liMS1 = Array.from(medSurgeItems.querySelectorAll("#liMS"));
+      // const liCOV1 = Array.from(covapItems.querySelectorAll("#liCOV"));
+      // const liFORS1 = Array.from(FORSItems.querySelectorAll("#liFORS"));
+      const liMCK1 = Array.from(
+        MckessonItems.querySelectorAll(".liVendor.MCK")
       );
-      const liVS1 = Array.from(vaxServeItems.querySelectorAll("#liVS"));
-      const liMS1 = Array.from(medSurgeItems.querySelectorAll("#liMS"));
-      const liCOV1 = Array.from(covapItems.querySelectorAll("#liCOV"));
-      const liFORS1 = Array.from(FORSItems.querySelectorAll("#liFORS"));
+      const liOI1 = Array.from(
+        OrderInsiteItems.querySelectorAll(".liVendor.OI")
+      );
+      const liGNFR1 = Array.from(GNFRItems.querySelectorAll(".liVendor.GNFR"));
+      const liSOC1 = Array.from(
+        signOrderCatalogItems.querySelectorAll(".liVendor.SOC")
+      );
+      const liVS1 = Array.from(vaxServeItems.querySelectorAll(".liVendor.VS"));
+      const liMS1 = Array.from(medSurgeItems.querySelectorAll(".liVendor.MS"));
+      const liCOV1 = Array.from(covapItems.querySelectorAll(".liVendor.COV"));
+      const liFORS1 = Array.from(FORSItems.querySelectorAll(".liVendor.FORS"));
       bigCollapseHideFunc(bigCollapseHideButtonMCK);
       bigCollapseHideFunc(bigCollapseHideButtonOI);
       bigCollapseHideFunc(bigCollapseHideButtonGNFR);
