@@ -3115,7 +3115,7 @@ const [
   bigLinkCOV,
   bigLinkFORS,
 ] = bigLinkArr;
-classAdd(bigLinkArr, vendorClass, 'target', '_blank');
+classAdd(bigLinkArr, vendorClass, "target", "_blank");
 // bigLinkArr.forEach(classAdd);
 // const bigLinkMCK = document.createElement("a");
 // bigLinkMCK.setAttribute("id", "bigLinkMCK");
@@ -3226,18 +3226,59 @@ bigLinkFORS.addEventListener("click", function () {
   }, 1);
 });
 // bigLinkFORS.setAttribute("target", "_blank");
-const hideButtonArr = DOMFactory('button', 'bigCollapseHideButtonVendor');
-classAdd(hideButtonArr, vendorClass, 'textContent', 'Minimize All Items');
-const [bigCollapseHideButtonMCK, bigCollapseHideButtonOI, bigCollapseHideButtonGNFR, bigCollapseHideButtonSOC, bigCollapseHideButtonVS, bigCollapseHideButtonMS, bigCollapseHideButtonCOV, bigCollapseHideButtonFORS] = hideButtonArr;
-const showButtonArr = DOMFactory('button', 'bigCollapseShowButtonVendor');
-classAdd(showButtonArr, vendorClass, 'textContent', 'Expand All Items');
-const [bigCollapseShowButtonMCK, bigCollapseShowButtonOI, bigCollapseShowButtonGNFR, bigCollapseShowButtonSOC, bigCollapseShowButtonVS, bigCollapseShowButtonMS, bigCollapseShowButtonCOV, bigCollapseShowButtonFORS] = showButtonArr;
-const clearButtonArr = DOMFactory('button', 'bigClearButtonVendor');
-classAdd(clearButtonArr, vendorClass, 'textContent', 'Remove All Items');
-const [bigClearButtonMCK, bigClearButtonOI, bigClearButtonGNFR, bigClearButtonSOC, bigClearButtonVS, bigClearButtonMS, bigClearButtonCOV, bigClearButtonFORS] = clearButtonArr;
-const removeDuplicatesArr = DOMFactory('button', 'removeDuplicatesVendor');
-classAdd(removeDuplicatesArr, vendorClass, 'textContent', 'Remove Duplicate Items');
-const [removeDuplicatesMCK, removeDuplicatesOI, removeDuplicatesGNFR, removeDuplicatesSOC, removeDuplicatesVS, removeDuplicatesMS, removeDuplicatesCOV, removeDuplicatesFORS] = removeDuplicatesArr;
+const hideButtonArr = DOMFactory("button", "bigCollapseHideButtonVendor");
+classAdd(hideButtonArr, vendorClass, "textContent", "Minimize All Items");
+const [
+  bigCollapseHideButtonMCK,
+  bigCollapseHideButtonOI,
+  bigCollapseHideButtonGNFR,
+  bigCollapseHideButtonSOC,
+  bigCollapseHideButtonVS,
+  bigCollapseHideButtonMS,
+  bigCollapseHideButtonCOV,
+  bigCollapseHideButtonFORS,
+] = hideButtonArr;
+const showButtonArr = DOMFactory("button", "bigCollapseShowButtonVendor");
+classAdd(showButtonArr, vendorClass, "textContent", "Expand All Items");
+const [
+  bigCollapseShowButtonMCK,
+  bigCollapseShowButtonOI,
+  bigCollapseShowButtonGNFR,
+  bigCollapseShowButtonSOC,
+  bigCollapseShowButtonVS,
+  bigCollapseShowButtonMS,
+  bigCollapseShowButtonCOV,
+  bigCollapseShowButtonFORS,
+] = showButtonArr;
+const clearButtonArr = DOMFactory("button", "bigClearButtonVendor");
+classAdd(clearButtonArr, vendorClass, "textContent", "Remove All Items");
+const [
+  bigClearButtonMCK,
+  bigClearButtonOI,
+  bigClearButtonGNFR,
+  bigClearButtonSOC,
+  bigClearButtonVS,
+  bigClearButtonMS,
+  bigClearButtonCOV,
+  bigClearButtonFORS,
+] = clearButtonArr;
+const removeDuplicatesArr = DOMFactory("button", "removeDuplicatesVendor");
+classAdd(
+  removeDuplicatesArr,
+  vendorClass,
+  "textContent",
+  "Remove Duplicate Items"
+);
+const [
+  removeDuplicatesMCK,
+  removeDuplicatesOI,
+  removeDuplicatesGNFR,
+  removeDuplicatesSOC,
+  removeDuplicatesVS,
+  removeDuplicatesMS,
+  removeDuplicatesCOV,
+  removeDuplicatesFORS,
+] = removeDuplicatesArr;
 // const bigCollapseHideButtonMCK = document.createElement("button");
 // bigCollapseHideButtonMCK['textContent'] = "Minimize All Items";
 // bigCollapseHideButtonMCK.setAttribute("id", "bigCollapseHideButtonMCK");
@@ -3397,8 +3438,17 @@ function bigCollapseShowFunc(bigCollapseShowButtonGNFR) {
     });
   });
 }
-const testingArr = [...document.querySelectorAll('.testing')];
-const [testingMCK, testingOI, testingGNFR, testingSOC, testingVS, testingMS, testingCOV, testingFORS] = testingArr;
+const testingArr = [...document.querySelectorAll(".testing")];
+const [
+  testingMCK,
+  testingOI,
+  testingGNFR,
+  testingSOC,
+  testingVS,
+  testingMS,
+  testingCOV,
+  testingFORS,
+] = testingArr;
 // const testingMCK = document.getElementById("testingMCK");
 // const testingOI = document.getElementById("testingOI");
 // const testingGNFR = document.getElementById("testingGNFR");
@@ -3413,8 +3463,17 @@ const listNav = document.getElementById("listNav");
 const listUl = Array.from(listNav.querySelectorAll("ul"));
 const navLi = document.getElementById("navLi");
 const empty = document.getElementById("empty");
-const titleArr = [...document.querySelectorAll('.titleVendor')];
-const [titleMCK, titleOI, titleGNFR, titleSOC, titleVS, titleMS, titleCOV, titleFORS] = titleArr;
+const titleArr = [...document.querySelectorAll(".titleVendor")];
+const [
+  titleMCK,
+  titleOI,
+  titleGNFR,
+  titleSOC,
+  titleVS,
+  titleMS,
+  titleCOV,
+  titleFORS,
+] = titleArr;
 // const titleMCK = document.getElementById("mck-items");
 // const titleOI = document.getElementById("OI-items");
 // const titleGNFR = document.getElementById("G-items");
@@ -4277,12 +4336,26 @@ function onClick(li) {
       const target = li;
       const itemNumber1 = vials[index].itemNumber;
       const nameMain = vials[index].name;
-      const imageArr = DOMFactory('img', 'imageVendor');
-      classAdd(imageArr, vendorClass, 'title', 'Click Here To Print The Barcode For The Item Number');
-      const [imageMCK, imageOI, imageGNFR, imageSOC, imageVS, imageMS, imageCOV, imageFORS] = imageArr;
-      imageArr.forEach(e => {
+      const imageArr = DOMFactory("img", "imageVendor");
+      classAdd(
+        imageArr,
+        vendorClass,
+        "title",
+        "Click Here To Print The Barcode For The Item Number"
+      );
+      const [
+        imageMCK,
+        imageOI,
+        imageGNFR,
+        imageSOC,
+        imageVS,
+        imageMS,
+        imageCOV,
+        imageFORS,
+      ] = imageArr;
+      imageArr.forEach((e) => {
         JsBarcode(e, itemNumber1, { height: 40 });
-      })
+      });
       // const imageMCK = document.createElement("img");
       // imageMCK.setAttribute("id", "imageMCK");
       // imageMCK.setAttribute("class", "imageVendor");
@@ -4355,12 +4428,26 @@ function onClick(li) {
       const spMS = document.createElement("span");
       const spCOV = document.createElement("span");
       const spFORS = document.createElement("span");
-      const descArr = DOMFactory('p', 'descVendor');
-      classAdd(descArr, vendorClass, 'title', 'Click Here To Copy The Name of The Item');
-      const [descMCK, descOI, descGNFR, descSOC, descVS, descMS, descCOV, descFORS] = descArr;
-      descArr.forEach(e => {
+      const descArr = DOMFactory("p", "descVendor");
+      classAdd(
+        descArr,
+        vendorClass,
+        "title",
+        "Click Here To Copy The Name of The Item"
+      );
+      const [
+        descMCK,
+        descOI,
+        descGNFR,
+        descSOC,
+        descVS,
+        descMS,
+        descCOV,
+        descFORS,
+      ] = descArr;
+      descArr.forEach((e) => {
         e.append(nameMain);
-      })
+      });
       // const descMCK = document.createElement("p");
       // descMCK.append(nameMain);
       // descMCK.setAttribute("id", "descMCK");
@@ -4401,9 +4488,18 @@ function onClick(li) {
       // descFORS.setAttribute("id", "descFORS");
       // descFORS.setAttribute("class", "descVendor");
       // descFORS.setAttribute("title", "Click Here To Copy The Name of The Item");
-      const smallLinkArr = DOMFactory('a', 'smallLinkVendor');
-      classAdd(smallLinkArr, vendorClass, 'target', '_blank');
-      const [smallLinkMCK, smallLinkOI, smallLinkGNFR, smallLinkSOC, smallLinkVS, smallLinkMS, smallLinkCOV, smallLinkFORS] = smallLinkArr;
+      const smallLinkArr = DOMFactory("a", "smallLinkVendor");
+      classAdd(smallLinkArr, vendorClass, "target", "_blank");
+      const [
+        smallLinkMCK,
+        smallLinkOI,
+        smallLinkGNFR,
+        smallLinkSOC,
+        smallLinkVS,
+        smallLinkMS,
+        smallLinkCOV,
+        smallLinkFORS,
+      ] = smallLinkArr;
       // const smallLinkMCK = document.createElement("a");
       // smallLinkMCK.setAttribute("target", "_blank");
       // smallLinkMCK.setAttribute("id", "smallLinkMCK");
@@ -4503,12 +4599,26 @@ function onClick(li) {
         " https://psz01.wal-mart.com/webdynpro/dispatcher/sap.com/tc~mdm~srmcat~uisearch/ProcurementCatalog7Ehp1#"
       );
       smallLinkFORS.text = "Order on FORS";
-      const itemNumberArr = DOMFactory('p', 'itemNumberVendor');
-      classAdd(itemNumberArr, vendorClass, 'title', 'Click Here To Copy The Item Number');
-      const [itemNumberMCK, itemNumberOI, itemNumberGNFR, itemNumberSOC, itemNumberVS, itemNumberMS, itemNumberCOV, itemNumberFORS] = itemNumberArr;
-      itemNumberArr.forEach(e => {
+      const itemNumberArr = DOMFactory("p", "itemNumberVendor");
+      classAdd(
+        itemNumberArr,
+        vendorClass,
+        "title",
+        "Click Here To Copy The Item Number"
+      );
+      const [
+        itemNumberMCK,
+        itemNumberOI,
+        itemNumberGNFR,
+        itemNumberSOC,
+        itemNumberVS,
+        itemNumberMS,
+        itemNumberCOV,
+        itemNumberFORS,
+      ] = itemNumberArr;
+      itemNumberArr.forEach((e) => {
         e.textContent = "Item Number: " + itemNumber1;
-      })
+      });
       // const itemNumberMCK = document.createElement("p");
       // itemNumberMCK.textContent = "Item Number: " + itemNumber1;
       // itemNumberMCK.setAttribute("id", "itemNumberMCK");
@@ -4556,8 +4666,9 @@ function onClick(li) {
       //   "Click Here To Copy The Item Number"
       // );
       const nameProp = getProperty(target.childNodes[0].textContent, "name");
-      const QRContainerArr = [...document.querySelectorAll('.QRContainer')];
-      const [QRMCK, QROI, QRGNFR, QRSOC, QRVS, QRMS, QRCOV, QRFORS] = QRContainerArr;
+      const QRContainerArr = [...document.querySelectorAll(".QRContainer")];
+      const [QRMCK, QROI, QRGNFR, QRSOC, QRVS, QRMS, QRCOV, QRFORS] =
+        QRContainerArr;
       // const QRMCK = document.getElementById("QRMCK");
       // const QROI = document.getElementById("QROI");
       // const QRGNFR = document.getElementById("QRGNFR");
@@ -4566,9 +4677,18 @@ function onClick(li) {
       // const QRMS = document.getElementById("QRMS");
       // const QRCOV = document.getElementById("QRCOV");
       // const QRFORS = document.getElementById("QRFORS");
-      const removeButtonArr = DOMFactory('button', 'removeButtonVendor');
-      classAdd(removeButtonArr, vendorClass, 'textContent', 'X');
-      const [removeButtonMCK, removeButtonOI, removeButtonGNFR, removeButtonSOC, removeButtonVS, removeButtonMS, removeButtonCOV, removeButtonFORS] = removeButtonArr;
+      const removeButtonArr = DOMFactory("button", "removeButtonVendor");
+      classAdd(removeButtonArr, vendorClass, "textContent", "X");
+      const [
+        removeButtonMCK,
+        removeButtonOI,
+        removeButtonGNFR,
+        removeButtonSOC,
+        removeButtonVS,
+        removeButtonMS,
+        removeButtonCOV,
+        removeButtonFORS,
+      ] = removeButtonArr;
       // const removeButtonMCK = document.createElement("button");
       // removeButtonMCK.textContent = "X";
       // removeButtonMCK.setAttribute("id", "removeButtonMCK");
@@ -4704,9 +4824,18 @@ function onClick(li) {
         addedItemsFORS,
         "data-addedtoFORS"
       );
-      const collapseButtonArr = DOMFactory('button', 'collapseButtonVendor');
+      const collapseButtonArr = DOMFactory("button", "collapseButtonVendor");
       classAdd(collapseButtonArr, vendorClass);
-      const [collapseButtonMCK, collapseButtonOI, collapseButtonGNFR, collapseButtonSOC, collapseButtonVS, collapseButtonMS, collapseButtonCOV, collapseButtonFORS] = collapseButtonArr;
+      const [
+        collapseButtonMCK,
+        collapseButtonOI,
+        collapseButtonGNFR,
+        collapseButtonSOC,
+        collapseButtonVS,
+        collapseButtonMS,
+        collapseButtonCOV,
+        collapseButtonFORS,
+      ] = collapseButtonArr;
       // const collapseButtonMCK = document.createElement("button");
       // collapseButtonMCK.setAttribute("id", "collapseButtonMCK");
       // collapseButtonMCK.setAttribute("class", "collapseButtonVendor");
@@ -4731,7 +4860,7 @@ function onClick(li) {
       // const collapseButtonFORS = document.createElement("button");
       // collapseButtonFORS.setAttribute("id", "collapseButtonFORS");
       // collapseButtonFORS.setAttribute("class", "collapseButtonVendor");
-      const liArr = DOMFactory('li', 'liVendor');
+      const liArr = DOMFactory("li", "liVendor");
       classAdd(liArr, vendorClass);
       const [liMCK, liOI, liGNFR, liSOC, liVS, liMS, liCOV, liFORS] = liArr;
       // const liMCK = document.createElement("li");
