@@ -299,9 +299,9 @@ body {
 #itemNumberSOC,
 .bigLink.SOC,
 #smallLinkSOC,
-#bigCollapseShowButtonSOC,
-#bigCollapseHideButtonSOC,
-#bigClearButtonSOC,
+.bigCollapseShowButtonVendor.SOC,
+.bigCollapseHideButtonVendor.SOC,
+.bigClearButtonVendor.SOC,
 #removeButtonSOC,
 #collapseButtonSOC,
 #removeDuplicatesSOC {
@@ -315,9 +315,9 @@ body {
 #itemNumberVS,
 .bigLink.VS,
 #smallLinkVS,
-#bigCollapseShowButtonVS,
-#bigCollapseHideButtonVS,
-#bigClearButtonVS,
+.bigCollapseShowButtonVendor.VS,
+.bigCollapseHideButtonVendor.VS,
+.bigClearButtonVendor.VS,
 #removeButtonVS,
 #collapseButtonVS,
 #removeDuplicatesVS {
@@ -328,9 +328,9 @@ body {
 #itemNumberMS,
 .bigLink.MS,
 #smallLinkMS,
-#bigCollapseShowButtonMS,
-#bigCollapseHideButtonMS,
-#bigClearButtonMS,
+.bigCollapseShowButtonVendor.MS,
+.bigCollapseHideButtonVendor.MS,
+.bigClearButtonVendor.MS,
 #removeButtonMS,
 #collapseButtonMS,
 #removeDuplicatesMS {
@@ -341,9 +341,9 @@ body {
 #itemNumberCOV,
 .bigLink.COV,
 #smallLinkCOV,
-#bigCollapseShowButtonCOV,
-#bigCollapseHideButtonCOV,
-#bigClearButtonCOV,
+.bigCollapseShowButtonVendor.COV,
+.bigCollapseHideButtonVendor.COV,
+.bigClearButtonVendor.COV,
 #removeButtonCOV,
 #collapseButtonCOV,
 #removeDuplicatesCOV {
@@ -354,9 +354,9 @@ body {
 #itemNumberFORS,
 .bigLink.FORS,
 #smallLinkFORS,
-#bigCollapseShowButtonFORS,
-#bigCollapseHideButtonFORS,
-#bigClearButtonFORS,
+.bigCollapseShowButtonVendor.FORS,
+.bigCollapseHideButtonVendor.FORS,
+.bigClearButtonVendor.FORS,
 #removeButtonFORS,
 #collapseButtonFORS,
 #removeDuplicatesFORS {
@@ -889,23 +889,23 @@ body {
   /* -webkit-transition: transform ease-in-out 0.1s;
   transition: transform ease-in-out 0.1s; */
 }
-#bigCollapseHideButtonMCK,
-#bigCollapseShowButtonMCK,
-#bigClearButtonMCK,
+.bigCollapseHideButtonVendor.MCK,
+.bigCollapseShowButtonVendor.MCK,
+.bigClearButtonVendor.MCK,
 #removeDuplicatesMCK {
   background-image: linear-gradient(rgb(0, 100, 140, 1), rgba(0, 100, 140, 0));
   background-color: inherit;
 }
-#bigCollapseHideButtonOI,
-#bigCollapseShowButtonOI,
-#bigClearButtonOI,
+.bigCollapseHideButtonVendor.OI,
+.bigCollapseShowButtonVendor.OI,
+.bigClearButtonVendor.OI,
 #removeDuplicatesOI {
   background-color: rgba(0, 255, 149, 0);
   background-image: linear-gradient(rgb(0, 146, 85, 1), rgb(0, 146, 85, 0));
 }
-#bigCollapseHideButtonGNFR,
-#bigCollapseShowButtonGNFR,
-#bigClearButtonGNFR,
+.bigCollapseHideButtonVendor.GNFR,
+.bigCollapseShowButtonVendor.GNFR,
+.bigClearButtonVendor.GNFR,
 #removeDuplicatesGNFR {
   background-color: rgba(255, 255, 0, 0);
   background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
@@ -1892,16 +1892,16 @@ li#li[data-FORS="true"] {
     -webkit-transition: transform ease-in-out 0.1s;
     transition: transform ease-in-out 0.1s;
   }
-  #bigCollapseHideButtonMCK,
-  #bigCollapseShowButtonMCK,
-  #bigClearButtonMCK,
+  .bigCollapseHideButtonVendor.MCK,
+  .bigCollapseShowButtonVendor.MCK,
+  .bigClearButtonVendor.MCK,
   #removeDuplicatesMCK {
     background-image: linear-gradient(rgb(0, 100, 140), rgba(0, 100, 140, 0));
     background-color: inherit;
   }
-  #bigCollapseHideButtonGNFR,
-  #bigCollapseShowButtonGNFR,
-  #bigClearButtonGNFR,
+  .bigCollapseHideButtonVendor.GNFR,
+  .bigCollapseShowButtonVendor.GNFR,
+  .bigClearButtonVendor.GNFR,
   #removeDuplicatesGNFR {
     background-image: linear-gradient(
       rgb(190, 190, 0, 1),
