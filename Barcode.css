@@ -243,16 +243,16 @@ body {
 #MS-items {
   font-size: 5px;
 }
-#bigLinkMCK {
+.bigLink.MCK {
   background-image: linear-gradient(rgb(0, 100, 140, 1), rgba(0, 100, 140, 0));
 }
-#bigLinkOI {
+.bigLink.OI {
   background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
 }
-#bigLinkGNFR {
+.bigLink.GNFR {
   background-image: linear-gradient(rgb(190, 190, 0, 1), rgba(190, 190, 0, 0));
 }
-.bigLinkVendor {
+.bigLink {
   display: flex;
   width: 84%;
   font-size: 4px;
@@ -270,7 +270,7 @@ body {
   justify-content: center;
   margin: 2px auto;
 }
-.bigLinkVendor:hover {
+.bigLink:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -297,7 +297,7 @@ body {
 }
 #descSOC,
 #itemNumberSOC,
-#bigLinkSOC,
+.bigLink.SOC,
 #smallLinkSOC,
 #bigCollapseShowButtonSOC,
 #bigCollapseHideButtonSOC,
@@ -308,12 +308,12 @@ body {
   background-color: rgba(209, 0, 0, 0);
   background-image: linear-gradient(rgb(175, 0, 0, 1), rgba(175, 0, 0, 0));
 }
-#bigLinkSOC {
+.bigLink.SOC {
   font-size: 13px;
 }
 #descVS,
 #itemNumberVS,
-#bigLinkVS,
+.bigLink.VS,
 #smallLinkVS,
 #bigCollapseShowButtonVS,
 #bigCollapseHideButtonVS,
@@ -326,7 +326,7 @@ body {
 }
 #descMS,
 #itemNumberMS,
-#bigLinkMS,
+.bigLink.MS,
 #smallLinkMS,
 #bigCollapseShowButtonMS,
 #bigCollapseHideButtonMS,
@@ -339,7 +339,7 @@ body {
 }
 #descCOV,
 #itemNumberCOV,
-#bigLinkCOV,
+.bigLink.COV,
 #smallLinkCOV,
 #bigCollapseShowButtonCOV,
 #bigCollapseHideButtonCOV,
@@ -352,7 +352,7 @@ body {
 }
 #descFORS,
 #itemNumberFORS,
-#bigLinkFORS,
+.bigLink.FORS,
 #smallLinkFORS,
 #bigCollapseShowButtonFORS,
 #bigCollapseHideButtonFORS,
@@ -950,7 +950,7 @@ body {
   font-weight: 900;
   align-self: flex-end;
 }
-#bigLinkMS {
+.bigLink.MS {
   font-size: 3.75px;
 }
 p.duplicate {
@@ -1265,22 +1265,22 @@ li#li[data-FORS="true"] {
   #MS-items {
     font-size: 17px;
   }
-  #bigLinkMCK {
+  .bigLink.MCK {
     background-image: linear-gradient(
       rgb(0, 100, 140, 1),
       rgba(0, 100, 140, 0)
     );
   }
-  #bigLinkOI {
+  .bigLink.OI {
     background-image: linear-gradient(rgb(0, 146, 85, 1), rgba(0, 146, 85, 0));
   }
-  #bigLinkGNFR {
+  .bigLink.GNFR {
     background-image: linear-gradient(
       rgb(190, 190, 0, 1),
       rgba(190, 190, 0, 0)
     );
   }
-  .bigLinkVendor {
+  .bigLink {
     display: flex;
     width: 84%;
     font-size: 16px;
@@ -1298,7 +1298,7 @@ li#li[data-FORS="true"] {
     justify-content: center;
     margin: 10px auto;
   }
-  .bigLinkVendor:hover {
+  .bigLink:hover {
     transform: scale(1.1);
     cursor: pointer;
   }
@@ -1958,7 +1958,7 @@ li#li[data-FORS="true"] {
     min-height: 70px;
     margin: 0 0;
   }
-  #bigLinkMS {
+  .bigLink.MS {
     font-size: 14px;
   }
   p.duplicate {

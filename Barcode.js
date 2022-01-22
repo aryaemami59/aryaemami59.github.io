@@ -3029,16 +3029,28 @@ const vials = [
   },
 ];
 // this is where we assign and grab elements from DOM.
-// const MckessonItems = document.getElementById("Mckesson-Items");
-const MckessonItems = document.querySelector('.column.MCK');
-console.log(MckessonItems)
-const OrderInsiteItems = document.getElementById("OrderInsite-Items");
-const GNFRItems = document.getElementById("GNFR-Items");
-const signOrderCatalogItems = document.getElementById("signOrderCatalogItems");
-const vaxServeItems = document.getElementById("vaxServeItems");
-const medSurgeItems = document.getElementById("medSurgeItems");
-const covapItems = document.getElementById("covapItems");
-const FORSItems = document.getElementById("FORSItems");
+const vendorItemsArr = [...document.querySelectorAll(".column")];
+const [
+  MckessonItems,
+  OrderInsiteItems,
+  GNFRItems,
+  signOrderCatalogItems,
+  vaxServeItems,
+  medSurgeItems,
+  covapItems,
+  FORSItems,
+] = vendorItemsArr;
+//  const MckessonItems = document.getElementById("Mckesson-Items");
+// const MckessonItems = document.querySelector(".column.MCK");
+//  const OrderInsiteItems = document.getElementById("OrderInsite-Items");
+// const OrderInsiteItems = document.querySelector('.column.OI');
+//  const GNFRItems = document.getElementById("GNFR-Items");
+// const GNFRItems = document.querySelector('.column.GNFR');
+// const signOrderCatalogItems = document.getElementById("signOrderCatalogItems");
+// const vaxServeItems = document.getElementById("vaxServeItems");
+// const medSurgeItems = document.getElementById("medSurgeItems");
+// const covapItems = document.getElementById("covapItems");
+// const FORSItems = document.getElementById("FORSItems");
 let list = document.getElementById("list");
 const search = document.getElementById("box");
 const list2 = document.createElement("ul");
@@ -3060,115 +3072,160 @@ const varToString = (varObj) => Object.keys(varObj)[0];
 // const displayName = varToString({somevar});
 // const sp = document.createElement('span');
 // sp.setAttribute('id', 'sp');
-const bigLinkMCK = document.createElement("a");
-bigLinkMCK.setAttribute("id", "bigLinkMCK");
-bigLinkMCK.setAttribute("class", "bigLinkVendor");
+function DOMFactory(element, elementClass) {
+  let array = [];
+  for (let i = 0; i < 8; i++) {
+    array.push(document.createElement(element));
+    array[i].className = elementClass;
+  }
+  return array;
+}
+const vendorClass = ["MCK", "OI", "GNFR", "SOC", "VS", "MS", "COV", "FORS"];
+const [
+  classMCK,
+  classOI,
+  classGNFR,
+  classSOC,
+  classVS,
+  classMS,
+  classCOV,
+  classFORS,
+] = vendorClass;
+function classAdd(array, classArr, attribute, attValue) {
+  array.forEach((e, i) => {
+    e.classList.add(classArr[i]);
+    e[attribute] = attValue;
+  });
+}
+// function classAdd1(array, classArr, attribute, attValue) {
+//   array.forEach(classAdd);
+// }
+// function classAdd(e, i) {
+//   e.classList.add(classArr[i]);
+//   e[attribute] = attValue;
+// }
+const bigLinkArr = DOMFactory("a", "bigLink");
+const [
+  bigLinkMCK,
+  bigLinkOI,
+  bigLinkGNFR,
+  bigLinkSOC,
+  bigLinkVS,
+  bigLinkMS,
+  bigLinkCOV,
+  bigLinkFORS,
+] = bigLinkArr;
+classAdd(bigLinkArr, vendorClass, 'target', '_blank');
+// bigLinkArr.forEach(classAdd);
+// const bigLinkMCK = document.createElement("a");
+// bigLinkMCK.setAttribute("id", "bigLinkMCK");
+// bigLinkMCK.setAttribute("class", "bigLink");
 bigLinkMCK.setAttribute(
   "title",
   "This Link Will Take You To The McKesson Website With All The Items Already Shown"
 );
 bigLinkMCK.addEventListener("click", function () {
-  setTimeout((e) => {
+  setTimeout(() => {
     window.open(
       "https://connect.mckesson.com/portal/site/smo/menuitem.87a0666be7398a3ece3ee6105740d0a0/?query=" +
         arr.join("%20or%20")
     );
   }, 1);
 });
-bigLinkMCK.setAttribute("target", "_blank");
-const bigLinkOI = document.createElement("a");
-bigLinkOI.setAttribute("id", "bigLinkOI");
-bigLinkOI.setAttribute("class", "bigLinkVendor");
+// bigLinkMCK.setAttribute("target", "_blank");
+// const bigLinkOI = document.createElement("a");
+// bigLinkOI.setAttribute("id", "bigLinkOI");
+// bigLinkOI.setAttribute("class", "bigLink");
 bigLinkOI.setAttribute(
   "title",
   "This Link Will Take You To The OrderInsite Website With The Item Numbers Copied"
 );
 bigLinkOI.addEventListener("click", function () {
-  setTimeout((e) => {
+  setTimeout(() => {
     window.open("https://acloud.orderinsite.com/rs/logon/walmart");
   }, 1);
 });
-bigLinkOI.setAttribute("target", "_blank");
-const bigLinkGNFR = document.createElement("a");
-bigLinkGNFR.setAttribute("id", "bigLinkGNFR");
-bigLinkGNFR.setAttribute("class", "bigLinkVendor");
+// bigLinkOI.setAttribute("target", "_blank");
+// const bigLinkGNFR = document.createElement("a");
+// bigLinkGNFR.setAttribute("id", "bigLinkGNFR");
+// bigLinkGNFR.setAttribute("class", "bigLink");
 bigLinkGNFR.setAttribute(
   "title",
   "This Link Will Take You To The GNFR Website With The Item Numbers Copied"
 );
 bigLinkGNFR.addEventListener("click", function () {
-  setTimeout((e) => {
+  setTimeout(() => {
     window.open("https://ppa01.wal-mart.com/irj/portal");
   }, 1);
 });
-bigLinkGNFR.setAttribute("target", "_blank");
-const bigLinkSOC = document.createElement("a");
-bigLinkSOC.setAttribute("id", "bigLinkSOC");
-bigLinkSOC.setAttribute("class", "bigLinkVendor");
+// bigLinkGNFR.setAttribute("target", "_blank");
+// const bigLinkSOC = document.createElement("a");
+// bigLinkSOC.setAttribute("id", "bigLinkSOC");
+// bigLinkSOC.setAttribute("class", "bigLink");
 bigLinkSOC.setAttribute(
   "title",
   "This Link Will Take You To The Sign Order Catalog Website With The Item Numbers Copied"
 );
 bigLinkSOC.addEventListener("click", function () {
-  setTimeout((e) => {
+  setTimeout(() => {
     window.open("https://ecom.schwarz.com/Default.aspx?page=ProductCatalog");
   }, 1);
 });
-bigLinkSOC.setAttribute("target", "_blank");
-const bigLinkVS = document.createElement("a");
-bigLinkVS.setAttribute("id", "bigLinkVS");
-bigLinkVS.setAttribute("class", "bigLinkVendor");
+// bigLinkSOC.setAttribute("target", "_blank");
+// const bigLinkVS = document.createElement("a");
+// bigLinkVS.setAttribute("id", "bigLinkVS");
+// bigLinkVS.setAttribute("class", "bigLink");
 bigLinkVS.setAttribute(
   "title",
   "This Link Will Take You To The VaxServe Website With The Item Numbers Copied"
 );
 bigLinkVS.addEventListener("click", function () {
-  setTimeout((e) => {
+  setTimeout(() => {
     window.open("https://unify.vaxserve.com/index.cfm?fa=portal.selectStore");
   }, 1);
 });
-bigLinkVS.setAttribute("target", "_blank");
-const bigLinkMS = document.createElement("a");
-bigLinkMS.setAttribute("id", "bigLinkMS");
-bigLinkMS.setAttribute("class", "bigLinkVendor");
+// bigLinkVS.setAttribute("target", "_blank");
+// const bigLinkMS = document.createElement("a");
+// bigLinkMS.setAttribute("id", "bigLinkMS");
+// bigLinkMS.setAttribute("class", "bigLink");
 bigLinkMS.setAttribute(
   "title",
   "This Link Will Take You To The McKesson MedSurge Website With The Item Numbers Copied"
 );
 bigLinkMS.addEventListener("click", function () {
-  setTimeout((e) => {
+  setTimeout(() => {
     window.open("https://mms.mckesson.com/portal/login");
   }, 1);
 });
-bigLinkMS.setAttribute("target", "_blank");
-const bigLinkCOV = document.createElement("a");
-bigLinkCOV.setAttribute("id", "bigLinkCOV");
-bigLinkCOV.setAttribute("class", "bigLinkVendor");
+// bigLinkMS.setAttribute("target", "_blank");
+// const bigLinkCOV = document.createElement("a");
+// bigLinkCOV.setAttribute("id", "bigLinkCOV");
+// bigLinkCOV.setAttribute("class", "bigLink");
 bigLinkCOV.setAttribute(
   "title",
   "This Link Will Take You To The Covap Website With The Item Numbers Copied"
 );
 bigLinkCOV.addEventListener("click", function () {
-  setTimeout((e) => {
+  setTimeout(() => {
     window.open("https://www.covap.com/");
   }, 1);
 });
-bigLinkCOV.setAttribute("target", "_blank");
-const bigLinkFORS = document.createElement("a");
-bigLinkFORS.setAttribute("id", "bigLinkFORS");
-bigLinkFORS.setAttribute("class", "bigLinkVendor");
+// bigLinkCOV.setAttribute("target", "_blank");
+// const bigLinkFORS = document.createElement("a");
+// bigLinkFORS.setAttribute("id", "bigLinkFORS");
+// bigLinkFORS.setAttribute("class", "bigLink");
 bigLinkFORS.setAttribute(
   "title",
   "This Link Will Take You To The FORS Website With The Item Numbers Copied"
 );
 bigLinkFORS.addEventListener("click", function () {
-  setTimeout((e) => {
+  setTimeout(() => {
     window.open(
       "https://psz01.wal-mart.com/webdynpro/dispatcher/sap.com/tc~mdm~srmcat~uisearch/ProcurementCatalog7Ehp1#"
     );
   }, 1);
 });
-bigLinkFORS.setAttribute("target", "_blank");
+// bigLinkFORS.setAttribute("target", "_blank");
 const bigCollapseHideButtonMCK = document.createElement("button");
 bigCollapseHideButtonMCK.textContent = "Minimize All Items";
 bigCollapseHideButtonMCK.setAttribute("id", "bigCollapseHideButtonMCK");
@@ -3266,15 +3323,25 @@ bigClearButtonFORS.textContent = "Remove All Items";
 bigClearButtonFORS.setAttribute("id", "bigClearButtonFORS");
 bigClearButtonFORS.setAttribute("class", "bigClearButtonVendor");
 const alert = document.getElementById("alert");
-const orderNumberMCK = document.getElementById("orderNumberMCK");
-// $(orderNumberMCK).hide();
-const orderNumberOI = document.getElementById("orderNumberOI");
-const orderNumberGNFR = document.getElementById("orderNumberGNFR");
-const orderNumberSOC = document.getElementById("orderNumberSOC");
-const orderNumberVS = document.getElementById("orderNumberVS");
-const orderNumberMS = document.getElementById("orderNumberMS");
-const orderNumberCOV = document.getElementById("orderNumberCOV");
-const orderNumberFORS = document.getElementById("orderNumberFORS");
+const orderNumberArr = [...document.querySelectorAll(".orderNumberVendor")];
+const [
+  orderNumberMCK,
+  orderNumberOI,
+  orderNumberGNFR,
+  orderNumberSOC,
+  orderNumberVS,
+  orderNumberMS,
+  orderNumberCOV,
+  orderNumberFORS,
+] = orderNumberArr;
+// const orderNumberMCK = document.getElementById("orderNumberMCK");
+// const orderNumberOI = document.getElementById("orderNumberOI");
+// const orderNumberGNFR = document.getElementById("orderNumberGNFR");
+// const orderNumberSOC = document.getElementById("orderNumberSOC");
+// const orderNumberVS = document.getElementById("orderNumberVS");
+// const orderNumberMS = document.getElementById("orderNumberMS");
+// const orderNumberCOV = document.getElementById("orderNumberCOV");
+// const orderNumberFORS = document.getElementById("orderNumberFORS");
 const removeDuplicatesMCK = document.createElement("button");
 const removeDuplicatesOI = document.createElement("button");
 const removeDuplicatesGNFR = document.createElement("button");
@@ -3551,22 +3618,31 @@ let itemsMS = [];
 let itemsCOV = [];
 let itemsFORS = [];
 // these are QR codes created that will be appended when the user clicks on a list item.
-const QRSpanArr = [...document.querySelectorAll('.QRSpan')];
-console.log(QRSpanArr);
+const QRSpanArr = [...document.querySelectorAll(".QRSpan")];
+// console.log(QRSpanArr);
 function createQRCodes() {
   let array = [];
-  QRSpanArr.forEach(e => {
+  QRSpanArr.forEach((e) => {
     let code = new QRCode(e, {
       width: 100,
       height: 100,
     });
-    code.className = ''
+    code.className = "";
     array.push(code);
-  })
+  });
   return array;
 }
 const QRCodeImages = createQRCodes();
-let [bigMCKImage, bigOIImage, bigGNFRImage, bigSOCImage, bigVSImage, bigMSImage, bigCOVImage, bigFORSImage] = QRCodeImages;
+let [
+  bigMCKImage,
+  bigOIImage,
+  bigGNFRImage,
+  bigSOCImage,
+  bigVSImage,
+  bigMSImage,
+  bigCOVImage,
+  bigFORSImage,
+] = QRCodeImages;
 // let bigMCKImage = new QRCode(document.getElementById("MCKQR"), {
 //   width: 100,
 //   height: 100,
@@ -3922,22 +3998,16 @@ function bigClearFunc(bigClearButtonMCK, array, redMCK, redMCK1, addedtomck) {
     if (column !== null) {
       const liVendor = column.querySelectorAll(".liVendor");
       const vendorQR = column.querySelector(".QRSpan");
-      const bigLinkVendor = column.querySelector(".bigLinkVendor");
-      const hideButton = column.querySelector(
-        ".bigCollapseHideButtonVendor"
-      );
-      const showButton = column.querySelector(
-        ".bigCollapseShowButtonVendor"
-      );
+      const bigLink = column.querySelector(".bigLink");
+      const hideButton = column.querySelector(".bigCollapseHideButtonVendor");
+      const showButton = column.querySelector(".bigCollapseShowButtonVendor");
       const li1 = list.querySelectorAll("li");
       const listUl = listNav.querySelectorAll("ul");
       const orderNumberVendor = column.querySelector(".orderNumberVendor");
-      const removeDuplicates = column.querySelector(
-        ".removeDuplicatesVendor"
-      );
+      const removeDuplicates = column.querySelector(".removeDuplicatesVendor");
       const desc = Array.from(column.querySelectorAll(".descVendor"));
       $(vendorQR).hide();
-      $(bigLinkVendor).remove();
+      $(bigLink).remove();
       $(hideButton).remove();
       $(showButton).remove();
       $(removeDuplicates).remove();
@@ -4030,13 +4100,9 @@ function removeDuplicatesFunc(
     const duplicates = Array.from(column.querySelectorAll(".duplicate"));
     const li = Array.from(list.querySelectorAll("li"));
     const vendorQR = column.querySelector(".QRSpan");
-    const bigLinkVendor = column.querySelector(".bigLinkVendor");
-    const hideButton = column.querySelector(
-      ".bigCollapseHideButtonVendor"
-    );
-    const showButton = column.querySelector(
-      ".bigCollapseShowButtonVendor"
-    );
+    const bigLink = column.querySelector(".bigLink");
+    const hideButton = column.querySelector(".bigCollapseHideButtonVendor");
+    const showButton = column.querySelector(".bigCollapseShowButtonVendor");
     const clearButton = column.querySelector(".bigClearButtonVendor");
     for (let i = 0; i < li.length; i++) {
       const liLoop = li[i].childNodes[0].textContent;
@@ -4090,7 +4156,7 @@ function removeDuplicatesFunc(
     orderNumberVendor.textContent = liVendor.length;
     if (liVendor.length === 0) {
       $(vendorQR).hide();
-      $(bigLinkVendor).remove();
+      $(bigLink).remove();
       $(hideButton).remove();
       $(showButton).remove();
       $(clearButton).remove();
