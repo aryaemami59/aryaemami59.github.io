@@ -5804,10 +5804,10 @@ class vial {
     x.push(this);
   }
 }
-const dramVials10 = new vial("10 dram vials", "10000", "mckesson orderinsite");
-const dramVials13 = new vial("13 dram vials", "10000", "mckesson orderinsite");
+// const dramVials10 = new vial("10 dram vials", "10000", "mckesson orderinsite");
+// const dramVials13 = new vial("13 dram vials", "10000", "mckesson orderinsite");
 // console.log(dramVials10);
-x.push(dramVials10);
+// x.push(dramVials10);
 
 // function hh() {
 //   return new Promise((resolve, reject) => {
