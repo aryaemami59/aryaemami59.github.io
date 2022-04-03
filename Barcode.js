@@ -9,68 +9,28 @@ const vials = [
 	{
 		name: "13 Dram Vials",
 		itemNumber: "09670570130",
-		keywords: [
-			"13",
-			"amber",
-			"thirteen",
-			"vials",
-			"09670503346",
-			"mck",
-			"mckesson",
-			"orderinsite",
-			"oi",
-		],
+		keywords: ["13", "amber", "thirteen", "vials", "09670503346", "mck", "mckesson", "orderinsite", "oi"],
 		McKesson: true,
 		OrderInsite: true,
 	},
 	{
 		name: "30 Dram Vials",
 		itemNumber: "09670570280",
-		keywords: [
-			"30",
-			"amber",
-			"thirty",
-			"vials",
-			"09670570280",
-			"mck",
-			"mckesson",
-			"orderinsite",
-			"oi",
-		],
+		keywords: ["30", "amber", "thirty", "vials", "09670570280", "mck", "mckesson", "orderinsite", "oi"],
 		McKesson: true,
 		OrderInsite: true,
 	},
 	{
 		name: "40 Dram Vials",
 		itemNumber: "09670570300",
-		keywords: [
-			"40",
-			"amber",
-			"forty",
-			"vials",
-			"09670570300",
-			"mck",
-			"mckesson",
-			"orderinsite",
-			"oi",
-		],
+		keywords: ["40", "amber", "forty", "vials", "09670570300", "mck", "mckesson", "orderinsite", "oi"],
 		McKesson: true,
 		OrderInsite: true,
 	},
 	{
 		name: "60 Dram Vials",
 		itemNumber: "09670570330",
-		keywords: [
-			"60",
-			"amber",
-			"sixty",
-			"vials",
-			"09670570330",
-			"mck",
-			"mckesson",
-			"orderinsite",
-			"oi",
-		],
+		keywords: ["60", "amber", "sixty", "vials", "09670570330", "mck", "mckesson", "orderinsite", "oi"],
 		McKesson: true,
 		OrderInsite: true,
 	},
@@ -437,6 +397,13 @@ const vials = [
 		name: "Flents Ear Loop Masks",
 		itemNumber: "02318505620",
 		keywords: ["mck", "mckesson", "orderinsite", "oi"],
+		McKesson: true,
+		OrderInsite: true,
+	},
+	{
+		name: "MuellerKold Instant Cold Pack",
+		itemNumber: "07467633102",
+		keywords: ["mck", "mckesson", "orderinsite", "oi", "ice", "icepack", "ice pack", "ice pak"],
 		McKesson: true,
 		OrderInsite: true,
 	},
@@ -3003,21 +2970,9 @@ function classAdd(array, classArr, attribute, attValue) {
 	});
 }
 const bigLinkArr = DOMFactory("a", "bigLink");
-const [
-	bigLinkMCK,
-	bigLinkOI,
-	bigLinkGNFR,
-	bigLinkSOC,
-	bigLinkVS,
-	bigLinkMS,
-	bigLinkCOV,
-	bigLinkFORS,
-] = bigLinkArr;
+const [bigLinkMCK, bigLinkOI, bigLinkGNFR, bigLinkSOC, bigLinkVS, bigLinkMS, bigLinkCOV, bigLinkFORS] = bigLinkArr;
 classAdd(bigLinkArr, vendorClass, "target", "_blank");
-bigLinkMCK.setAttribute(
-	"title",
-	"This Link Will Take You To The McKesson Website With All The Items Already Shown"
-);
+bigLinkMCK.setAttribute("title", "This Link Will Take You To The McKesson Website With All The Items Already Shown");
 bigLinkMCK.addEventListener("click", function () {
 	setTimeout(() => {
 		window.open(
@@ -3026,19 +2981,13 @@ bigLinkMCK.addEventListener("click", function () {
 		);
 	}, 1);
 });
-bigLinkOI.setAttribute(
-	"title",
-	"This Link Will Take You To The OrderInsite Website With The Item Numbers Copied"
-);
+bigLinkOI.setAttribute("title", "This Link Will Take You To The OrderInsite Website With The Item Numbers Copied");
 bigLinkOI.addEventListener("click", function () {
 	setTimeout(() => {
 		window.open("https://acloud.orderinsite.com/rs/logon/walmart");
 	}, 1);
 });
-bigLinkGNFR.setAttribute(
-	"title",
-	"This Link Will Take You To The GNFR Website With The Item Numbers Copied"
-);
+bigLinkGNFR.setAttribute("title", "This Link Will Take You To The GNFR Website With The Item Numbers Copied");
 bigLinkGNFR.addEventListener("click", function () {
 	setTimeout(() => {
 		window.open("https://ppa01.wal-mart.com/irj/portal");
@@ -3053,10 +3002,7 @@ bigLinkSOC.addEventListener("click", function () {
 		window.open("https://ecom.schwarz.com/Default.aspx?page=ProductCatalog");
 	}, 1);
 });
-bigLinkVS.setAttribute(
-	"title",
-	"This Link Will Take You To The VaxServe Website With The Item Numbers Copied"
-);
+bigLinkVS.setAttribute("title", "This Link Will Take You To The VaxServe Website With The Item Numbers Copied");
 bigLinkVS.addEventListener("click", function () {
 	setTimeout(() => {
 		window.open("https://unify.vaxserve.com/index.cfm?fa=portal.selectStore");
@@ -3071,19 +3017,13 @@ bigLinkMS.addEventListener("click", function () {
 		window.open("https://mms.mckesson.com/portal/login");
 	}, 1);
 });
-bigLinkCOV.setAttribute(
-	"title",
-	"This Link Will Take You To The Covap Website With The Item Numbers Copied"
-);
+bigLinkCOV.setAttribute("title", "This Link Will Take You To The Covap Website With The Item Numbers Copied");
 bigLinkCOV.addEventListener("click", function () {
 	setTimeout(() => {
 		window.open("https://www.covap.com/");
 	}, 1);
 });
-bigLinkFORS.setAttribute(
-	"title",
-	"This Link Will Take You To The FORS Website With The Item Numbers Copied"
-);
+bigLinkFORS.setAttribute("title", "This Link Will Take You To The FORS Website With The Item Numbers Copied");
 bigLinkFORS.addEventListener("click", function () {
 	setTimeout(() => {
 		window.open(
@@ -3171,16 +3111,7 @@ function bigCollapseShowFunc(bigCollapseShowButtonGNFR) {
 	});
 }
 const testingArr = [...document.querySelectorAll(".testing")];
-const [
-	testingMCK,
-	testingOI,
-	testingGNFR,
-	testingSOC,
-	testingVS,
-	testingMS,
-	testingCOV,
-	testingFORS,
-] = testingArr;
+const [testingMCK, testingOI, testingGNFR, testingSOC, testingVS, testingMS, testingCOV, testingFORS] = testingArr;
 const button = document.getElementById("button");
 const searchResults = document.getElementById("searchResults");
 const listNav = document.getElementById("listNav");
@@ -3408,16 +3339,8 @@ function createQRCodes() {
 	return array;
 }
 const QRCodeImages = createQRCodes();
-let [
-	bigMCKImage,
-	bigOIImage,
-	bigGNFRImage,
-	bigSOCImage,
-	bigVSImage,
-	bigMSImage,
-	bigCOVImage,
-	bigFORSImage,
-] = QRCodeImages;
+let [bigMCKImage, bigOIImage, bigGNFRImage, bigSOCImage, bigVSImage, bigMSImage, bigCOVImage, bigFORSImage] =
+	QRCodeImages;
 // this function will make sure that no duplicate results are added.
 function avoidDuplciateResults(myFunc, checkFunc) {
 	if (addedItems.every(checkFunc)) {
@@ -3648,10 +3571,7 @@ function removeButtonFunc(removeButtonMCK, array, image, char, redMCK, addedItem
 		//     }
 		//   }
 		// }
-		const numberItem = liVendor
-			.querySelector(".itemNumberVendor")
-			.textContent.replace("Item Number: ", " ")
-			.trim();
+		const numberItem = liVendor.querySelector(".itemNumberVendor").textContent.replace("Item Number: ", " ").trim();
 		for (let i = 0; i < array.length; i++) {
 			const element = array[i];
 			if (numberItem == element) {
@@ -3768,9 +3688,7 @@ function removeDuplicatesFunc(removeDuplicates, addedtomck, array, image, char, 
 		let duplicateItems = [];
 		const descVendor = Array.from(itemContainers.querySelectorAll(".descVendor"));
 		const column = e.target.parentNode;
-		const alternateDesc = Array.from(
-			itemContainers.querySelectorAll(`p.descVendor:not(#${descMCK}`)
-		);
+		const alternateDesc = Array.from(itemContainers.querySelectorAll(`p.descVendor:not(#${descMCK}`));
 		const duplicates = Array.from(column.querySelectorAll(".duplicate"));
 		const li = Array.from(list.querySelectorAll("li"));
 		const vendorQR = column.querySelector(".QRSpan");
@@ -3842,26 +3760,12 @@ function removeDuplicatesFunc(removeDuplicates, addedtomck, array, image, char, 
 
 removeDuplicatesFunc(removeDuplicatesMCK, "data-addedtomck", arr, bigMCKImage, " OR ", "descMCK");
 removeDuplicatesFunc(removeDuplicatesOI, "data-addedtooi", arr1, bigOIImage, ", ", "descOI");
-removeDuplicatesFunc(
-	removeDuplicatesGNFR,
-	"data-addedtognfr",
-	arr2,
-	bigGNFRImage,
-	" , ",
-	"descGNFR"
-);
+removeDuplicatesFunc(removeDuplicatesGNFR, "data-addedtognfr", arr2, bigGNFRImage, " , ", "descGNFR");
 removeDuplicatesFunc(removeDuplicatesSOC, "data-addedtosoc", arr3, bigSOCImage, " , ", "descSOC");
 removeDuplicatesFunc(removeDuplicatesVS, "data-addedtovs", arr4, bigVSImage, " , ", "descVS");
 removeDuplicatesFunc(removeDuplicatesMS, "data-addedtoms", arr5, bigMSImage, " , ", "descMS");
 removeDuplicatesFunc(removeDuplicatesCOV, "data-addedtocov", arr6, bigCOVImage, " , ", "descCOV");
-removeDuplicatesFunc(
-	removeDuplicatesFORS,
-	"data-addedtofors",
-	arr7,
-	bigFORSImage,
-	" , ",
-	"descFORS"
-);
+removeDuplicatesFunc(removeDuplicatesFORS, "data-addedtofors", arr7, bigFORSImage, " , ", "descFORS");
 // this function takes list items and categorizes them based on vendor and adds vendor icons.
 // function categorizeByClass(arr, a) {
 //   for (let j = 0; j < arr.length; j++) {
@@ -3890,14 +3794,8 @@ function onClick(li) {
 			const itemNumber1 = vials[index].itemNumber;
 			const nameMain = vials[index].name;
 			const imageArr = DOMFactory("img", "imageVendor");
-			classAdd(
-				imageArr,
-				vendorClass,
-				"title",
-				"Click Here To Print The Barcode For The Item Number"
-			);
-			const [imageMCK, imageOI, imageGNFR, imageSOC, imageVS, imageMS, imageCOV, imageFORS] =
-				imageArr;
+			classAdd(imageArr, vendorClass, "title", "Click Here To Print The Barcode For The Item Number");
+			const [imageMCK, imageOI, imageGNFR, imageSOC, imageVS, imageMS, imageCOV, imageFORS] = imageArr;
 			imageArr.forEach(e => {
 				JsBarcode(e, itemNumber1, { height: 40 });
 			});
@@ -3991,14 +3889,10 @@ function onClick(li) {
 				smallLinkCOV,
 				smallLinkFORS,
 			] = smallLinkArr;
-			smallLinkMCK.setAttribute(
-				"title",
-				"This Link Will Take You To The McKesson Website With The Item Already Shown"
-			);
+			smallLinkMCK.setAttribute("title", "This Link Will Take You To The McKesson Website With The Item Already Shown");
 			smallLinkMCK.setAttribute(
 				"href",
-				"https://connect.mckesson.com/portal/site/smo/menuitem.87a0666be7398a3ece3ee6105740d0a0/?query=" +
-					itemNumber1
+				"https://connect.mckesson.com/portal/site/smo/menuitem.87a0666be7398a3ece3ee6105740d0a0/?query=" + itemNumber1
 			);
 			smallLinkMCK.text = "Order on McKesson";
 			smallLinkOI.setAttribute(
@@ -4010,20 +3904,11 @@ function onClick(li) {
 			smallLinkGNFR.setAttribute("title", "This Link Will Take You To The GNFR Website");
 			smallLinkGNFR.setAttribute("href", "https://ppa01.wal-mart.com/irj/portal");
 			smallLinkGNFR.text = "Order on GNFR";
-			smallLinkSOC.setAttribute(
-				"title",
-				"This Link Will Take You To The Sign Order Catalog Website"
-			);
-			smallLinkSOC.setAttribute(
-				"href",
-				"https://ecom.schwarz.com/Default.aspx?page=ProductCatalog"
-			);
+			smallLinkSOC.setAttribute("title", "This Link Will Take You To The Sign Order Catalog Website");
+			smallLinkSOC.setAttribute("href", "https://ecom.schwarz.com/Default.aspx?page=ProductCatalog");
 			smallLinkSOC.text = "Order on Sign Order Catalog";
 			smallLinkVS.setAttribute("title", "This Link Will Take You To The VaxServe Website");
-			smallLinkVS.setAttribute(
-				"href",
-				"https://unify.vaxserve.com/index.cfm?fa=portal.selectStore"
-			);
+			smallLinkVS.setAttribute("href", "https://unify.vaxserve.com/index.cfm?fa=portal.selectStore");
 			smallLinkVS.text = "Order on VaxServe";
 			smallLinkMS.setAttribute("title", "This Link Will Take You To The McKesson MedSurge Website");
 			smallLinkMS.setAttribute("href", "https://mms.mckesson.com/portal/login");
@@ -4138,78 +4023,14 @@ function onClick(li) {
 			copyItemNumber(descMS, nameMain);
 			copyItemNumber(descCOV, nameMain);
 			copyItemNumber(descFORS, nameMain);
-			removeButtonFunc(
-				removeButtonMCK,
-				arr,
-				bigMCKImage,
-				" OR ",
-				"redMCK",
-				addedItemsMCK,
-				"data-addedtoMCK"
-			);
-			removeButtonFunc(
-				removeButtonOI,
-				arr1,
-				bigOIImage,
-				", ",
-				"redOI",
-				addedItemsOI,
-				"data-addedtoOI"
-			);
-			removeButtonFunc(
-				removeButtonGNFR,
-				arr2,
-				bigGNFRImage,
-				" , ",
-				"redGNFR",
-				addedItemsGNFR,
-				"data-addedtoGNFR"
-			);
-			removeButtonFunc(
-				removeButtonSOC,
-				arr3,
-				bigSOCImage,
-				" , ",
-				"redSOC",
-				addedItemsSOC,
-				"data-addedtoSOC"
-			);
-			removeButtonFunc(
-				removeButtonVS,
-				arr4,
-				bigVSImage,
-				" , ",
-				"redVS",
-				addedItemsVS,
-				"data-addedtoVS"
-			);
-			removeButtonFunc(
-				removeButtonMS,
-				arr5,
-				bigMSImage,
-				" , ",
-				"redMS",
-				addedItemsMS,
-				"data-addedtoMS"
-			);
-			removeButtonFunc(
-				removeButtonCOV,
-				arr6,
-				bigCOVImage,
-				" , ",
-				"redCOV",
-				addedItemsCOV,
-				"data-addedtoCOV"
-			);
-			removeButtonFunc(
-				removeButtonFORS,
-				arr7,
-				bigFORSImage,
-				" , ",
-				"redFORS",
-				addedItemsFORS,
-				"data-addedtoFORS"
-			);
+			removeButtonFunc(removeButtonMCK, arr, bigMCKImage, " OR ", "redMCK", addedItemsMCK, "data-addedtoMCK");
+			removeButtonFunc(removeButtonOI, arr1, bigOIImage, ", ", "redOI", addedItemsOI, "data-addedtoOI");
+			removeButtonFunc(removeButtonGNFR, arr2, bigGNFRImage, " , ", "redGNFR", addedItemsGNFR, "data-addedtoGNFR");
+			removeButtonFunc(removeButtonSOC, arr3, bigSOCImage, " , ", "redSOC", addedItemsSOC, "data-addedtoSOC");
+			removeButtonFunc(removeButtonVS, arr4, bigVSImage, " , ", "redVS", addedItemsVS, "data-addedtoVS");
+			removeButtonFunc(removeButtonMS, arr5, bigMSImage, " , ", "redMS", addedItemsMS, "data-addedtoMS");
+			removeButtonFunc(removeButtonCOV, arr6, bigCOVImage, " , ", "redCOV", addedItemsCOV, "data-addedtoCOV");
+			removeButtonFunc(removeButtonFORS, arr7, bigFORSImage, " , ", "redFORS", addedItemsFORS, "data-addedtoFORS");
 			const collapseButtonArr = DOMFactory("button", "collapseButtonVendor");
 			classAdd(collapseButtonArr, vendorClass);
 			const [
@@ -4225,49 +4046,14 @@ function onClick(li) {
 			const liArr = DOMFactory("li", "liVendor");
 			classAdd(liArr, vendorClass);
 			const [liMCK, liOI, liGNFR, liSOC, liVS, liMS, liCOV, liFORS] = liArr;
-			liMCK.append(
-				removeButtonMCK,
-				collapseButtonMCK,
-				descMCK,
-				imageMCK,
-				itemNumberMCK,
-				smallLinkMCK
-			);
+			liMCK.append(removeButtonMCK, collapseButtonMCK, descMCK, imageMCK, itemNumberMCK, smallLinkMCK);
 			liOI.append(removeButtonOI, collapseButtonOI, descOI, imageOI, itemNumberOI, smallLinkOI);
-			liGNFR.append(
-				removeButtonGNFR,
-				collapseButtonGNFR,
-				descGNFR,
-				imageGNFR,
-				itemNumberGNFR,
-				smallLinkGNFR
-			);
-			liSOC.append(
-				removeButtonSOC,
-				collapseButtonSOC,
-				descSOC,
-				imageSOC,
-				itemNumberSOC,
-				smallLinkSOC
-			);
+			liGNFR.append(removeButtonGNFR, collapseButtonGNFR, descGNFR, imageGNFR, itemNumberGNFR, smallLinkGNFR);
+			liSOC.append(removeButtonSOC, collapseButtonSOC, descSOC, imageSOC, itemNumberSOC, smallLinkSOC);
 			liVS.append(removeButtonVS, collapseButtonVS, descVS, imageVS, itemNumberVS, smallLinkVS);
 			liMS.append(removeButtonMS, collapseButtonMS, descMS, imageMS, itemNumberMS, smallLinkMS);
-			liCOV.append(
-				removeButtonCOV,
-				collapseButtonCOV,
-				descCOV,
-				imageCOV,
-				itemNumberCOV,
-				smallLinkCOV
-			);
-			liFORS.append(
-				removeButtonFORS,
-				collapseButtonFORS,
-				descFORS,
-				imageFORS,
-				itemNumberFORS,
-				smallLinkFORS
-			);
+			liCOV.append(removeButtonCOV, collapseButtonCOV, descCOV, imageCOV, itemNumberCOV, smallLinkCOV);
+			liFORS.append(removeButtonFORS, collapseButtonFORS, descFORS, imageFORS, itemNumberFORS, smallLinkFORS);
 			function collapseFunc(collapseButtonMCK) {
 				$(collapseButtonMCK).on("click", function (e) {
 					e.preventDefault();
@@ -4721,9 +4507,7 @@ printBarcode(QRFORS);
 function buttonClick() {
 	const li = list.children;
 	for (let i = 0; i < li.length; i++) {
-		const textList = document.createTextNode(
-			Object.values(li)[i].childNodes[0].textContent
-		).textContent;
+		const textList = document.createTextNode(Object.values(li)[i].childNodes[0].textContent).textContent;
 		items.push(textList);
 		items = removeDuplicates(items);
 		const listNew = document.createElement("li");
@@ -4948,8 +4732,7 @@ search.addEventListener("input", event => {
 				})
 				.sort((a, b) => {
 					return (
-						getRelevancy(b.name.toLowerCase().trim(), value, re) -
-						getRelevancy(a.name.toLowerCase().trim(), value, re)
+						getRelevancy(b.name.toLowerCase().trim(), value, re) - getRelevancy(a.name.toLowerCase().trim(), value, re)
 					);
 				})
 		);
