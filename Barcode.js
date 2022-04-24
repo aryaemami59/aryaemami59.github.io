@@ -1829,6 +1829,14 @@ const vials = [
 		GNFR: true,
 	},
 	{
+		name: "Hazardous Waste Liners",
+		itemNumber: "100659902",
+		keywords: ["gnfr"],
+		McKesson: false,
+		OrderInsite: false,
+		GNFR: true,
+	},
+	{
 		name: "Opioid Pamphlets",
 		itemNumber: "586338822",
 		keywords: ["586338822", "sign", "signing", "catalog", "bunzl"],
