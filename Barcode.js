@@ -1830,7 +1830,7 @@ const vials = [
 	},
 	{
 		name: "Hazardous Waste Liners",
-		itemNumber: "100659902",
+		itemNumber: "100603023",
 		keywords: ["gnfr"],
 		McKesson: false,
 		OrderInsite: false,
